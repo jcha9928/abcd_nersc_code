@@ -1,0 +1,31 @@
+#/bin/bash
+# usage: dcm_conversion
+
+list=$1
+
+
+
+CMD_batch=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/batch.cmd.dcm_conversion.${list}
+rm $CMD_batch
+
+for SUBJECT in `cat $adnidata/$list`
+do
+#s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
+CMD=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd.dcm_conversion.${SUBJECT}
+rm $CMD
+#SUBJECT=${s}_1mm_flair
+
+  cat<<EOC >$CMD
+  #!/bin/bash
+  source ~/.bashrc
+  workingdir=$adnidata/${SUBJECT}
+  cd \$workingdir
+  echo \$workingdir
+  echo "dcm2niix -9 -v y -o ./ -f %i_%f ./"
+
+  EOC
+
+chmod +x $CMD
+echo $CMD>>$CMD_batch
+
+done
