@@ -15,15 +15,17 @@ CMD=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd.dcm_conversion.
 rm $CMD
 #SUBJECT=${s}_1mm_flair
 
-  cat<<EOC >$CMD
-  #!/bin/bash
-  source ~/.bashrc
-  workingdir=$adnidata/${SUBJECT}
-  cd \$workingdir
-  echo \$workingdir
-  echo "dcm2niix -9 -v y -o ./ -f %i_%f ./"
+########################################################################################################################################
+cat<<EOC >$CMD
+#!/bin/bash
+source ~/.bashrc
+workingdir=$adnidata/${SUBJECT}
+cd \$workingdir
+echo \$workingdir
+echo "dcm2niix -9 -v y -o ./ -f %i_%f ./"
 
-  EOC
+EOC
+########################################################################################################################################
 
 chmod +x $CMD
 echo $CMD>>$CMD_batch
