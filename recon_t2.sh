@@ -13,16 +13,18 @@ rm -rf $CMD2
 for s in `cat $adnidata/$list`
 do
 
-SUBJECTS_DIR=/ifs/scratch/pimri/posnerlab/1anal/IDP/fs
+SUBJECTS_DIR=$adnifs
 
-IMPATH=/ifs/scratch/pimri/posnerlab/1anal/IDP/data/${s}
-EXPERTOPT=$SUBJECTS_DIR/expert.opt
-FLAIR=`ls $IMPATH/flair*nii*`
-T1=`ls $IMPATH/t1*nii*`
+IMPATH=$adnidata/${s}
+#EXPERTOPT=$SUBJECTS_DIR/expert.opt
+FLAIR=`ls $IMPATH/${s}_Axial_FLAIR_Axial_FLAIR.nii.gz`
+T1=`ls $IMPATH/${s}_Accelerated_SAG_IR-SPGR_Accelerated_SAG_IR-SPGR.nii.gz`
 SUBJECT=${s}_1mm_flair
 
 recon1=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job/recon1.${s}
 rm -rf $recon1
+
+if [ -z "$t1" ];then flairarg= ;else flairarge="-FLAIR $FLAIR -FLAIRpial"; fi
 
 ### 1 INITIAL RECON-ALL
 cat<<EOC >$recon1
