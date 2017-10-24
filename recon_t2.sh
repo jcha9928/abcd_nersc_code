@@ -39,7 +39,7 @@ EOM
 done
 
 
-echo "$code/fsl_sub_hpc_6 -t $CMD1"
+$code/fsl_sub_hpc_6 -t $CMD1
 echo $CMD1
 
 #for s in `cat $adnidata/$list`
