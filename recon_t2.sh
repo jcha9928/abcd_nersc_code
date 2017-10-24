@@ -1,16 +1,16 @@
 #!/bin/bash
 
-list=$1
+#list=$1
 #year=2011
-threads=6
-IDP=/ifs/scratch/pimri/posnerlab/1anal/IDP
+threads=4
+adni=/ifs/scratch/pimri/posnerlab/1anal/adni
 
-CMD1=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job/cmd1.${list}
-CMD2=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job/cmd2.${list}
+CMD1=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.${list}
+CMD2=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd2.${list}
 rm -rf $CMD1
 rm -rf $CMD2
 
-for s in `cat $IDP/data/$list`
+for s in `cat $adnidata/$list`
 do
 
 SUBJECTS_DIR=/ifs/scratch/pimri/posnerlab/1anal/IDP/fs
