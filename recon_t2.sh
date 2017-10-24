@@ -21,14 +21,14 @@ FLAIR=`ls $IMPATH/${s}_Axial_FLAIR_Axial_FLAIR.nii.gz`
 T1=`ls $IMPATH/${s}_Accelerated_SAG_IR-SPGR_Accelerated_SAG_IR-SPGR.nii.gz`
 SUBJECT=${s}_1mm_flair
 
-recon1=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job/recon1.${s}
+recon1=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/recon1.${s}
 rm -rf $recon1
 
-if [ -z "$t1" ];then flairarg= ;else flairarge="-FLAIR $FLAIR -FLAIRpial"; fi
+if [ -z "$t1" ];then flair_arg= ;else flair_arg="-FLAIR $FLAIR -FLAIRpial"; fi
 
 ### 1 INITIAL RECON-ALL
 cat<<EOC >$recon1
-recon-all -all -s ${SUBJECT} -i $T1 -FLAIR $FLAIR -FLAIRpial -qcache
+recon-all -all -s ${SUBJECT} -i $T1 $flair_arg -qcache
 EOC
 
 chmod +x $recon1
@@ -43,14 +43,16 @@ done
 #prejobid=`$code/fsl_sub_hpc_6 -t $CMD1`
 echo $CMD1
 
-for s in `cat $IDP/data/$list`
+for s in `cat $adnidata/$list`
 do
-recon2=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job/recon2.${s}
+recon2=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/recon2.${s}
 rm -rf $recon2
+
+if [ -z "$t1" ];then hippo_arg="-hippocampal-subfields-T1" ;else hippo_arg="-hippocampal-subfields-T1T2 $FLAIR flair"; fi
 
 ### 2 HIPPOCAMPAL SEGMENTATION
 cat<<EOC >$recon2
-recon-all -s ${SUBJECT} -hippocampal-subfields-T1T2 $FLAIR flair -itkthreads ${threads} 
+recon-all -s ${SUBJECT} $hippo_arg -itkthreads ${threads} 
 EOC
 
 chmod +x $recon2
