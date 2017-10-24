@@ -5,11 +5,12 @@ list=$1
 threads=4 # this is unused
 
 adni=/ifs/scratch/pimri/posnerlab/1anal/adni
+adnidata=/ifs/scratch/pimri/posnerlab/1anal/adni/data/nii
 
 CMD1=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.${list}
 rm -rf $CMD1
 
-for s in `cat $adnidata/\$list`
+for s in `cat \$adnidata/\$list`
 do
 echo $s
 SUBJECTS_DIR=$adnifs
