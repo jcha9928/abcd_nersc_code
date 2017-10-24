@@ -11,7 +11,7 @@ rm -rf $CMD1
 
 for s in `cat $adnidata/\$list`
 do
-
+echo $s
 SUBJECTS_DIR=$adnifs
 
 IMPATH=$adnidata/${s}
