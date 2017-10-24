@@ -17,7 +17,7 @@ SUBJECTS_DIR=$adnifs
 
 IMPATH=$adnidata
 #EXPERTOPT=$SUBJECTS_DIR/expert.opt
-FLAIR=`ls $IMPATH/${s}_Axial_FLAIR_Axial_FLAIR.nii.gz`
+FLAIR=`ls $IMPATH/${s}_*FLAIR.nii.gz`
 T1=`ls $IMPATH/${s}*SPGR*.nii.gz`
 SUBJECT=${s}_1mm_flair
 
