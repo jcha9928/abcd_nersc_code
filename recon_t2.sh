@@ -11,7 +11,7 @@ CMD2=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd2.${list}
 rm -rf $CMD1
 rm -rf $CMD2
 
-for s in `cat $adnidata/$list`
+for s in `cat $adnidata/\$list`
 do
 
 SUBJECTS_DIR=$adnifs
