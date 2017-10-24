@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#list=$1
+list=$1
 #year=2011
 threads=4 # this is unused
 
