@@ -7,9 +7,7 @@ threads=4 # this is unused
 adni=/ifs/scratch/pimri/posnerlab/1anal/adni
 
 CMD1=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.${list}
-CMD2=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd2.${list}
 rm -rf $CMD1
-rm -rf $CMD2
 
 for s in `cat $adnidata/\$list`
 do
