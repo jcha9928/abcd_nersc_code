@@ -14,7 +14,7 @@ while [ $1 != -- ] ; do
     shift
 done
 
-logdir=/ifs/scratch/pimri/posnerlab/1anal/IDP/code/idp/job
+logdir=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job
 CMD1_batch=$logdir/batch${nbatch}_5ttgen
 CMD2_batch=$logdir/batch${nbatch}_tckgen
 
@@ -24,7 +24,7 @@ rm -rf $CMD2_batch
 #nthreadsX2=$((${nthreads}*2))
 
 
-subjectlist=/ifs/scratch/pimri/posnerlab/1anal/IDP/data/list_dti_batch${nbatch}
+subjectlist=/ifs/scratch/pimri/posnerlab/1anal/adni/data/nii/list_dti
 for s in `cat $subjectlist`
 do
 
@@ -39,7 +39,8 @@ FREESURFER_HOME=$work/freesurfer_dev/freesurfer
 source /ifs/scratch/pimri/posnerlab/freesurfer_dev/freesurfer/FreeSurferEnv.sh
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$nthreads
 SUBJECT=${s}_1mm_flair
-cd /ifs/scratch/pimri/posnerlab/1anal/IDP/fs/\${SUBJECT}/dmri2
+
+cd /ifs/scratch/pimri/posnerlab/1anal/adni/fs/\${SUBJECT}/dmri2
 mkdir xfm
 
 ### flirt 
