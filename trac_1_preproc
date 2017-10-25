@@ -47,7 +47,7 @@ fi
 
 #%% 4. dwipreproc -eddy current
 if [ ! -e mr_dwi_denoised_preproc.mif.gz ];then
-    dwipreproc PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads $threads
+    dwipreproc -rpe_none -pe_dir PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads $threads
 fi
 
 #%% 5. mask and bias field correction
