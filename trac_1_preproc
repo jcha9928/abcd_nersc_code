@@ -9,19 +9,20 @@ adni=/ifs/scratch/pimri/posnerlab/1anal/adni
 CMD_batch=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.batch.trac.${list}
 rm -rf $CMD_batch
 
-for SUBJECT in `cat \$adnidata/\$list`
+for s in `cat \$adnidata/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.trac.${s}
 rm -rf $CMD
 SUBJECT=${s}_1mm_flair
-
+echo ${SUBJECT}
 
 cat<<EOC >$CMD
 #!/bin/bash
 source ~/.bashrc
 workingdir=/ifs/scratch/pimri/posnerlab/1anal/adni/fs/${SUBJECT}/dmri2
 echo $workingdir
+mkdir $workingdir
 
 if [ ! -e \$workingdir ]; then mkdir \$workingdir; fi
 cd \$workingdir
