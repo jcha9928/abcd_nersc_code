@@ -7,13 +7,13 @@ threads=1
 adni=/ifs/scratch/pimri/posnerlab/1anal/adni
 
 CMD_batch=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.batch.trac.${list}
-rm $CMD_batch
+rm -rf $CMD_batch
 
 for SUBJECT in `cat \$adnidata/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job/cmd1.trac.${s}
-rm $CMD
+rm -rf $CMD
 SUBJECT=${s}_1mm_flair
 
 
