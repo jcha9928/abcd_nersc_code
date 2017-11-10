@@ -14,7 +14,7 @@ while [ $1 != -- ] ; do
     shift
 done
 
-logdir=/ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job
+logdir=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job
 CMD1_batch=$logdir/batch${nbatch}_5ttgen
 CMD2_batch=$logdir/batch${nbatch}_tckgen
 
@@ -28,19 +28,18 @@ subjectlist=/ifs/scratch/pimri/posnerlab/1anal/adni/data/nii/list_dti
 for s in `cat $subjectlist`
 do
 
-
-
 CMD1=$logdir/cmd.5ttgen.${s}
 rm -rf $CMD1
 
 echo "#!/bin/bash
 source ~/.bashrc
-FREESURFER_HOME=$work/freesurfer_dev/freesurfer
-source /ifs/scratch/pimri/posnerlab/freesurfer_dev/freesurfer/FreeSurferEnv.sh
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$nthreads
-SUBJECT=${s}_1mm_flair
+#FREESURFER_HOME=$WORK/freesurfer_dev/freesurfer
+#source /ifs/scratch/pimri/posnerlab/freesurfer_dev/freesurfer/FreeSurferEnv.sh
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=256
+#SUBJECT=${s}_1mm_flair
+SUBJECT=${s}
 
-cd /ifs/scratch/pimri/posnerlab/1anal/adni/fs/\${SUBJECT}/dmri2
+cd $adni/fs/\${SUBJECT}/dmri2
 mkdir xfm
 
 ### flirt 
@@ -48,7 +47,8 @@ echo *****NOW GENERATING ANAT2DIFF.FLT.MAT *****
 mri_convert ../mri/brain.mgz brain_anat_orig.nii.gz
 sleep 5
 
-/ifs/scratch/pimri/posnerlab/freesurfer_dev/freesurfer/bin/flip4fsl  brain_anat_orig.nii.gz brain_anat.nii.gz
+#/ifs/scratch/pimri/posnerlab/freesurfer_dev/freesurfer/bin/flip4fsl  brain_anat_orig.nii.gz brain_anat.nii.gz
+orientLAS brain_anat_orig.nii.gz brain_anat.nii.gz
 sleep 5
 
 mrconvert mr_meanb0.mif.gz mr_meanb0.nii.gz -force
