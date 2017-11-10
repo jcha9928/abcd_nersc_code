@@ -1,7 +1,7 @@
 #!/bin/bash
 
 list=$1
-threads=6
+threads=256
 #threadsX2=$((${threads}*2))
 
 adni=/ifs/scratch/pimri/posnerlab/1anal/adni
@@ -63,7 +63,7 @@ fi
 
 #%% 7. generating b0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if [ ! -e mr_meanb0.mif.gz ];then
-     dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads $threadsX2 | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads $threads
+     dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads $threads | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads $threads
 fi
 
 #%% 8. upsampling %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
