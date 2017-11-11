@@ -32,15 +32,15 @@ do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1.trac.${s}
 rm -rf $CMD
-SUBJECT=${s}_1mm_flair
+SUBJECT=${s}
 #echo ${SUBJECT}
 
 cat<<EOC >$CMD
 #!/bin/bash
 source ~/.bashrc
 workingdir=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/${SUBJECT}/dmri2
-echo $workingdir
-mkdir $workingdir
+echo \$workingdir
+mkdir \$workingdir
 
 if [ ! -e \$workingdir ]; then mkdir \$workingdir; fi
 cd \$workingdir
