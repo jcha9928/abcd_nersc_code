@@ -18,11 +18,11 @@ cat<<EOC >$CMD_batch
 #COBALT --attrs mcdram=cache:numa=quad
 #COBALT -A AD_Brain_Imaging
 echo start............................................
-export n_nodes=$COBALT_JOBSIZE
-export n_mpi_ranks_per_node=1
-export n_mpi_ranks=202
-export n_openmp_threads_per_rank=64
-export n_hyperthreads_per_core=4
+#export n_nodes=$COBALT_JOBSIZE
+#export n_mpi_ranks_per_node=202
+#export n_mpi_ranks=202
+#export n_openmp_threads_per_rank=64
+#export n_hyperthreads_per_core=4
 
 EOC
 
@@ -127,7 +127,7 @@ EOC
 
 
 chmod +x $CMD
-echo $CMD>>$CMD_batch
+echo "aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD">>$CMD_batch
 
 
 done
