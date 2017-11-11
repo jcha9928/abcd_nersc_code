@@ -9,22 +9,21 @@ adni=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni
 CMD_batch=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1.batch.trac.${list}
 rm -rf $CMD_batch
 
-cat<<EOM > $CMD_batch
 
-#!/bin/bash
+
+cat "#!/bin/bash
 #COBALT -t 60
 #COBALT -n 202
 #COBALT --attrs mcdram=cache:numa=quad
 #COBALT -A AD_Brain_Imaging
-echo "Starting Cobalt job script"
+echo start............................................
 export n_nodes=$COBALT_JOBSIZE
 export n_mpi_ranks_per_node=1
 #export n_mpi_ranks=$(($n_nodes * $n_mpi_ranks_per_node))
 export n_mpi_ranks=202
 export n_openmp_threads_per_rank=64
-export n_hyperthreads_per_core=4
+export n_hyperthreads_per_core=4" > $CMD_batch
 
-EOM
 
 
 for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
