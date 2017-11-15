@@ -29,6 +29,7 @@ EOC
 
 for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
 do
+i=1
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1.trac.${s}
 rm -rf $CMD
@@ -131,7 +132,7 @@ EOC
 
 chmod +x $CMD
 
-
+####################################################################
 cat<<EOA >$CMD_sub
 #!/bin/bash
 #COBALT -t 60
@@ -147,18 +148,21 @@ echo start............................................
 aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD
 
 EOA
-
+#####################################################################
 
 chmod +x $CMD_sub
 
-#echo "aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD">>$CMD_batch
-echo "execute $CMD_sub"
+
+echo "aprun -n $i -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD &">>$CMD_batch
+i=$(($i+1))
+#echo "execute $CMD_sub"
 
 done
 
+echo "wait" >> $CMD_batch
 ### batch submission
 
-#echo $CMD_batch
+echo $CMD_batch
 #chmod +x $CMD_batch
 #echo "qsub $CMD_batch"
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
