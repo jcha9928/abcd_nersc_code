@@ -152,7 +152,8 @@ EOA
 chmod +x $CMD_sub
 
 
-echo "aprun -n $i -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD &">>$CMD_batch
+echo "aprun -n $i -N 1 -j 4 -e OMP_NUM_THREADS=256 $CMD > cmd1.log.${SUBJECT} &">>$CMD_batch
+echo "sleep 1">>$CMD_batch
 i=$(($i+1))
 echo $i
 #echo "execute $CMD_sub"
