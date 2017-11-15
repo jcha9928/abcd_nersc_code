@@ -9,7 +9,7 @@ adni=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni
 CMD_batch=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1.batch.trac.${list}
 rm -rf $CMD_batch
 
-
+#######################################################################################################
 cat<<EOC >$CMD_batch
 #!/bin/bash
 #COBALT -t 60
@@ -25,13 +25,18 @@ echo start............................................
 
 EOC
 
-
+#######################################################################################################
 
 for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1.trac.${s}
 rm -rf $CMD
+
+CMD_sub=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd1_sub.trac.${s}
+rm -rf $CMD_sub
+
+
 SUBJECT=${s}
 #echo ${SUBJECT}
 
@@ -124,18 +129,38 @@ dtifit -k mr_dwi_denoised_preproc_biasCorr.nii.gz -o dtifit -m mr_dilate_mask.ni
 echo "I THINK EVERYTHING IS DONE BY NOW"
 EOC
 
-
 chmod +x $CMD
-echo "aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD">>$CMD_batch
 
+
+cat<<EOA >$CMD_sub
+#!/bin/bash
+#COBALT -t 60
+#COBALT -n 1
+#COBALT --attrs mcdram=cache:numa=quad
+#COBALT -A AD_Brain_Imaging
+echo start............................................
+#export n_nodes=$COBALT_JOBSIZE
+#export n_mpi_ranks_per_node=202
+#export n_mpi_ranks=202
+#export n_openmp_threads_per_rank=64
+#export n_hyperthreads_per_core=4
+aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD
+
+EOA
+
+
+chmod +x $CMD_sub
+
+#echo "aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD">>$CMD_batch
+echo "execute $CMD_sub"
 
 done
 
 ### batch submission
 
-echo $CMD_batch
-chmod +x $CMD_batch
-echo "qsub $CMD_batch"
+#echo $CMD_batch
+#chmod +x $CMD_batch
+#echo "qsub $CMD_batch"
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
 #$code/fsl_sub_hpc_6 -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
 
