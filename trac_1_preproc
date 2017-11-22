@@ -144,7 +144,7 @@ echo start............................................
 #export n_mpi_ranks=202
 #export n_openmp_threads_per_rank=64
 #export n_hyperthreads_per_core=4
-aprun -n 1 -N 1 -d 1 -j 4 -e OMP_NUM_THREADS=256 -cc depth $CMD
+aprun -n 1 -N 1 -d 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 -cc depth $CMD
 
 EOA
 #####################################################################
@@ -152,8 +152,8 @@ EOA
 chmod +x $CMD_sub
 
 
-echo "aprun -n $i -N 1 -j 4 -e OMP_NUM_THREADS=256 $CMD > cmd1.log.${SUBJECT} &">>$CMD_batch
-echo "sleep 1">>$CMD_batch
+echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > cmd1.log.${SUBJECT} &">>$CMD_batch
+echo "sleep 0.2">>$CMD_batch
 i=$(($i+1))
 echo $i
 #echo "execute $CMD_sub"
