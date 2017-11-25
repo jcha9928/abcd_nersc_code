@@ -1,0 +1,157 @@
+#!/bin/bash
+
+list=$1
+threads=256
+#threadsX2=$((${threads}*2))
+
+adni=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni
+
+CMD_batch=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd2.batch.trac.${list}
+rm -rf $CMD_batch
+
+#######################################################################################################
+cat<<EOC >$CMD_batch
+#!/bin/bash
+#COBALT -t 360
+#COBALT -n 202
+#COBALT --attrs mcdram=cache:numa=quad
+#COBALT -A AD_Brain_Imaging
+echo start............................................
+#export n_nodes=$COBALT_JOBSIZE
+#export n_mpi_ranks_per_node=202
+#export n_mpi_ranks=202
+#export n_openmp_threads_per_rank=64
+#export n_hyperthreads_per_core=4
+EOC
+
+#######################################################################################################
+
+i=1
+
+for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
+do
+#s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
+
+CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd2.trac.${s}
+rm -rf $CMD
+
+SUBJECT=${s}
+#echo ${SUBJECT}
+
+cat<<EOC >$CMD
+#!/bin/bash
+source ~/.bashrc
+workingdir=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/${SUBJECT}/dmri2
+echo \$workingdir
+mkdir \$workingdir
+cd \$workingdir
+pwd
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=256
+#############################################################MRTRIX########################
+FREESURFER_HOME=/lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer
+source /lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer/FreeSurferEnv.sh
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$nthreads
+SUBJECT=${s}_1mm_flair
+cd /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\${SUBJECT}/dmri2
+mkdir xfm
+### flirt 
+echo *****NOW GENERATING ANAT2DIFF.FLT.MAT *****
+mri_convert ../mri/brain.mgz brain_anat_orig.nii.gz
+sleep 0.2
+orientLAS brain_anat_orig.nii.gz brain_anat.nii.gz
+sleep 0.2
+mrconvert mr_meanb0.mif.gz mr_meanb0.nii.gz -force
+sleep 0.2
+bet2 mr_meanb0.nii.gz mr_meanb0_brain.nii.gz
+sleep 0.2
+flirt -in brain_anat.nii.gz -ref mr_meanb0_brain.nii.gz -out brain_anat2diff -omat anat2diff.flt.mat -v
+sleep 0.2
+### 5TTGEN
+echo ***** NOW 5TTGEN *****
+mri_convert ../mri/T1.mgz T1.nii.gz
+sleep 0.2
+orientLAS T1.nii.gz T1_flip.nii.gz
+sleep 0.2
+flirt -in T1_flip.nii.gz -out T1_2diff_flt.nii.gz -ref mr_meanb0.nii.gz -applyxfm -init anat2diff.flt.mat -v
+sleep 0.2
+ 
+#5ttgen fsl brain_anat.nii.gz 5tt_from_brain_anat_test.nii.gz -nocrop 
+5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp
+sleep 0.2
+flirt -in 5tt_freesurfer.nii.gz -ref mr_meanb0_brain.nii.gz -out 5tt_freesurfer2diff -applyxfm -init anat2diff.flt.mat -v
+sleep 0.2
+mrconvert 5tt_freesurfer2diff.nii.gz 5tt_freesurfer2diff.mif.gz -force
+sleep 0.2
+cp 5tt_freesurfer2diff.nii.gz 5tt2.nii.gz
+sleep 0.2
+cp 5tt_freesurfer2diff.mif.gz 5tt2.mif.gz
+sleep 0.2
+5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force
+sleep 0.2
+### APARC+ASEG to diff
+for im in aparc+aseg aparc.a2009s+aseg
+do
+   echo ****NOW CONVERTING MGZ TO NII
+   mri_convert ../mri/\${im}.mgz \${im}.nii.gz
+   sleep 0.2
+   
+   echo ****FLIPING FOR FSL
+   orientLAS \${im}.nii.gz \${im}_flip.nii.gz
+   sleep 0.2
+   
+   echo ****NOW FLIRTING
+   flirt -in \${im}_flip.nii.gz -out \${im}_2_diff_flt.nii.gz -ref mr_meanb0_brain.nii.gz -applyxfm -init anat2diff.flt.mat -interp nearestneighbour
+   sleep 0.2
+done
+### labelconvert for aparc+aseg and aparc.a2009+aseg
+labelconvert aparc+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_default.txt nodes_aparc+aseg2.mif.gz -force
+sleep 0.2
+labelconvert aparc.a2009s+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt nodes_aparc.a2009s+aseg2.mif.gz -force
+sleep 0.2
+### tckgen
+if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
+tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
+  if [ \$tracknum != 10000000 ]; then
+  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
+  sleep 0.2
+  
+  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
+  sleep 0.2
+  else 
+  echo 'sift done'*******
+  fi
+else  
+tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
+sleep 0.2
+tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
+sleep 0.2
+fi
+#### tck2connectome
+for im in aparc+aseg aparc.a2009s+aseg
+do
+tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv 
+tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv 
+tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv 
+done
+#############################################################MRTRIX########################
+EOC
+
+chmod +x $CMD
+
+
+
+
+echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} &">>$CMD_batch
+echo "sleep 0.2">>$CMD_batch
+i=$(($i+1))
+echo $i
+#echo "execute $CMD_sub"
+
+done
+
+echo "wait" >> $CMD_batch
+### batch submission
+
+echo $CMD_batch
+chmod +x $CMD_batch
+echo "qsub $CMD_batch"
