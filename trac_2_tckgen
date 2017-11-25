@@ -139,28 +139,28 @@ sleep 0.2
 if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
 tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
   if [ \$tracknum != 10000000 ]; then
-  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads $nthreads
+  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
   sleep 0.2
   
-  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads $nthreads && echo 'sift done'*******
+  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
   sleep 0.2
   else 
   echo 'sift done'*******
   fi
 else  
-tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads $nthreads
+tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
 sleep 0.2
 
-tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads $nthreads && echo 'sift done'*******
+tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
 sleep 0.2
 fi
 
 #### tck2connectome
 for im in aparc+aseg aparc.a2009s+aseg
 do
-tck2connectome -force -zero_diagonal -nthreads $nthreads mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv 
-tck2connectome -force -zero_diagonal -scale_length -stat_edge mean -nthreads $nthreads mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv 
-tck2connectome -force -zero_diagonal -scale_invnodevol -nthreads $nthreads mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv 
+tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv 
+tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv 
+tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv 
 done
 
 #############################################################MRTRIX########################
