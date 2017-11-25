@@ -76,16 +76,21 @@ flirt -in T1_flip.nii.gz -out T1_2diff_flt.nii.gz -ref mr_meanb0.nii.gz -applyxf
 sleep 0.2
  
 #5ttgen fsl brain_anat.nii.gz 5tt_from_brain_anat_test.nii.gz -nocrop 
-5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp
+5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force
 sleep 0.2
+
 flirt -in 5tt_freesurfer.nii.gz -ref mr_meanb0_brain.nii.gz -out 5tt_freesurfer2diff -applyxfm -init anat2diff.flt.mat -v
 sleep 0.2
+
 mrconvert 5tt_freesurfer2diff.nii.gz 5tt_freesurfer2diff.mif.gz -force
 sleep 0.2
+
 cp 5tt_freesurfer2diff.nii.gz 5tt2.nii.gz
 sleep 0.2
+
 cp 5tt_freesurfer2diff.mif.gz 5tt2.mif.gz
 sleep 0.2
+
 5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force
 sleep 0.2
 ### APARC+ASEG to diff
