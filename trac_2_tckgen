@@ -48,9 +48,47 @@ mkdir \$workingdir
 cd \$workingdir
 pwd
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=256
+
 #############################################################MRTRIX########################
 FREESURFER_HOME=/lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer
 source /lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer/FreeSurferEnv.sh
+
+
+##############################PREPROCESSING####################################
+    mrconvert dti.nii.gz -force mr_dwi.mif.gz -fslgrad dti.bvec dti.bval -datatype float32 -stride 0,0,0,1 -nthreads 256
+    sleep 0.2
+    
+    dwidenoise mr_dwi.mif.gz -force mr_dwi_denoised.mif.gz -nthreads 256
+    sleep 0.2
+    
+    dwipreproc -rpe_none -pe_dir PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads 256
+    sleep 0.2
+    
+    dwi2mask mr_dwi_denoised_preproc.mif.gz - -nthreads 256 | maskfilter - erode -npass 7 -force mr_eroded_mask.mif.gz -nthreads 256
+    sleep 0.2
+    
+    dwibiascorrect mr_dwi_denoised_preproc.mif.gz -force mr_dwi_denoised_preproc_biasCorr.mif.gz -ants -mask mr_eroded_mask.mif.gz -fslgrad dti.bvec dti.bval -nthreads 256
+    sleep 0.2
+    
+    dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads 256 | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads 256
+    sleep 0.2
+    
+    mrresize mr_dwi_denoised_preproc_biasCorr.mif.gz -scale 2.0 -force mr_dwi_denoised_preproc_biasCorr_upsample.mif.gz -nthreads 256
+	   sleep 0.2
+    
+    dwi2response dhollander -mask mr_eroded_mask.mif.gz -voxels mr_voxels_eroded.mif.gz mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt response_gm.txt response_csf.txt -force -nthreads 256
+    sleep 0.2
+    
+#% make sure to use "DILATED MASK" for FOD generation
+    dwi2mask mr_dwi_denoised_preproc_biasCorr.mif.gz - -nthreads 256 | maskfilter - dilate -npass 5 -force mr_dilate_mask.mif.gz -nthreads 256
+   	sleep 0.2
+    
+    dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 256
+   	sleep 0.2
+    
+    mrconvert WM_FODs.mif.gz - -coord 3 0 -nthreads 256 | mrcat csf.mif.gz gm.mif.gz - tissueRGB.mif.gz -axis 3 -nthreads 256
+    sleep 0.2
+#################################################################################
 
 SUBJECT=${s}
 cd /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\${SUBJECT}/dmri2
@@ -67,7 +105,7 @@ bet2 mr_meanb0.nii.gz mr_meanb0_brain.nii.gz
 sleep 0.2
 flirt -in brain_anat.nii.gz -ref mr_meanb0_brain.nii.gz -out brain_anat2diff -omat anat2diff.flt.mat -v
 sleep 0.2
-### 5TTGEN
+### 5TTGEN#########################################
 echo ***** NOW 5TTGEN *****
 mri_convert ../mri/T1.mgz T1.nii.gz
 sleep 0.2
@@ -96,6 +134,7 @@ sleep 0.2
 sleep 0.2
 
 dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 256
+sleep 0.2
 
 ### APARC+ASEG to diff
 for im in aparc+aseg aparc.a2009s+aseg
@@ -115,8 +154,10 @@ done
 ### labelconvert for aparc+aseg and aparc.a2009+aseg
 labelconvert aparc+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_default.txt nodes_aparc+aseg2.mif.gz -force
 sleep 0.2
+
 labelconvert aparc.a2009s+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt nodes_aparc.a2009s+aseg2.mif.gz -force
 sleep 0.2
+
 ### tckgen
 if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
 tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
@@ -132,6 +173,7 @@ tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 1
 else  
 tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 256 
 sleep 0.2
+
 tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 256 && echo 'sift done'*******
 sleep 0.2
 fi
