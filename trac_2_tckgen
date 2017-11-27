@@ -31,11 +31,12 @@ i=1
 for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
-
 CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd2.trac.${s}
 rm -rf $CMD
 
 SUBJECT=${s}
+rm ./job/log.tckgen.${SUBJECT}
+
 #echo ${SUBJECT}
 
 cat<<EOC >$CMD
@@ -93,6 +94,9 @@ sleep 0.2
 
 5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force
 sleep 0.2
+
+dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force 
+
 ### APARC+ASEG to diff
 for im in aparc+aseg aparc.a2009s+aseg
 do
@@ -146,7 +150,7 @@ chmod +x $CMD
 
 
 
-echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} &">>$CMD_batch 2>&1
+echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD >> ./job/log.tckgen.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "sleep 0.2">>$CMD_batch
 i=$(($i+1))
 echo $i
