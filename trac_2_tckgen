@@ -77,7 +77,7 @@ flirt -in T1_flip.nii.gz -out T1_2diff_flt.nii.gz -ref mr_meanb0.nii.gz -applyxf
 sleep 0.2
  
 #5ttgen fsl brain_anat.nii.gz 5tt_from_brain_anat_test.nii.gz -nocrop 
-5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force
+5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force -nthreads 256
 sleep 0.2
 
 flirt -in 5tt_freesurfer.nii.gz -ref mr_meanb0_brain.nii.gz -out 5tt_freesurfer2diff -applyxfm -init anat2diff.flt.mat -v
@@ -92,10 +92,10 @@ sleep 0.2
 cp 5tt_freesurfer2diff.mif.gz 5tt2.mif.gz
 sleep 0.2
 
-5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force
+5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force -nthreads 256
 sleep 0.2
 
-dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force 
+dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 256
 
 ### APARC+ASEG to diff
 for im in aparc+aseg aparc.a2009s+aseg
@@ -121,26 +121,26 @@ sleep 0.2
 if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
 tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
   if [ \$tracknum != 10000000 ]; then
-  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
+  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 256
   sleep 0.2
   
-  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
+  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 256 && echo 'sift done'*******
   sleep 0.2
   else 
   echo 'sift done'*******
   fi
 else  
-tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force 
+tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 256 
 sleep 0.2
-tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force && echo 'sift done'*******
+tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 256 && echo 'sift done'*******
 sleep 0.2
 fi
 #### tck2connectome
 for im in aparc+aseg aparc.a2009s+aseg
 do
-tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv 
-tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv 
-tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv 
+tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv -nthreads 256
+tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv -nthreads 256 
+tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv -nthreads 256
 done
 #############################################################MRTRIX########################
 EOC
