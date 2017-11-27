@@ -13,7 +13,7 @@ rm -rf $CMD_batch
 cat<<EOC >$CMD_batch
 #!/bin/bash
 #COBALT -t 360
-#COBALT -n 202
+#COBALT -n 250
 #COBALT --attrs mcdram=cache:numa=quad
 #COBALT -A AD_Brain_Imaging
 echo start............................................
@@ -196,7 +196,7 @@ chmod +x $CMD
 
 
 
-echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD >> ./job/log.tckgen.${SUBJECT} 2>&1 &">>$CMD_batch 
+echo "aprun -n 1 -N 1 -d 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "sleep 1">>$CMD_batch
 i=$(($i+1))
 echo $i
