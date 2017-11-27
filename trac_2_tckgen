@@ -146,7 +146,7 @@ chmod +x $CMD
 
 
 
-echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} &">>$CMD_batch
+echo "aprun -n 1 -N 1 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} &">>$CMD_batch 2>&1
 echo "sleep 0.2">>$CMD_batch
 i=$(($i+1))
 echo $i
