@@ -1,7 +1,7 @@
 #!/bin/bash
 
 list=$1
-threads=256
+threads=128
 #threadsX2=$((${threads}*2))
 
 adni=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni
@@ -47,7 +47,7 @@ echo \$workingdir
 mkdir \$workingdir
 cd \$workingdir
 pwd
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=256
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=128
 echo beginning of the code \`date +"%Y-%m-%d/%H:%M:%S"\`
 
 #############################################################MRTRIX########################
@@ -56,39 +56,39 @@ source /lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer/FreeSurferEnv.sh
 
 
 ##############################PREPROCESSING####################################
-    mrconvert dti.nii.gz -force mr_dwi.mif.gz -fslgrad dti.bvec dti.bval -datatype float32 -stride 0,0,0,1 -nthreads 256
-    sleep 0.2
+#    mrconvert dti.nii.gz -force mr_dwi.mif.gz -fslgrad dti.bvec dti.bval -datatype float32 -stride 0,0,0,1 -nthreads 128
+#    sleep 0.2
     
-    dwidenoise mr_dwi.mif.gz -force mr_dwi_denoised.mif.gz -nthreads 256
-    sleep 0.2
+#    dwidenoise mr_dwi.mif.gz -force mr_dwi_denoised.mif.gz -nthreads 128
+#    sleep 0.2
     
-    dwipreproc -rpe_none -pe_dir PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads 256
-    sleep 0.2
+#    dwipreproc -rpe_none -pe_dir PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads 128
+#    sleep 0.2
     
-    dwi2mask mr_dwi_denoised_preproc.mif.gz - -nthreads 256 | maskfilter - erode -npass 7 -force mr_eroded_mask.mif.gz -nthreads 256
-    sleep 0.2
+#    dwi2mask mr_dwi_denoised_preproc.mif.gz - -nthreads 128 | maskfilter - erode -npass 7 -force mr_eroded_mask.mif.gz -nthreads 128
+#    sleep 0.2
     
-    dwibiascorrect mr_dwi_denoised_preproc.mif.gz -force mr_dwi_denoised_preproc_biasCorr.mif.gz -ants -mask mr_eroded_mask.mif.gz -fslgrad dti.bvec dti.bval -nthreads 256
-    sleep 0.2
+#    dwibiascorrect mr_dwi_denoised_preproc.mif.gz -force mr_dwi_denoised_preproc_biasCorr.mif.gz -ants -mask mr_eroded_mask.mif.gz -fslgrad dti.bvec dti.bval -nthreads 128
+#    sleep 0.2
     
-    dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads 256 | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads 256
-    sleep 0.2
+#    dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads 128 | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads 128
+#    sleep 0.2
     
-    mrresize mr_dwi_denoised_preproc_biasCorr.mif.gz -scale 2.0 -force mr_dwi_denoised_preproc_biasCorr_upsample.mif.gz -nthreads 256
-	   sleep 0.2
+#    mrresize mr_dwi_denoised_preproc_biasCorr.mif.gz -scale 2.0 -force mr_dwi_denoised_preproc_biasCorr_upsample.mif.gz -nthreads 128
+#	   sleep 0.2
     
-    dwi2response dhollander -mask mr_eroded_mask.mif.gz -voxels mr_voxels_eroded.mif.gz mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt response_gm.txt response_csf.txt -force -nthreads 256
-    sleep 0.2
+#    dwi2response dhollander -mask mr_eroded_mask.mif.gz -voxels mr_voxels_eroded.mif.gz mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt response_gm.txt response_csf.txt -force -nthreads 128
+#    sleep 0.2
     
 #% make sure to use "DILATED MASK" for FOD generation
-    dwi2mask mr_dwi_denoised_preproc_biasCorr.mif.gz - -nthreads 256 | maskfilter - dilate -npass 5 -force mr_dilate_mask.mif.gz -nthreads 256
-   	sleep 0.2
+#    dwi2mask mr_dwi_denoised_preproc_biasCorr.mif.gz - -nthreads 128 | maskfilter - dilate -npass 5 -force mr_dilate_mask.mif.gz -nthreads 128
+#   	sleep 0.2
     
-    dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 256
-   	sleep 0.2
+#    dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 128
+#   	sleep 0.2
     
-    mrconvert WM_FODs.mif.gz - -coord 3 0 -nthreads 256 | mrcat csf.mif.gz gm.mif.gz - tissueRGB.mif.gz -axis 3 -nthreads 256
-    sleep 0.2
+#    mrconvert WM_FODs.mif.gz - -coord 3 0 -nthreads 128 | mrcat csf.mif.gz gm.mif.gz - tissueRGB.mif.gz -axis 3 -nthreads 128
+#    sleep 0.2
 #################################################################################
 echo preprocessing is done \`date +"%Y-%m-%d/%H:%M:%S"\`
 
@@ -117,7 +117,7 @@ flirt -in T1_flip.nii.gz -out T1_2diff_flt.nii.gz -ref mr_meanb0.nii.gz -applyxf
 sleep 0.2
  
 #5ttgen fsl brain_anat.nii.gz 5tt_from_brain_anat_test.nii.gz -nocrop 
-5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force -nthreads 256
+5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force -nthreads 128
 sleep 0.2
 
 flirt -in 5tt_freesurfer.nii.gz -ref mr_meanb0_brain.nii.gz -out 5tt_freesurfer2diff -applyxfm -init anat2diff.flt.mat -v
@@ -132,10 +132,10 @@ sleep 0.2
 cp 5tt_freesurfer2diff.mif.gz 5tt2.mif.gz
 sleep 0.2
 
-5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force -nthreads 256
+5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force -nthreads 128
 sleep 0.2
 
-dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 256
+dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 128
 sleep 0.2
 
 ### APARC+ASEG to diff
@@ -166,27 +166,27 @@ echo now ready for tckgen \`date +"%Y-%m-%d/%H:%M:%S"\`
 if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
 tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
   if [ \$tracknum != 10000000 ]; then
-  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 256
+  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 128
   sleep 0.2
   
-  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 256 && echo 'sift done'*******
+  tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 128 && echo 'sift done'*******
   sleep 0.2
   else 
   echo 'sift done'*******
   fi
 else  
-tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 256 
+tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 128 
 sleep 0.2
 
-tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 256 && echo 'sift done'*******
+tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 128 && echo 'sift done'*******
 sleep 0.2
 fi
 #### tck2connectome
 for im in aparc+aseg aparc.a2009s+aseg
 do
-tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv -nthreads 256
-tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv -nthreads 256 
-tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv -nthreads 256
+tck2connectome -force -zero_diagonal mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_count.csv -nthreads 128
+tck2connectome -force -zero_diagonal -scale_length -stat_edge mean mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_length.csv -nthreads 128 
+tck2connectome -force -zero_diagonal -scale_invnodevol mr_track_10M_SIFT2_${s}.tck nodes_\${im}2.mif.gz mr_sift_10M_connectome_\${im}_volumeadj.csv -nthreads 128
 done
 #############################################################MRTRIX########################
 EOC
@@ -196,7 +196,7 @@ chmod +x $CMD
 
 
 
-echo "aprun -n 1 -N 1 -d 256 -j 4 -cc depth -e OMP_NUM_THREADS=256 $CMD > ./job/log.tckgen.${SUBJECT} 2>&1 &">>$CMD_batch 
+echo "aprun -n 1 -N 1 -d 128 -j 2 -cc depth -e OMP_NUM_THREADS=128 $CMD > ./job/log.tckgen.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "sleep 1">>$CMD_batch
 i=$(($i+1))
 echo $i
