@@ -1,2 +1,2 @@
 # idp
-This is pipeline for multimodal brain imaging analysis for Ilsan Dementia Project or IDP on Argonne HPC
+This is a pipeline for high-throughput brain imaging analysis in Alzheimer's Disease (AD) on ALCF.
