@@ -11,8 +11,8 @@ abcd=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/
 CMD_batch=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/abcd_alcf_code/job/cobaltjob.recon.batch${1}
 rm -rf $CMD_batch
 
-#######################################################################################################
-cat<<EOC >$CMD_batch
+####################################################################################
+cat<<EOA >$CMD_batch
 #!/bin/bash
 #COBALT -t 720
 #COBALT -n 1000
@@ -24,9 +24,12 @@ echo start............................................
 #export n_mpi_ranks=202
 #export n_openmp_threads_per_rank=64
 #export n_hyperthreads_per_core=4
-EOC
+EOA
+#####################################################################
 
-#######################################################################################################
+
+
+
 i=1
 for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/abcd_alcf_code/\$list`
 do
@@ -42,13 +45,13 @@ echo ${SUBJECT}
 datafolder=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/data
 t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
 t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
-if [ ! -e $t2 ]; then t2_arg=" "
-else t2_arg=" -T2 $t2 -T2pial "
-fi
+  if [ ! -e $t2 ]; then t2_arg=" "
+  else t2_arg=" -T2 $t2 -T2pial "
+  fi
 
-if [ ! -e $t2 ]; then hippo_arg=" -hippocampal-subfields-T1 "
-else hippo_arg=" -hippocampal-subfields-T1T2 $t2 T1T2 "
-fi
+  if [ ! -e $t2 ]; then hippo_arg=" -hippocampal-subfields-T1 "
+  else hippo_arg=" -hippocampal-subfields-T1T2 $t2 T1T2 "
+  fi
 
 #############################################CMD#####################################
 cat<<EOC >$CMD
@@ -67,28 +70,11 @@ EOC
 
 chmod +x $CMD
 
-cat<<EOA >$CMD_batch
-#!/bin/bash
-#COBALT -t 720
-#COBALT -n 1000
-#COBALT --attrs mcdram=cache:numa=quad
-#COBALT -A AD_Brain_Imaging
-echo start............................................
-#export n_nodes=$COBALT_JOBSIZE
-#export n_mpi_ranks_per_node=202
-#export n_mpi_ranks=202
-#export n_openmp_threads_per_rank=64
-#export n_hyperthreads_per_core=4
-EOA
-#####################################################################
-
-chmod +x $CMD_batch
-
 echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "sleep 0.5">>$CMD_batch
 
 i=$(($i+1))
-echo $i
+#echo $i
 
 done
 
