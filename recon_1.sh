@@ -18,6 +18,8 @@ cat<<EOA >$CMD_batch
 #COBALT -n 1000
 #COBALT --attrs mcdram=cache:numa=quad
 #COBALT -A AD_Brain_Imaging
+#COBLAT -M jiook.cha@nyspi.columbia.edu
+
 echo start............................................
 #export n_nodes=$COBALT_JOBSIZE
 #export n_mpi_ranks_per_node=202
