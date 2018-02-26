@@ -19,8 +19,11 @@ cat<<EOC >$CMD_batch
 #SBATCH -J trac1
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 2:00:00
+#SBATCH -t 12:00:00
 #SBATCH -L cscratch1
+
+#DW jobdw capacity=150GB access_mode=striped type=scratch pool=sm_pool
+
 
 echo start............................................
 
@@ -59,6 +62,12 @@ source ~/.basrh_jiook
 
 
 ##############################PREPROCESSING####################################
+mkdir -p $DW_JOB_STRIPED/dwi
+cd $DW_JOB_STRIPED/dwi
+echo `pwd`
+
+    cp \$workingdir/*dwi.bvec \$workingdir/*dwi.bval \$workingdir/*dwi.nii.gz ./
+    
     mrconvert -fslgrad *dwi.bvec *dwi.bval -datatype float32 -stride 0,0,0,1 -nthreads 272 *dwi.nii.gz -force mr_dwi.mif 
     sleep 0.1
     
@@ -70,39 +79,39 @@ source ~/.basrh_jiook
     
     #erode mask for dwibiadcorrection 
     dwi2mask mr_dwi_denoised.mif - -nthreads 272 | maskfilter - erode -npass 3 -force mr_eroded_mask.mif -nthreads 272
-    sleep 0.2
+    sleep 0.1
     
     dwibiascorrect mr_dwi_denoised.mif -force mr_dwi_denoised_biasCorr.mif -ants -mask mr_eroded_mask.mif.gz -nthreads 272
-    sleep 0.2
+    sleep 0.1
     
     #upsample to 1.25 mm as recommended
     mrresize mr_dwi_denoised_biasCorr.mif -vox 1.25 -force mr_dwi_denoised_biasCorr_upsample125.mif -nthreads 272
-	sleep 0.2
+    sleep 0.1
     
     #generate b0 mask
     dwiextract mr_dwi_denoised_biasCorr_upsample125.mif - -bzero -nthreads 272 | mrmath - mean -force mr_meanb0_upsample125.mif -axis 3 -nthreads 272
-    sleep 0.2
+    sleep 0.1
     
     mrresize mr_eroded_mask.mif  -vox 1.25 -force mr_eroded_mask_upsample125.mif -nthreads 272
-    sleep 0.2
+    sleep 0.1
     
     #note that response function is estimated using non-upsampled images
     dwi2response dhollander -mask mr_eroded_mask.mif -voxels mr_voxels_eroded.mif mr_dwi_denoised_biasCorr.mif response_wm.txt response_gm.txt response_csf.txt -force -nthreads 272
-    sleep 0.2
+    sleep 0.1
     
     #% make sure to use "DILATED MASK" for FOD generation
     dwi2mask mr_dwi_denoised_biasCorr_upsample125.mif - -nthreads 272 | maskfilter - dilate -npass 3 -force mr_dilate_mask_upsample125.mif -nthreads 272
-   	sleep 0.2
+    sleep 0.1
     
     dwi2fod msmt_csd mr_dwi_denoised_biasCorr_upsample125.mif response_wm.txt WM_FODs.mif response_gm.txt gm.mif response_csf.txt csf.mif -mask mr_dilate_mask_upsample125.mif -force -nthreads 272
-   	sleep 0.2
+    sleep 0.1
     
     mrconvert WM_FODs.mif - -coord 3 0 -nthreads 272 | mrcat csf.mif gm.mif - tissueRGB.mif -axis 3 -nthreads 272
-    sleep 0.2
+    sleep 0.1
     # mrview tissueRGB.mif -odf.load_sh WM_FODs.mif
     
     ### this is crucial to make the FODs comparable across subjects###
-    mtnormalise WM_FODs.mif WM_FODs_norm.mif gm.mif gm_norm.mif csf.mif csf_norm.mif -mask mr_dilate_mask_upsample125.mif
+    mtnormalise WM_FODs.mif WM_FODs_norm.mif gm.mif gm_norm.mif csf.mif csf_norm.mif -mask mr_dilate_mask_upsample125.mif -nthreads 272
        
     ## compress all mif files ###
     pigz --fast -vf -p 272 -b 1024 *.mif
@@ -110,32 +119,54 @@ source ~/.basrh_jiook
 #################################################################################
 echo preprocessing is done \`date +"%Y-%m-%d/%H:%M:%S"\`
 
+
+################### registering freesurfer ##########
+workingdir2=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/mri
 SUBJECT=${s}
-cd /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\${SUBJECT}/dmri2
+#cd /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\${SUBJECT}/dmri2
 mkdir xfm
+
 ### flirt 
 echo *****NOW GENERATING ANAT2DIFF.FLT.MAT *****
-mri_convert ../mri/brain.mgz brain_anat_orig.nii.gz
-sleep 0.2
+mri_convert \$workingdir2/brain.mgz brain_anat_orig.nii.gz
+sleep 0.1
 orientLAS brain_anat_orig.nii.gz brain_anat.nii.gz
-sleep 0.2
+sleep 0.1
 mrconvert mr_meanb0.mif.gz mr_meanb0.nii.gz -force
-sleep 0.2
+sleep 0.1
 bet2 mr_meanb0.nii.gz mr_meanb0_brain.nii.gz
-sleep 0.2
+sleep 0.1
 flirt -in brain_anat.nii.gz -ref mr_meanb0_brain.nii.gz -out brain_anat2diff -omat anat2diff.flt.mat -v
-sleep 0.2
+sleep 0.1
 ### 5TTGEN#########################################
 echo ***** NOW 5TTGEN *****
-mri_convert ../mri/T1.mgz T1.nii.gz
-sleep 0.2
+mri_convert \$workingdir2/T1.mgz T1.nii.gz
+sleep 0.1
 orientLAS T1.nii.gz T1_flip.nii.gz
-sleep 0.2
+sleep 0.1
 flirt -in T1_flip.nii.gz -out T1_2diff_flt.nii.gz -ref mr_meanb0.nii.gz -applyxfm -init anat2diff.flt.mat -v
-sleep 0.2
- 
+sleep 0.1
+
+### APARC+ASEG to diff
+for im in aparc+aseg aparc.a2009s+aseg
+do
+   echo ****NOW CONVERTING MGZ TO NII
+   mri_convert \$workingdir2/\${im}.mgz \${im}.nii.gz
+   sleep 0.2
+   
+   echo ****FLIPING FOR FSL
+   orientLAS \${im}.nii.gz \${im}_flip.nii.gz
+   sleep 0.2
+   
+   echo ****NOW FLIRTING
+   flirt -in \${im}_flip.nii.gz -out \${im}_2_diff_flt.nii.gz -ref mr_meanb0_brain.nii.gz -applyxfm -init anat2diff.flt.mat -interp nearestneighbour
+   sleep 0.2
+done
+
+
+
 #5ttgen fsl brain_anat.nii.gz 5tt_from_brain_anat_test.nii.gz -nocrop 
-5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force -nthreads 128
+5ttgen freesurfer aparc+aseg_flip.nii.gz 5tt_freesurfer.nii.gz -nocrop -sgm_amyg_hipp -force -nthreads 272
 sleep 0.2
 
 flirt -in 5tt_freesurfer.nii.gz -ref mr_meanb0_brain.nii.gz -out 5tt_freesurfer2diff -applyxfm -init anat2diff.flt.mat -v
@@ -150,32 +181,19 @@ sleep 0.2
 cp 5tt_freesurfer2diff.mif.gz 5tt2.mif.gz
 sleep 0.2
 
-5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force -nthreads 128
+5tt2gmwmi 5tt2.mif.gz -force 5tt2_gmwmi_mask.mif.gz -force -nthreads 272
 sleep 0.2
 
-dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 128
+#dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 128
 sleep 0.2
 
-### APARC+ASEG to diff
-for im in aparc+aseg aparc.a2009s+aseg
-do
-   echo ****NOW CONVERTING MGZ TO NII
-   mri_convert ../mri/\${im}.mgz \${im}.nii.gz
-   sleep 0.2
-   
-   echo ****FLIPING FOR FSL
-   orientLAS \${im}.nii.gz \${im}_flip.nii.gz
-   sleep 0.2
-   
-   echo ****NOW FLIRTING
-   flirt -in \${im}_flip.nii.gz -out \${im}_2_diff_flt.nii.gz -ref mr_meanb0_brain.nii.gz -applyxfm -init anat2diff.flt.mat -interp nearestneighbour
-   sleep 0.2
-done
+
+
 ### labelconvert for aparc+aseg and aparc.a2009+aseg
-labelconvert aparc+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_default.txt nodes_aparc+aseg2.mif.gz -force
+labelconvert aparc+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /global/homes/j/jcha9928/app/mrtrix3/share/mrtrix3/labelconvert/fs_default.txt nodes_aparc+aseg2.mif.gz -force
 sleep 0.2
 
-labelconvert aparc.a2009s+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /lus/theta-fs0/projects/AD_Brain_Imaging//app/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt nodes_aparc.a2009s+aseg2.mif.gz -force
+labelconvert aparc.a2009s+aseg_2_diff_flt.nii.gz $FREESURFER_HOME/FreeSurferColorLUT.txt /global/homes/j/jcha9928/app/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt nodes_aparc.a2009s+aseg2.mif.gz -force
 sleep 0.2
 
 echo now ready for tckgen \`date +"%Y-%m-%d/%H:%M:%S"\`
@@ -184,9 +202,9 @@ echo now ready for tckgen \`date +"%Y-%m-%d/%H:%M:%S"\`
 if [ -e mr_track_10M_SIFT2_${s}.tck ]; then
 tracknum=\`tckinfo mr_track_10M_SIFT2_${s}.tck | grep max_num_tracks | grep -o 10000000\`
   if [ \$tracknum != 10000000 ]; then
-  tckgen WM_FODs.mif.gz /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -maxlength 250 -minlength 30 -select 20M -force -nthreads 128
+  tckgen WM_FODs.mif /tmp/mr_track_20M2_${s}.tck -act 5tt2.mif.gz -backtrack -crop_at_gmwmi -seed_dynamic WM_FODs.mif.gz -angle 22.5 -maxlength 250 -minlength 10 -power 1.0 -select 20M -force -nthreads 128
   sleep 0.2
-  
+    
   tcksift -act 5tt2.mif.gz /tmp/mr_track_20M2_${s}.tck WM_FODs.mif.gz mr_track_10M_SIFT2_${s}.tck -term_number 10M -force -nthreads 128 && echo 'sift done'*******
   sleep 0.2
   else 
