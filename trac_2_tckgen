@@ -4,34 +4,36 @@ list=$1
 threads=128
 #threadsX2=$((${threads}*2))
 
-adni=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni
+abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
-CMD_batch=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd2.batch.trac.${list}
+CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd1.batch.trac.${list}
 rm -rf $CMD_batch
 
 #######################################################################################################
 cat<<EOC >$CMD_batch
-#!/bin/bash
-#COBALT -t 360
-#COBALT -n 250
-#COBALT --attrs mcdram=cache:numa=quad
-#COBALT -A AD_Brain_Imaging
+#!/bin/bash -l
+
+#SBATCH -N 1024
+#SBATCH -C knl,quad,cache
+#SBATCH -q regular
+#SBATCH -J trac1
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 2:00:00
+#SBATCH -L cscratch1
+
 echo start............................................
-#export n_nodes=$COBALT_JOBSIZE
-#export n_mpi_ranks_per_node=202
-#export n_mpi_ranks=202
-#export n_openmp_threads_per_rank=64
-#export n_hyperthreads_per_core=4
+
 EOC
 
 #######################################################################################################
 
 i=1
 
-for s in `cat /lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/\$list`
+for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
-CMD=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/adni_on_alcf/job/cmd2.trac.${s}
+CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd2.trac.${s}
 rm -rf $CMD
 
 SUBJECT=${s}
@@ -42,53 +44,69 @@ rm ./job/log.tckgen.${SUBJECT}
 cat<<EOC >$CMD
 #!/bin/bash
 source ~/.bashrc
-workingdir=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/adni/fs/${SUBJECT}/dmri2
+workingdir=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/dmri2
 echo \$workingdir
-mkdir \$workingdir
+mkdir -p \$workingdir
 cd \$workingdir
 pwd
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=128
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=272
 echo beginning of the code \`date +"%Y-%m-%d/%H:%M:%S"\`
 
 #############################################################MRTRIX########################
-FREESURFER_HOME=/lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer
-source /lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer/FreeSurferEnv.sh
+FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
+source /global/homes/j/jcha9928/app/freesurfer/FreeSurferEnv.sh
+source ~/.basrh_jiook
 
 
 ##############################PREPROCESSING####################################
-#    mrconvert dti.nii.gz -force mr_dwi.mif.gz -fslgrad dti.bvec dti.bval -datatype float32 -stride 0,0,0,1 -nthreads 128
-#    sleep 0.2
+    mrconvert -fslgrad *dwi.bvec *dwi.bval -datatype float32 -stride 0,0,0,1 -nthreads 272 *dwi.nii.gz -force mr_dwi.mif 
+    sleep 0.1
     
-#    dwidenoise mr_dwi.mif.gz -force mr_dwi_denoised.mif.gz -nthreads 128
-#    sleep 0.2
+    dwidenoise mr_dwi.mif -force mr_dwi_denoised.mif -nthreads 272
+    sleep 0.1
     
 #    dwipreproc -rpe_none -pe_dir PA mr_dwi_denoised.mif.gz -force mr_dwi_denoised_preproc.mif.gz -rpe_none -nthreads 128
 #    sleep 0.2
     
-#    dwi2mask mr_dwi_denoised_preproc.mif.gz - -nthreads 128 | maskfilter - erode -npass 7 -force mr_eroded_mask.mif.gz -nthreads 128
-#    sleep 0.2
+    #erode mask for dwibiadcorrection 
+    dwi2mask mr_dwi_denoised.mif - -nthreads 272 | maskfilter - erode -npass 3 -force mr_eroded_mask.mif -nthreads 272
+    sleep 0.2
     
-#    dwibiascorrect mr_dwi_denoised_preproc.mif.gz -force mr_dwi_denoised_preproc_biasCorr.mif.gz -ants -mask mr_eroded_mask.mif.gz -fslgrad dti.bvec dti.bval -nthreads 128
-#    sleep 0.2
+    dwibiascorrect mr_dwi_denoised.mif -force mr_dwi_denoised_biasCorr.mif -ants -mask mr_eroded_mask.mif.gz -nthreads 272
+    sleep 0.2
     
-#    dwiextract mr_dwi_denoised_preproc_biasCorr.mif.gz - -bzero -nthreads 128 | mrmath - mean -force mr_meanb0.mif.gz -axis 3 -nthreads 128
-#    sleep 0.2
+    #upsample to 1.25 mm as recommended
+    mrresize mr_dwi_denoised_biasCorr.mif -vox 1.25 -force mr_dwi_denoised_biasCorr_upsample125.mif -nthreads 272
+	sleep 0.2
     
-#    mrresize mr_dwi_denoised_preproc_biasCorr.mif.gz -scale 2.0 -force mr_dwi_denoised_preproc_biasCorr_upsample.mif.gz -nthreads 128
-#	   sleep 0.2
+    #generate b0 mask
+    dwiextract mr_dwi_denoised_biasCorr_upsample125.mif - -bzero -nthreads 272 | mrmath - mean -force mr_meanb0_upsample125.mif -axis 3 -nthreads 272
+    sleep 0.2
     
-#    dwi2response dhollander -mask mr_eroded_mask.mif.gz -voxels mr_voxels_eroded.mif.gz mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt response_gm.txt response_csf.txt -force -nthreads 128
-#    sleep 0.2
+    mrresize mr_eroded_mask.mif  -vox 1.25 -force mr_eroded_mask_upsample125.mif -nthreads 272
+    sleep 0.2
     
-#% make sure to use "DILATED MASK" for FOD generation
-#    dwi2mask mr_dwi_denoised_preproc_biasCorr.mif.gz - -nthreads 128 | maskfilter - dilate -npass 5 -force mr_dilate_mask.mif.gz -nthreads 128
-#   	sleep 0.2
+    #note that response function is estimated using non-upsampled images
+    dwi2response dhollander -mask mr_eroded_mask.mif -voxels mr_voxels_eroded.mif mr_dwi_denoised_biasCorr.mif response_wm.txt response_gm.txt response_csf.txt -force -nthreads 272
+    sleep 0.2
     
-#    dwi2fod msmt_csd mr_dwi_denoised_preproc_biasCorr.mif.gz response_wm.txt WM_FODs.mif.gz response_gm.txt gm.mif.gz response_csf.txt csf.mif.gz -mask mr_dilate_mask.mif.gz -force -nthreads 128
-#   	sleep 0.2
+    #% make sure to use "DILATED MASK" for FOD generation
+    dwi2mask mr_dwi_denoised_biasCorr_upsample125.mif - -nthreads 272 | maskfilter - dilate -npass 3 -force mr_dilate_mask_upsample125.mif -nthreads 272
+   	sleep 0.2
     
-#    mrconvert WM_FODs.mif.gz - -coord 3 0 -nthreads 128 | mrcat csf.mif.gz gm.mif.gz - tissueRGB.mif.gz -axis 3 -nthreads 128
-#    sleep 0.2
+    dwi2fod msmt_csd mr_dwi_denoised_biasCorr_upsample125.mif response_wm.txt WM_FODs.mif response_gm.txt gm.mif response_csf.txt csf.mif -mask mr_dilate_mask_upsample125.mif -force -nthreads 272
+   	sleep 0.2
+    
+    mrconvert WM_FODs.mif - -coord 3 0 -nthreads 272 | mrcat csf.mif gm.mif - tissueRGB.mif -axis 3 -nthreads 272
+    sleep 0.2
+    # mrview tissueRGB.mif -odf.load_sh WM_FODs.mif
+    
+    ### this is crucial to make the FODs comparable across subjects###
+    mtnormalise WM_FODs.mif WM_FODs_norm.mif gm.mif gm_norm.mif csf.mif csf_norm.mif -mask mr_dilate_mask_upsample125.mif
+       
+    ## compress all mif files ###
+    pigz --fast -vf -p 272 -b 1024 *.mif
+
 #################################################################################
 echo preprocessing is done \`date +"%Y-%m-%d/%H:%M:%S"\`
 
