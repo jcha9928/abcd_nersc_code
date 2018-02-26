@@ -13,7 +13,7 @@ rm -rf $CMD_batch
 
 ####################################################################################
 cat<<EOA >$CMD_batch
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH -N 1024
 #SBATCH -C haswell
