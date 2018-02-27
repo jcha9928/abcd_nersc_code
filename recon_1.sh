@@ -25,7 +25,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -L cscratch1
 
 #OpenMP settings:
-export OMP_NUM_THREADS=16
+export OMP_NUM_THREADS=64
 export OMP_PLACES=threads
 export OMP_PROC_BIND=spread
 
@@ -67,9 +67,9 @@ source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 16
+recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
@@ -78,7 +78,7 @@ EOC
 chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
-echo "srun -N 1 -n 1 -c 16 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
+echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
 echo "sleep 0.5">>$CMD_batch
 
 i=$(($i+1))
