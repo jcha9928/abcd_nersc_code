@@ -15,7 +15,7 @@ rm -rf $CMD_batch
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
 
-#SBATCH -N 1024
+#SBATCH -N 2048
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J recon
