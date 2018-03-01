@@ -8,7 +8,7 @@ threads=16
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
-CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.batch${1}
+CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.rh.batch${1}
 rm -rf $CMD_batch
 
 ####################################################################################
@@ -45,7 +45,7 @@ rm -rf $CMD
 #rm -rf $CMD_sub
 
 SUBJECT=${s}
-echo ${SUBJECT}
+#echo ${SUBJECT}
 datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
 t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
 t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
@@ -66,7 +66,7 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -hemi lh -parallel -openmp 64
+recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -hemi rh -parallel -openmp 64
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
@@ -88,7 +88,7 @@ echo "wait" >> $CMD_batch
 
 echo $CMD_batch
 chmod +x $CMD_batch
-echo "sbatch $CMD_batch"
+sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
