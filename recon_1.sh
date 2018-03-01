@@ -15,13 +15,13 @@ rm -rf $CMD_batch
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
 
-#SBATCH -N 2048
+#SBATCH -N 1000
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 24:00:00
+#SBATCH -t 12:00:00
 #SBATCH -L cscratch1
 
 #OpenMP settings:
@@ -33,9 +33,6 @@ echo start............................................
 
 EOA
 #####################################################################
-
-
-
 
 i=1
 for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/\$list`
@@ -79,7 +76,7 @@ chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
-echo "sleep 0.5">>$CMD_batch
+echo "sleep 0.1">>$CMD_batch
 
 i=$(($i+1))
 #echo $i
