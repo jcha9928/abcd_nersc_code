@@ -66,7 +66,7 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64
+recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -hemi lh -parallel -openmp 64
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
