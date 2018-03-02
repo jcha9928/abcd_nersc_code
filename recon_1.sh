@@ -23,6 +23,7 @@ cat<<EOA >$CMD_batch
 #SBATCH --mail-type=ALL
 #SBATCH -t 12:00:00
 #SBATCH -L cscratch1
+#DW jobdw capacity=10000GB access_mode=striped type=scratch pool=sm_pool
 
 #OpenMP settings:
 export OMP_NUM_THREADS=64
@@ -30,6 +31,7 @@ export OMP_PLACES=threads
 export OMP_PROC_BIND=spread
 
 echo start............................................
+echo "working directory is $DW_JOB_STRIPED"
 
 EOA
 #####################################################################
@@ -63,10 +65,15 @@ cat<<EOC >$CMD
 source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+mkdir \$DW_JOB_STRIPED/fs
+SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -hemi rh -parallel -openmp 64
+recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64
+
+cp -rf \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
