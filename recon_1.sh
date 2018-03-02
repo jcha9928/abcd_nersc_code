@@ -2,7 +2,7 @@
 #usage: recon_1.sh list_t1_batch60_aa
 
 list=${1}
-N=`wc ${1} | awk '{print $1}'
+N=`wc ${1} | awk '{print $1}'`
 
 echo $list
 threads=16
