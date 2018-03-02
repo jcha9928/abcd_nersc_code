@@ -21,9 +21,9 @@ cat<<EOA >$CMD_batch
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 12:00:00
+#SBATCH -t 10:00:00
 #SBATCH -L cscratch1
-#DW jobdw capacity=20000GB access_mode=striped type=scratch pool=sm_pool
+#DW jobdw capacity=240GB access_mode=striped type=scratch pool=sm_pool
 
 #OpenMP settings:
 export OMP_NUM_THREADS=64
