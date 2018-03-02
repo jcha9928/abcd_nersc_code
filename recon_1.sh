@@ -72,7 +72,7 @@ mkdir \$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64
+recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 
 echo now copying fs to local scratch
 
