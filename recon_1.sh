@@ -31,7 +31,7 @@ export OMP_PLACES=threads
 export OMP_PROC_BIND=spread
 
 echo start............................................
-echo "working directory is $DW_JOB_STRIPED"
+echo "working directory is \$DW_JOB_STRIPED"
 
 EOA
 #####################################################################
