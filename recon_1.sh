@@ -2,6 +2,7 @@
 #usage: recon_1.sh list_t1_batch60_aa
 
 list=${1}
+N=`wc ${1} | awk '{print $1}'
 
 echo $list
 threads=16
@@ -15,7 +16,7 @@ rm -rf $CMD_batch
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
 
-#SBATCH -N 60
+#SBATCH -N $N
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J recon
@@ -73,7 +74,9 @@ ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
 recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64
 
-cp -rf \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+echo now copying fs to local scratch
+
+cp -rfv \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
@@ -95,7 +98,7 @@ echo "wait" >> $CMD_batch
 
 echo $CMD_batch
 chmod +x $CMD_batch
-sbatch $CMD_batch
+echo sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
