@@ -8,7 +8,7 @@ threads=16
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
-CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.rh.batch${1}
+CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.batch${1}
 rm -rf $CMD_batch
 
 ####################################################################################
