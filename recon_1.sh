@@ -23,7 +23,7 @@ cat<<EOA >$CMD_batch
 #SBATCH --mail-type=ALL
 #SBATCH -t 12:00:00
 #SBATCH -L cscratch1
-#DW jobdw capacity=10000GB access_mode=striped type=scratch pool=sm_pool
+#DW jobdw capacity=20000GB access_mode=striped type=scratch pool=sm_pool
 
 #OpenMP settings:
 export OMP_NUM_THREADS=64
