@@ -1,7 +1,7 @@
 #!/bin/bash
 #usage: recon_1.sh batch#
 
-list=list_t1_batch${1}.txt
+list=list_t1_batch${1}
 
 echo $list
 threads=16
