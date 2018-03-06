@@ -63,7 +63,7 @@ input_arg1="-all -i ${t1} "
   fi
 input_arg2="${input_arg1} ${t2_arg} ${hippo_arg}"
 else 
-input_arg2="-make -all "
+input_arg2="-make all "
 fi
   
 #############################################CMD#####################################
@@ -76,7 +76,7 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 mkdir \$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp 32 
