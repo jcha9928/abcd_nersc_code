@@ -105,8 +105,8 @@ echo "wait" >> $CMD_batch
 ### batch submission
 
 echo $CMD_batch
-chmod +x $CMD_batch
-echo sbatch $CMD_batch
+chmod +x $CMD_batch 
+sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
