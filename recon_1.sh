@@ -74,8 +74,9 @@ FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-mkdir \$DW_JOB_STRIPED/fs
-SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
+#mkdir \$DW_JOB_STRIPED/fs
+#SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
+SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
