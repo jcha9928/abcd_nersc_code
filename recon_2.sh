@@ -53,7 +53,7 @@ cat<<EOC >$CMD
 
   cat $l | parallel --jobs 32 recon-all \
   -s {} \
-  -i ${datafolder}/{}/ses-baselineyear1arm1/anat/{}_*_T1w.nii.gz \
+  -i \`ls ${datafolder}/{}/ses-*/anat/{}_ses-*_T1w.nii.gz\` \
   -all \
   -qcache  
   
