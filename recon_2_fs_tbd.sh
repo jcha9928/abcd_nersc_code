@@ -1,15 +1,16 @@
 #!/bin/bash
 #usage: recon_1.sh list_t1_batch32_*
+cd /global/cscratch1/sd/jcha9928/anal/fs_tbd
 
-list=`ls ./list/batch32*`
+list=`ls batch32*`
 #N=`wc ${1} | awk '{print $1}'`
 
 echo $list
 threads=1
 
-abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
+fs_tbd=/global/cscratch1/sd/jcha9928/anal/fs_tbd
 
-CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.batch
+CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.fs_tbd.batch
 rm -rf $CMD_batch
 
 ####################################################################################
@@ -17,7 +18,7 @@ cat<<EOA >$CMD_batch
 #!/bin/bash -l
 #SBATCH -N 32
 #SBATCH -C haswell
-#SBATCH -q regular
+#SBATCH -q premium
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
@@ -36,10 +37,10 @@ i=1
 for l in `echo $list`
 do
 
-batchname=`echo $l | sed 's/.\/list\///'`
-datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
+batchname=`echo $l`
+datafolder=/global/cscratch1/sd/jcha9928/anal/fs_tbd/data
 
-CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.${batchname}
+CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.fs_tbd.${batchname}
 rm -rf $CMD
 
 #############################################################################################
@@ -48,12 +49,12 @@ cat<<EOC >$CMD
   source ~/.bashrc_jiook
   FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
   source $FREESURFER_HOME/SetUpFreeSurfer.sh
-  SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+  SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/fs_tbd
   cat $l | parallel --jobs 32 recon-all \
   -s {} \
   -i ${datafolder}/anat/{}_t1w.nii.gz \
-  -T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
-  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial T1T2 \
+  -hippocampal-subfields-T1 \
+  -brainstem-structures
   -all \
   -qcache  
   
