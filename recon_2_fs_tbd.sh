@@ -52,7 +52,7 @@ cat<<EOC >$CMD
   SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/fs_tbd
   cat $l | parallel --jobs 32 recon-all \
   -s {} \
-  -i ${datafolder}/{}_t1w.nii.gz \
+  -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
   -hippocampal-subfields-T1 \
   -brainstem-structures
   -all \
