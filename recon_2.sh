@@ -54,10 +54,18 @@ cat<<EOC >$CMD
   cat $l | parallel --jobs 32 recon-all \
   -s {} \
   -i ${datafolder}/anat/{}_t1w.nii.gz \
-  -T2 ${datafolder}/anat/{}_t2w.nii.gz-T2pial \
-  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz-T2pial T1T2 \
+  -T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
+  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial T1T2 \
   -all \
   -qcache  
+  
+  #################use this when there is no T2w images###################
+  #cat $l | parallel --jobs 32 recon-all \
+  #-s {} \
+  #-i ${datafolder}/anat/{}_t1w.nii.gz \
+  #-hippocampal-subfields-T1 ${datafolder}/anat/{}_t2w.nii.gz  \
+  #-all \
+  #-qcache 
   
   echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
@@ -65,7 +73,7 @@ EOC
 #############################################################################################
 chmod +x $CMD
 
-echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > ./job/log.recon.${batchname} 2>&1 &">>$CMD_batch
+echo "srun -N 1 -n 1 -c 32 --cpu_bind=cores $CMD > ./job/log.recon.${batchname} 2>&1 &">>$CMD_batch
 echo "sleep 0.1">>$CMD_batch
 
 i=$(($i+1))
