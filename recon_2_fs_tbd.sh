@@ -54,7 +54,6 @@ cat<<EOC >$CMD
   -s {} \
   -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
   -hippocampal-subfields-T1 \
-  -brainstem-structures
   -all \
   -qcache  
   
