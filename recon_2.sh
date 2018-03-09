@@ -55,7 +55,7 @@ cat<<EOC >$CMD
   -s {} \
   -i ${datafolder}/anat/{}_t1w.nii.gz \
   -T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
-  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial T1T2 \
+  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz T1T2 \
   -all \
   -qcache"  
   
