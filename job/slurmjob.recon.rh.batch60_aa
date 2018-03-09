@@ -1,0 +1,21 @@
+#!/bin/bash -l
+
+#SBATCH -N 60
+#SBATCH -C haswell
+#SBATCH -q regular
+#SBATCH -J recon
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 12:00:00
+#SBATCH -L cscratch1
+#DW jobdw capacity=10000GB access_mode=striped type=scratch pool=sm_pool
+
+#OpenMP settings:
+export OMP_NUM_THREADS=64
+export OMP_PLACES=threads
+export OMP_PROC_BIND=spread
+
+echo start............................................
+echo "working directory is "
+
+wait

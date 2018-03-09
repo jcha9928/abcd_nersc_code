@@ -1,0 +1,141 @@
+#!/bin/bash -l
+
+#SBATCH -N 60
+#SBATCH -C haswell
+#SBATCH -q regular
+#SBATCH -J recon
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 10:00:00
+#SBATCH -L cscratch1
+#DW jobdw capacity=60GB access_mode=striped type=scratch pool=sm_pool
+
+#OpenMP settings:
+export OMP_NUM_THREADS=64
+export OMP_PLACES=threads
+export OMP_PROC_BIND=spread
+
+echo start............................................
+echo "working directory is $DW_JOB_STRIPED"
+
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7YA52BU1 > ./job/log.recon.sub-NDARINV7YA52BU1 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7YKXALB5 > ./job/log.recon.sub-NDARINV7YKXALB5 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7YM285FW > ./job/log.recon.sub-NDARINV7YM285FW 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7Z1KL0E5 > ./job/log.recon.sub-NDARINV7Z1KL0E5 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7ZGKDCX1 > ./job/log.recon.sub-NDARINV7ZGKDCX1 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7ZM9YYTN > ./job/log.recon.sub-NDARINV7ZM9YYTN 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7ZTZMB99 > ./job/log.recon.sub-NDARINV7ZTZMB99 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV7ZVJYLM3 > ./job/log.recon.sub-NDARINV7ZVJYLM3 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV804917DP > ./job/log.recon.sub-NDARINV804917DP 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV80VX1MHD > ./job/log.recon.sub-NDARINV80VX1MHD 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV80Z1RNR4 > ./job/log.recon.sub-NDARINV80Z1RNR4 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8179BTRR > ./job/log.recon.sub-NDARINV8179BTRR 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV81J6U6L2 > ./job/log.recon.sub-NDARINV81J6U6L2 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV81L2CWB2 > ./job/log.recon.sub-NDARINV81L2CWB2 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV81M94TWZ > ./job/log.recon.sub-NDARINV81M94TWZ 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV81R15GP2 > ./job/log.recon.sub-NDARINV81R15GP2 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV82FT97YR > ./job/log.recon.sub-NDARINV82FT97YR 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV82HYA45D > ./job/log.recon.sub-NDARINV82HYA45D 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV82N7RUVA > ./job/log.recon.sub-NDARINV82N7RUVA 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV838THCGU > ./job/log.recon.sub-NDARINV838THCGU 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV83ZDBYTJ > ./job/log.recon.sub-NDARINV83ZDBYTJ 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV840V0YZ8 > ./job/log.recon.sub-NDARINV840V0YZ8 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8491DRGC > ./job/log.recon.sub-NDARINV8491DRGC 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV84EPJRY1 > ./job/log.recon.sub-NDARINV84EPJRY1 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV84EPPR51 > ./job/log.recon.sub-NDARINV84EPPR51 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV84RPF7HW > ./job/log.recon.sub-NDARINV84RPF7HW 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV84V3NTN5 > ./job/log.recon.sub-NDARINV84V3NTN5 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV84XXL5T1 > ./job/log.recon.sub-NDARINV84XXL5T1 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV85LJWRMC > ./job/log.recon.sub-NDARINV85LJWRMC 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV85UUUHN0 > ./job/log.recon.sub-NDARINV85UUUHN0 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8666P5JN > ./job/log.recon.sub-NDARINV8666P5JN 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV86PXMUHA > ./job/log.recon.sub-NDARINV86PXMUHA 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV86X5Z1TX > ./job/log.recon.sub-NDARINV86X5Z1TX 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV86XEMNPW > ./job/log.recon.sub-NDARINV86XEMNPW 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8720DP0M > ./job/log.recon.sub-NDARINV8720DP0M 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV87C4733D > ./job/log.recon.sub-NDARINV87C4733D 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV87L30DBB > ./job/log.recon.sub-NDARINV87L30DBB 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV87NMT6BW > ./job/log.recon.sub-NDARINV87NMT6BW 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV87WRYJ7F > ./job/log.recon.sub-NDARINV87WRYJ7F 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV87XG4274 > ./job/log.recon.sub-NDARINV87XG4274 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV88HZ7ZCH > ./job/log.recon.sub-NDARINV88HZ7ZCH 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV88RD5H70 > ./job/log.recon.sub-NDARINV88RD5H70 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV88RGRPEF > ./job/log.recon.sub-NDARINV88RGRPEF 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV88V8C4GJ > ./job/log.recon.sub-NDARINV88V8C4GJ 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV897CW9GM > ./job/log.recon.sub-NDARINV897CW9GM 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV898CW3V8 > ./job/log.recon.sub-NDARINV898CW3V8 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV89B7M962 > ./job/log.recon.sub-NDARINV89B7M962 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8AMD17WG > ./job/log.recon.sub-NDARINV8AMD17WG 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8AN54XEV > ./job/log.recon.sub-NDARINV8AN54XEV 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8ANDJD6V > ./job/log.recon.sub-NDARINV8ANDJD6V 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8BG4EF9Y > ./job/log.recon.sub-NDARINV8BG4EF9Y 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8BK50DPV > ./job/log.recon.sub-NDARINV8BK50DPV 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8BKUAN4C > ./job/log.recon.sub-NDARINV8BKUAN4C 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8BNYHNBW > ./job/log.recon.sub-NDARINV8BNYHNBW 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8BTF3TP9 > ./job/log.recon.sub-NDARINV8BTF3TP9 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8C5PMGAM > ./job/log.recon.sub-NDARINV8C5PMGAM 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8CBT9W65 > ./job/log.recon.sub-NDARINV8CBT9W65 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8CF76E8P > ./job/log.recon.sub-NDARINV8CF76E8P 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8CGB04GK > ./job/log.recon.sub-NDARINV8CGB04GK 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINV8CNPVNRX > ./job/log.recon.sub-NDARINV8CNPVNRX 2>&1 &
+sleep 0.1
+wait

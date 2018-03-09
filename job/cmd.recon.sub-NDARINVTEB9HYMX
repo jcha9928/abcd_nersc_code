@@ -2,9 +2,18 @@
 source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
 
-recon-all -all -s sub-NDARINVTEB9HYMX -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTEB9HYMX/ses-baselineYear1Arm1/anat/sub-NDARINVTEB9HYMX_ses-baselineYear1Arm1_T1w.nii.gz  -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTEB9HYMX/ses-baselineYear1Arm1/anat/sub-NDARINVTEB9HYMX_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTEB9HYMX/ses-baselineYear1Arm1/anat/sub-NDARINVTEB9HYMX_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 16
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+#mkdir $DW_JOB_STRIPED/fs
+#SUBJECTS_DIR=$DW_JOB_STRIPED/fs
+SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+
+#recon-all -all -s sub-NDARINVTEB9HYMX -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTEB9HYMX/ses-baselineYear1Arm1/anat/sub-NDARINVTEB9HYMX_ses-baselineYear1Arm1_T1w.nii.gz  -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVT2JJ42KE/ses-baselineYear1Arm1/anat/sub-NDARINVT2JJ42KE_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVT2JJ42KE/ses-baselineYear1Arm1/anat/sub-NDARINVT2JJ42KE_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 64 
+recon-all -s sub-NDARINVTEB9HYMX -make all  -parallel -openmp 32 
+
+#echo now copying fs to local scratch
+
+#cp -rfv $DW_JOB_STRIPED/fs/sub-NDARINVTEB9HYMX /global/cscratch1/sd/jcha9928/anal/ABCD/fs
 
 echo "I THINK RECON-ALL IS DONE BY NOW"

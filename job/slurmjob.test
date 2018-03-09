@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+#SBATCH -N 1
+#SBATCH -C haswell
+#SBATCH -q premium
+#SBATCH -J recon
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu                               
+#SBATCH --mail-type=ALL                                          
+#SBATCH -t 24:00:00                                                                            
+#SBATCH -L cscratch1                            
+#DW jobdw capacity=10000GB access_mode=striped type=scratch pool=sm_pool                  
+#OpenMP settings:                                                                                                                   
+export OMP_NUM_THREADS=64
+export OMP_PLACES=threads
+export OMP_PROC_BIND=spread
+
+echo start............................................
+echo "working directory is $DW_JOB_STRIPED"
+
+srun -N 1 -n 1 -c 64 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.sub-NDARINVJNDY0DWK > ./job/log.recon.sub-NDARINVJNDY0DWK 2>&1 & sleep 1
+
+wait

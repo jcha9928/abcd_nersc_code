@@ -1,10 +1,19 @@
 #!/bin/bash
-source ~/.bashrc
-FREESURFER_HOME=/lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer
-source /lus/theta-fs0/projects/AD_Brain_Imaging/app/freesurfer/SetUpFreeSurfer.sh
-SUBJECTS_DIR=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
+source ~/.bashrc_jiook
+FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
+source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
 
-recon-all -all -s sub-NDARINV007W6H7B -i /lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/data/sub-NDARINV007W6H7B/ses-baselineYear1Arm1/anat/sub-NDARINV007W6H7B_ses-baselineYear1Arm1_T1w.nii.gz    -hippocampal-subfields-T1  -parallel -openmp 64
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+#mkdir $DW_JOB_STRIPED/fs
+#SUBJECTS_DIR=$DW_JOB_STRIPED/fs
+SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+
+#recon-all -all -s sub-NDARINV007W6H7B -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV007W6H7B/ses-baselineYear1Arm1/anat/sub-NDARINV007W6H7B_ses-baselineYear1Arm1_T1w.nii.gz    -hippocampal-subfields-T1  -parallel -openmp 64 
+recon-all -s sub-NDARINV007W6H7B -all -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV007W6H7B/ses-baselineYear1Arm1/anat/sub-NDARINV007W6H7B_ses-baselineYear1Arm1_T1w.nii.gz     -hippocampal-subfields-T1  -parallel -openmp 32 
+
+#echo now copying fs to local scratch
+
+#cp -rfv $DW_JOB_STRIPED/fs/sub-NDARINV007W6H7B /global/cscratch1/sd/jcha9928/anal/ABCD/fs
 
 echo "I THINK RECON-ALL IS DONE BY NOW"
