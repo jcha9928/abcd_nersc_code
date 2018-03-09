@@ -16,7 +16,7 @@ rm -rf $CMD_batch
 ####################################################################################
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
-#SBATCH -N 32
+#SBATCH -N 2
 #SBATCH -C haswell
 #SBATCH -q premium
 #SBATCH -J recon
