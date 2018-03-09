@@ -1,8 +1,8 @@
 #!/bin/bash
 #usage: recon_1.sh list_t1_batch32_*
 
-list=`ls ./list/batch32*`
-N=`wc ${list} | awk '{print $1}'`
+list=`ls -1 ./list/batch32_t12*`   # this could be either batch32_t12 or batch32_t1only#
+N=`ls -1 ./list/batch32* | wc | awk '{print $1}'`
 
 echo $list
 threads=1
