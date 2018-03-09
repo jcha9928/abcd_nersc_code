@@ -49,7 +49,7 @@ cat<<EOC >$CMD
   FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
   source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
-  SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+  SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs2
 
   cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
   -s {} \
