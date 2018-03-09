@@ -2,7 +2,7 @@
 #usage: recon_1.sh list_t1_batch32_*
 cd /global/cscratch1/sd/jcha9928/anal/fs_tbd
 
-list=`ls batch32*`
+list=\`ls batch32*\`
 #N=`wc ${1} | awk '{print $1}'`
 
 echo $list
