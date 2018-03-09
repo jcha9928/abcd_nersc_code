@@ -54,7 +54,7 @@ cat<<EOC >$CMD
   sleep 3
   
   ### using GNIU parallel###
-  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && recon-all \
+  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
   -s {} \
   -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
   -hippocampal-subfields-T1 \
