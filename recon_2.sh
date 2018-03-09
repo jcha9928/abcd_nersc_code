@@ -2,6 +2,8 @@
 #usage: recon_1.sh list_t1_batch32_*
 
 list=`ls -1 ./list/batch32_t12*`   # this could be either batch32_t12 or batch32_t1only#
+list=`ls -1 ./list/batch32_t1only*`   # this could be either batch32_t12 or batch32_t1only#
+
 N=`ls -1 ./list/batch32* | wc | awk '{print $1}'`
 
 echo $list
@@ -51,21 +53,21 @@ cat<<EOC >$CMD
 
   SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs2
 
+  #cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
+  #-s {} \
+  #-i ${datafolder}/anat/{}_t1w.nii.gz \
+  #-T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
+  #-hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz T1T2 \
+  #-all \
+  #-qcache"  
+  
+  #################use this when there is no T2w images###################
   cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
   -s {} \
   -i ${datafolder}/anat/{}_t1w.nii.gz \
-  -T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
-  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz T1T2 \
+  -hippocampal-subfields-T1 \
   -all \
-  -qcache"  
-  
-  #################use this when there is no T2w images###################
-  #cat $l | parallel --jobs 32 recon-all \
-  #-s {} \
-  #-i ${datafolder}/anat/{}_t1w.nii.gz \
-  #-hippocampal-subfields-T1 ${datafolder}/anat/{}_t2w.nii.gz  \
-  #-all \
-  #-qcache 
+  -qcache" 
   
   echo "I THINK RECON-ALL IS DONE BY NOW"
 EOC
@@ -86,7 +88,7 @@ echo "wait" >> $CMD_batch
 
 echo $CMD_batch
 chmod +x $CMD_batch 
-sbatch $CMD_batch
+echo sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
