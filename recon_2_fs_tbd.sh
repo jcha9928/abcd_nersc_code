@@ -50,12 +50,16 @@ cat<<EOC >$CMD
   FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
   source $FREESURFER_HOME/SetUpFreeSurfer.sh
   SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/fs_tbd
-  cat $l | parallel --jobs 32 recon-all \
+  module load parallel
+  sleep 3
+  
+  ### using GNIU parallel###
+  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && recon-all \
   -s {} \
   -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
   -hippocampal-subfields-T1 \
   -all \
-  -qcache  
+  -qcache"  
   
   #################use this when there is no T2w images###################
   #cat $l | parallel --jobs 32 recon-all \
