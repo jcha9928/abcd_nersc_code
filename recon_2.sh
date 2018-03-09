@@ -2,7 +2,7 @@
 #usage: recon_1.sh list_t1_batch32_*
 
 list=`ls ./list/batch32*`
-#N=`wc ${1} | awk '{print $1}'`
+N=`wc ${list} | awk '{print $1}'`
 
 echo $list
 threads=1
@@ -15,7 +15,7 @@ rm -rf $CMD_batch
 ####################################################################################
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
-#SBATCH -N 32
+#SBATCH -N $N
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J recon
@@ -51,13 +51,13 @@ cat<<EOC >$CMD
 
   SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 
-  cat $l | parallel --jobs 32 recon-all \
+  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
   -s {} \
   -i ${datafolder}/anat/{}_t1w.nii.gz \
   -T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial \
   -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz -T2pial T1T2 \
   -all \
-  -qcache  
+  -qcache"  
   
   #################use this when there is no T2w images###################
   #cat $l | parallel --jobs 32 recon-all \
