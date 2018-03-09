@@ -53,7 +53,9 @@ cat<<EOC >$CMD
 
   cat $l | parallel --jobs 32 recon-all \
   -s {} \
-  -i \`ls ${datafolder}/{}/ses-*/anat/{}_ses-*_T1w.nii.gz\` \
+  -i ${datafolder}/anat/{}_t1w.nii.gz \
+  -T2 ${datafolder}/anat/{}_t2w.nii.gz-T2pial \
+  -hippocampal-subfields-T1T2 ${datafolder}/anat/{}_t2w.nii.gz-T2pial T1T2 \
   -all \
   -qcache  
   
