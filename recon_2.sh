@@ -43,7 +43,7 @@ CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.${batc
 rm -rf $CMD
 
 #############################################################################################
-  cat<<EOC >$CMD
+cat<<EOC >$CMD
   #!/bin/bash
   source ~/.bashrc_jiook
   FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
@@ -58,7 +58,8 @@ rm -rf $CMD
   -qcache  
   
   echo "I THINK RECON-ALL IS DONE BY NOW"
-  EOC
+EOC
+
 #############################################################################################
 chmod +x $CMD
 
