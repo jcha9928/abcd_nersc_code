@@ -24,9 +24,9 @@ cat<<EOA >$CMD_batch
 #SBATCH -t 00:05:00
 #SBATCH -L cscratch1
 #OpenMP settings:
-export OMP_NUM_THREADS=32
-export OMP_PLACES=threads
-export OMP_PROC_BIND=true
+#export OMP_NUM_THREADS=1
+#export OMP_PLACES=threads
+#export OMP_PROC_BIND=true
 echo start............................................
 echo "working directory is `pwd`"
 EOA
