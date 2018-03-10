@@ -10,7 +10,7 @@ threads=1
 
 fs_tbd=/global/cscratch1/sd/jcha9928/anal/fs_tbd
 
-CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.fs_tbd.batch
+CMD_batch=/global/cscratch1/sd/jcha9928/anal/fs_tbd/job/slurmjob.recon.fs_tbd.batch
 rm -rf $CMD_batch
 
 ####################################################################################
@@ -40,8 +40,11 @@ do
 batchname=`echo $l`
 datafolder=/global/cscratch1/sd/jcha9928/anal/fs_tbd/data
 
-CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.fs_tbd.${batchname}
+CMD=/global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.fs_tbd.${batchname}
 rm -rf $CMD
+
+log=/global/cscratch1/sd/jcha9928/anal/fs_tbd/job/log.recon.${batchname}
+rm -rf $log
 
 #############################################################################################
 cat<<EOC >$CMD
@@ -76,7 +79,7 @@ EOC
 #############################################################################################
 chmod +x $CMD
 
-echo "srun -N 1 -n 1 -c 32 --cpu_bind=cores $CMD > ./job/log.recon.${batchname} 2>&1 &">>$CMD_batch
+echo "srun -N 1 -n 1 -c 32 --cpu_bind=cores $CMD > ${log} 2>&1 &">>$CMD_batch
 echo "sleep 0.1">>$CMD_batch
 
 i=$(($i+1))
