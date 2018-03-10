@@ -75,7 +75,7 @@ SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 
-rm ${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
+rm \${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
 
 recon-all -s ${SUBJECT} ${input_arg2} 
 #echo now copying fs to local scratch
