@@ -23,7 +23,7 @@ cat<<EOA >$CMD_batch
 #SBATCH --mail-type=ALL
 #SBATCH -t 00:05:00
 #SBATCH -L cscratch1
-#OpenMP settings:
+#OpenMP settings: #############THIS SHOULDN'T BE USED WITH GNY PARALLEL ######################
 #export OMP_NUM_THREADS=1
 #export OMP_PLACES=threads
 #export OMP_PROC_BIND=true
