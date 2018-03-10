@@ -21,7 +21,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 30:00:00
+#SBATCH -t 00:05:00
 #SBATCH -L cscratch1
 #OpenMP settings:
 #export OMP_NUM_THREADS=32
@@ -60,7 +60,9 @@ SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/fs_tbd
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
-rm ${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
+rm \${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
+
+ulimit -m 4000000 && ulimit -v 4000000
 
 recon-all -s ${s} -i ${datafolder}/${s}_acq-HCP_T1w.nii.gz -hippocampal-subfields-T1 -all -qcache
 
@@ -73,7 +75,9 @@ chmod +x $CMD
 
 done
 
-echo "cat $list | parallel --delay .2 --jobs $N \"ulimit -m 4000000 && ulimit -v 4000000 && srun -n 1 -c 1 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.{} \"" >>$CMD_batch 
+#echo "cat $list | parallel --delay .2 --jobs $N \" /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.{} \"" >>$CMD_batch 
+echo "cat $list | parallel --delay .2 --jobs $N \" $abcd/abcd_nersc_code/job/cmd.recon.{} > /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/log.recon.{} 2>&1 \"" >>$CMD_batch 
+
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 #echo "srun -N 1 -n 1 -c 1 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
@@ -85,7 +89,7 @@ echo "echo check if it's done">>$CMD_batch
 
 echo $CMD_batch
 chmod +x $CMD_batch 
-echo sbatch $CMD_batch
+sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
