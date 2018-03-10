@@ -74,6 +74,9 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
+
+rm ${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
+
 recon-all -s ${SUBJECT} ${input_arg2} 
 #echo now copying fs to local scratch
 #cp -rfv \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
@@ -86,7 +89,7 @@ chmod +x $CMD
 
 done
 
-echo "cat $list | parallel --delay .2 --jobs $N \"ulimit -m 4000000 && ulimit -v 4000000 && /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
+echo "cat $list | parallel --delay .2 --jobs $N \"ulimit -m 4000000 && ulimit -v 4000000 && srun -n 1 -c 1 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 #echo "srun -N 1 -n 1 -c 1 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
