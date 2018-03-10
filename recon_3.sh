@@ -48,7 +48,7 @@ SUBJECT=${s}
 datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
 t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
 t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
-if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
+#if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
 input_arg1="-all -i ${t1} "
   if [ ! -e $t2 ]; then t2_arg=" "
   else t2_arg=" -T2 $t2 -T2pial "
@@ -58,9 +58,9 @@ input_arg1="-all -i ${t1} "
   else hippo_arg=" -hippocampal-subfields-T1T2 $t2 T1T2 "
   fi
 input_arg2="${input_arg1} ${t2_arg} ${hippo_arg}"
-else 
-input_arg2="-make all "
-fi
+#else 
+#input_arg2="-make all "
+#fi
   
 #############################################CMD#####################################
 cat<<EOC >$CMD
@@ -71,7 +71,7 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 #mkdir \$DW_JOB_STRIPED/fs
 #SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs2
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 
