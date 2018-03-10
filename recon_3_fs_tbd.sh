@@ -76,7 +76,7 @@ chmod +x $CMD
 done
 
 #echo "cat $list | parallel --delay .2 --jobs $N \" /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.{} \"" >>$CMD_batch 
-echo "cat $list | parallel --delay .2 --jobs $N \" $abcd/abcd_nersc_code/job/cmd.recon.{} > /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/log.recon.{} 2>&1 \"" >>$CMD_batch 
+echo "cat $list | parallel --delay .2 --jobs $N \" /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.{} > /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/log.recon.{} 2>&1 \"" >>$CMD_batch 
 
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
