@@ -17,11 +17,11 @@ cat<<EOA >$CMD_batch
 #!/bin/bash -l
 #SBATCH -N $((($N+31)/32))
 #SBATCH -C haswell
-#SBATCH -q regular
+#SBATCH -q premium
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 1:00:00
+#SBATCH -t 00:01:00
 #SBATCH -L cscratch1
 #OpenMP settings:
 #export OMP_NUM_THREADS=32
