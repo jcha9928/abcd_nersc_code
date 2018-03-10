@@ -33,7 +33,7 @@ EOA
 #####################################################################
 
 i=1
-for s in `cat /global/cscratch1/sd/jcha9928/anal/fs_tbd/job/\$list`
+for s in `cat $list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/global/cscratch1/sd/jcha9928/anal/fs_tbd/job/cmd.recon.${s}
