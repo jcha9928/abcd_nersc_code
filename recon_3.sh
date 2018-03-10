@@ -101,7 +101,7 @@ echo "cat $list | parallel --delay .2 --jobs $N \" $abcd/abcd_nersc_code/job/cmd
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 #echo "srun -N 1 -n 1 -c 1 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
-echo "echo check if it's done">>$CMD_batch
+echo "echo check the results">>$CMD_batch
 
 #echo "wait" >> $CMD_batch
 
