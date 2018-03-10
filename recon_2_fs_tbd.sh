@@ -1,6 +1,7 @@
 #!/bin/bash
 #usage: recon_1.sh list_t1_batch32_*
 cd /global/cscratch1/sd/jcha9928/anal/fs_tbd
+sleep 0.5
 
 list=`ls batch32*`
 #N=`wc ${1} | awk '{print $1}'`
@@ -22,7 +23,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 24:00:00
+#SBATCH -t 30:00:00
 #SBATCH -L cscratch1
 #OpenMP settings:
 export OMP_NUM_THREADS=1
@@ -58,12 +59,15 @@ cat<<EOC >$CMD
   cd /global/cscratch1/sd/jcha9928/anal/fs_tbd
   
   ### using GNIU parallel###
-  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
-  -s {} \
-  -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
-  -hippocampal-subfields-T1 \
-  -all \
-  -qcache"  
+  echo "cat $list | parallel --delay .2 --jobs $N \"ulimit -m 4000000 && ulimit -v 4000000 && \
+    srun -n 1 -c 1 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
+
+#  cat $l | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all \
+#  -s {} \
+#  -i ${datafolder}/{}_acq-HCP_T1w.nii.gz \
+#  -hippocampal-subfields-T1 \
+#  -all \
+#  -qcache"  
   
   #################use this when there is no T2w images###################
   #cat $l | parallel --jobs 32 recon-all \
