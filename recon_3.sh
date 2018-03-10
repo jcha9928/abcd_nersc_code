@@ -77,6 +77,9 @@ ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1
 
 rm \${SUBJECTS_DIR}/$SUBJECT/scripts/IsRunning*
 
+ulimit -m 4000000
+ulimit -v 4000000
+
 recon-all -s ${SUBJECT} ${input_arg2} 
 #echo now copying fs to local scratch
 #cp -rfv \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
