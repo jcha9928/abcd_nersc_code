@@ -15,7 +15,7 @@ rm -rf $CMD_batch
 ####################################################################################
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
-#SBATCH -N $(($N/32))
+#SBATCH -N $((($N+31)/32))
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J recon
