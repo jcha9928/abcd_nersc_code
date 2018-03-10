@@ -21,7 +21,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 30:00:00
+#SBATCH -t 00:05:00
 #SBATCH -L cscratch1
 #OpenMP settings:
 #export OMP_NUM_THREADS=32
