@@ -46,8 +46,11 @@ rm -rf /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${S
 SUBJECT=${s}
 #echo ${SUBJECT}
 datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
-t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
-t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
+#t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
+t1=/global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/${s}_t1w.nii.gz
+#t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
+t2=/global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/${s}_t2w.nii.g
+
 #if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
 input_arg1="-all -i ${t1} "
   if [ ! -e $t2 ]; then t2_arg=" "
@@ -94,7 +97,7 @@ done
 #echo "cat $list | parallel --delay .2 --jobs $N \"srun -n 1 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
 
 #echo "cat $list | parallel --delay .2 --jobs $N \"srun -n 1 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
-echo "cat $list | parallel --delay .2 --jobs $N \" /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
+echo "cat $list | parallel --delay .2 --jobs $N \" $abcd/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 #echo "srun -N 1 -n 1 -c 1 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
