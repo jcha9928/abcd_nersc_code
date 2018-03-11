@@ -108,7 +108,7 @@ cat<<EOF >$cmd_parallel
 source ~/.bashrc_jiook
 module load parallel
 
-cat $list | parallel --delay .2 --jobs 32 "srun -n 1 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} " 
+cat $list | parallel --delay .2 --jobs 32 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} 
 
 EOF
 
