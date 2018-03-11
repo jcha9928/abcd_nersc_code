@@ -2,7 +2,7 @@
 #usage: recon_1.sh list_t1_batch32
 
 list=${1}
-N=`wc ${1} | awk '{print $1}'`
+N=`wc list/${1} | awk '{print $1}'`
 
 echo $list
 threads=1
@@ -38,7 +38,7 @@ EOA
 #####################################################################
 
 i=1
-for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/\$list`
+for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/list/\$list`
 do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.${s}
