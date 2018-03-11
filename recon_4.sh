@@ -117,7 +117,7 @@ chmod +x $cmd_parallel
 ####################################################################################################
 
 
-echo "srun -n 32 --cpu_bind=cores $CMD > ./job/log.recon.${batchname} 2>&1 &">>$CMD_batch
+echo "srun -n 32 --cpu_bind=cores $cmd_parallel > ./job/log.recon.batch32.${1} 2>&1 &">>$CMD_batch
 
 #echo "cat $list | parallel --delay .2 --jobs $N \"srun -n 1 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
 
@@ -134,6 +134,7 @@ echo "echo check the results">>$CMD_batch
 ### batch submission
 
 echo $CMD_batch
+echo log file is ./job/log.recon.batch32.${1}
 chmod +x $CMD_batch 
 echo sbatch $CMD_batch
 
