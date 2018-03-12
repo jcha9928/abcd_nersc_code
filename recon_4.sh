@@ -127,7 +127,7 @@ done
 
 
 
-echo "srun -n 32 --cpu_bind=cores $cmd_parallel > ./job/log.recon.batch32.${1} 2>&1 &">>$CMD_batch
+echo "srun -n 32 --cpu_bind=cores $cmd_parallel > ./job/log.recon.batch32.${1} 2>&1 ">>$CMD_batch
 
 #echo "cat $list | parallel --delay .2 --jobs $N \"srun -n 1 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} \"" >>$CMD_batch 
 
