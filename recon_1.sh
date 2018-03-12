@@ -18,7 +18,7 @@ cat<<EOA >$CMD_batch
 
 #SBATCH -N $N
 #SBATCH -C haswell
-#SBATCH -q premium
+#SBATCH -q regular
 #SBATCH -J recon
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
