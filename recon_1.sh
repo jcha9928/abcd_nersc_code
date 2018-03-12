@@ -5,7 +5,7 @@ list=${1}
 N=`wc ${1} | awk '{print $1}'`
 
 echo $list
-threads=16
+threads=64
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
@@ -26,7 +26,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -L cscratch1
 
 #OpenMP settings:
-export OMP_NUM_THREADS=32
+export OMP_NUM_THREADS=$threads
 export OMP_PLACES=threads
 export OMP_PROC_BIND=true
 
@@ -44,6 +44,7 @@ CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.${s}
 rm -rf $CMD
 rm -rf /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${SUBJECT}
 
+LOG=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${SUBJECT}
 #CMD_sub=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/abcd_alcf_code/job/cmd_sub.recon.${s}
 #rm -rf $CMD_sub
 
@@ -77,10 +78,10 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 #mkdir \$DW_JOB_STRIPED/fs
 #SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$threads
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
-recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp 32 
+recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp $threads 
 
 #echo now copying fs to local scratch
 
@@ -93,7 +94,7 @@ EOC
 chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
-echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch
+echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > $LOG 2>&1 &">>$CMD_batch
 echo "sleep 0.1">>$CMD_batch
 
 i=$(($i+1))
