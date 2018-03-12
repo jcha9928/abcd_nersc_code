@@ -120,7 +120,7 @@ chmod +x $CMD
 
 
 echo $CMD & >> $cmd_parallel
-echo sleep 0.1 << $cmd_parallel
+echo sleep 0.1 >> $cmd_parallel
 
 done
 
