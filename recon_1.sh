@@ -53,6 +53,7 @@ SUBJECT=${s}
 datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
 t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
 t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
+
 if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
 input_arg1="-all -i ${t1} "
   if [ ! -e $t2 ]; then t2_arg=" "
