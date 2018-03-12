@@ -37,6 +37,29 @@ echo "working directory is `pwd`"
 EOA
 #####################################################################
 
+
+###############################################################################################
+#########   GNU PARALLEL   ####################################################################
+cmd_parallel=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd_parallel.recon
+rm $cmd_parallel
+
+cat<<EOF >$cmd_parallel
+#!/bin/bash
+source ~/.bashrc_jiook
+module load parallel
+
+#cat $list | parallel --delay .2 --jobs 32 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} 
+
+
+
+EOF
+
+chmod +x $cmd_parallel
+####################################################################################################
+####################################################################################################
+
+
+
 i=1
 for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/list/\$list`
 do
@@ -96,25 +119,12 @@ EOC
 chmod +x $CMD
 
 
+echo $CMD & >> $cmd_parallel
+echo sleep 0.1 << $cmd_parallel
+
 done
 
-###############################################################################################
-#########   GNU PARALLEL   ####################################################################
-cmd_parallel=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd_parallel.recon
-rm $cmd_parallel
 
-cat<<EOF >$cmd_parallel
-#!/bin/bash
-source ~/.bashrc_jiook
-module load parallel
-
-cat $list | parallel --delay .2 --jobs 32 /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.{} 
-
-EOF
-
-chmod +x $cmd_parallel
-####################################################################################################
-####################################################################################################
 
 
 echo "srun -n 32 --cpu_bind=cores $cmd_parallel > ./job/log.recon.batch32.${1} 2>&1 &">>$CMD_batch
