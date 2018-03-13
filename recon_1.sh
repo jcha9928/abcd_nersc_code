@@ -1,5 +1,6 @@
 #!/bin/bash
-#usage: recon_1.sh list_t1_batch60_aa
+#usage: recon_1.sh batch300_aa
+# use this one: other versions failed
 
 list=${1}
 N=`wc ${1} | awk '{print $1}'`
@@ -19,7 +20,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -N $N
 #SBATCH -C haswell
 #SBATCH -q premium
-#SBATCH -J b${1}
+#SBATCH -J $list
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
 #SBATCH -t 10:00:00
