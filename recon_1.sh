@@ -26,8 +26,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -t 10:00:00
 #SBATCH -L cscratch1
 #DW jobdw capacity=20GB access_mode=striped type=scratch
-#DW stage_in source=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT} destination=$DW_JOB_STRIPED/${SUBJECT} type=directory
-#DW stage_out source=$DW_JOB_STRIPED/${SUBJECT} destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT} type=directory
+#DW stage_out source=$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
 
 #OpenMP settings:
 export OMP_NUM_THREADS=$threads
@@ -58,7 +57,7 @@ datafolder=/global/cscratch1/sd/jcha9928/anal/ABCD/data
 t1=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T1w.nii.gz
 t2=${datafolder}/${s}/ses-baselineYear1Arm1/anat/${s}_ses-baselineYear1Arm1_T2w.nii.gz
 
-if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
+#if [ ! -e /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/recon-all.log ]; then
 input_arg1="-all -i ${t1} "
   if [ ! -e $t2 ]; then t2_arg=" "
   else t2_arg=" -T2 $t2 -T2pial "
@@ -68,9 +67,9 @@ input_arg1="-all -i ${t1} "
   else hippo_arg=" -hippocampal-subfields-T1T2 $t2 T1T2 "
   fi
 input_arg2="${input_arg1} ${t2_arg} ${hippo_arg}"
-else 
-input_arg2="-make all "
-fi
+#else 
+#input_arg2="-make all "
+#fi
   
 #############################################CMD#####################################
 cat<<EOC >$CMD
@@ -79,12 +78,16 @@ source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
+
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-#mkdir \$DW_JOB_STRIPED/fs
-#SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
+mkdir -p \$DW_JOB_STRIPED/fs
+SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
+
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$threads
-rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/IsRunning*
+#rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/IsRunning*
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp $threads 
