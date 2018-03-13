@@ -23,9 +23,9 @@ cat<<EOA >$CMD_batch
 #SBATCH -J $list
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 10:00:00
+#SBATCH -t 00:10:00
 #SBATCH -L cscratch1
-#DW jobdw capacity=20GB access_mode=striped type=scratch
+#DW jobdw capacity=600GB access_mode=striped type=scratch
 #DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
 
 #OpenMP settings:
