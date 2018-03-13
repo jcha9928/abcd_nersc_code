@@ -45,9 +45,10 @@ do
 #s=`echo $SUBJECT | egrep -o '[0-9]{8}'`
 CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.${s}
 rm -rf $CMD
-rm -rf /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${SUBJECT}
 
 LOG=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${SUBJECT}
+rm -rf $LOG
+
 #CMD_sub=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/abcd_alcf_code/job/cmd_sub.recon.${s}
 #rm -rf $CMD_sub
 
