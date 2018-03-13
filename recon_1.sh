@@ -1,5 +1,5 @@
 #!/bin/bash
-#usage: recon_1.sh batch300_aa
+#usage: recon_1.sh b300_aa
 # use this one: other versions failed
 
 list=${1}
