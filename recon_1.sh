@@ -26,7 +26,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -t 10:00:00
 #SBATCH -L cscratch1
 #DW jobdw capacity=20GB access_mode=striped type=scratch
-#DW stage_out source=$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
+#DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
 
 #OpenMP settings:
 export OMP_NUM_THREADS=$threads
