@@ -5,7 +5,7 @@ list=${1}
 N=`wc ${1} | awk '{print $1}'`
 
 echo $list
-threads=64
+threads=32
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
@@ -19,11 +19,14 @@ cat<<EOA >$CMD_batch
 #SBATCH -N $N
 #SBATCH -C haswell
 #SBATCH -q premium
-#SBATCH -J recon
+#SBATCH -J b${1}
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
 #SBATCH -t 10:00:00
 #SBATCH -L cscratch1
+#DW jobdw capacity=20GB access_mode=striped type=scratch
+#DW stage_in source=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT} destination=$DW_JOB_STRIPED/${SUBJECT} type=directory
+#DW stage_out source=$DW_JOB_STRIPED/${SUBJECT} destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT} type=directory
 
 #OpenMP settings:
 export OMP_NUM_THREADS=$threads
@@ -80,6 +83,7 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 #SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$threads
+rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/IsRunning*
 
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp $threads 
@@ -96,7 +100,7 @@ chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > $LOG 2>&1 &">>$CMD_batch
-echo "sleep 0.1">>$CMD_batch
+echo "sleep 1">>$CMD_batch
 
 i=$(($i+1))
 #echo $i
@@ -108,7 +112,7 @@ echo "wait" >> $CMD_batch
 
 echo $CMD_batch
 chmod +x $CMD_batch 
-sbatch $CMD_batch
+echo sbatch $CMD_batch
 
 
 #$code/fsl_sub_hpc_2 -s smp,$threads -l /ifs/scratch/pimri/posnerlab/1anal/adni/adni_on_c2b2/job -t $CMD_batch
