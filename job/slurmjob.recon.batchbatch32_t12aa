@@ -1,0 +1,19 @@
+#!/bin/bash -l
+#SBATCH -N 2  
+#SBATCH -C haswell
+#SBATCH -q premium
+#SBATCH -J recon
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 00:05:00
+#SBATCH -L cscratch1
+#OpenMP settings: #############THIS SHOULDN'T BE USED WITH GNY PARALLEL ######################
+
+#export OMP_NUM_THREADS=1
+#export OMP_PLACES=threads
+#export OMP_PROC_BIND=true
+
+echo start............................................
+echo "working directory is /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code"
+srun -n 32 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd_parallel.recon > ./job/log.recon.batch32.batch32_t12aa 2>&1 
+echo check the results

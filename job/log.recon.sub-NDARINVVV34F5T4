@@ -1,0 +1,3733 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+Linux nid01131 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts/recon-all.local-copy'
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH
+
+ mri_convert /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T1w.nii.gz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/001.mgz 
+
+mri_convert.bin /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T1w.nii.gz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/001.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T1w.nii.gz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/001.mgz...
+#--------------------------------------------
+#@# T2/FLAIR Input Tue Mar 13 09:11:13 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH
+
+ mri_convert --no_scale 1 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T2w.nii.gz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz 
+
+mri_convert.bin --no_scale 1 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T2w.nii.gz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVVV50F0CH/ses-baselineYear1Arm1/anat/sub-NDARINVVV50F0CH_ses-baselineYear1Arm1_T2w.nii.gz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz...
+#--------------------------------------------
+#@# MotionCor Tue Mar 13 09:11:16 PDT 2018
+Found 1 runs
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+
+ cp /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/001.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/rawavg.mgz 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH
+
+ mri_convert /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/rawavg.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz --conform 
+
+mri_convert.bin /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/rawavg.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz --conform 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/rawavg.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/talairach.xfm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Mar 13 09:11:25 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --n 1 --proto-iters 1000 --distance 50 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+/global/homes/j/jcha9928/app/freesurfer/bin/mri_nu_correct.mni
+--no-rescale --i orig.mgz --o orig_nu.mgz --n 1 --proto-iters 1000 --distance 50
+nIters 1
+$Id: mri_nu_correct.mni,v 1.27 2016/02/26 16:19:49 mreuter Exp $
+Linux nid01131 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+Tue Mar 13 09:11:25 PDT 2018
+Program nu_correct, built from:
+Package MNI N3, version 1.12.0, compiled by nicks@terrier (x86_64-unknown-linux-gnu) on 2015-06-19 at 01:25:34
+/usr/bin/bc
+tmpdir is ./tmp.mri_nu_correct.mni.52675
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.52675/nu0.mnc -odt float
+mri_convert.bin orig.mgz ./tmp.mri_nu_correct.mni.52675/nu0.mnc -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from orig.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from uchar to float (noscale = 0)...
+writing to ./tmp.mri_nu_correct.mni.52675/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Tue Mar 13 09:11:27 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.52675/nu0.mnc ./tmp.mri_nu_correct.mni.52675/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.52675/0/ -iterations 1000 -distance 50
+[jcha9928@nid01131:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/] [2018-03-13 09:11:27] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 1000 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 50 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.52675/0/ ./tmp.mri_nu_correct.mni.52675/nu0.mnc ./tmp.mri_nu_correct.mni.52675/nu1.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 31 
+CV of field change: 0.000988708
+ 
+ 
+ 
+mri_convert ./tmp.mri_nu_correct.mni.52675/nu1.mnc orig_nu.mgz --like orig.mgz --conform
+mri_convert.bin ./tmp.mri_nu_correct.mni.52675/nu1.mnc orig_nu.mgz --like orig.mgz --conform 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from ./tmp.mri_nu_correct.mni.52675/nu1.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+writing to orig_nu.mgz...
+ 
+ 
+Tue Mar 13 09:12:27 PDT 2018
+mri_nu_correct.mni done
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+Started at Tue Mar 13 09:12:27 PDT 2018
+Ended   at Tue Mar 13 09:12:54 PDT 2018
+talairach_avi done
+
+ cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+#--------------------------------------------
+#@# Talairach Failure Detection Tue Mar 13 09:12:56 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+talairach_afd: Talairach Transform: transforms/talairach.xfm OK (p=0.4905, pval=0.1531 >= threshold=0.0050)
+
+ awk -f /global/homes/j/jcha9928/app/freesurfer/bin/extract_talairach_avi_QA.awk /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/talairach_avi.log 
+
+
+ tal_QC_AZS /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/talairach_avi.log 
+
+TalAviQA: 0.97735
+z-score: 0
+#--------------------------------------------
+#@# Nu Intensity Correction Tue Mar 13 09:12:57 PDT 2018
+
+ mri_nu_correct.mni --i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+/global/homes/j/jcha9928/app/freesurfer/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2
+nIters 2
+$Id: mri_nu_correct.mni,v 1.27 2016/02/26 16:19:49 mreuter Exp $
+Linux nid01131 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+Tue Mar 13 09:12:57 PDT 2018
+Program nu_correct, built from:
+Package MNI N3, version 1.12.0, compiled by nicks@terrier (x86_64-unknown-linux-gnu) on 2015-06-19 at 01:25:34
+/usr/bin/bc
+tmpdir is ./tmp.mri_nu_correct.mni.53516
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.53516/nu0.mnc -odt float
+mri_convert.bin orig.mgz ./tmp.mri_nu_correct.mni.53516/nu0.mnc -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from orig.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from uchar to float (noscale = 0)...
+writing to ./tmp.mri_nu_correct.mni.53516/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Tue Mar 13 09:12:58 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.53516/nu0.mnc ./tmp.mri_nu_correct.mni.53516/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.53516/0/
+[jcha9928@nid01131:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/] [2018-03-13 09:12:58] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.53516/0/ ./tmp.mri_nu_correct.mni.53516/nu0.mnc ./tmp.mri_nu_correct.mni.53516/nu1.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 17 
+CV of field change: 0.000971281
+ 
+ 
+--------------------------------------------------------
+Iteration 2 Tue Mar 13 09:13:38 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.53516/nu1.mnc ./tmp.mri_nu_correct.mni.53516/nu2.mnc -tmpdir ./tmp.mri_nu_correct.mni.53516/1/
+[jcha9928@nid01131:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/] [2018-03-13 09:13:38] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.53516/1/ ./tmp.mri_nu_correct.mni.53516/nu1.mnc ./tmp.mri_nu_correct.mni.53516/nu2.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 13 
+CV of field change: 0.000999479
+ 
+ 
+ 
+mri_binarize --i ./tmp.mri_nu_correct.mni.53516/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.53516/ones.mgz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+cmdline mri_binarize.bin --i ./tmp.mri_nu_correct.mni.53516/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.53516/ones.mgz 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+
+input      ./tmp.mri_nu_correct.mni.53516/nu2.mnc
+frame      0
+nErode3d   0
+nErode2d   0
+output     ./tmp.mri_nu_correct.mni.53516/ones.mgz
+Binarizing based on threshold
+min        -1
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 16777216 values in range
+Counting number of voxels in first frame
+Found 16777216 voxels in final mask
+Count: 16777216 16777216.000000 16777216 100.000000
+mri_binarize done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.53516/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.53516/sum.junk --avgwf ./tmp.mri_nu_correct.mni.53516/input.mean.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.53516/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.53516/sum.junk --avgwf ./tmp.mri_nu_correct.mni.53516/input.mean.dat 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.53516/ones.mgz
+Loading orig.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.53516/input.mean.dat
+mri_segstats done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.53516/ones.mgz --i ./tmp.mri_nu_correct.mni.53516/nu2.mnc --sum ./tmp.mri_nu_correct.mni.53516/sum.junk --avgwf ./tmp.mri_nu_correct.mni.53516/output.mean.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.53516/ones.mgz --i ./tmp.mri_nu_correct.mni.53516/nu2.mnc --sum ./tmp.mri_nu_correct.mni.53516/sum.junk --avgwf ./tmp.mri_nu_correct.mni.53516/output.mean.dat 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.53516/ones.mgz
+Loading ./tmp.mri_nu_correct.mni.53516/nu2.mnc
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.53516/output.mean.dat
+mri_segstats done
+mris_calc -o ./tmp.mri_nu_correct.mni.53516/nu2.mnc ./tmp.mri_nu_correct.mni.53516/nu2.mnc mul .97888564155928557889
+Saving result to './tmp.mri_nu_correct.mni.53516/nu2.mnc' (type = MINC )                       [ ok ]
+mri_convert ./tmp.mri_nu_correct.mni.53516/nu2.mnc nu.mgz --like orig.mgz
+mri_convert.bin ./tmp.mri_nu_correct.mni.53516/nu2.mnc nu.mgz --like orig.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from ./tmp.mri_nu_correct.mni.53516/nu2.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+mri_make_uchar nu.mgz transforms/talairach.xfm nu.mgz
+type change took 0 minutes and 5 seconds.
+mapping (10, 118) to ( 3, 110)
+ 
+ 
+Tue Mar 13 09:14:39 PDT 2018
+mri_nu_correct.mni done
+
+ mri_add_xform_to_header -c /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/talairach.xfm nu.mgz nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Intensity Normalization Tue Mar 13 09:14:39 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_normalize -g 1 -mprage nu.mgz T1.mgz 
+
+using max gradient = 1.000
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+reading from nu.mgz...
+normalizing image...
+talairach transform
+ 1.06321  -0.03845   0.00320  -0.90993;
+ 0.03769   0.96186   0.48079  -14.60629;
+-0.03659  -0.49068   1.04378   8.38020;
+ 0.00000   0.00000   0.00000   1.00000;
+processing without aseg, no1d=0
+MRInormInit(): 
+INFO: Modifying talairach volume c_(r,a,s) based on average_305
+MRInormalize(): 
+MRIsplineNormalize(): npeaks = 20
+Starting OpenSpline(): npoints = 20
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+
+Iterating 2 times
+---------------------------------
+3d normalization pass 1 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 61 (61), valley at 43 (43)
+csf peak at 31, setting threshold to 51
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+---------------------------------
+3d normalization pass 2 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 60 (60), valley at 42 (42)
+csf peak at 30, setting threshold to 50
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+Done iterating ---------------------------------
+writing output to T1.mgz
+3D bias adjustment took 1 minutes and 12 seconds.
+#--------------------------------------------
+#@# Skull Stripping Tue Mar 13 09:15:52 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_em_register -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mri_em_register.skull.dat -skull nu.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca transforms/talairach_with_skull.lta 
+
+aligning to atlas containing skull, setting unknown_nbr_spacing = 5
+
+== Number of threads available to mri_em_register for OpenMP = 64 == 
+reading 1 input volumes...
+logging results to talairach_with_skull.log
+reading '/global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca'...
+average std = 22.9   using min determinant for regularization = 52.6
+0 singular and 9002 ill-conditioned covariance matrices regularized
+reading 'nu.mgz'...
+freeing gibbs priors...done.
+accounting for voxel sizes in initial transform
+bounding unknown intensity as < 8.7 or > 569.1 
+total sample mean = 77.6 (1399 zeros)
+************************************************
+spacing=8, using 3243 sample points, tol=1.00e-05...
+************************************************
+register_mri: find_optimal_transform
+find_optimal_transform: nsamples 3243, passno 0, spacing 8
+resetting wm mean[0]: 100 --> 108
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=6.0
+skull bounding box = (45, 54, 34) --> (209, 255, 255)
+using (100, 121, 145) as brain centroid...
+mean wm in atlas = 108, using box (80,96,118) --> (120, 145,172) to find MRI wm
+before smoothing, mri peak at 108
+robust fit to distribution - 107 +- 5.6
+after smoothing, mri peak at 108, scaling input intensities by 1.000
+scaling channel 0 by 1
+initial log_p = -4.602
+************************************************
+First Search limited to translation only.
+************************************************
+max log p =    -4.506473 @ (-9.091, -9.091, -27.273)
+max log p =    -4.417803 @ (13.636, -4.545, 4.545)
+max log p =    -4.358333 @ (-2.273, -2.273, -2.273)
+max log p =    -4.343724 @ (-3.409, 3.409, -1.136)
+max log p =    -4.343724 @ (0.000, 0.000, 0.000)
+max log p =    -4.343724 @ (0.000, 0.000, 0.000)
+Found translation: (-1.1, -12.5, -26.1): log p = -4.344
+****************************************
+Nine parameter search.  iteration 0 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.899, old_max_log_p =-4.344 (thresh=-4.3)
+ 1.06375   0.00000   0.00000  -9.16960;
+ 0.00000   1.06246   0.44009  -75.10748;
+ 0.00000  -0.44009   1.06246   35.33052;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 1 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.899, old_max_log_p =-3.899 (thresh=-3.9)
+ 1.06375   0.00000   0.00000  -9.16960;
+ 0.00000   1.06246   0.44009  -75.10748;
+ 0.00000  -0.44009   1.06246   35.33052;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.2500
+****************************************
+Nine parameter search.  iteration 2 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.808, old_max_log_p =-3.899 (thresh=-3.9)
+ 1.06090   0.05338   0.06819  -23.85965;
+-0.06823   1.04884   0.51454  -72.57381;
+-0.03415  -0.49883   1.01152   51.50919;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 3 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.792, old_max_log_p =-3.808 (thresh=-3.8)
+ 1.08249   0.01939   0.05228  -21.28419;
+-0.03348   1.05002   0.51649  -77.32529;
+-0.03351  -0.48947   0.99256   52.62321;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 4 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.771, old_max_log_p =-3.792 (thresh=-3.8)
+ 1.08249   0.01939   0.05228  -21.28419;
+-0.03298   1.08545   0.49281  -79.37787;
+-0.03394  -0.44633   0.99001   48.57480;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 5 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.770, old_max_log_p =-3.771 (thresh=-3.8)
+ 1.08249   0.01939   0.05228  -21.28419;
+-0.03236   1.06510   0.48357  -75.22376;
+-0.03330  -0.43796   0.97144   49.74384;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.0625
+****************************************
+Nine parameter search.  iteration 6 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.724, old_max_log_p =-3.770 (thresh=-3.8)
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 7 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.724, old_max_log_p =-3.724 (thresh=-3.7)
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+min search scale 0.025000 reached
+***********************************************
+Computing MAP estimate using 3243 samples...
+***********************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-05
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 3243
+Quasinewton: input matrix
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 010: -log(p) =   -0.0  tol 0.000010
+Resulting transform:
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+
+pass 1, spacing 8: log(p) = -3.724 (old=-4.602)
+transform before final EM align:
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+
+**************************************************
+ EM alignment process ...
+ Computing final MAP estimate using 364799 samples. 
+**************************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-07
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 364799
+Quasinewton: input matrix
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 012: -log(p) =    4.3  tol 0.000000
+final transform:
+ 1.08669   0.00209   0.04426  -18.19331;
+-0.01520   1.05920   0.50077  -77.87950;
+-0.03281  -0.45586   0.96453   52.77167;
+ 0.00000   0.00000   0.00000   1.00000;
+
+writing output transformation to transforms/talairach_with_skull.lta...
+mri_em_register utimesec    14829.604000
+mri_em_register stimesec    2.256000
+mri_em_register ru_maxrss   611596
+mri_em_register ru_ixrss    0
+mri_em_register ru_idrss    0
+mri_em_register ru_isrss    0
+mri_em_register ru_minflt   162542
+mri_em_register ru_majflt   132
+mri_em_register ru_nswap    0
+mri_em_register ru_inblock  0
+mri_em_register ru_oublock  24
+mri_em_register ru_msgsnd   0
+mri_em_register ru_msgrcv   0
+mri_em_register ru_nsignals 0
+mri_em_register ru_nvcsw    3805
+mri_em_register ru_nivcsw   25555
+registration took 4 minutes and 29 seconds.
+
+ mri_watershed -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mri_watershed.dat -T1 -brain_atlas /global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca transforms/talairach_with_skull.lta T1.mgz brainmask.auto.mgz 
+
+
+Mode:          T1 normalized volume
+Mode:          Use the information of atlas (default parms, --help for details)
+
+*********************************************************
+The input file is T1.mgz
+The output file is brainmask.auto.mgz
+Weighting the input with atlas information before watershed
+
+*************************WATERSHED**************************
+Sorting...
+      first estimation of the COG coord: x=128 y=125 z=124 r=79
+      first estimation of the main basin volume: 2076172 voxels
+      Looking for seedpoints 
+        2 found in the cerebellum 
+        16 found in the rest of the brain 
+      global maximum in x=150, y=124, z=88, Imax=255
+      CSF=20, WM_intensity=110, WM_VARIANCE=5
+      WM_MIN=110, WM_HALF_MIN=110, WM_HALF_MAX=110, WM_MAX=110 
+      preflooding height equal to 10 percent
+done.
+Analyze...
+
+      main basin size=8310262063 voxels, voxel volume =1.000 
+                     = 8310262063 mmm3 = 8310262.272 cm3
+done.
+PostAnalyze...Basin Prior
+ 37 basins merged thanks to atlas 
+      ***** 0 basin(s) merged in 1 iteration(s)
+      ***** 0 voxel(s) added to the main basin
+done.
+Weighting the input with prior template 
+
+****************TEMPLATE DEFORMATION****************
+
+      second estimation of the COG coord: x=126,y=131, z=120, r=9254 iterations
+^^^^^^^^ couldn't find WM with original limits - expanding ^^^^^^
+
+   GLOBAL      CSF_MIN=1, CSF_intensity=2, CSF_MAX=42 , nb = 44741
+  RIGHT_CER    CSF_MIN=1, CSF_intensity=2, CSF_MAX=25 , nb = -1029423136
+  LEFT_CER     CSF_MIN=1, CSF_intensity=2, CSF_MAX=24 , nb = -1062753253
+ RIGHT_BRAIN   CSF_MIN=1, CSF_intensity=2, CSF_MAX=44 , nb = 1071813858
+ LEFT_BRAIN    CSF_MIN=1, CSF_intensity=2, CSF_MAX=46 , nb = -1078655314
+    OTHER      CSF_MIN=0, CSF_intensity=5, CSF_MAX=24 , nb = 1082514805
+ Problem with the least square interpolation in GM_MIN calculation.
+   
+                     CSF_MAX  TRANSITION  GM_MIN  GM
+    GLOBAL     
+  before analyzing :    42,      42,        42,   58
+  after  analyzing :    27,      42,        42,   46
+   RIGHT_CER   
+  before analyzing :    25,      32,        40,   65
+  after  analyzing :    25,      37,        40,   44
+   LEFT_CER    
+  before analyzing :    24,      28,        35,   66
+  after  analyzing :    24,      32,        35,   40
+  RIGHT_BRAIN  
+  before analyzing :    44,      41,        41,   58
+  after  analyzing :    27,      41,        41,   45
+  LEFT_BRAIN   
+  before analyzing :    46,      42,        41,   58
+  after  analyzing :    27,      42,        42,   46
+     OTHER     
+  before analyzing :    24,      24,        26,   62
+  after  analyzing :    24,      25,        26,   34
+      mri_strip_skull: done peeling brain
+      highly tesselated surface with 10242 vertices
+      matching...69 iterations
+
+*********************VALIDATION*********************
+curvature mean = -0.013, std = 0.010
+curvature mean = 70.368, std = 7.237
+
+No Rigid alignment: -atlas Mode Off (basic atlas / no registration)
+      before rotation: sse = 6.34, sigma = 14.53
+      after  rotation: sse = 6.34, sigma = 14.53
+Localization of inacurate regions: Erosion-Dilation steps
+      the sse mean is  9.64, its var is 22.96   
+      before Erosion-Dilatation  8.64% of inacurate vertices
+      after  Erosion-Dilatation 13.03% of inacurate vertices
+      Validation of the shape of the surface done.
+Scaling of atlas fields onto current surface fields
+
+********FINAL ITERATIVE TEMPLATE DEFORMATION********
+Compute Local values csf/gray
+Fine Segmentation...35 iterations
+
+      mri_strip_skull: done peeling brain
+
+Brain Size = 1667287 voxels, voxel volume = 1.000 mm3
+           = 1667287 mmm3 = 1667.287 cm3
+
+
+******************************
+Saving brainmask.auto.mgz
+done
+mri_watershed utimesec    58.572000
+mri_watershed stimesec    2.120000
+mri_watershed ru_maxrss   835780
+mri_watershed ru_ixrss    0
+mri_watershed ru_idrss    0
+mri_watershed ru_isrss    0
+mri_watershed ru_minflt   216288
+mri_watershed ru_majflt   179
+mri_watershed ru_nswap    0
+mri_watershed ru_inblock  0
+mri_watershed ru_oublock  2696
+mri_watershed ru_msgsnd   0
+mri_watershed ru_msgrcv   0
+mri_watershed ru_nsignals 0
+mri_watershed ru_nvcsw    33812
+mri_watershed ru_nivcsw   119
+mri_watershed done
+
+ cp brainmask.auto.mgz brainmask.mgz 
+
+#-------------------------------------
+#@# EM Registration Tue Mar 13 09:20:35 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_em_register -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mri_em_register.dat -uns 3 -mask brainmask.mgz nu.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca transforms/talairach.lta 
+
+setting unknown_nbr_spacing = 3
+using MR volume brainmask.mgz to mask input volume...
+
+== Number of threads available to mri_em_register for OpenMP = 64 == 
+reading 1 input volumes...
+logging results to talairach.log
+reading '/global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca'...
+average std = 7.3   using min determinant for regularization = 5.3
+0 singular and 841 ill-conditioned covariance matrices regularized
+reading 'nu.mgz'...
+freeing gibbs priors...done.
+accounting for voxel sizes in initial transform
+bounding unknown intensity as < 6.3 or > 503.7 
+total sample mean = 78.8 (1011 zeros)
+************************************************
+spacing=8, using 2830 sample points, tol=1.00e-05...
+************************************************
+register_mri: find_optimal_transform
+find_optimal_transform: nsamples 2830, passno 0, spacing 8
+resetting wm mean[0]: 98 --> 107
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=27.0
+skull bounding box = (58, 68, 47) --> (194, 199, 202)
+using (103, 112, 125) as brain centroid...
+mean wm in atlas = 107, using box (86,96,106) --> (119, 128,144) to find MRI wm
+before smoothing, mri peak at 108
+robust fit to distribution - 108 +- 4.5
+after smoothing, mri peak at 108, scaling input intensities by 0.991
+scaling channel 0 by 0.990741
+initial log_p = -4.256
+************************************************
+First Search limited to translation only.
+************************************************
+max log p =    -4.058145 @ (-9.091, -9.091, -27.273)
+max log p =    -3.927485 @ (4.545, -4.545, 4.545)
+max log p =    -3.853549 @ (2.273, 2.273, -2.273)
+max log p =    -3.806993 @ (3.409, -1.136, 1.136)
+max log p =    -3.793266 @ (-1.705, 0.568, -0.568)
+max log p =    -3.793266 @ (0.000, 0.000, 0.000)
+Found translation: (-0.6, -11.9, -24.4): log p = -3.793
+****************************************
+Nine parameter search.  iteration 0 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.556, old_max_log_p =-3.793 (thresh=-3.8)
+ 1.07500   0.00000   0.00000  -10.11609;
+ 0.00000   1.07260   0.40226  -66.20233;
+ 0.00000  -0.39034   0.83330   55.93932;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 1 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.521, old_max_log_p =-3.556 (thresh=-3.6)
+ 1.07500   0.00000   0.00000  -10.11609;
+ 0.00000   0.99215   0.37209  -52.29041;
+ 0.00000  -0.41961   0.89580   52.22643;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 2 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.515, old_max_log_p =-3.521 (thresh=-3.5)
+ 0.99438   0.00000   0.00000   0.14789;
+ 0.00000   0.99215   0.37209  -52.29041;
+ 0.00000  -0.45108   0.96298   48.23508;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 3 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-3.515, old_max_log_p =-3.515 (thresh=-3.5)
+ 0.99438   0.00000   0.00000   0.14789;
+ 0.00000   0.99215   0.37209  -52.29041;
+ 0.00000  -0.45108   0.96298   48.23508;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.2500
+****************************************
+Nine parameter search.  iteration 4 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.333, old_max_log_p =-3.515 (thresh=-3.5)
+ 1.01178  -0.01577   0.02902  -3.52078;
+ 0.00000   1.01235   0.46354  -67.73759;
+-0.03439  -0.50010   0.92034   63.73690;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 5 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.333, old_max_log_p =-3.333 (thresh=-3.3)
+ 1.01178  -0.01577   0.02902  -3.52078;
+ 0.00000   1.01235   0.46354  -67.73759;
+-0.03439  -0.50010   0.92034   63.73690;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.0625
+****************************************
+Nine parameter search.  iteration 6 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.300, old_max_log_p =-3.333 (thresh=-3.3)
+ 1.01189   0.00492   0.02895  -7.14503;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 7 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.298, old_max_log_p =-3.300 (thresh=-3.3)
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+min search scale 0.025000 reached
+***********************************************
+Computing MAP estimate using 2830 samples...
+***********************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-05
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 2830
+Quasinewton: input matrix
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 010: -log(p) =   -0.0  tol 0.000010
+Resulting transform:
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+
+pass 1, spacing 8: log(p) = -3.298 (old=-4.256)
+transform before final EM align:
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+
+**************************************************
+ EM alignment process ...
+ Computing final MAP estimate using 315557 samples. 
+**************************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-07
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 315557
+Quasinewton: input matrix
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 012: -log(p) =    3.8  tol 0.000000
+final transform:
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+
+writing output transformation to transforms/talairach.lta...
+mri_em_register utimesec    16200.216000
+mri_em_register stimesec    2.288000
+mri_em_register ru_maxrss   589508
+mri_em_register ru_ixrss    0
+mri_em_register ru_idrss    0
+mri_em_register ru_isrss    0
+mri_em_register ru_minflt   163267
+mri_em_register ru_majflt   0
+mri_em_register ru_nswap    0
+mri_em_register ru_inblock  0
+mri_em_register ru_oublock  24
+mri_em_register ru_msgsnd   0
+mri_em_register ru_msgrcv   0
+mri_em_register ru_nsignals 0
+mri_em_register ru_nvcsw    4538
+mri_em_register ru_nivcsw   29580
+registration took 4 minutes and 36 seconds.
+#--------------------------------------
+#@# CA Normalize Tue Mar 13 09:25:11 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_ca_normalize -c ctrl_pts.mgz -mask brainmask.mgz nu.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca transforms/talairach.lta norm.mgz 
+
+writing control point volume to ctrl_pts.mgz
+using MR volume brainmask.mgz to mask input volume...
+reading 1 input volume
+reading atlas from '/global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca'...
+reading transform from 'transforms/talairach.lta'...
+reading input volume from nu.mgz...
+resetting wm mean[0]: 98 --> 107
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=27.0
+skull bounding box = (58, 68, 47) --> (194, 199, 202)
+using (103, 112, 125) as brain centroid...
+mean wm in atlas = 107, using box (86,96,106) --> (119, 128,144) to find MRI wm
+before smoothing, mri peak at 108
+robust fit to distribution - 108 +- 4.5
+after smoothing, mri peak at 108, scaling input intensities by 0.991
+scaling channel 0 by 0.990741
+using 246344 sample points...
+INFO: compute sample coordinates transform
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+INFO: transform used
+finding control points in Left_Cerebral_White_Matter....
+found 39915 control points for structure...
+bounding box (128, 70, 50) --> (193, 184, 207)
+Left_Cerebral_White_Matter: limiting intensities to 95.0 --> 132.0
+0 of 1017 (0.0%) samples deleted
+finding control points in Right_Cerebral_White_Matter....
+found 39557 control points for structure...
+bounding box (64, 70, 51) --> (129, 177, 206)
+Right_Cerebral_White_Matter: limiting intensities to 96.0 --> 132.0
+0 of 840 (0.0%) samples deleted
+finding control points in Left_Cerebellum_White_Matter....
+found 3059 control points for structure...
+bounding box (129, 157, 88) --> (177, 195, 139)
+Left_Cerebellum_White_Matter: limiting intensities to 95.0 --> 132.0
+0 of 10 (0.0%) samples deleted
+finding control points in Right_Cerebellum_White_Matter....
+found 2705 control points for structure...
+bounding box (84, 157, 84) --> (128, 194, 139)
+Right_Cerebellum_White_Matter: limiting intensities to 94.0 --> 132.0
+0 of 17 (0.0%) samples deleted
+finding control points in Brain_Stem....
+found 3518 control points for structure...
+bounding box (111, 140, 115) --> (145, 200, 148)
+Brain_Stem: limiting intensities to 106.0 --> 132.0
+3 of 5 (60.0%) samples deleted
+using 1889 total control points for intensity normalization...
+bias field = 0.991 +- 0.041
+10 of 1886 control points discarded
+finding control points in Left_Cerebral_White_Matter....
+found 39915 control points for structure...
+bounding box (128, 70, 50) --> (193, 184, 207)
+Left_Cerebral_White_Matter: limiting intensities to 91.0 --> 132.0
+0 of 1096 (0.0%) samples deleted
+finding control points in Right_Cerebral_White_Matter....
+found 39557 control points for structure...
+bounding box (64, 70, 51) --> (129, 177, 206)
+Right_Cerebral_White_Matter: limiting intensities to 92.0 --> 132.0
+0 of 1166 (0.0%) samples deleted
+finding control points in Left_Cerebellum_White_Matter....
+found 3059 control points for structure...
+bounding box (129, 157, 88) --> (177, 195, 139)
+Left_Cerebellum_White_Matter: limiting intensities to 88.0 --> 132.0
+2 of 78 (2.6%) samples deleted
+finding control points in Right_Cerebellum_White_Matter....
+found 2705 control points for structure...
+bounding box (84, 157, 84) --> (128, 194, 139)
+Right_Cerebellum_White_Matter: limiting intensities to 88.0 --> 132.0
+2 of 86 (2.3%) samples deleted
+finding control points in Brain_Stem....
+found 3518 control points for structure...
+bounding box (111, 140, 115) --> (145, 200, 148)
+Brain_Stem: limiting intensities to 88.0 --> 132.0
+6 of 83 (7.2%) samples deleted
+using 2509 total control points for intensity normalization...
+bias field = 1.008 +- 0.054
+10 of 2480 control points discarded
+finding control points in Left_Cerebral_White_Matter....
+found 39915 control points for structure...
+bounding box (128, 70, 50) --> (193, 184, 207)
+Left_Cerebral_White_Matter: limiting intensities to 90.0 --> 132.0
+0 of 1112 (0.0%) samples deleted
+finding control points in Right_Cerebral_White_Matter....
+found 39557 control points for structure...
+bounding box (64, 70, 51) --> (129, 177, 206)
+Right_Cerebral_White_Matter: limiting intensities to 90.0 --> 132.0
+0 of 1224 (0.0%) samples deleted
+finding control points in Left_Cerebellum_White_Matter....
+found 3059 control points for structure...
+bounding box (129, 157, 88) --> (177, 195, 139)
+Left_Cerebellum_White_Matter: limiting intensities to 88.0 --> 132.0
+31 of 104 (29.8%) samples deleted
+finding control points in Right_Cerebellum_White_Matter....
+found 2705 control points for structure...
+bounding box (84, 157, 84) --> (128, 194, 139)
+Right_Cerebellum_White_Matter: limiting intensities to 88.0 --> 132.0
+17 of 51 (33.3%) samples deleted
+finding control points in Brain_Stem....
+found 3518 control points for structure...
+bounding box (111, 140, 115) --> (145, 200, 148)
+Brain_Stem: limiting intensities to 88.0 --> 132.0
+19 of 120 (15.8%) samples deleted
+using 2611 total control points for intensity normalization...
+bias field = 1.014 +- 0.050
+23 of 2486 control points discarded
+writing normalized volume to norm.mgz...
+writing control points to ctrl_pts.mgz
+freeing GCA...done.
+normalization took 1 minutes and 4 seconds.
+#--------------------------------------
+#@# CA Reg Tue Mar 13 09:26:15 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_ca_register -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mri_ca_register.dat -nobigventricles -T transforms/talairach.lta -align-after -mask brainmask.mgz norm.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca transforms/talairach.m3z 
+
+not handling expanded ventricles...
+using previously computed transform transforms/talairach.lta
+renormalizing sequences with structure alignment, equivalent to:
+	-renormalize
+	-regularize_mean 0.500
+	-regularize 0.500
+using MR volume brainmask.mgz to mask input volume...
+
+== Number of threads available to mri_ca_register for OpenMP = 64 == 
+reading 1 input volumes...
+logging results to talairach.log
+reading input volume 'norm.mgz'...
+reading GCA '/global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca'...
+label assignment complete, 0 changed (0.00%)
+det(m_affine) = 1.18 (predicted orig area = 6.8)
+label assignment complete, 0 changed (0.00%)
+freeing gibbs priors...done.
+average std[0] = 5.0
+**************** pass 1 of 1 ************************
+enabling zero nodes
+setting smoothness coefficient to 0.039
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.844, neg=0, invalid=762
+0001: dt=221.952000, rms=0.759 (10.076%), neg=0, invalid=762
+0002: dt=231.744292, rms=0.738 (2.846%), neg=0, invalid=762
+0003: dt=156.757709, rms=0.727 (1.470%), neg=0, invalid=762
+0004: dt=295.936000, rms=0.721 (0.849%), neg=0, invalid=762
+0005: dt=137.634409, rms=0.717 (0.557%), neg=0, invalid=762
+0006: dt=443.904000, rms=0.713 (0.578%), neg=0, invalid=762
+0007: dt=129.472000, rms=0.710 (0.389%), neg=0, invalid=762
+0008: dt=517.888000, rms=0.707 (0.374%), neg=0, invalid=762
+0009: dt=129.472000, rms=0.705 (0.324%), neg=0, invalid=762
+0010: dt=369.920000, rms=0.703 (0.209%), neg=0, invalid=762
+0011: dt=369.920000, rms=0.703 (-0.181%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.704, neg=0, invalid=762
+0012: dt=129.472000, rms=0.702 (0.305%), neg=0, invalid=762
+0013: dt=517.888000, rms=0.700 (0.296%), neg=0, invalid=762
+0014: dt=517.888000, rms=0.698 (0.286%), neg=0, invalid=762
+0015: dt=129.472000, rms=0.697 (0.138%), neg=0, invalid=762
+0016: dt=129.472000, rms=0.697 (0.047%), neg=0, invalid=762
+0017: dt=129.472000, rms=0.696 (0.098%), neg=0, invalid=762
+0018: dt=129.472000, rms=0.695 (0.143%), neg=0, invalid=762
+0019: dt=129.472000, rms=0.694 (0.185%), neg=0, invalid=762
+0020: dt=129.472000, rms=0.692 (0.221%), neg=0, invalid=762
+0021: dt=129.472000, rms=0.690 (0.231%), neg=0, invalid=762
+0022: dt=129.472000, rms=0.689 (0.223%), neg=0, invalid=762
+0023: dt=129.472000, rms=0.687 (0.205%), neg=0, invalid=762
+0024: dt=129.472000, rms=0.686 (0.181%), neg=0, invalid=762
+0025: dt=129.472000, rms=0.685 (0.169%), neg=0, invalid=762
+0026: dt=129.472000, rms=0.684 (0.169%), neg=0, invalid=762
+0027: dt=129.472000, rms=0.683 (0.167%), neg=0, invalid=762
+0028: dt=129.472000, rms=0.682 (0.153%), neg=0, invalid=762
+0029: dt=129.472000, rms=0.681 (0.138%), neg=0, invalid=762
+0030: dt=129.472000, rms=0.680 (0.133%), neg=0, invalid=762
+0031: dt=129.472000, rms=0.679 (0.118%), neg=0, invalid=762
+0032: dt=129.472000, rms=0.678 (0.117%), neg=0, invalid=762
+0033: dt=1183.744000, rms=0.678 (0.069%), neg=0, invalid=762
+0034: dt=1183.744000, rms=0.678 (-1.377%), neg=0, invalid=762
+setting smoothness coefficient to 0.154
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.682, neg=0, invalid=762
+0035: dt=168.770370, rms=0.674 (1.163%), neg=0, invalid=762
+0036: dt=130.844444, rms=0.667 (0.961%), neg=0, invalid=762
+0037: dt=67.676240, rms=0.663 (0.666%), neg=0, invalid=762
+0038: dt=145.152000, rms=0.660 (0.480%), neg=0, invalid=762
+0039: dt=66.993318, rms=0.657 (0.456%), neg=0, invalid=762
+0040: dt=145.152000, rms=0.654 (0.367%), neg=0, invalid=762
+0041: dt=36.288000, rms=0.652 (0.310%), neg=0, invalid=762
+0042: dt=331.776000, rms=0.649 (0.504%), neg=0, invalid=762
+0043: dt=66.222222, rms=0.645 (0.578%), neg=0, invalid=762
+0044: dt=36.288000, rms=0.644 (0.165%), neg=0, invalid=762
+0045: dt=36.288000, rms=0.644 (0.075%), neg=0, invalid=762
+0046: dt=36.288000, rms=0.643 (0.137%), neg=0, invalid=762
+0047: dt=36.288000, rms=0.641 (0.201%), neg=0, invalid=762
+0048: dt=36.288000, rms=0.640 (0.250%), neg=0, invalid=762
+0049: dt=36.288000, rms=0.638 (0.282%), neg=0, invalid=762
+0050: dt=36.288000, rms=0.636 (0.290%), neg=0, invalid=762
+0051: dt=36.288000, rms=0.634 (0.297%), neg=0, invalid=762
+0052: dt=36.288000, rms=0.632 (0.299%), neg=0, invalid=762
+0053: dt=36.288000, rms=0.631 (0.301%), neg=0, invalid=762
+0054: dt=36.288000, rms=0.629 (0.299%), neg=0, invalid=762
+0055: dt=36.288000, rms=0.627 (0.284%), neg=0, invalid=762
+0056: dt=36.288000, rms=0.625 (0.258%), neg=0, invalid=762
+0057: dt=36.288000, rms=0.624 (0.235%), neg=0, invalid=762
+0058: dt=36.288000, rms=0.622 (0.220%), neg=0, invalid=762
+0059: dt=36.288000, rms=0.621 (0.206%), neg=0, invalid=762
+0060: dt=36.288000, rms=0.620 (0.200%), neg=0, invalid=762
+0061: dt=36.288000, rms=0.619 (0.180%), neg=0, invalid=762
+0062: dt=36.288000, rms=0.618 (0.154%), neg=0, invalid=762
+0063: dt=36.288000, rms=0.617 (0.136%), neg=0, invalid=762
+0064: dt=36.288000, rms=0.616 (0.117%), neg=0, invalid=762
+0065: dt=36.288000, rms=0.616 (0.109%), neg=0, invalid=762
+0066: dt=145.152000, rms=0.615 (0.033%), neg=0, invalid=762
+0067: dt=145.152000, rms=0.615 (-0.103%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.616, neg=0, invalid=762
+0068: dt=36.288000, rms=0.615 (0.217%), neg=0, invalid=762
+0069: dt=103.680000, rms=0.614 (0.093%), neg=0, invalid=762
+0070: dt=103.680000, rms=0.614 (0.070%), neg=0, invalid=762
+0071: dt=103.680000, rms=0.614 (0.030%), neg=0, invalid=762
+0072: dt=103.680000, rms=0.614 (-0.014%), neg=0, invalid=762
+setting smoothness coefficient to 0.588
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.634, neg=0, invalid=762
+0073: dt=1.600000, rms=0.634 (0.108%), neg=0, invalid=762
+0074: dt=0.400000, rms=0.634 (0.000%), neg=0, invalid=762
+0075: dt=0.400000, rms=0.634 (-0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.634, neg=0, invalid=762
+0076: dt=0.000000, rms=0.634 (0.102%), neg=0, invalid=762
+0077: dt=0.000000, rms=0.634 (0.000%), neg=0, invalid=762
+setting smoothness coefficient to 2.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.695, neg=0, invalid=762
+0078: dt=5.028902, rms=0.677 (2.506%), neg=0, invalid=762
+0079: dt=2.300000, rms=0.677 (0.077%), neg=0, invalid=762
+0080: dt=2.300000, rms=0.677 (-0.044%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.677, neg=0, invalid=762
+0081: dt=0.000000, rms=0.677 (0.080%), neg=0, invalid=762
+0082: dt=0.000000, rms=0.677 (0.000%), neg=0, invalid=762
+setting smoothness coefficient to 5.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.737, neg=0, invalid=762
+0083: dt=1.280000, rms=0.733 (0.597%), neg=0, invalid=762
+0084: dt=1.836601, rms=0.728 (0.652%), neg=0, invalid=762
+0085: dt=0.256000, rms=0.728 (0.006%), neg=0, invalid=762
+0086: dt=0.256000, rms=0.728 (0.007%), neg=0, invalid=762
+0087: dt=0.256000, rms=0.728 (-0.001%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.728, neg=0, invalid=762
+0088: dt=1.024000, rms=0.727 (0.182%), neg=0, invalid=762
+0089: dt=1.024000, rms=0.727 (0.033%), neg=0, invalid=762
+0090: dt=1.024000, rms=0.727 (-0.020%), neg=0, invalid=762
+resetting metric properties...
+setting smoothness coefficient to 10.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.682, neg=0, invalid=762
+0091: dt=0.898224, rms=0.660 (3.191%), neg=0, invalid=762
+0092: dt=0.080000, rms=0.659 (0.154%), neg=0, invalid=762
+0093: dt=0.080000, rms=0.659 (-0.084%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.659, neg=0, invalid=762
+0094: dt=0.028000, rms=0.659 (0.102%), neg=0, invalid=762
+0095: dt=0.004000, rms=0.659 (-0.000%), neg=0, invalid=762
+renormalizing by structure alignment....
+renormalizing input #0
+gca peak = 0.10027 (20)
+mri peak = 0.14070 ( 7)
+Left_Lateral_Ventricle (4): linear fit = 0.31 x + 0.0 (634 voxels, overlap=0.086)
+Left_Lateral_Ventricle (4): linear fit = 0.40 x + 0.0 (634 voxels, peak =  6), gca=8.0
+gca peak = 0.15565 (16)
+mri peak = 0.11196 ( 8)
+Right_Lateral_Ventricle (43): linear fit = 0.44 x + 0.0 (500 voxels, overlap=0.043)
+Right_Lateral_Ventricle (43): linear fit = 0.44 x + 0.0 (500 voxels, peak =  7), gca=7.0
+gca peak = 0.26829 (96)
+mri peak = 0.06865 (93)
+Right_Pallidum (52): linear fit = 0.99 x + 0.0 (633 voxels, overlap=1.004)
+Right_Pallidum (52): linear fit = 0.99 x + 0.0 (633 voxels, peak = 95), gca=94.6
+gca peak = 0.20183 (93)
+mri peak = 0.04898 (78)
+Left_Pallidum (13): linear fit = 0.90 x + 0.0 (618 voxels, overlap=0.858)
+Left_Pallidum (13): linear fit = 0.90 x + 0.0 (618 voxels, peak = 84), gca=84.2
+gca peak = 0.21683 (55)
+mri peak = 0.08224 (59)
+Right_Hippocampus (53): linear fit = 1.02 x + 0.0 (719 voxels, overlap=0.999)
+Right_Hippocampus (53): linear fit = 1.02 x + 0.0 (719 voxels, peak = 56), gca=56.4
+gca peak = 0.30730 (58)
+mri peak = 0.09690 (62)
+Left_Hippocampus (17): linear fit = 1.04 x + 0.0 (759 voxels, overlap=0.999)
+Left_Hippocampus (17): linear fit = 1.04 x + 0.0 (759 voxels, peak = 61), gca=60.6
+gca peak = 0.11430 (101)
+mri peak = 0.14314 (105)
+Right_Cerebral_White_Matter (41): linear fit = 1.03 x + 0.0 (56786 voxels, overlap=0.619)
+Right_Cerebral_White_Matter (41): linear fit = 1.03 x + 0.0 (56786 voxels, peak = 105), gca=104.5
+gca peak = 0.12076 (102)
+mri peak = 0.13668 (106)
+Left_Cerebral_White_Matter (2): linear fit = 1.03 x + 0.0 (53703 voxels, overlap=0.587)
+Left_Cerebral_White_Matter (2): linear fit = 1.03 x + 0.0 (53703 voxels, peak = 106), gca=105.6
+gca peak = 0.14995 (59)
+mri peak = 0.03990 (59)
+Left_Cerebral_Cortex (3): linear fit = 1.02 x + 0.0 (18136 voxels, overlap=0.995)
+Left_Cerebral_Cortex (3): linear fit = 1.02 x + 0.0 (18136 voxels, peak = 60), gca=60.5
+gca peak = 0.15082 (58)
+mri peak = 0.04878 (57)
+Right_Cerebral_Cortex (42): linear fit = 1.02 x + 0.0 (20136 voxels, overlap=0.998)
+Right_Cerebral_Cortex (42): linear fit = 1.02 x + 0.0 (20136 voxels, peak = 59), gca=59.4
+gca peak = 0.14161 (67)
+mri peak = 0.08007 (63)
+Right_Caudate (50): linear fit = 0.98 x + 0.0 (787 voxels, overlap=0.952)
+Right_Caudate (50): linear fit = 0.98 x + 0.0 (787 voxels, peak = 65), gca=65.3
+gca peak = 0.15243 (71)
+mri peak = 0.06705 (72)
+Left_Caudate (11): linear fit = 0.94 x + 0.0 (798 voxels, overlap=0.858)
+Left_Caudate (11): linear fit = 0.94 x + 0.0 (798 voxels, peak = 67), gca=67.1
+gca peak = 0.13336 (57)
+mri peak = 0.04532 (56)
+Left_Cerebellum_Cortex (8): linear fit = 1.04 x + 0.0 (18728 voxels, overlap=0.936)
+Left_Cerebellum_Cortex (8): linear fit = 1.04 x + 0.0 (18728 voxels, peak = 60), gca=59.6
+gca peak = 0.13252 (56)
+mri peak = 0.04378 (60)
+Right_Cerebellum_Cortex (47): linear fit = 1.07 x + 0.0 (20619 voxels, overlap=0.886)
+Right_Cerebellum_Cortex (47): linear fit = 1.07 x + 0.0 (20619 voxels, peak = 60), gca=59.6
+gca peak = 0.18181 (84)
+mri peak = 0.07273 (88)
+Left_Cerebellum_White_Matter (7): linear fit = 1.08 x + 0.0 (6082 voxels, overlap=0.633)
+Left_Cerebellum_White_Matter (7): linear fit = 1.08 x + 0.0 (6082 voxels, peak = 90), gca=90.3
+gca peak = 0.20573 (83)
+mri peak = 0.07567 (88)
+Right_Cerebellum_White_Matter (46): linear fit = 1.05 x + 0.0 (5806 voxels, overlap=0.749)
+Right_Cerebellum_White_Matter (46): linear fit = 1.05 x + 0.0 (5806 voxels, peak = 88), gca=87.6
+gca peak = 0.21969 (57)
+mri peak = 0.07183 (63)
+Left_Amygdala (18): linear fit = 1.08 x + 0.0 (359 voxels, overlap=1.010)
+Left_Amygdala (18): linear fit = 1.08 x + 0.0 (359 voxels, peak = 61), gca=61.3
+gca peak = 0.39313 (56)
+mri peak = 0.07595 (57)
+Right_Amygdala (54): linear fit = 1.04 x + 0.0 (460 voxels, overlap=1.003)
+Right_Amygdala (54): linear fit = 1.04 x + 0.0 (460 voxels, peak = 59), gca=58.5
+gca peak = 0.14181 (85)
+mri peak = 0.04482 (101)
+Left_Thalamus_Proper (10): linear fit = 1.13 x + 0.0 (5246 voxels, overlap=0.806)
+Left_Thalamus_Proper (10): linear fit = 1.13 x + 0.0 (5246 voxels, peak = 96), gca=96.5
+gca peak = 0.11978 (83)
+mri peak = 0.04559 (90)
+Right_Thalamus_Proper (49): linear fit = 1.08 x + 0.0 (3976 voxels, overlap=0.931)
+Right_Thalamus_Proper (49): linear fit = 1.08 x + 0.0 (3976 voxels, peak = 89), gca=89.2
+gca peak = 0.13399 (79)
+mri peak = 0.04719 (84)
+Left_Putamen (12): linear fit = 1.04 x + 0.0 (1574 voxels, overlap=0.929)
+Left_Putamen (12): linear fit = 1.04 x + 0.0 (1574 voxels, peak = 83), gca=82.6
+gca peak = 0.14159 (79)
+mri peak = 0.05837 (76)
+Right_Putamen (51): linear fit = 1.04 x + 0.0 (2117 voxels, overlap=1.000)
+Right_Putamen (51): linear fit = 1.04 x + 0.0 (2117 voxels, peak = 83), gca=82.6
+gca peak = 0.10025 (80)
+mri peak = 0.06724 (91)
+Brain_Stem (16): linear fit = 1.15 x + 0.0 (8862 voxels, overlap=0.204)
+Brain_Stem (16): linear fit = 1.15 x + 0.0 (8862 voxels, peak = 92), gca=92.4
+gca peak = 0.13281 (86)
+mri peak = 0.08527 (99)
+Right_VentralDC (60): linear fit = 1.14 x + 0.0 (606 voxels, overlap=0.600)
+Right_VentralDC (60): linear fit = 1.14 x + 0.0 (606 voxels, peak = 98), gca=98.5
+gca peak = 0.12801 (89)
+mri peak = 0.07195 (99)
+Left_VentralDC (28): linear fit = 1.10 x + 0.0 (918 voxels, overlap=0.599)
+Left_VentralDC (28): linear fit = 1.10 x + 0.0 (918 voxels, peak = 97), gca=97.5
+gca peak = 0.20494 (23)
+uniform distribution in MR - rejecting arbitrary fit
+gca peak = 0.15061 (21)
+mri peak = 0.20202 ( 9)
+Fourth_Ventricle (15): linear fit = 0.38 x + 0.0 (446 voxels, overlap=0.354)
+Fourth_Ventricle (15): linear fit = 0.38 x + 0.0 (446 voxels, peak =  8), gca=8.1
+gca peak Unknown = 0.94835 ( 0)
+gca peak Left_Inf_Lat_Vent = 0.18056 (32)
+gca peak Left_Thalamus = 0.64095 (94)
+gca peak Third_Ventricle = 0.20494 (23)
+gca peak Fourth_Ventricle = 0.15061 (21)
+gca peak CSF = 0.20999 (34)
+gca peak Left_Accumbens_area = 0.39030 (62)
+gca peak Left_undetermined = 0.95280 (25)
+gca peak Left_vessel = 0.67734 (53)
+gca peak Left_choroid_plexus = 0.09433 (44)
+gca peak Right_Inf_Lat_Vent = 0.23544 (26)
+gca peak Right_Accumbens_area = 0.30312 (64)
+gca peak Right_vessel = 0.46315 (51)
+gca peak Right_choroid_plexus = 0.14086 (44)
+gca peak Fifth_Ventricle = 0.51669 (36)
+gca peak WM_hypointensities = 0.09722 (76)
+gca peak non_WM_hypointensities = 0.11899 (47)
+gca peak Optic_Chiasm = 0.39033 (72)
+label assignment complete, 0 changed (0.00%)
+not using caudate to estimate GM means
+estimating mean gm scale to be 1.04 x + 0.0
+estimating mean wm scale to be 1.03 x + 0.0
+estimating mean csf scale to be 0.42 x + 0.0
+saving intensity scales to talairach.label_intensities.txt
+**************** pass 1 of 1 ************************
+enabling zero nodes
+setting smoothness coefficient to 0.008
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.671, neg=0, invalid=762
+0096: dt=153.854305, rms=0.663 (1.174%), neg=0, invalid=762
+0097: dt=221.952000, rms=0.660 (0.431%), neg=0, invalid=762
+0098: dt=129.472000, rms=0.658 (0.306%), neg=0, invalid=762
+0099: dt=129.472000, rms=0.657 (0.111%), neg=0, invalid=762
+0100: dt=295.936000, rms=0.655 (0.265%), neg=0, invalid=762
+0101: dt=73.984000, rms=0.654 (0.126%), neg=0, invalid=762
+0102: dt=1183.744000, rms=0.652 (0.418%), neg=0, invalid=762
+0103: dt=92.480000, rms=0.650 (0.271%), neg=0, invalid=762
+0104: dt=32.368000, rms=0.650 (-0.002%), neg=0, invalid=762
+0105: dt=32.368000, rms=0.650 (0.004%), neg=0, invalid=762
+0106: dt=32.368000, rms=0.650 (0.004%), neg=0, invalid=762
+0107: dt=32.368000, rms=0.650 (0.009%), neg=0, invalid=762
+0108: dt=32.368000, rms=0.650 (0.021%), neg=0, invalid=762
+0109: dt=32.368000, rms=0.650 (0.042%), neg=0, invalid=762
+0110: dt=32.368000, rms=0.649 (0.056%), neg=0, invalid=762
+0111: dt=32.368000, rms=0.649 (0.057%), neg=0, invalid=762
+0112: dt=32.368000, rms=0.648 (0.052%), neg=0, invalid=762
+0113: dt=32.368000, rms=0.648 (0.045%), neg=0, invalid=762
+0114: dt=32.368000, rms=0.648 (0.039%), neg=0, invalid=762
+0115: dt=32.368000, rms=0.648 (0.030%), neg=0, invalid=762
+0116: dt=32.368000, rms=0.648 (0.026%), neg=0, invalid=762
+0117: dt=32.368000, rms=0.647 (0.029%), neg=0, invalid=762
+0118: dt=32.368000, rms=0.647 (0.035%), neg=0, invalid=762
+0119: dt=32.368000, rms=0.647 (0.042%), neg=0, invalid=762
+0120: dt=32.368000, rms=0.647 (0.040%), neg=0, invalid=762
+0121: dt=32.368000, rms=0.646 (0.036%), neg=0, invalid=762
+0122: dt=32.368000, rms=0.646 (0.033%), neg=0, invalid=762
+0123: dt=32.368000, rms=0.646 (0.026%), neg=0, invalid=762
+0124: dt=32.368000, rms=0.646 (0.021%), neg=0, invalid=762
+0125: dt=32.368000, rms=0.646 (0.018%), neg=0, invalid=762
+0126: dt=1479.680000, rms=0.645 (0.093%), neg=0, invalid=762
+0127: dt=55.488000, rms=0.645 (0.028%), neg=0, invalid=762
+0128: dt=55.488000, rms=0.645 (0.012%), neg=0, invalid=762
+0129: dt=55.488000, rms=0.645 (0.006%), neg=0, invalid=762
+0130: dt=55.488000, rms=0.645 (0.007%), neg=0, invalid=762
+0131: dt=55.488000, rms=0.645 (0.021%), neg=0, invalid=762
+0132: dt=55.488000, rms=0.644 (0.025%), neg=0, invalid=762
+0133: dt=55.488000, rms=0.644 (0.018%), neg=0, invalid=762
+0134: dt=55.488000, rms=0.644 (0.012%), neg=0, invalid=762
+0135: dt=92.480000, rms=0.644 (0.004%), neg=0, invalid=762
+0136: dt=92.480000, rms=0.644 (0.012%), neg=0, invalid=762
+0137: dt=92.480000, rms=0.644 (0.013%), neg=0, invalid=762
+0138: dt=92.480000, rms=0.644 (0.015%), neg=0, invalid=762
+0139: dt=92.480000, rms=0.644 (0.016%), neg=0, invalid=762
+0140: dt=92.480000, rms=0.644 (0.020%), neg=0, invalid=762
+0141: dt=92.480000, rms=0.644 (0.025%), neg=0, invalid=762
+0142: dt=92.480000, rms=0.643 (0.026%), neg=0, invalid=762
+0143: dt=92.480000, rms=0.643 (0.027%), neg=0, invalid=762
+0144: dt=92.480000, rms=0.643 (0.027%), neg=0, invalid=762
+0145: dt=92.480000, rms=0.643 (0.028%), neg=0, invalid=762
+0146: dt=92.480000, rms=0.643 (0.027%), neg=0, invalid=762
+0147: dt=92.480000, rms=0.643 (0.027%), neg=0, invalid=762
+0148: dt=92.480000, rms=0.642 (0.027%), neg=0, invalid=762
+0149: dt=92.480000, rms=0.642 (0.027%), neg=0, invalid=762
+0150: dt=92.480000, rms=0.642 (0.025%), neg=0, invalid=762
+0151: dt=92.480000, rms=0.642 (0.025%), neg=0, invalid=762
+0152: dt=4734.976000, rms=0.641 (0.111%), neg=0, invalid=762
+0153: dt=55.488000, rms=0.641 (0.033%), neg=0, invalid=762
+0154: dt=55.488000, rms=0.641 (0.009%), neg=0, invalid=762
+0155: dt=55.488000, rms=0.641 (-0.006%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.641, neg=0, invalid=762
+0156: dt=129.472000, rms=0.640 (0.191%), neg=0, invalid=762
+0157: dt=517.888000, rms=0.640 (0.078%), neg=0, invalid=762
+0158: dt=221.952000, rms=0.640 (0.037%), neg=0, invalid=762
+0159: dt=221.952000, rms=0.639 (0.011%), neg=0, invalid=762
+0160: dt=221.952000, rms=0.639 (0.052%), neg=0, invalid=762
+0161: dt=221.952000, rms=0.639 (0.038%), neg=0, invalid=762
+0162: dt=221.952000, rms=0.639 (0.041%), neg=0, invalid=762
+0163: dt=221.952000, rms=0.638 (0.045%), neg=0, invalid=762
+0164: dt=221.952000, rms=0.638 (0.051%), neg=0, invalid=762
+0165: dt=221.952000, rms=0.638 (0.033%), neg=0, invalid=762
+0166: dt=221.952000, rms=0.638 (0.024%), neg=0, invalid=762
+0167: dt=221.952000, rms=0.637 (0.046%), neg=0, invalid=762
+0168: dt=221.952000, rms=0.637 (0.024%), neg=0, invalid=762
+0169: dt=221.952000, rms=0.637 (0.016%), neg=0, invalid=762
+0170: dt=221.952000, rms=0.637 (0.018%), neg=0, invalid=762
+0171: dt=32.368000, rms=0.637 (0.002%), neg=0, invalid=762
+0172: dt=32.368000, rms=0.637 (-0.001%), neg=0, invalid=762
+setting smoothness coefficient to 0.031
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.638, neg=0, invalid=762
+0173: dt=69.517241, rms=0.636 (0.362%), neg=0, invalid=762
+0174: dt=130.645995, rms=0.630 (0.948%), neg=0, invalid=762
+0175: dt=36.288000, rms=0.627 (0.327%), neg=0, invalid=762
+0176: dt=497.664000, rms=0.621 (1.020%), neg=0, invalid=762
+0177: dt=36.288000, rms=0.615 (1.011%), neg=0, invalid=762
+0178: dt=173.000000, rms=0.611 (0.564%), neg=0, invalid=762
+0179: dt=30.426230, rms=0.610 (0.163%), neg=0, invalid=762
+0180: dt=36.288000, rms=0.610 (0.038%), neg=0, invalid=762
+0181: dt=36.288000, rms=0.610 (0.078%), neg=0, invalid=762
+0182: dt=36.288000, rms=0.609 (0.148%), neg=0, invalid=762
+0183: dt=36.288000, rms=0.607 (0.210%), neg=0, invalid=762
+0184: dt=36.288000, rms=0.606 (0.255%), neg=0, invalid=762
+0185: dt=36.288000, rms=0.604 (0.279%), neg=0, invalid=762
+0186: dt=36.288000, rms=0.602 (0.287%), neg=0, invalid=762
+0187: dt=36.288000, rms=0.601 (0.279%), neg=0, invalid=762
+0188: dt=36.288000, rms=0.599 (0.270%), neg=0, invalid=762
+0189: dt=36.288000, rms=0.598 (0.265%), neg=0, invalid=762
+0190: dt=36.288000, rms=0.596 (0.252%), neg=0, invalid=762
+0191: dt=36.288000, rms=0.595 (0.241%), neg=0, invalid=762
+0192: dt=36.288000, rms=0.593 (0.222%), neg=0, invalid=762
+0193: dt=36.288000, rms=0.592 (0.206%), neg=0, invalid=762
+0194: dt=36.288000, rms=0.591 (0.191%), neg=0, invalid=762
+0195: dt=36.288000, rms=0.590 (0.177%), neg=0, invalid=762
+0196: dt=36.288000, rms=0.589 (0.171%), neg=0, invalid=762
+0197: dt=36.288000, rms=0.588 (0.153%), neg=0, invalid=762
+0198: dt=36.288000, rms=0.587 (0.143%), neg=0, invalid=762
+0199: dt=36.288000, rms=0.586 (0.138%), neg=0, invalid=762
+0200: dt=36.288000, rms=0.586 (0.137%), neg=0, invalid=762
+0201: dt=36.288000, rms=0.585 (0.138%), neg=0, invalid=762
+0202: dt=36.288000, rms=0.585 (0.021%), neg=0, invalid=762
+0203: dt=36.288000, rms=0.584 (0.035%), neg=0, invalid=762
+0204: dt=36.288000, rms=0.584 (0.050%), neg=0, invalid=762
+0205: dt=36.288000, rms=0.584 (0.061%), neg=0, invalid=762
+0206: dt=36.288000, rms=0.583 (0.072%), neg=0, invalid=762
+0207: dt=36.288000, rms=0.583 (0.077%), neg=0, invalid=762
+0208: dt=36.288000, rms=0.582 (0.082%), neg=0, invalid=762
+0209: dt=36.288000, rms=0.582 (0.080%), neg=0, invalid=762
+0210: dt=36.288000, rms=0.581 (0.076%), neg=0, invalid=762
+0211: dt=36.288000, rms=0.581 (0.071%), neg=0, invalid=762
+0212: dt=36.288000, rms=0.581 (0.074%), neg=0, invalid=762
+0213: dt=36.288000, rms=0.580 (0.081%), neg=0, invalid=762
+0214: dt=36.288000, rms=0.580 (0.084%), neg=0, invalid=762
+0215: dt=36.288000, rms=0.579 (0.081%), neg=0, invalid=762
+0216: dt=36.288000, rms=0.579 (0.074%), neg=0, invalid=762
+0217: dt=36.288000, rms=0.578 (0.069%), neg=0, invalid=762
+0218: dt=36.288000, rms=0.578 (0.069%), neg=0, invalid=762
+0219: dt=36.288000, rms=0.578 (0.070%), neg=0, invalid=762
+0220: dt=36.288000, rms=0.577 (0.073%), neg=0, invalid=762
+0221: dt=36.288000, rms=0.577 (0.072%), neg=0, invalid=762
+0222: dt=36.288000, rms=0.576 (0.069%), neg=0, invalid=762
+0223: dt=36.288000, rms=0.576 (0.068%), neg=0, invalid=762
+0224: dt=36.288000, rms=0.576 (0.063%), neg=0, invalid=762
+0225: dt=36.288000, rms=0.575 (0.063%), neg=0, invalid=762
+0226: dt=36.288000, rms=0.575 (0.066%), neg=0, invalid=762
+0227: dt=36.288000, rms=0.574 (0.063%), neg=0, invalid=762
+0228: dt=36.288000, rms=0.574 (0.064%), neg=0, invalid=762
+0229: dt=36.288000, rms=0.574 (0.061%), neg=0, invalid=762
+0230: dt=36.288000, rms=0.573 (0.059%), neg=0, invalid=762
+0231: dt=36.288000, rms=0.573 (0.055%), neg=0, invalid=762
+0232: dt=18.144000, rms=0.573 (0.003%), neg=0, invalid=762
+0233: dt=9.072000, rms=0.573 (0.002%), neg=0, invalid=762
+0234: dt=2.268000, rms=0.573 (0.001%), neg=0, invalid=762
+0235: dt=1.134000, rms=0.573 (-0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.574, neg=0, invalid=762
+0236: dt=0.121500, rms=0.573 (0.126%), neg=0, invalid=762
+0237: dt=0.008859, rms=0.573 (0.000%), neg=0, invalid=762
+0238: dt=0.000277, rms=0.573 (0.000%), neg=0, invalid=762
+0239: dt=0.000138, rms=0.573 (0.000%), neg=0, invalid=762
+0240: dt=0.000069, rms=0.573 (0.000%), neg=0, invalid=762
+0241: dt=0.000000, rms=0.573 (0.000%), neg=0, invalid=762
+setting smoothness coefficient to 0.118
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.581, neg=0, invalid=762
+0242: dt=128.000000, rms=0.565 (2.776%), neg=0, invalid=762
+0243: dt=11.200000, rms=0.561 (0.645%), neg=0, invalid=762
+0244: dt=11.200000, rms=0.559 (0.378%), neg=0, invalid=762
+0245: dt=2.800000, rms=0.559 (0.070%), neg=0, invalid=762
+0246: dt=2.800000, rms=0.558 (0.069%), neg=0, invalid=762
+0247: dt=0.175000, rms=0.558 (0.005%), neg=0, invalid=762
+0248: dt=0.175000, rms=0.558 (0.004%), neg=0, invalid=762
+0249: dt=0.087500, rms=0.558 (0.002%), neg=0, invalid=762
+0250: dt=0.043750, rms=0.558 (0.001%), neg=0, invalid=762
+0251: dt=0.010937, rms=0.558 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.559, neg=0, invalid=762
+0252: dt=38.400000, rms=0.554 (0.927%), neg=0, invalid=762
+0253: dt=23.660232, rms=0.551 (0.508%), neg=0, invalid=762
+0254: dt=25.600000, rms=0.549 (0.321%), neg=0, invalid=762
+0255: dt=25.600000, rms=0.548 (0.290%), neg=0, invalid=762
+0256: dt=25.600000, rms=0.546 (0.232%), neg=0, invalid=762
+0257: dt=25.600000, rms=0.545 (0.230%), neg=0, invalid=762
+0258: dt=22.639456, rms=0.544 (0.189%), neg=0, invalid=762
+0259: dt=25.600000, rms=0.543 (0.203%), neg=0, invalid=762
+0260: dt=24.111628, rms=0.542 (0.145%), neg=0, invalid=762
+0261: dt=25.600000, rms=0.541 (0.185%), neg=0, invalid=762
+0262: dt=19.200000, rms=0.540 (0.133%), neg=0, invalid=762
+0263: dt=38.400000, rms=0.539 (0.186%), neg=0, invalid=762
+0264: dt=11.200000, rms=0.539 (0.122%), neg=0, invalid=762
+0265: dt=179.200000, rms=0.535 (0.709%), neg=0, invalid=762
+0266: dt=11.200000, rms=0.534 (0.235%), neg=0, invalid=762
+0267: dt=38.400000, rms=0.533 (0.124%), neg=0, invalid=762
+0268: dt=19.200000, rms=0.532 (0.097%), neg=0, invalid=762
+0269: dt=44.800000, rms=0.532 (0.116%), neg=0, invalid=762
+0270: dt=11.200000, rms=0.531 (0.086%), neg=0, invalid=762
+0271: dt=179.200000, rms=0.530 (0.240%), neg=0, invalid=762
+0272: dt=11.200000, rms=0.529 (0.233%), neg=0, invalid=762
+0273: dt=25.600000, rms=0.528 (0.140%), neg=0, invalid=762
+0274: dt=38.400000, rms=0.528 (0.078%), neg=0, invalid=762
+0275: dt=19.200000, rms=0.527 (0.071%), neg=0, invalid=762
+0276: dt=38.400000, rms=0.527 (0.055%), neg=0, invalid=762
+0277: dt=11.200000, rms=0.527 (0.053%), neg=0, invalid=762
+0278: dt=307.200000, rms=0.525 (0.268%), neg=0, invalid=762
+0279: dt=32.000000, rms=0.524 (0.270%), neg=0, invalid=762
+0280: dt=25.600000, rms=0.523 (0.113%), neg=0, invalid=762
+0281: dt=19.200000, rms=0.523 (0.078%), neg=0, invalid=762
+0282: dt=25.600000, rms=0.523 (0.032%), neg=0, invalid=762
+0283: dt=25.600000, rms=0.522 (0.058%), neg=0, invalid=762
+0284: dt=25.600000, rms=0.522 (0.068%), neg=0, invalid=762
+0285: dt=25.600000, rms=0.522 (0.086%), neg=0, invalid=762
+0286: dt=25.600000, rms=0.521 (0.128%), neg=0, invalid=762
+0287: dt=25.600000, rms=0.520 (0.135%), neg=0, invalid=762
+0288: dt=25.600000, rms=0.519 (0.151%), neg=0, invalid=762
+0289: dt=25.600000, rms=0.519 (0.162%), neg=0, invalid=762
+0290: dt=12.800000, rms=0.519 (0.022%), neg=0, invalid=762
+0291: dt=6.400000, rms=0.519 (0.001%), neg=0, invalid=762
+0292: dt=2.800000, rms=0.518 (0.006%), neg=0, invalid=762
+0293: dt=0.175000, rms=0.518 (-0.002%), neg=0, invalid=762
+setting smoothness coefficient to 0.400
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.535, neg=0, invalid=762
+0294: dt=0.000000, rms=0.534 (0.113%), neg=0, invalid=762
+0295: dt=0.000000, rms=0.534 (0.000%), neg=0, invalid=762
+0296: dt=0.150000, rms=0.534 (-0.014%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.535, neg=0, invalid=762
+0297: dt=0.000000, rms=0.534 (0.113%), neg=0, invalid=762
+0298: dt=0.000000, rms=0.534 (0.000%), neg=0, invalid=762
+0299: dt=0.150000, rms=0.534 (-0.015%), neg=0, invalid=762
+setting smoothness coefficient to 1.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.566, neg=0, invalid=762
+0300: dt=0.448000, rms=0.565 (0.228%), neg=0, invalid=762
+0301: dt=0.320000, rms=0.565 (0.032%), neg=0, invalid=762
+0302: dt=0.320000, rms=0.565 (-0.011%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.565, neg=0, invalid=762
+0303: dt=0.448000, rms=0.564 (0.176%), neg=0, invalid=762
+0304: dt=0.256000, rms=0.564 (0.012%), neg=0, invalid=762
+0305: dt=0.256000, rms=0.564 (-0.008%), neg=0, invalid=762
+resetting metric properties...
+setting smoothness coefficient to 2.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.522, neg=0, invalid=762
+0306: dt=0.448000, rms=0.507 (2.981%), neg=0, invalid=762
+0307: dt=0.448000, rms=0.504 (0.573%), neg=0, invalid=762
+0308: dt=0.448000, rms=0.502 (0.326%), neg=0, invalid=762
+0309: dt=0.448000, rms=0.501 (0.187%), neg=0, invalid=762
+0310: dt=0.470588, rms=0.500 (0.146%), neg=0, invalid=762
+0311: dt=0.448000, rms=0.500 (0.087%), neg=0, invalid=762
+0312: dt=0.448000, rms=0.500 (0.083%), neg=0, invalid=762
+0313: dt=0.448000, rms=0.499 (0.049%), neg=0, invalid=762
+0314: dt=0.448000, rms=0.499 (0.054%), neg=0, invalid=762
+0315: dt=0.448000, rms=0.499 (0.081%), neg=0, invalid=762
+0316: dt=0.448000, rms=0.498 (0.082%), neg=0, invalid=762
+0317: dt=0.448000, rms=0.498 (0.089%), neg=0, invalid=762
+0318: dt=0.448000, rms=0.497 (0.074%), neg=0, invalid=762
+0319: dt=0.448000, rms=0.497 (0.042%), neg=0, invalid=762
+0320: dt=0.224000, rms=0.497 (-0.004%), neg=0, invalid=762
+0321: dt=0.000000, rms=0.497 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.498, neg=0, invalid=762
+0322: dt=0.384000, rms=0.493 (1.056%), neg=0, invalid=762
+0323: dt=0.448000, rms=0.491 (0.273%), neg=0, invalid=762
+0324: dt=0.448000, rms=0.491 (0.040%), neg=0, invalid=762
+0325: dt=0.448000, rms=0.491 (0.016%), neg=0, invalid=762
+0326: dt=0.448000, rms=0.491 (0.004%), neg=0, invalid=762
+0327: dt=0.448000, rms=0.491 (-0.016%), neg=0, invalid=762
+label assignment complete, 0 changed (0.00%)
+********************* ALLOWING NEGATIVE NODES IN DEFORMATION********************************
+**************** pass 1 of 1 ************************
+enabling zero nodes
+setting smoothness coefficient to 0.008
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.490, neg=0, invalid=762
+0328: dt=0.000000, rms=0.489 (0.141%), neg=0, invalid=762
+0329: dt=0.000000, rms=0.489 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.490, neg=0, invalid=762
+0330: dt=129.472000, rms=0.489 (0.176%), neg=0, invalid=762
+0331: dt=92.480000, rms=0.489 (0.009%), neg=0, invalid=762
+0332: dt=92.480000, rms=0.489 (0.005%), neg=0, invalid=762
+0333: dt=92.480000, rms=0.489 (0.018%), neg=0, invalid=762
+0334: dt=92.480000, rms=0.488 (0.014%), neg=0, invalid=762
+0335: dt=92.480000, rms=0.488 (0.008%), neg=0, invalid=762
+setting smoothness coefficient to 0.031
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.489, neg=0, invalid=762
+0336: dt=6.480000, rms=0.488 (0.145%), neg=0, invalid=762
+0337: dt=1.296000, rms=0.488 (-0.001%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.489, neg=0, invalid=762
+0338: dt=124.416000, rms=0.488 (0.311%), neg=0, invalid=762
+0339: dt=31.104000, rms=0.487 (0.087%), neg=0, invalid=762
+0340: dt=31.104000, rms=0.487 (0.038%), neg=0, invalid=762
+0341: dt=31.104000, rms=0.487 (0.057%), neg=0, invalid=762
+0342: dt=31.104000, rms=0.486 (0.070%), neg=0, invalid=762
+0343: dt=31.104000, rms=0.486 (0.075%), neg=0, invalid=762
+0344: dt=31.104000, rms=0.486 (0.072%), neg=0, invalid=762
+0345: dt=31.104000, rms=0.485 (0.075%), neg=0, invalid=762
+0346: dt=31.104000, rms=0.485 (0.066%), neg=0, invalid=762
+0347: dt=82.944000, rms=0.485 (0.018%), neg=0, invalid=762
+setting smoothness coefficient to 0.118
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.486, neg=0, invalid=762
+0348: dt=11.200000, rms=0.484 (0.291%), neg=0, invalid=762
+0349: dt=25.600000, rms=0.483 (0.165%), neg=0, invalid=762
+iter 0, gcam->neg = 3
+after 7 iterations, nbhd size=1, neg = 0
+0350: dt=25.600000, rms=0.482 (0.219%), neg=0, invalid=762
+iter 0, gcam->neg = 7
+after 7 iterations, nbhd size=1, neg = 0
+0351: dt=25.600000, rms=0.482 (0.163%), neg=0, invalid=762
+iter 0, gcam->neg = 3
+after 8 iterations, nbhd size=1, neg = 0
+0352: dt=25.600000, rms=0.481 (0.023%), neg=0, invalid=762
+iter 0, gcam->neg = 9
+after 9 iterations, nbhd size=1, neg = 0
+0353: dt=25.600000, rms=0.481 (0.056%), neg=0, invalid=762
+iter 0, gcam->neg = 21
+after 11 iterations, nbhd size=1, neg = 0
+0354: dt=25.600000, rms=0.481 (0.142%), neg=0, invalid=762
+iter 0, gcam->neg = 18
+after 2 iterations, nbhd size=0, neg = 0
+0355: dt=25.600000, rms=0.480 (0.202%), neg=0, invalid=762
+iter 0, gcam->neg = 11
+after 7 iterations, nbhd size=0, neg = 0
+0356: dt=25.600000, rms=0.478 (0.240%), neg=0, invalid=762
+iter 0, gcam->neg = 9
+after 9 iterations, nbhd size=1, neg = 0
+0357: dt=25.600000, rms=0.477 (0.238%), neg=0, invalid=762
+iter 0, gcam->neg = 10
+after 2 iterations, nbhd size=0, neg = 0
+0358: dt=25.600000, rms=0.476 (0.267%), neg=0, invalid=762
+iter 0, gcam->neg = 10
+after 4 iterations, nbhd size=0, neg = 0
+0359: dt=25.600000, rms=0.475 (0.203%), neg=0, invalid=762
+iter 0, gcam->neg = 11
+after 3 iterations, nbhd size=0, neg = 0
+0360: dt=25.600000, rms=0.474 (0.116%), neg=0, invalid=762
+iter 0, gcam->neg = 12
+after 13 iterations, nbhd size=1, neg = 0
+0361: dt=25.600000, rms=0.474 (0.100%), neg=0, invalid=762
+iter 0, gcam->neg = 3
+after 2 iterations, nbhd size=0, neg = 0
+0362: dt=44.800000, rms=0.473 (0.237%), neg=0, invalid=762
+0363: dt=11.200000, rms=0.473 (0.031%), neg=0, invalid=762
+0364: dt=11.200000, rms=0.473 (0.025%), neg=0, invalid=762
+0365: dt=11.200000, rms=0.472 (0.029%), neg=0, invalid=762
+0366: dt=11.200000, rms=0.472 (0.040%), neg=0, invalid=762
+0367: dt=11.200000, rms=0.472 (0.046%), neg=0, invalid=762
+0368: dt=11.200000, rms=0.472 (0.047%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 2 iterations, nbhd size=0, neg = 0
+0369: dt=11.200000, rms=0.472 (0.032%), neg=0, invalid=762
+0370: dt=11.200000, rms=0.472 (0.027%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.472, neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 6 iterations, nbhd size=1, neg = 0
+0371: dt=32.000000, rms=0.468 (0.832%), neg=0, invalid=762
+0372: dt=23.182663, rms=0.467 (0.288%), neg=0, invalid=762
+0373: dt=25.155080, rms=0.466 (0.159%), neg=0, invalid=762
+0374: dt=25.155080, rms=0.466 (0.122%), neg=0, invalid=762
+0375: dt=25.155080, rms=0.465 (0.210%), neg=0, invalid=762
+0376: dt=25.155080, rms=0.464 (0.167%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 3 iterations, nbhd size=0, neg = 0
+0377: dt=25.155080, rms=0.463 (0.154%), neg=0, invalid=762
+0378: dt=25.155080, rms=0.463 (0.038%), neg=0, invalid=762
+0379: dt=25.155080, rms=0.463 (0.092%), neg=0, invalid=762
+0380: dt=25.155080, rms=0.462 (0.038%), neg=0, invalid=762
+0381: dt=11.200000, rms=0.462 (0.077%), neg=0, invalid=762
+0382: dt=44.800000, rms=0.462 (0.095%), neg=0, invalid=762
+0383: dt=19.200000, rms=0.462 (0.040%), neg=0, invalid=762
+0384: dt=19.200000, rms=0.461 (0.022%), neg=0, invalid=762
+0385: dt=19.200000, rms=0.461 (0.036%), neg=0, invalid=762
+0386: dt=19.200000, rms=0.461 (0.055%), neg=0, invalid=762
+0387: dt=19.200000, rms=0.461 (0.051%), neg=0, invalid=762
+0388: dt=19.200000, rms=0.461 (0.037%), neg=0, invalid=762
+setting smoothness coefficient to 0.400
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.466, neg=0, invalid=762
+0389: dt=0.108000, rms=0.465 (0.148%), neg=0, invalid=762
+0390: dt=0.045000, rms=0.465 (-0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.466, neg=0, invalid=762
+0391: dt=3.529412, rms=0.465 (0.186%), neg=0, invalid=762
+0392: dt=3.456000, rms=0.465 (0.019%), neg=0, invalid=762
+0393: dt=3.456000, rms=0.465 (0.016%), neg=0, invalid=762
+0394: dt=3.456000, rms=0.464 (-0.012%), neg=0, invalid=762
+setting smoothness coefficient to 1.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.471, neg=0, invalid=762
+0395: dt=0.000000, rms=0.471 (0.148%), neg=0, invalid=762
+0396: dt=0.000000, rms=0.471 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.471, neg=0, invalid=762
+0397: dt=1.024000, rms=0.470 (0.226%), neg=0, invalid=762
+0398: dt=0.448000, rms=0.470 (0.014%), neg=0, invalid=762
+0399: dt=0.448000, rms=0.470 (-0.002%), neg=0, invalid=762
+resetting metric properties...
+setting smoothness coefficient to 2.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.463, neg=0, invalid=762
+iter 0, gcam->neg = 746
+after 12 iterations, nbhd size=1, neg = 0
+0400: dt=2.285714, rms=0.429 (7.280%), neg=0, invalid=762
+0401: dt=0.080000, rms=0.429 (0.070%), neg=0, invalid=762
+0402: dt=0.080000, rms=0.429 (-0.056%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.430, neg=0, invalid=762
+0403: dt=0.080000, rms=0.429 (0.259%), neg=0, invalid=762
+0404: dt=0.001500, rms=0.429 (0.004%), neg=0, invalid=762
+0405: dt=0.001500, rms=0.429 (0.000%), neg=0, invalid=762
+0406: dt=0.001500, rms=0.429 (-0.000%), neg=0, invalid=762
+label assignment complete, 0 changed (0.00%)
+label assignment complete, 0 changed (0.00%)
+***************** morphing with label term set to 0 *******************************
+**************** pass 1 of 1 ************************
+enabling zero nodes
+setting smoothness coefficient to 0.008
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0407: dt=0.000000, rms=0.413 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0408: dt=18.496000, rms=0.413 (0.002%), neg=0, invalid=762
+0409: dt=8.092000, rms=0.413 (0.000%), neg=0, invalid=762
+0410: dt=8.092000, rms=0.413 (-0.000%), neg=0, invalid=762
+setting smoothness coefficient to 0.031
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0411: dt=0.000000, rms=0.413 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0412: dt=31.104000, rms=0.413 (0.018%), neg=0, invalid=762
+0413: dt=36.288000, rms=0.413 (0.008%), neg=0, invalid=762
+0414: dt=36.288000, rms=0.413 (0.007%), neg=0, invalid=762
+0415: dt=36.288000, rms=0.413 (0.006%), neg=0, invalid=762
+0416: dt=36.288000, rms=0.413 (0.001%), neg=0, invalid=762
+setting smoothness coefficient to 0.118
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.414, neg=0, invalid=762
+0417: dt=2.800000, rms=0.414 (0.013%), neg=0, invalid=762
+0418: dt=1.600000, rms=0.414 (0.002%), neg=0, invalid=762
+0419: dt=1.600000, rms=0.414 (-0.001%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.414, neg=0, invalid=762
+0420: dt=44.800000, rms=0.412 (0.377%), neg=0, invalid=762
+0421: dt=25.600000, rms=0.412 (0.126%), neg=0, invalid=762
+0422: dt=25.600000, rms=0.411 (0.104%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 2 iterations, nbhd size=0, neg = 0
+0423: dt=25.600000, rms=0.411 (0.145%), neg=0, invalid=762
+0424: dt=25.600000, rms=0.410 (0.172%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 3 iterations, nbhd size=0, neg = 0
+0425: dt=25.600000, rms=0.410 (0.138%), neg=0, invalid=762
+iter 0, gcam->neg = 3
+after 0 iterations, nbhd size=0, neg = 0
+0426: dt=25.600000, rms=0.409 (0.153%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 1 iterations, nbhd size=0, neg = 0
+0427: dt=25.600000, rms=0.408 (0.124%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 1 iterations, nbhd size=0, neg = 0
+0428: dt=25.600000, rms=0.408 (0.139%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 4 iterations, nbhd size=0, neg = 0
+0429: dt=25.600000, rms=0.407 (0.106%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 0 iterations, nbhd size=0, neg = 0
+0430: dt=25.600000, rms=0.407 (0.122%), neg=0, invalid=762
+iter 0, gcam->neg = 3
+after 7 iterations, nbhd size=1, neg = 0
+0431: dt=25.600000, rms=0.407 (0.077%), neg=0, invalid=762
+0432: dt=11.200000, rms=0.407 (0.015%), neg=0, invalid=762
+0433: dt=11.200000, rms=0.406 (0.006%), neg=0, invalid=762
+0434: dt=11.200000, rms=0.406 (0.009%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 1 iterations, nbhd size=0, neg = 0
+0435: dt=11.200000, rms=0.406 (0.010%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 1 iterations, nbhd size=0, neg = 0
+0436: dt=11.200000, rms=0.406 (0.011%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 3 iterations, nbhd size=0, neg = 0
+0437: dt=11.200000, rms=0.406 (0.010%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 2 iterations, nbhd size=0, neg = 0
+0438: dt=11.200000, rms=0.406 (0.011%), neg=0, invalid=762
+0439: dt=11.200000, rms=0.406 (0.013%), neg=0, invalid=762
+0440: dt=11.200000, rms=0.406 (0.014%), neg=0, invalid=762
+0441: dt=11.200000, rms=0.406 (0.014%), neg=0, invalid=762
+setting smoothness coefficient to 0.400
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.410, neg=0, invalid=762
+0442: dt=0.000000, rms=0.410 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.410, neg=0, invalid=762
+0443: dt=8.500000, rms=0.410 (0.043%), neg=0, invalid=762
+0444: dt=11.520000, rms=0.409 (0.047%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 2 iterations, nbhd size=0, neg = 0
+0445: dt=35.438017, rms=0.409 (0.122%), neg=0, invalid=762
+iter 0, gcam->neg = 62
+after 11 iterations, nbhd size=1, neg = 0
+0446: dt=53.413534, rms=0.408 (0.316%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 0 iterations, nbhd size=0, neg = 0
+0447: dt=6.666667, rms=0.407 (0.060%), neg=0, invalid=762
+iter 0, gcam->neg = 1
+after 0 iterations, nbhd size=0, neg = 0
+0448: dt=6.666667, rms=0.407 (0.001%), neg=0, invalid=762
+iter 0, gcam->neg = 2
+after 0 iterations, nbhd size=0, neg = 0
+0449: dt=6.666667, rms=0.407 (-0.024%), neg=0, invalid=762
+setting smoothness coefficient to 1.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0450: dt=0.000050, rms=0.413 (0.000%), neg=0, invalid=762
+0451: dt=0.000000, rms=0.413 (0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.413, neg=0, invalid=762
+0452: dt=0.000000, rms=0.413 (0.000%), neg=0, invalid=762
+resetting metric properties...
+setting smoothness coefficient to 2.000
+blurring input image with Gaussian with sigma=2.000...
+0000: dt=0.000, rms=0.403, neg=0, invalid=762
+iter 0, gcam->neg = 513
+after 13 iterations, nbhd size=1, neg = 0
+0453: dt=1.373560, rms=0.392 (2.708%), neg=0, invalid=762
+0454: dt=0.000013, rms=0.392 (0.000%), neg=0, invalid=762
+0455: dt=0.000013, rms=0.392 (0.000%), neg=0, invalid=762
+0456: dt=0.000013, rms=0.392 (-0.000%), neg=0, invalid=762
+blurring input image with Gaussian with sigma=0.500...
+0000: dt=0.000, rms=0.392, neg=0, invalid=762
+0457: dt=0.096000, rms=0.392 (0.047%), neg=0, invalid=762
+0458: dt=0.028000, rms=0.392 (0.004%), neg=0, invalid=762
+0459: dt=0.028000, rms=0.392 (0.001%), neg=0, invalid=762
+0460: dt=0.028000, rms=0.392 (-0.010%), neg=0, invalid=762
+writing output transformation to transforms/talairach.m3z...
+GCAMwrite
+mri_ca_register took 1 hours, 22 minutes and 5 seconds.
+mri_ca_register utimesec    9414.824000
+mri_ca_register stimesec    7.500000
+mri_ca_register ru_maxrss   1329344
+mri_ca_register ru_ixrss    0
+mri_ca_register ru_idrss    0
+mri_ca_register ru_isrss    0
+mri_ca_register ru_minflt   3888096
+mri_ca_register ru_majflt   256
+mri_ca_register ru_nswap    0
+mri_ca_register ru_inblock  0
+mri_ca_register ru_oublock  63016
+mri_ca_register ru_msgsnd   0
+mri_ca_register ru_msgrcv   0
+mri_ca_register ru_nsignals 0
+mri_ca_register ru_nvcsw    289346
+mri_ca_register ru_nivcsw   11906
+FSRUNTIME@ mri_ca_register  1.3681 hours 64 threads
+#--------------------------------------
+#@# SubCort Seg Tue Mar 13 10:48:21 PDT 2018
+
+ mri_ca_label -relabel_unlikely 9 .3 -prior 0.5 -align norm.mgz transforms/talairach.m3z /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca aseg.auto_noCCseg.mgz 
+
+sysname  Linux
+hostname nid01131
+machine  x86_64
+
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+mri_ca_label -relabel_unlikely 9 .3 -prior 0.5 -align norm.mgz transforms/talairach.m3z /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca aseg.auto_noCCseg.mgz 
+
+
+== Number of threads available to mri_ca_label for OpenMP = 64 == 
+relabeling unlikely voxels with window_size = 9 and prior threshold 0.30
+using Gibbs prior factor = 0.500
+renormalizing sequences with structure alignment, equivalent to:
+	-renormalize
+	-renormalize_mean 0.500
+	-regularize 0.500
+reading 1 input volumes
+reading classifier array from /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca
+reading input volume from norm.mgz
+average std[0] = 7.3
+reading transform from transforms/talairach.m3z
+setting orig areas to linear transform determinant scaled 6.77
+Atlas used for the 3D morph was /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca
+average std = 7.3   using min determinant for regularization = 5.3
+0 singular and 0 ill-conditioned covariance matrices regularized
+labeling volume...
+renormalizing by structure alignment....
+renormalizing input #0
+gca peak = 0.16259 (20)
+mri peak = 0.13424 ( 7)
+Left_Lateral_Ventricle (4): linear fit = 0.29 x + 0.0 (211 voxels, overlap=0.134)
+Left_Lateral_Ventricle (4): linear fit = 0.40 x + 0.0 (211 voxels, peak =  6), gca=8.0
+gca peak = 0.17677 (13)
+mri peak = 0.11951 ( 7)
+Right_Lateral_Ventricle (43): linear fit = 0.31 x + 0.0 (263 voxels, overlap=0.269)
+Right_Lateral_Ventricle (43): linear fit = 0.40 x + 0.0 (263 voxels, peak =  4), gca=5.2
+gca peak = 0.28129 (95)
+mri peak = 0.09462 (94)
+Right_Pallidum (52): linear fit = 0.99 x + 0.0 (692 voxels, overlap=1.015)
+Right_Pallidum (52): linear fit = 0.99 x + 0.0 (692 voxels, peak = 94), gca=93.6
+gca peak = 0.16930 (96)
+mri peak = 0.08811 (93)
+Left_Pallidum (13): linear fit = 1.00 x + 0.0 (715 voxels, overlap=1.014)
+Left_Pallidum (13): linear fit = 1.00 x + 0.0 (715 voxels, peak = 96), gca=95.5
+gca peak = 0.24553 (55)
+mri peak = 0.07207 (59)
+Right_Hippocampus (53): linear fit = 1.04 x + 0.0 (791 voxels, overlap=1.011)
+Right_Hippocampus (53): linear fit = 1.04 x + 0.0 (791 voxels, peak = 57), gca=57.5
+gca peak = 0.30264 (59)
+mri peak = 0.08016 (60)
+Left_Hippocampus (17): linear fit = 1.04 x + 0.0 (744 voxels, overlap=1.012)
+Left_Hippocampus (17): linear fit = 1.04 x + 0.0 (744 voxels, peak = 62), gca=61.7
+gca peak = 0.07580 (103)
+mri peak = 0.15410 (105)
+Right_Cerebral_White_Matter (41): linear fit = 1.00 x + 0.0 (35605 voxels, overlap=0.595)
+Right_Cerebral_White_Matter (41): linear fit = 1.00 x + 0.0 (35605 voxels, peak = 104), gca=103.5
+gca peak = 0.07714 (104)
+mri peak = 0.14425 (106)
+Left_Cerebral_White_Matter (2): linear fit = 1.01 x + 0.0 (36510 voxels, overlap=0.566)
+Left_Cerebral_White_Matter (2): linear fit = 1.01 x + 0.0 (36510 voxels, peak = 106), gca=105.6
+gca peak = 0.09712 (58)
+mri peak = 0.04359 (57)
+Left_Cerebral_Cortex (3): linear fit = 1.02 x + 0.0 (27278 voxels, overlap=0.989)
+Left_Cerebral_Cortex (3): linear fit = 1.02 x + 0.0 (27278 voxels, peak = 59), gca=59.4
+gca peak = 0.11620 (58)
+mri peak = 0.04849 (56)
+Right_Cerebral_Cortex (42): linear fit = 0.96 x + 0.0 (27186 voxels, overlap=0.984)
+Right_Cerebral_Cortex (42): linear fit = 0.96 x + 0.0 (27186 voxels, peak = 56), gca=56.0
+gca peak = 0.30970 (66)
+mri peak = 0.09146 (69)
+Right_Caudate (50): linear fit = 1.03 x + 0.0 (984 voxels, overlap=1.005)
+Right_Caudate (50): linear fit = 1.03 x + 0.0 (984 voxels, peak = 68), gca=68.3
+gca peak = 0.15280 (69)
+mri peak = 0.09756 (68)
+Left_Caudate (11): linear fit = 0.93 x + 0.0 (1001 voxels, overlap=0.593)
+Left_Caudate (11): linear fit = 0.93 x + 0.0 (1001 voxels, peak = 64), gca=63.8
+gca peak = 0.13902 (56)
+mri peak = 0.05183 (62)
+Left_Cerebellum_Cortex (8): linear fit = 1.12 x + 0.0 (19753 voxels, overlap=0.864)
+Left_Cerebellum_Cortex (8): linear fit = 1.12 x + 0.0 (19753 voxels, peak = 62), gca=62.4
+gca peak = 0.14777 (55)
+mri peak = 0.05000 (60)
+Right_Cerebellum_Cortex (47): linear fit = 1.07 x + 0.0 (21117 voxels, overlap=0.940)
+Right_Cerebellum_Cortex (47): linear fit = 1.07 x + 0.0 (21117 voxels, peak = 59), gca=58.6
+gca peak = 0.16765 (84)
+mri peak = 0.08680 (91)
+Left_Cerebellum_White_Matter (7): linear fit = 1.07 x + 0.0 (4543 voxels, overlap=0.729)
+Left_Cerebellum_White_Matter (7): linear fit = 1.07 x + 0.0 (4543 voxels, peak = 89), gca=89.5
+gca peak = 0.18739 (84)
+mri peak = 0.09141 (88)
+Right_Cerebellum_White_Matter (46): linear fit = 1.07 x + 0.0 (4613 voxels, overlap=0.802)
+Right_Cerebellum_White_Matter (46): linear fit = 1.07 x + 0.0 (4613 voxels, peak = 89), gca=89.5
+gca peak = 0.29869 (57)
+mri peak = 0.06744 (60)
+Left_Amygdala (18): linear fit = 1.10 x + 0.0 (438 voxels, overlap=1.022)
+Left_Amygdala (18): linear fit = 1.10 x + 0.0 (438 voxels, peak = 62), gca=62.4
+gca peak = 0.33601 (57)
+mri peak = 0.07974 (61)
+Right_Amygdala (54): linear fit = 1.04 x + 0.0 (479 voxels, overlap=1.025)
+Right_Amygdala (54): linear fit = 1.04 x + 0.0 (479 voxels, peak = 60), gca=59.6
+gca peak = 0.11131 (90)
+mri peak = 0.05761 (88)
+Left_Thalamus_Proper (10): linear fit = 1.04 x + 0.0 (3777 voxels, overlap=0.912)
+Left_Thalamus_Proper (10): linear fit = 1.04 x + 0.0 (3777 voxels, peak = 94), gca=94.0
+gca peak = 0.11793 (83)
+mri peak = 0.05705 (90)
+Right_Thalamus_Proper (49): linear fit = 1.04 x + 0.0 (3346 voxels, overlap=0.950)
+Right_Thalamus_Proper (49): linear fit = 1.04 x + 0.0 (3346 voxels, peak = 87), gca=86.7
+gca peak = 0.08324 (81)
+mri peak = 0.06413 (80)
+Left_Putamen (12): linear fit = 1.00 x + 0.0 (1841 voxels, overlap=0.955)
+Left_Putamen (12): linear fit = 1.00 x + 0.0 (1841 voxels, peak = 81), gca=81.0
+gca peak = 0.10360 (77)
+mri peak = 0.05849 (82)
+Right_Putamen (51): linear fit = 1.01 x + 0.0 (2304 voxels, overlap=0.985)
+Right_Putamen (51): linear fit = 1.01 x + 0.0 (2304 voxels, peak = 78), gca=78.2
+gca peak = 0.08424 (78)
+mri peak = 0.06828 (90)
+Brain_Stem (16): linear fit = 1.13 x + 0.0 (9128 voxels, overlap=0.476)
+Brain_Stem (16): linear fit = 1.13 x + 0.0 (9128 voxels, peak = 89), gca=88.5
+gca peak = 0.12631 (89)
+mri peak = 0.08313 (99)
+Right_VentralDC (60): linear fit = 1.12 x + 0.0 (1272 voxels, overlap=0.672)
+Right_VentralDC (60): linear fit = 1.12 x + 0.0 (1272 voxels, peak = 100), gca=100.1
+gca peak = 0.14500 (87)
+mri peak = 0.08051 (99)
+Left_VentralDC (28): linear fit = 1.08 x + 0.0 (1348 voxels, overlap=0.847)
+Left_VentralDC (28): linear fit = 1.08 x + 0.0 (1348 voxels, peak = 94), gca=93.5
+gca peak = 0.14975 (24)
+mri peak = 0.16669 (15)
+gca peak = 0.19357 (14)
+mri peak = 0.11111 ( 7)
+Fourth_Ventricle (15): linear fit = 0.43 x + 0.0 (211 voxels, overlap=0.649)
+Fourth_Ventricle (15): linear fit = 0.43 x + 0.0 (211 voxels, peak =  6), gca=6.0
+gca peak Unknown = 0.94835 ( 0)
+gca peak Left_Inf_Lat_Vent = 0.16825 (27)
+gca peak Left_Thalamus = 1.00000 (94)
+gca peak Third_Ventricle = 0.14975 (24)
+gca peak Fourth_Ventricle = 0.19357 (14)
+gca peak CSF = 0.23379 (36)
+gca peak Left_Accumbens_area = 0.70037 (62)
+gca peak Left_undetermined = 1.00000 (26)
+gca peak Left_vessel = 0.75997 (52)
+gca peak Left_choroid_plexus = 0.12089 (35)
+gca peak Right_Inf_Lat_Vent = 0.24655 (23)
+gca peak Right_Accumbens_area = 0.45042 (65)
+gca peak Right_vessel = 0.82168 (52)
+gca peak Right_choroid_plexus = 0.14516 (37)
+gca peak Fifth_Ventricle = 0.65475 (32)
+gca peak WM_hypointensities = 0.07854 (76)
+gca peak non_WM_hypointensities = 0.08491 (43)
+gca peak Optic_Chiasm = 0.71127 (75)
+not using caudate to estimate GM means
+estimating mean gm scale to be 1.04 x + 0.0
+estimating mean wm scale to be 1.01 x + 0.0
+estimating mean csf scale to be 0.40 x + 0.0
+saving intensity scales to aseg.auto_noCCseg.label_intensities.txt
+renormalizing by structure alignment....
+renormalizing input #0
+gca peak = 0.30837 ( 7)
+mri peak = 0.13424 ( 7)
+Left_Lateral_Ventricle (4): linear fit = 0.85 x + 0.0 (211 voxels, overlap=0.952)
+Left_Lateral_Ventricle (4): linear fit = 0.85 x + 0.0 (211 voxels, peak =  6), gca=5.9
+gca peak = 0.30173 ( 5)
+mri peak = 0.11951 ( 7)
+Right_Lateral_Ventricle (43): linear fit = 1.11 x + 0.0 (263 voxels, overlap=0.961)
+Right_Lateral_Ventricle (43): linear fit = 1.11 x + 0.0 (263 voxels, peak =  6), gca=5.5
+gca peak = 0.23195 (93)
+mri peak = 0.09462 (94)
+Right_Pallidum (52): linear fit = 1.00 x + 0.0 (692 voxels, overlap=1.004)
+Right_Pallidum (52): linear fit = 1.00 x + 0.0 (692 voxels, peak = 93), gca=92.5
+gca peak = 0.18532 (96)
+mri peak = 0.08811 (93)
+Left_Pallidum (13): linear fit = 0.95 x + 0.0 (715 voxels, overlap=1.011)
+Left_Pallidum (13): linear fit = 0.95 x + 0.0 (715 voxels, peak = 92), gca=91.7
+gca peak = 0.29356 (58)
+mri peak = 0.07207 (59)
+Right_Hippocampus (53): linear fit = 0.99 x + 0.0 (791 voxels, overlap=1.009)
+Right_Hippocampus (53): linear fit = 0.99 x + 0.0 (791 voxels, peak = 57), gca=57.1
+gca peak = 0.29363 (59)
+mri peak = 0.08016 (60)
+Left_Hippocampus (17): linear fit = 1.00 x + 0.0 (744 voxels, overlap=1.012)
+Left_Hippocampus (17): linear fit = 1.00 x + 0.0 (744 voxels, peak = 59), gca=59.0
+gca peak = 0.07886 (103)
+mri peak = 0.15410 (105)
+Right_Cerebral_White_Matter (41): linear fit = 1.00 x + 0.0 (35605 voxels, overlap=0.616)
+Right_Cerebral_White_Matter (41): linear fit = 1.00 x + 0.0 (35605 voxels, peak = 104), gca=103.5
+gca peak = 0.07821 (106)
+mri peak = 0.14425 (106)
+Left_Cerebral_White_Matter (2): linear fit = 1.00 x + 0.0 (36510 voxels, overlap=0.634)
+Left_Cerebral_White_Matter (2): linear fit = 1.00 x + 0.0 (36510 voxels, peak = 106), gca=106.0
+gca peak = 0.09495 (59)
+mri peak = 0.04359 (57)
+Left_Cerebral_Cortex (3): linear fit = 0.96 x + 0.0 (27278 voxels, overlap=0.996)
+Left_Cerebral_Cortex (3): linear fit = 0.96 x + 0.0 (27278 voxels, peak = 57), gca=56.9
+gca peak = 0.11974 (56)
+mri peak = 0.04849 (56)
+Right_Cerebral_Cortex (42): linear fit = 1.02 x + 0.0 (27186 voxels, overlap=0.973)
+Right_Cerebral_Cortex (42): linear fit = 1.02 x + 0.0 (27186 voxels, peak = 57), gca=57.4
+gca peak = 0.26257 (69)
+mri peak = 0.09146 (69)
+Right_Caudate (50): linear fit = 0.99 x + 0.0 (984 voxels, overlap=1.008)
+Right_Caudate (50): linear fit = 0.99 x + 0.0 (984 voxels, peak = 68), gca=68.0
+gca peak = 0.13199 (64)
+mri peak = 0.09756 (68)
+Left_Caudate (11): linear fit = 1.00 x + 0.0 (1001 voxels, overlap=1.001)
+Left_Caudate (11): linear fit = 1.00 x + 0.0 (1001 voxels, peak = 64), gca=64.0
+gca peak = 0.12764 (62)
+mri peak = 0.05183 (62)
+Left_Cerebellum_Cortex (8): linear fit = 0.99 x + 0.0 (19753 voxels, overlap=0.986)
+Left_Cerebellum_Cortex (8): linear fit = 0.99 x + 0.0 (19753 voxels, peak = 61), gca=61.1
+gca peak = 0.13842 (58)
+mri peak = 0.05000 (60)
+Right_Cerebellum_Cortex (47): linear fit = 1.02 x + 0.0 (21117 voxels, overlap=0.994)
+Right_Cerebellum_Cortex (47): linear fit = 1.02 x + 0.0 (21117 voxels, peak = 59), gca=59.4
+gca peak = 0.15889 (90)
+mri peak = 0.08680 (91)
+Left_Cerebellum_White_Matter (7): linear fit = 1.00 x + 0.0 (4543 voxels, overlap=0.961)
+Left_Cerebellum_White_Matter (7): linear fit = 1.00 x + 0.0 (4543 voxels, peak = 90), gca=89.6
+gca peak = 0.14967 (90)
+mri peak = 0.09141 (88)
+Right_Cerebellum_White_Matter (46): linear fit = 1.00 x + 0.0 (4613 voxels, overlap=0.981)
+Right_Cerebellum_White_Matter (46): linear fit = 1.00 x + 0.0 (4613 voxels, peak = 90), gca=89.6
+gca peak = 0.26686 (62)
+mri peak = 0.06744 (60)
+Left_Amygdala (18): linear fit = 0.95 x + 0.0 (438 voxels, overlap=1.032)
+Left_Amygdala (18): linear fit = 0.95 x + 0.0 (438 voxels, peak = 59), gca=59.2
+gca peak = 0.30201 (60)
+mri peak = 0.07974 (61)
+Right_Amygdala (54): linear fit = 1.02 x + 0.0 (479 voxels, overlap=1.021)
+Right_Amygdala (54): linear fit = 1.02 x + 0.0 (479 voxels, peak = 62), gca=61.5
+gca peak = 0.11173 (94)
+mri peak = 0.05761 (88)
+Left_Thalamus_Proper (10): linear fit = 0.98 x + 0.0 (3777 voxels, overlap=0.997)
+Left_Thalamus_Proper (10): linear fit = 0.98 x + 0.0 (3777 voxels, peak = 92), gca=91.7
+gca peak = 0.09554 (90)
+mri peak = 0.05705 (90)
+Right_Thalamus_Proper (49): linear fit = 1.00 x + 0.0 (3346 voxels, overlap=0.992)
+Right_Thalamus_Proper (49): linear fit = 1.00 x + 0.0 (3346 voxels, peak = 90), gca=90.0
+gca peak = 0.08324 (81)
+mri peak = 0.06413 (80)
+Left_Putamen (12): linear fit = 1.00 x + 0.0 (1841 voxels, overlap=0.955)
+Left_Putamen (12): linear fit = 1.00 x + 0.0 (1841 voxels, peak = 81), gca=81.0
+gca peak = 0.08217 (78)
+mri peak = 0.05849 (82)
+Right_Putamen (51): linear fit = 1.00 x + 0.0 (2304 voxels, overlap=0.996)
+Right_Putamen (51): linear fit = 1.00 x + 0.0 (2304 voxels, peak = 78), gca=77.6
+gca peak = 0.07701 (89)
+mri peak = 0.06828 (90)
+Brain_Stem (16): linear fit = 0.99 x + 0.0 (9128 voxels, overlap=0.849)
+Brain_Stem (16): linear fit = 0.99 x + 0.0 (9128 voxels, peak = 88), gca=87.7
+gca peak = 0.09998 (96)
+mri peak = 0.08313 (99)
+Right_VentralDC (60): linear fit = 1.02 x + 0.0 (1272 voxels, overlap=0.901)
+Right_VentralDC (60): linear fit = 1.02 x + 0.0 (1272 voxels, peak = 98), gca=98.4
+gca peak = 0.16552 (92)
+mri peak = 0.08051 (99)
+Left_VentralDC (28): linear fit = 1.02 x + 0.0 (1348 voxels, overlap=0.936)
+Left_VentralDC (28): linear fit = 1.02 x + 0.0 (1348 voxels, peak = 94), gca=94.3
+gca peak = 0.33708 (10)
+mri peak = 0.16669 (15)
+gca peak = 0.45928 ( 6)
+mri peak = 0.11111 ( 7)
+Fourth_Ventricle (15): linear fit = 1.26 x + 0.0 (211 voxels, overlap=0.989)
+Fourth_Ventricle (15): linear fit = 1.26 x + 0.0 (211 voxels, peak =  8), gca=7.6
+gca peak Unknown = 0.94835 ( 0)
+gca peak Left_Inf_Lat_Vent = 0.17216 (28)
+gca peak Left_Thalamus = 0.72551 (98)
+gca peak Third_Ventricle = 0.33708 (10)
+gca peak CSF = 0.26605 (13)
+gca peak Left_Accumbens_area = 0.60312 (58)
+gca peak Left_undetermined = 1.00000 (26)
+gca peak Left_vessel = 0.75997 (52)
+gca peak Left_choroid_plexus = 0.12089 (35)
+gca peak Right_Inf_Lat_Vent = 0.22626 (24)
+gca peak Right_Accumbens_area = 0.31948 (67)
+gca peak Right_vessel = 0.82168 (52)
+gca peak Right_choroid_plexus = 0.14516 (37)
+gca peak Fifth_Ventricle = 0.65560 (13)
+gca peak WM_hypointensities = 0.07428 (77)
+gca peak non_WM_hypointensities = 0.12165 (55)
+gca peak Optic_Chiasm = 0.70883 (75)
+not using caudate to estimate GM means
+estimating mean gm scale to be 0.99 x + 0.0
+estimating mean wm scale to be 1.00 x + 0.0
+estimating mean csf scale to be 1.07 x + 0.0
+saving intensity scales to aseg.auto_noCCseg.label_intensities.txt
+saving sequentially combined intensity scales to aseg.auto_noCCseg.label_intensities.txt
+69176 voxels changed in iteration 0 of unlikely voxel relabeling
+223 voxels changed in iteration 1 of unlikely voxel relabeling
+17 voxels changed in iteration 2 of unlikely voxel relabeling
+0 voxels changed in iteration 3 of unlikely voxel relabeling
+34660 gm and wm labels changed (%21 to gray, %79 to white out of all changed labels)
+337 hippocampal voxels changed.
+0 amygdala voxels changed.
+pass 1: 74108 changed. image ll: -2.125, PF=0.500
+pass 2: 21084 changed. image ll: -2.124, PF=0.500
+pass 3: 6207 changed.
+pass 4: 2262 changed.
+43232 voxels changed in iteration 0 of unlikely voxel relabeling
+229 voxels changed in iteration 1 of unlikely voxel relabeling
+3 voxels changed in iteration 2 of unlikely voxel relabeling
+1 voxels changed in iteration 3 of unlikely voxel relabeling
+0 voxels changed in iteration 4 of unlikely voxel relabeling
+6721 voxels changed in iteration 0 of unlikely voxel relabeling
+97 voxels changed in iteration 1 of unlikely voxel relabeling
+6 voxels changed in iteration 2 of unlikely voxel relabeling
+0 voxels changed in iteration 3 of unlikely voxel relabeling
+5783 voxels changed in iteration 0 of unlikely voxel relabeling
+39 voxels changed in iteration 1 of unlikely voxel relabeling
+6 voxels changed in iteration 2 of unlikely voxel relabeling
+0 voxels changed in iteration 3 of unlikely voxel relabeling
+4301 voxels changed in iteration 0 of unlikely voxel relabeling
+28 voxels changed in iteration 1 of unlikely voxel relabeling
+0 voxels changed in iteration 2 of unlikely voxel relabeling
+MRItoUCHAR: min=0, max=85
+MRItoUCHAR: converting to UCHAR
+writing labeled volume to aseg.auto_noCCseg.mgz
+mri_ca_label utimesec    2305.128000
+mri_ca_label stimesec    1.168000
+mri_ca_label ru_maxrss   2115724
+mri_ca_label ru_ixrss    0
+mri_ca_label ru_idrss    0
+mri_ca_label ru_isrss    0
+mri_ca_label ru_minflt   885675
+mri_ca_label ru_majflt   157
+mri_ca_label ru_nswap    0
+mri_ca_label ru_inblock  0
+mri_ca_label ru_oublock  504
+mri_ca_label ru_msgsnd   0
+mri_ca_label ru_msgrcv   0
+mri_ca_label ru_nsignals 0
+mri_ca_label ru_nvcsw    9233
+mri_ca_label ru_nivcsw   2199
+auto-labeling took 36 minutes and 6 seconds.
+
+ mri_cc -aseg aseg.auto_noCCseg.mgz -o aseg.auto.mgz -lta /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/cc_up.lta sub-NDARINVVV50F0CH 
+
+will read input aseg from aseg.auto_noCCseg.mgz
+writing aseg with cc labels to aseg.auto.mgz
+will write lta as /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/cc_up.lta
+reading aseg from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/aseg.auto_noCCseg.mgz
+reading norm from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/norm.mgz
+41106 voxels in left wm, 52624 in right wm, xrange [122, 132]
+searching rotation angles z=[-10  4], y=[-5  9]
+searching scale 1 Z rot -9.5  searching scale 1 Z rot -9.3  searching scale 1 Z rot -9.0  searching scale 1 Z rot -8.8  searching scale 1 Z rot -8.5  searching scale 1 Z rot -8.3  searching scale 1 Z rot -8.0  searching scale 1 Z rot -7.8  searching scale 1 Z rot -7.5  searching scale 1 Z rot -7.3  searching scale 1 Z rot -7.0  searching scale 1 Z rot -6.8  searching scale 1 Z rot -6.5  searching scale 1 Z rot -6.3  searching scale 1 Z rot -6.0  searching scale 1 Z rot -5.8  searching scale 1 Z rot -5.5  searching scale 1 Z rot -5.3  searching scale 1 Z rot -5.0  searching scale 1 Z rot -4.8  searching scale 1 Z rot -4.5  searching scale 1 Z rot -4.3  searching scale 1 Z rot -4.0  searching scale 1 Z rot -3.8  searching scale 1 Z rot -3.5  searching scale 1 Z rot -3.3  searching scale 1 Z rot -3.0  searching scale 1 Z rot -2.8  searching scale 1 Z rot -2.5  searching scale 1 Z rot -2.3  searching scale 1 Z rot -2.0  searching scale 1 Z rot -1.8  searching scale 1 Z rot -1.5  searching scale 1 Z rot -1.3  searching scale 1 Z rot -1.0  searching scale 1 Z rot -0.8  searching scale 1 Z rot -0.5  searching scale 1 Z rot -0.3  searching scale 1 Z rot -0.0  searching scale 1 Z rot 0.2  searching scale 1 Z rot 0.5  searching scale 1 Z rot 0.7  searching scale 1 Z rot 1.0  searching scale 1 Z rot 1.2  searching scale 1 Z rot 1.5  searching scale 1 Z rot 1.7  searching scale 1 Z rot 2.0  searching scale 1 Z rot 2.2  searching scale 1 Z rot 2.5  searching scale 1 Z rot 2.7  searching scale 1 Z rot 3.0  searching scale 1 Z rot 3.2  searching scale 1 Z rot 3.5  searching scale 1 Z rot 3.7  searching scale 1 Z rot 4.0  searching scale 1 Z rot 4.2  global minimum found at slice 127.3, rotations (2.23, -2.52)
+final transformation (x=127.3, yr=2.231, zr=-2.524):
+ 0.99827   0.04403   0.03889  -8.49645;
+-0.04400   0.99903  -0.00171   19.90575;
+-0.03893   0.00000   0.99924   19.04027;
+ 0.00000   0.00000   0.00000   1.00000;
+updating x range to be [126, 130] in xformed coordinates
+best xformed slice 128
+cc center is found at 128 114 114
+eigenvectors:
+ 0.00083  -0.00211   1.00000;
+-0.35977  -0.93304  -0.00167;
+ 0.93304  -0.35977  -0.00153;
+error in mid anterior detected - correcting...
+writing aseg with callosum to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/aseg.auto.mgz...
+corpus callosum segmentation took 0.6 minutes
+#--------------------------------------
+#@# Merge ASeg Tue Mar 13 11:25:02 PDT 2018
+
+ cp aseg.auto.mgz aseg.presurf.mgz 
+
+#--------------------------------------------
+#@# Intensity Normalization2 Tue Mar 13 11:25:02 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_normalize -mprage -aseg aseg.presurf.mgz -mask brainmask.mgz norm.mgz brain.mgz 
+
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+using segmentation for initial intensity normalization
+using MR volume brainmask.mgz to mask input volume...
+reading from norm.mgz...
+Reading aseg aseg.presurf.mgz
+normalizing image...
+processing with aseg
+removing outliers in the aseg WM...
+1027 control points removed
+Building bias image
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 0...
+Smoothing with sigma 8
+Applying bias correction
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+
+Iterating 2 times
+---------------------------------
+3d normalization pass 1 of 2
+white matter peak found at 110
+white matter peak found at 109
+gm peak at 62 (62), valley at 23 (23)
+csf peak at 11, setting threshold to 45
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+---------------------------------
+3d normalization pass 2 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 61 (61), valley at 22 (22)
+csf peak at 31, setting threshold to 51
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+Done iterating ---------------------------------
+writing output to brain.mgz
+3D bias adjustment took 1 minutes and 44 seconds.
+#--------------------------------------------
+#@# Mask BFS Tue Mar 13 11:26:47 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_mask -T 5 brain.mgz brainmask.mgz brain.finalsurfs.mgz 
+
+threshold mask volume at 5
+DoAbs = 0
+Found 1628928 voxels in mask (pct=  9.71)
+Writing masked volume to brain.finalsurfs.mgz...done.
+#--------------------------------------------
+#@# WM Segmentation Tue Mar 13 11:26:48 PDT 2018
+
+ mri_segment -mprage brain.mgz wm.seg.mgz 
+
+doing initial intensity segmentation...
+using local statistics to label ambiguous voxels...
+computing class statistics for intensity windows...
+WM (107.0): 106.7 +- 5.0 [79.0 --> 125.0]
+GM (67.0) : 66.6 +- 9.0 [30.0 --> 95.0]
+setting bottom of white matter range to 75.6
+setting top of gray matter range to 84.6
+doing initial intensity segmentation...
+using local statistics to label ambiguous voxels...
+using local geometry to label remaining ambiguous voxels...
+
+reclassifying voxels using Gaussian border classifier...
+
+removing voxels with positive offset direction...
+smoothing T1 volume with sigma = 0.250
+removing 1-dimensional structures...
+9550 sparsely connected voxels removed...
+thickening thin strands....
+20 segments, 6405 filled
+1172 bright non-wm voxels segmented.
+4608 diagonally connected voxels added...
+white matter segmentation took 1.0 minutes
+writing output to wm.seg.mgz...
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+
+ mri_edit_wm_with_aseg -keep-in wm.seg.mgz brain.mgz aseg.presurf.mgz wm.asegedit.mgz 
+
+preserving editing changes in input volume...
+auto filling took 0.28 minutes
+reading wm segmentation from wm.seg.mgz...
+13 voxels added to wm to prevent paths from MTL structures to cortex
+2839 additional wm voxels added
+0 additional wm voxels added
+SEG EDIT: 34156 voxels turned on, 55695 voxels turned off.
+propagating editing to output volume from wm.seg.mgz
+115,126,128 old 86   new 86
+115,126,128 old 86   new 86
+writing edited volume to wm.asegedit.mgz....
+
+ mri_pretess wm.asegedit.mgz wm norm.mgz wm.mgz 
+
+
+Iteration Number : 1
+pass   1 (xy+):  14 found -  14 modified     |    TOTAL:  14
+pass   2 (xy+):   0 found -  14 modified     |    TOTAL:  14
+pass   1 (xy-):  24 found -  24 modified     |    TOTAL:  38
+pass   2 (xy-):   0 found -  24 modified     |    TOTAL:  38
+pass   1 (yz+):  48 found -  48 modified     |    TOTAL:  86
+pass   2 (yz+):   0 found -  48 modified     |    TOTAL:  86
+pass   1 (yz-):  19 found -  19 modified     |    TOTAL: 105
+pass   2 (yz-):   0 found -  19 modified     |    TOTAL: 105
+pass   1 (xz+):  16 found -  16 modified     |    TOTAL: 121
+pass   2 (xz+):   0 found -  16 modified     |    TOTAL: 121
+pass   1 (xz-):  21 found -  21 modified     |    TOTAL: 142
+pass   2 (xz-):   0 found -  21 modified     |    TOTAL: 142
+Iteration Number : 1
+pass   1 (+++):  26 found -  26 modified     |    TOTAL:  26
+pass   2 (+++):   0 found -  26 modified     |    TOTAL:  26
+pass   1 (+++):  35 found -  35 modified     |    TOTAL:  61
+pass   2 (+++):   0 found -  35 modified     |    TOTAL:  61
+pass   1 (+++):  25 found -  25 modified     |    TOTAL:  86
+pass   2 (+++):   0 found -  25 modified     |    TOTAL:  86
+pass   1 (+++):  28 found -  28 modified     |    TOTAL: 114
+pass   2 (+++):   0 found -  28 modified     |    TOTAL: 114
+Iteration Number : 1
+pass   1 (++): 224 found - 224 modified     |    TOTAL: 224
+pass   2 (++):   0 found - 224 modified     |    TOTAL: 224
+pass   1 (+-): 173 found - 173 modified     |    TOTAL: 397
+pass   2 (+-):   0 found - 173 modified     |    TOTAL: 397
+pass   1 (--): 199 found - 199 modified     |    TOTAL: 596
+pass   2 (--):   0 found - 199 modified     |    TOTAL: 596
+pass   1 (-+): 133 found - 133 modified     |    TOTAL: 729
+pass   2 (-+):   0 found - 133 modified     |    TOTAL: 729
+Iteration Number : 2
+pass   1 (xy+):   4 found -   4 modified     |    TOTAL:   4
+pass   2 (xy+):   0 found -   4 modified     |    TOTAL:   4
+pass   1 (xy-):   5 found -   5 modified     |    TOTAL:   9
+pass   2 (xy-):   0 found -   5 modified     |    TOTAL:   9
+pass   1 (yz+):   7 found -   7 modified     |    TOTAL:  16
+pass   2 (yz+):   0 found -   7 modified     |    TOTAL:  16
+pass   1 (yz-):   8 found -   8 modified     |    TOTAL:  24
+pass   2 (yz-):   0 found -   8 modified     |    TOTAL:  24
+pass   1 (xz+):   2 found -   2 modified     |    TOTAL:  26
+pass   2 (xz+):   0 found -   2 modified     |    TOTAL:  26
+pass   1 (xz-):   8 found -   8 modified     |    TOTAL:  34
+pass   2 (xz-):   0 found -   8 modified     |    TOTAL:  34
+Iteration Number : 2
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   4 found -   4 modified     |    TOTAL:   4
+pass   2 (+++):   0 found -   4 modified     |    TOTAL:   4
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   4
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   4
+Iteration Number : 2
+pass   1 (++):   5 found -   5 modified     |    TOTAL:   5
+pass   2 (++):   0 found -   5 modified     |    TOTAL:   5
+pass   1 (+-):   1 found -   1 modified     |    TOTAL:   6
+pass   2 (+-):   0 found -   1 modified     |    TOTAL:   6
+pass   1 (--):   3 found -   3 modified     |    TOTAL:   9
+pass   2 (--):   0 found -   3 modified     |    TOTAL:   9
+pass   1 (-+):   4 found -   4 modified     |    TOTAL:  13
+pass   2 (-+):   0 found -   4 modified     |    TOTAL:  13
+Iteration Number : 3
+pass   1 (xy+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xy-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz-):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 3
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 3
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (--):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   0
+
+Total Number of Modified Voxels = 1036 (out of 544585: 0.190237)
+binarizing input wm segmentation...
+Ambiguous edge configurations... 
+
+mri_pretess done
+
+#--------------------------------------------
+#@# Fill Tue Mar 13 11:28:07 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri
+
+ mri_fill -a ../scripts/ponscc.cut.log -xform transforms/talairach.lta -segmentation aseg.auto_noCCseg.mgz wm.mgz filled.mgz 
+
+logging cutting plane coordinates to ../scripts/ponscc.cut.log...
+INFO: Using transforms/talairach.lta and its offset for Talairach volume ...
+using segmentation aseg.auto_noCCseg.mgz...
+reading input volume...done.
+searching for cutting planes...voxel to talairach voxel transform
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+voxel to talairach voxel transform
+ 1.01427   0.00493   0.02902  -7.45882;
+-0.01630   1.02002   0.45722  -66.34894;
+-0.02600  -0.49015   0.92108   61.28228;
+ 0.00000   0.00000   0.00000   1.00000;
+reading segmented volume aseg.auto_noCCseg.mgz...
+Looking for area (min, max) = (350, 1400)
+area[0] = 906 (min = 350, max = 1400), aspect = 0.43 (min = 0.10, max = 0.75)
+no need to search
+using seed (125, 121, 148), TAL = (3.0, 20.0, 7.0)
+talairach voxel to voxel transform
+ 0.98509  -0.01588  -0.02315   7.71252;
+ 0.00264   0.79152  -0.39299   76.61951;
+ 0.02921   0.42075   0.87590  -25.54272;
+ 0.00000   0.00000   0.00000   1.00000;
+segmentation indicates cc at (125,  121,  148) --> (3.0, 20.0, 7.0)
+done.
+writing output to filled.mgz...
+filling took 0.4 minutes
+talairach cc position changed to (3.00, 20.00, 7.00)
+Erasing brainstem...done.
+seed_search_size = 9, min_neighbors = 5
+search rh wm seed point around talairach space:(21.00, 20.00, 7.00) SRC: (107.77, 114.51, 158.13)
+search lh wm seed point around talairach space (-15.00, 20.00, 7.00), SRC: (143.23, 114.61, 159.18)
+compute mri_fill using aseg
+Erasing Brain Stem and Cerebellum ...
+Define left and right masks using aseg:
+Building Voronoi diagram ...
+Using the Voronoi diagram to separate WM into two hemispheres ...
+Find the largest connected component for each hemisphere ...
+#--------------------------------------------
+#@# Tessellate lh Tue Mar 13 11:28:31 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mri_pretess ../mri/filled.mgz 255 ../mri/norm.mgz ../mri/filled-pretess255.mgz 
+
+
+Iteration Number : 1
+pass   1 (xy+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xy-):   2 found -   2 modified     |    TOTAL:   2
+pass   2 (xy-):   0 found -   2 modified     |    TOTAL:   2
+pass   1 (yz+):   2 found -   2 modified     |    TOTAL:   4
+pass   2 (yz+):   0 found -   2 modified     |    TOTAL:   4
+pass   1 (yz-):   4 found -   4 modified     |    TOTAL:   8
+pass   2 (yz-):   0 found -   4 modified     |    TOTAL:   8
+pass   1 (xz+):   2 found -   2 modified     |    TOTAL:  10
+pass   2 (xz+):   0 found -   2 modified     |    TOTAL:  10
+pass   1 (xz-):   2 found -   2 modified     |    TOTAL:  12
+pass   2 (xz-):   0 found -   2 modified     |    TOTAL:  12
+Iteration Number : 1
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 1
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   1 found -   1 modified     |    TOTAL:   1
+pass   2 (+-):   0 found -   1 modified     |    TOTAL:   1
+pass   1 (--):   1 found -   1 modified     |    TOTAL:   2
+pass   2 (--):   0 found -   1 modified     |    TOTAL:   2
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   2
+Iteration Number : 2
+pass   1 (xy+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xy-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz-):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 2
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 2
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (--):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   0
+
+Total Number of Modified Voxels = 14 (out of 262081: 0.005342)
+Ambiguous edge configurations... 
+
+mri_pretess done
+
+
+ mri_tessellate ../mri/filled-pretess255.mgz 255 ../surf/lh.orig.nofix 
+
+$Id: mri_tessellate.c,v 1.38.2.1 2016/07/26 18:46:38 zkaufman Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+slice 50: 143 vertices, 180 faces
+slice 60: 4855 vertices, 5111 faces
+slice 70: 14884 vertices, 15308 faces
+slice 80: 28393 vertices, 28878 faces
+slice 90: 42707 vertices, 43186 faces
+slice 100: 57549 vertices, 58014 faces
+slice 110: 71623 vertices, 72106 faces
+slice 120: 85229 vertices, 85695 faces
+slice 130: 98202 vertices, 98629 faces
+slice 140: 110106 vertices, 110534 faces
+slice 150: 122159 vertices, 122586 faces
+slice 160: 133269 vertices, 133673 faces
+slice 170: 143364 vertices, 143709 faces
+slice 180: 151135 vertices, 151397 faces
+slice 190: 157889 vertices, 158147 faces
+slice 200: 162348 vertices, 162508 faces
+slice 210: 163282 vertices, 163326 faces
+slice 220: 163282 vertices, 163326 faces
+slice 230: 163282 vertices, 163326 faces
+slice 240: 163282 vertices, 163326 faces
+slice 250: 163282 vertices, 163326 faces
+using the conformed surface RAS to save vertex points...
+writing ../surf/lh.orig.nofix
+using vox2ras matrix:
+-1.00000   0.00000   0.00000   128.00000;
+ 0.00000   0.00000   1.00000  -128.00000;
+ 0.00000  -1.00000   0.00000   128.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+ rm -f ../mri/filled-pretess255.mgz 
+
+
+ mris_extract_main_component ../surf/lh.orig.nofix ../surf/lh.orig.nofix 
+
+
+counting number of connected components...
+   163282 voxel in cpt #1: X=-44 [v=163282,e=489978,f=326652] located at (-28.030653, -8.788581, 2.212871)
+For the whole surface: X=-44 [v=163282,e=489978,f=326652]
+One single component has been found
+nothing to do
+done
+
+#--------------------------------------------
+#@# Tessellate rh Tue Mar 13 11:28:35 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mri_pretess ../mri/filled.mgz 127 ../mri/norm.mgz ../mri/filled-pretess127.mgz 
+
+
+Iteration Number : 1
+pass   1 (xy+):   1 found -   1 modified     |    TOTAL:   1
+pass   2 (xy+):   0 found -   1 modified     |    TOTAL:   1
+pass   1 (xy-):   1 found -   1 modified     |    TOTAL:   2
+pass   2 (xy-):   0 found -   1 modified     |    TOTAL:   2
+pass   1 (yz+):   3 found -   3 modified     |    TOTAL:   5
+pass   2 (yz+):   0 found -   3 modified     |    TOTAL:   5
+pass   1 (yz-):   1 found -   1 modified     |    TOTAL:   6
+pass   2 (yz-):   0 found -   1 modified     |    TOTAL:   6
+pass   1 (xz+):   1 found -   1 modified     |    TOTAL:   7
+pass   2 (xz+):   0 found -   1 modified     |    TOTAL:   7
+pass   1 (xz-):   1 found -   1 modified     |    TOTAL:   8
+pass   2 (xz-):   0 found -   1 modified     |    TOTAL:   8
+Iteration Number : 1
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 1
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   1 found -   1 modified     |    TOTAL:   1
+pass   2 (+-):   0 found -   1 modified     |    TOTAL:   1
+pass   1 (--):   0 found -   0 modified     |    TOTAL:   1
+pass   1 (-+):   1 found -   1 modified     |    TOTAL:   2
+pass   2 (-+):   0 found -   1 modified     |    TOTAL:   2
+Iteration Number : 2
+pass   1 (xy+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xy-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz-):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 2
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 2
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (--):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   0
+
+Total Number of Modified Voxels = 10 (out of 262536: 0.003809)
+Ambiguous edge configurations... 
+
+mri_pretess done
+
+
+ mri_tessellate ../mri/filled-pretess127.mgz 127 ../surf/rh.orig.nofix 
+
+$Id: mri_tessellate.c,v 1.38.2.1 2016/07/26 18:46:38 zkaufman Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+slice 50: 111 vertices, 132 faces
+slice 60: 4752 vertices, 5045 faces
+slice 70: 15321 vertices, 15755 faces
+slice 80: 29695 vertices, 30162 faces
+slice 90: 44910 vertices, 45440 faces
+slice 100: 60005 vertices, 60440 faces
+slice 110: 74198 vertices, 74661 faces
+slice 120: 87386 vertices, 87823 faces
+slice 130: 100329 vertices, 100788 faces
+slice 140: 112483 vertices, 112874 faces
+slice 150: 123949 vertices, 124343 faces
+slice 160: 134240 vertices, 134659 faces
+slice 170: 144187 vertices, 144574 faces
+slice 180: 152182 vertices, 152507 faces
+slice 190: 158022 vertices, 158264 faces
+slice 200: 162018 vertices, 162181 faces
+slice 210: 162684 vertices, 162748 faces
+slice 220: 162684 vertices, 162748 faces
+slice 230: 162684 vertices, 162748 faces
+slice 240: 162684 vertices, 162748 faces
+slice 250: 162684 vertices, 162748 faces
+using the conformed surface RAS to save vertex points...
+writing ../surf/rh.orig.nofix
+using vox2ras matrix:
+-1.00000   0.00000   0.00000   128.00000;
+ 0.00000   0.00000   1.00000  -128.00000;
+ 0.00000  -1.00000   0.00000   128.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+ rm -f ../mri/filled-pretess127.mgz 
+
+
+ mris_extract_main_component ../surf/rh.orig.nofix ../surf/rh.orig.nofix 
+
+
+counting number of connected components...
+   162684 voxel in cpt #1: X=-64 [v=162684,e=488244,f=325496] located at (30.023617, -10.270973, 5.148386)
+For the whole surface: X=-64 [v=162684,e=488244,f=325496]
+One single component has been found
+nothing to do
+done
+
+#--------------------------------------------
+#@# Smooth1 lh Tue Mar 13 11:28:38 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_smooth -nw -seed 1234 ../surf/lh.orig.nofix ../surf/lh.smoothwm.nofix 
+
+#--------------------------------------------
+#@# Smooth1 rh Tue Mar 13 11:28:39 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_smooth -nw -seed 1234 ../surf/rh.orig.nofix ../surf/rh.smoothwm.nofix 
+
+Waiting for PID 60528 of (60528 60532) to complete...
+Waiting for PID 60532 of (60528 60532) to complete...
+PIDs (60528 60532) completed and logs appended.
+#--------------------------------------------
+#@# Inflation1 lh Tue Mar 13 11:28:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_inflate -no-save-sulc ../surf/lh.smoothwm.nofix ../surf/lh.inflated.nofix 
+
+#--------------------------------------------
+#@# Inflation1 rh Tue Mar 13 11:28:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_inflate -no-save-sulc ../surf/rh.smoothwm.nofix ../surf/rh.inflated.nofix 
+
+Waiting for PID 60704 of (60704 60707) to complete...
+Waiting for PID 60707 of (60704 60707) to complete...
+PIDs (60704 60707) completed and logs appended.
+#--------------------------------------------
+#@# QSphere lh Tue Mar 13 11:29:13 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_sphere -q -seed 1234 ../surf/lh.inflated.nofix ../surf/lh.qsphere.nofix 
+
+#--------------------------------------------
+#@# QSphere rh Tue Mar 13 11:29:13 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_sphere -q -seed 1234 ../surf/rh.inflated.nofix ../surf/rh.qsphere.nofix 
+
+Waiting for PID 60885 of (60885 60951) to complete...
+Waiting for PID 60951 of (60885 60951) to complete...
+PIDs (60885 60951) completed and logs appended.
+#--------------------------------------------
+#@# Fix Topology Copy lh Tue Mar 13 11:31:48 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ cp ../surf/lh.orig.nofix ../surf/lh.orig 
+
+
+ cp ../surf/lh.inflated.nofix ../surf/lh.inflated 
+
+#--------------------------------------------
+#@# Fix Topology Copy rh Tue Mar 13 11:31:48 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ cp ../surf/rh.orig.nofix ../surf/rh.orig 
+
+
+ cp ../surf/rh.inflated.nofix ../surf/rh.inflated 
+
+#@# Fix Topology lh Tue Mar 13 11:31:48 PDT 2018
+
+ mris_fix_topology -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_fix_topology.lh.dat -mgz -sphere qsphere.nofix -ga -seed 1234 sub-NDARINVVV50F0CH lh 
+
+#@# Fix Topology rh Tue Mar 13 11:31:48 PDT 2018
+
+ mris_fix_topology -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_fix_topology.rh.dat -mgz -sphere qsphere.nofix -ga -seed 1234 sub-NDARINVVV50F0CH rh 
+
+Waiting for PID 61192 of (61192 61195) to complete...
+Waiting for PID 61195 of (61192 61195) to complete...
+PIDs (61192 61195) completed and logs appended.
+
+ mris_euler_number ../surf/lh.orig 
+
+euler # = v-e+f = 2g-2: 161120 - 483354 + 322236 = 2 --> 0 holes
+      F =2V-4:          322236 = 322240-4 (0)
+      2E=3F:            966708 = 966708 (0)
+
+total defect index = 0
+
+ mris_euler_number ../surf/rh.orig 
+
+euler # = v-e+f = 2g-2: 160564 - 481686 + 321124 = 2 --> 0 holes
+      F =2V-4:          321124 = 321128-4 (0)
+      2E=3F:            963372 = 963372 (0)
+
+total defect index = 0
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_remove_intersection ../surf/lh.orig ../surf/lh.orig 
+
+intersection removal took 0.00 hours
+removing intersecting faces
+000: 30 intersecting
+writing corrected surface to ../surf/lh.orig
+
+ rm ../surf/lh.inflated 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_remove_intersection ../surf/rh.orig ../surf/rh.orig 
+
+intersection removal took 0.00 hours
+removing intersecting faces
+000: 42 intersecting
+001: 2 intersecting
+writing corrected surface to ../surf/rh.orig
+
+ rm ../surf/rh.inflated 
+
+#--------------------------------------------
+#@# Make White Surf lh Tue Mar 13 12:15:25 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -whiteonly -mgz -T1 brain.finalsurfs sub-NDARINVVV50F0CH lh 
+
+#--------------------------------------------
+#@# Make White Surf rh Tue Mar 13 12:15:25 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -whiteonly -mgz -T1 brain.finalsurfs sub-NDARINVVV50F0CH rh 
+
+Waiting for PID 63051 of (63051 63054) to complete...
+Waiting for PID 63054 of (63051 63054) to complete...
+PIDs (63051 63054) completed and logs appended.
+#--------------------------------------------
+#@# Smooth2 lh Tue Mar 13 12:23:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_smooth -n 3 -nw -seed 1234 ../surf/lh.white.preaparc ../surf/lh.smoothwm 
+
+#--------------------------------------------
+#@# Smooth2 rh Tue Mar 13 12:23:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_smooth -n 3 -nw -seed 1234 ../surf/rh.white.preaparc ../surf/rh.smoothwm 
+
+Waiting for PID 63476 of (63476 63479) to complete...
+Waiting for PID 63479 of (63476 63479) to complete...
+PIDs (63476 63479) completed and logs appended.
+#--------------------------------------------
+#@# Inflation2 lh Tue Mar 13 12:23:59 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_inflate -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_inflate.lh.dat ../surf/lh.smoothwm ../surf/lh.inflated 
+
+#--------------------------------------------
+#@# Inflation2 rh Tue Mar 13 12:23:59 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_inflate -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_inflate.rh.dat ../surf/rh.smoothwm ../surf/rh.inflated 
+
+Waiting for PID 63648 of (63648 63651) to complete...
+Waiting for PID 63651 of (63648 63651) to complete...
+PIDs (63648 63651) completed and logs appended.
+#--------------------------------------------
+#@# Curv .H and .K lh Tue Mar 13 12:24:22 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf
+
+ mris_curvature -w lh.white.preaparc 
+
+rm -f lh.white.H
+ln -s lh.white.preaparc.H lh.white.H
+rm -f lh.white.K
+ln -s lh.white.preaparc.K lh.white.K
+
+ mris_curvature -thresh .999 -n -a 5 -w -distances 10 10 lh.inflated 
+
+#--------------------------------------------
+#@# Curv .H and .K rh Tue Mar 13 12:24:22 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf
+
+ mris_curvature -w rh.white.preaparc 
+
+rm -f rh.white.H
+ln -s rh.white.preaparc.H rh.white.H
+rm -f rh.white.K
+ln -s rh.white.preaparc.K rh.white.K
+
+ mris_curvature -thresh .999 -n -a 5 -w -distances 10 10 rh.inflated 
+
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf
+reconbatchjobs /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts/recon-all.log mris_curvature_white_lh.cmd rm_curvature_white_lh.H.cmd ln_curvature_white_lh.H.cmd rm_curvature_white_lh.K.cmd ln_curvature_white_lh.K.cmd mris_curvature_inflated_lh.cmd mris_curvature_white_rh.cmd rm_curvature_white_rh.H.cmd ln_curvature_white_rh.H.cmd rm_curvature_white_rh.K.cmd ln_curvature_white_rh.K.cmd mris_curvature_inflated_rh.cmd
+Waiting for PID 63862 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63865 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63868 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63871 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63874 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63877 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63880 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63883 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63886 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63889 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63892 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+Waiting for PID 63895 of (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) to complete...
+PIDs (63862 63865 63868 63871 63874 63877 63880 63883 63886 63889 63892 63895) completed and logs appended.
+
+#-----------------------------------------
+#@# Curvature Stats lh Tue Mar 13 12:26:28 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf
+
+ mris_curvature_stats -m --writeCurvatureFiles -G -o ../stats/lh.curv.stats -F smoothwm sub-NDARINVVV50F0CH lh curv sulc 
+
+             Toggling save flag on curvature files                       [ ok ]
+                 Outputting results using filestem   [ ../stats/lh.curv.stats ]
+             Toggling save flag on curvature files                       [ ok ]
+                                   Setting surface [ sub-NDARINVVV50F0CH/lh.smoothwm ]
+                                Reading surface...                       [ ok ]
+                                   Setting texture                     [ curv ]
+                                Reading texture...                       [ ok ]
+                                   Setting texture                     [ sulc ]
+                                Reading texture...Gb_filter = 0
+                       [ ok ]
+      Calculating Discrete Principal Curvatures...
+   Determining geometric order for vertex faces... [####################] [ ok ]
+                      Determining KH curvatures... [####################] [ ok ]
+                    Determining k1k2 curvatures... [####################] [ ok ]
+                                   deltaViolations                      [ 282 ]
+Gb_filter = 0
+
+WARN:    S lookup   min:                          -0.269622
+WARN:    S explicit min:                          0.000000	vertex = 171
+
+#-----------------------------------------
+#@# Curvature Stats rh Tue Mar 13 12:26:32 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf
+
+ mris_curvature_stats -m --writeCurvatureFiles -G -o ../stats/rh.curv.stats -F smoothwm sub-NDARINVVV50F0CH rh curv sulc 
+
+             Toggling save flag on curvature files                       [ ok ]
+                 Outputting results using filestem   [ ../stats/rh.curv.stats ]
+             Toggling save flag on curvature files                       [ ok ]
+                                   Setting surface [ sub-NDARINVVV50F0CH/rh.smoothwm ]
+                                Reading surface...                       [ ok ]
+                                   Setting texture                     [ curv ]
+                                Reading texture...                       [ ok ]
+                                   Setting texture                     [ sulc ]
+                                Reading texture...Gb_filter = 0
+                       [ ok ]
+      Calculating Discrete Principal Curvatures...
+   Determining geometric order for vertex faces... [####################] [ ok ]
+                      Determining KH curvatures... [####################] [ ok ]
+                    Determining k1k2 curvatures... [####################] [ ok ]
+                                   deltaViolations                      [ 290 ]
+Gb_filter = 0
+
+WARN:    S lookup   min:                          -0.607428
+WARN:    S explicit min:                          0.000000	vertex = 14
+#--------------------------------------------
+#@# Sphere lh Tue Mar 13 12:26:35 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_sphere -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_sphere.lh.dat -seed 1234 ../surf/lh.inflated ../surf/lh.sphere 
+
+#--------------------------------------------
+#@# Sphere rh Tue Mar 13 12:26:35 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_sphere -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_sphere.rh.dat -seed 1234 ../surf/rh.inflated ../surf/rh.sphere 
+
+Waiting for PID 64438 of (64438 64448) to complete...
+Waiting for PID 64448 of (64438 64448) to complete...
+PIDs (64438 64448) completed and logs appended.
+#--------------------------------------------
+#@# Surf Reg lh Tue Mar 13 12:39:32 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_register -curv -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_register.lh.dat ../surf/lh.sphere /global/homes/j/jcha9928/app/freesurfer/average/lh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif ../surf/lh.sphere.reg 
+
+#--------------------------------------------
+#@# Surf Reg rh Tue Mar 13 12:39:32 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_register -curv -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/touch/rusage.mris_register.rh.dat ../surf/rh.sphere /global/homes/j/jcha9928/app/freesurfer/average/rh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif ../surf/rh.sphere.reg 
+
+Waiting for PID 65024 of (65024 65027) to complete...
+Waiting for PID 65027 of (65024 65027) to complete...
+PIDs (65024 65027) completed and logs appended.
+#--------------------------------------------
+#@# Jacobian white lh Tue Mar 13 13:26:47 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_jacobian ../surf/lh.white.preaparc ../surf/lh.sphere.reg ../surf/lh.jacobian_white 
+
+#--------------------------------------------
+#@# Jacobian white rh Tue Mar 13 13:26:47 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_jacobian ../surf/rh.white.preaparc ../surf/rh.sphere.reg ../surf/rh.jacobian_white 
+
+Waiting for PID 1629 of (1629 1632) to complete...
+Waiting for PID 1632 of (1629 1632) to complete...
+PIDs (1629 1632) completed and logs appended.
+#--------------------------------------------
+#@# AvgCurv lh Tue Mar 13 13:26:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mrisp_paint -a 5 /global/homes/j/jcha9928/app/freesurfer/average/lh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif#6 ../surf/lh.sphere.reg ../surf/lh.avg_curv 
+
+#--------------------------------------------
+#@# AvgCurv rh Tue Mar 13 13:26:50 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mrisp_paint -a 5 /global/homes/j/jcha9928/app/freesurfer/average/rh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif#6 ../surf/rh.sphere.reg ../surf/rh.avg_curv 
+
+Waiting for PID 1805 of (1805 1808) to complete...
+Waiting for PID 1808 of (1805 1808) to complete...
+PIDs (1805 1808) completed and logs appended.
+#-----------------------------------------
+#@# Cortical Parc lh Tue Mar 13 13:26:52 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINVVV50F0CH lh ../surf/lh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/lh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.annot 
+
+#-----------------------------------------
+#@# Cortical Parc rh Tue Mar 13 13:26:53 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_ca_label -l ../label/rh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINVVV50F0CH rh ../surf/rh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/rh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/rh.aparc.annot 
+
+Waiting for PID 1982 of (1982 1985) to complete...
+Waiting for PID 1985 of (1982 1985) to complete...
+PIDs (1982 1985) completed and logs appended.
+#--------------------------------------------
+#@# Make Pial Surf lh Tue Mar 13 13:27:14 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_make_surfaces -orig_white white.preaparc -orig_pial white.preaparc -aseg ../mri/aseg.presurf -mgz -T1 brain.finalsurfs sub-NDARINVVV50F0CH lh 
+
+#--------------------------------------------
+#@# Make Pial Surf rh Tue Mar 13 13:27:14 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ mris_make_surfaces -orig_white white.preaparc -orig_pial white.preaparc -aseg ../mri/aseg.presurf -mgz -T1 brain.finalsurfs sub-NDARINVVV50F0CH rh 
+
+Waiting for PID 2217 of (2217 2220) to complete...
+Waiting for PID 2220 of (2217 2220) to complete...
+PIDs (2217 2220) completed and logs appended.
+#--------------------------------------------
+#@# Refine Pial Surfs w/ T2/FLAIR Tue Mar 13 13:51:24 PDT 2018
+
+ bbregister --s sub-NDARINVVV50F0CH --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz --lta /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.lta --init-coreg --T2 
+
+tmp /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149
+Log file is /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat.log
+Tue Mar 13 13:51:25 PDT 2018
+
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+/global/homes/j/jcha9928/app/freesurfer/bin/bbregister --s sub-NDARINVVV50F0CH --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz --lta /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.lta --init-coreg --T2
+
+$Id: bbregister,v 1.75 2016/05/10 20:02:28 greve Exp $
+Linux nid01131 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /global/homes/j/jcha9928/app/freesurfer
+mri_convert /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii
+mri_convert.bin /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii...
+mri_coreg --s sub-NDARINVVV50F0CH --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --regdat /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.init.dat --reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/mri_coreg.lta --nthreads 64 --dof 6 --sep 4 --ftol .0001 --linmintol .01 --no-ref-mask
+
+$Id: mri_coreg.c,v 1.27 2016/04/30 15:11:49 greve Exp $
+cwd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+cmdline mri_coreg --s sub-NDARINVVV50F0CH --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --regdat /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.init.dat --reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/mri_coreg.lta --nthreads 64 --dof 6 --sep 4 --ftol .0001 --linmintol .01 --no-ref-mask 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+dof    6
+nsep    1
+cras0    1
+ftol    0.000100
+linmintol    0.010000
+bf       1
+bflim    30.000000
+bfnsamp    30
+SmoothRef 0
+SatPct    99.990000
+MovOOB 0
+optschema 1
+Reading in mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii
+Reading in ref /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/brainmask.mgz
+Setting cras translation parameters to align centers
+Creating random numbers for coordinate dithering
+Performing intensity dithering
+Initial parameters  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  1.0000  1.0000  1.0000  0.0000  0.0000  0.0000 
+Separation list (1):  4   min = 4
+DoSmoothing 1
+DoCoordDither 1
+DoIntensityDither 1
+nitersmax 4
+ftol 1.000e-04
+linmintol 1.000e-02
+SatPct 99.990000
+Hist FWHM 7.000000 7.000000
+nthreads 64
+movsat = 392.1881
+mov gstd 1.8914 1.8914 1.8914
+Smoothing mov
+refsat = 122.0000
+ref gstd 1.8914 1.8914 1.8914
+Smoothing ref
+COREGpreproc() done
+Testing if mov and target overlap
+Init cost   -1.0585698927
+nhits = 262144 out of 16777216, Percent Overlap: 100.0
+Initial  RefRAS-to-MovRAS
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Initial  RefVox-to-MovVox
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+sep = 4 -----------------------------------
+COREGoptBruteForce() 30 1 30
+Turning on MovOOB for BruteForce Search
+#BF# sep= 4 iter=0 lim=30.0 delta=2.00   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000   -1.0585699
+Turning  MovOOB back off after brute force search
+
+
+---------------------------------
+Init Powel Params dof = 6
+Starting OpenPowel2(), sep = 4
+InitialCost        -1.0585699081 
+#@#  4  188  0.00000 0.00000 0.00000 0.00000 0.00000 0.00000   -1.0585699
+fs_powell::minimize
+  nparams 6
+  maxfev 4
+  ftol   0.000100
+  linmin_xtol_   0.010000
+  powell nthiter 0: fret = -1.058570
+#@#  4  195  0.05413 0.00000 0.00000 0.00000 0.00000 0.00000   -1.0585791
+#@#  4  196  0.11098 0.00000 0.00000 0.00000 0.00000 0.00000   -1.0585833
+#@#  4  204  0.11098 0.38197 0.00000 0.00000 0.00000 0.00000   -1.0588006
+#@#  4  207  0.11098 0.33350 0.00000 0.00000 0.00000 0.00000   -1.0588007
+#@#  4  209  0.11098 0.35618 0.00000 0.00000 0.00000 0.00000   -1.0588009
+#@#  4  211  0.11098 0.36618 0.00000 0.00000 0.00000 0.00000   -1.0588013
+#@#  4  218  0.11098 0.36618 0.06161 0.00000 0.00000 0.00000   -1.0588140
+#@#  4  219  0.11098 0.36618 0.12816 0.00000 0.00000 0.00000   -1.0588191
+#@#  4  221  0.11098 0.36618 0.11816 0.00000 0.00000 0.00000   -1.0588193
+#@#  4  229  0.11098 0.36618 0.11816 0.38197 0.00000 0.00000   -1.0588470
+#@#  4  231  0.11098 0.36618 0.11816 0.31126 0.00000 0.00000   -1.0588490
+#@#  4  239  0.11098 0.36618 0.11816 0.31126 0.38197 0.00000   -1.0589157
+#@#  4  241  0.11098 0.36618 0.11816 0.31126 0.40744 0.00000   -1.0589166
+#@#  4  250  0.11098 0.36618 0.11816 0.31126 0.40744 -0.02843   -1.0589168
+#@#  4  251  0.11098 0.36618 0.11816 0.31126 0.40744 -0.05595   -1.0589173
+#@#  4  255  0.11098 0.36618 0.11816 0.31126 0.40744 -0.06595   -1.0589175
+  powell nthiter 1: fret = -1.058918
+#@#  4  264  0.02946 0.36618 0.11816 0.31126 0.40744 -0.07595   -1.0589229
+#@#  4  273  0.02946 0.40889 0.11816 0.31126 0.40744 -0.07595   -1.0589234
+#@#  4  276  0.02946 0.45839 0.11816 0.31126 0.40744 -0.07595   -1.0589238
+#@#  4  277  0.02946 0.44839 0.11816 0.31126 0.40744 -0.07595   -1.0589248
+#@#  4  285  0.02946 0.44839 0.04173 0.31126 0.40744 -0.07595   -1.0589275
+#@#  4  286  0.02946 0.44839 0.06149 0.31126 0.40744 -0.07595   -1.0589281
+#@#  4  295  0.02946 0.44839 0.07149 0.01042 0.40744 -0.07595   -1.0589678
+#@#  4  316  0.02946 0.44839 0.07149 0.00042 0.40744 -0.05294   -1.0589693
+#@#  4  317  0.02946 0.44839 0.07149 0.00042 0.40744 0.08417   -1.0589739
+#@#  4  319  0.02946 0.44839 0.07149 0.00042 0.40744 0.06513   -1.0589751
+Powell done niters total = 1
+OptTimeSec  7.5 sec
+OptTimeMin  0.12 min
+nEvals 320
+Final parameters   0.02946017   0.44838926   0.07148756   0.00041673   0.40743858   0.06512956 
+Final cost   -1.058975153403143
+ 
+
+---------------------------------
+mri_coreg utimesec    213.672000
+mri_coreg stimesec    73.512000
+mri_coreg ru_maxrss   441172
+mri_coreg ru_ixrss    0
+mri_coreg ru_idrss    0
+mri_coreg ru_isrss    0
+mri_coreg ru_minflt   3720456
+mri_coreg ru_majflt   305
+mri_coreg ru_nswap    0
+mri_coreg ru_inblock  0
+mri_coreg ru_oublock  16
+mri_coreg ru_msgsnd   0
+mri_coreg ru_msgrcv   0
+mri_coreg ru_nsignals 0
+mri_coreg ru_nvcsw    32467
+mri_coreg ru_nivcsw   483
+Final  RefRAS-to-MovRAS
+ 0.99997   0.00114   0.00711   0.02946;
+-0.00114   1.00000   0.00001   0.44839;
+-0.00711  -0.00002   0.99997   0.07149;
+ 0.00000   0.00000   0.00000   1.00000;
+Final  RefVox-to-MovVox
+ 0.99997   0.00711  -0.00114  -0.79086;
+-0.00711   0.99997   0.00002   0.84000;
+ 0.00114  -0.00001   1.00000   0.30390;
+ 0.00000   0.00000   0.00000   1.00000;
+Final parameters  0.0295  0.4484  0.0715  0.0004  0.4074  0.0651 
+nhits = 258765 out of 16777216, Percent Overlap:  98.7
+mri_coreg RunTimeSec 38.4 sec
+To check run:
+   tkregisterfv --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --targ /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/brainmask.mgz --reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/mri_coreg.lta --s sub-NDARINVVV50F0CH --surfs 
+
+mri_coreg done
+
+mri_segreg --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --init-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.init.dat --out-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat --subsamp-brute 100 --subsamp 100 --tol 1e-4 --tol1d 1e-3 --brute -4 4 4 --surf white --gm-proj-frac 0.5 --gm-gt-wm 0.5
+$Id: mri_segreg.c,v 1.113 2016/05/10 03:23:20 greve Exp $
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+mri_segreg --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --init-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.init.dat --out-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat --subsamp-brute 100 --subsamp 100 --tol 1e-4 --tol1d 1e-3 --brute -4 4 4 --surf white --gm-proj-frac 0.5 --gm-gt-wm 0.5 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+movvol /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii
+regfile /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.init.dat
+subject sub-NDARINVVV50F0CH
+dof 6
+outregfile /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat
+UseMask 0
+UseLH 1
+UseRH 1
+nsubsamp 100
+PenaltySign  -1
+PenaltySlope 0.500000
+PenaltyCenter 0.000000
+surfname white
+GMProjFrac 0.500000
+WMProjAbs 2.000000
+lhcostfile (null)
+rhcostfile (null)
+interp  trilinear (1)
+frame  0
+TolPowell 0.000100
+nMaxItersPowell 36
+n1dmin  3
+Profile   0
+Gdiag_no  -1
+AddNoise  0 (0)
+SynthSeed 1521682828
+TransRandMax 0.000000
+RotRandMax 0.000000
+Translations 0.000000 0.000000 0.000000
+Rotations   0.000000 0.000000 0.000000
+Input reg
+ 0.99997   0.00114   0.00711   0.02945;
+-0.00114   1.00000   0.00001   0.44840;
+-0.00711  -0.00002   0.99997   0.07149;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Loading mov
+Projecting LH Surfs
+Loading lh.white surf
+Loading lh.thickness for GM
+GM Proj: 1 0.500000 2.000000
+WM Proj: 0 0.500000 2.000000
+Projecting RH Surfs
+Loading rh.white surf
+Loading rh.thickness for GM
+Projecting RH Surfs
+Using lh.cortex.label
+Using rh.cortex.label
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.043533
+ 1  -25.0 -25.0  25.0   0.995189
+ 2  -25.0  25.0 -25.0   1.005990
+ 3  -25.0  25.0  25.0   0.992084
+ 4   25.0 -25.0 -25.0   0.984627
+ 5   25.0 -25.0  25.0   1.013752
+ 6   25.0  25.0 -25.0   1.007207
+ 7   25.0  25.0  25.0   0.979374
+REL:  8  0.160862    8.021756  1.002719 rel = 0.160426 
+Initial costs ----------------
+Number of surface hits 3080
+WM  Intensity   124.0869 +/-  18.7213
+Ctx Intensity   149.3486 +/-  15.2375
+Pct Contrast     18.9021 +/-  13.6908
+Cost   0.1609
+RelCost   0.1604
+
+------------------------------------
+Brute force preopt -4 4 4, n = 729
+     0  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000      0.9781   0.9781  0.0
+     2  -4.0000  -4.0000  -4.0000  -4.0000  -4.0000   4.0000      0.9463   0.9463  0.0
+     5  -4.0000  -4.0000  -4.0000  -4.0000   0.0000   4.0000      0.8985   0.8985  0.0
+    30  -4.0000  -4.0000   0.0000  -4.0000   0.0000  -4.0000      0.8888   0.8888  0.0
+    34  -4.0000  -4.0000   0.0000  -4.0000   4.0000   0.0000      0.8723   0.8723  0.0
+    35  -4.0000  -4.0000   0.0000  -4.0000   4.0000   4.0000      0.8512   0.8512  0.0
+   120  -4.0000   0.0000   0.0000   0.0000   0.0000  -4.0000      0.8054   0.8054  0.0
+   122  -4.0000   0.0000   0.0000   0.0000   0.0000   4.0000      0.7724   0.7724  0.0
+   274   0.0000  -4.0000   0.0000  -4.0000   0.0000   0.0000      0.7674   0.7674  0.0
+   284   0.0000  -4.0000   0.0000   0.0000   0.0000   4.0000      0.7603   0.7603  0.0
+   361   0.0000   0.0000   0.0000   0.0000  -4.0000   0.0000      0.6746   0.6746  0.0
+   364   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000      0.1609   0.1609  0.0
+Brute Force --------------------------
+Min cost was 0.160862
+Number of iterations   729
+Search time 1.022000 sec
+Parameters at best (transmm, rotdeg)
+  0.000   0.000   0.000  0.000  0.000  0.000 
+--------------------------------------------
+
+Starting Powell Minimization
+Init Powel Params dof = 6
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+fs_powell::minimize
+  nparams 6
+  maxfev 36
+  ftol   0.000100
+  linmin_xtol_   0.001000
+  powell nthiter 0: fret = 0.160862
+   7 -0.059  0.000  0.000  0.000  0.000  0.000   0.1605486909
+   9 -0.058  0.000  0.000  0.000  0.000  0.000   0.1605474577
+  10 -0.036  0.000  0.000  0.000  0.000  0.000   0.1605132859
+  13 -0.037  0.000  0.000  0.000  0.000  0.000   0.1605120785
+  14 -0.039  0.000  0.000  0.000  0.000  0.000   0.1605115516
+  22 -0.039 -0.618  0.000  0.000  0.000  0.000   0.1503188094
+  24 -0.039 -0.388  0.000  0.000  0.000  0.000   0.1427415424
+  25 -0.039 -0.374  0.000  0.000  0.000  0.000   0.1424853260
+  27 -0.039 -0.327  0.000  0.000  0.000  0.000   0.1419434231
+  29 -0.039 -0.313  0.000  0.000  0.000  0.000   0.1419162963
+  30 -0.039 -0.314  0.000  0.000  0.000  0.000   0.1419160267
+  31 -0.039 -0.315  0.000  0.000  0.000  0.000   0.1419159536
+  40 -0.039 -0.315  0.145  0.000  0.000  0.000   0.1411519292
+  41 -0.039 -0.315  0.110  0.000  0.000  0.000   0.1406195450
+  42 -0.039 -0.315  0.087  0.000  0.000  0.000   0.1403020787
+  44 -0.039 -0.315  0.073  0.000  0.000  0.000   0.1402510274
+  46 -0.039 -0.315  0.074  0.000  0.000  0.000   0.1402502386
+  55 -0.039 -0.315  0.074  0.031  0.000  0.000   0.1401888823
+  56 -0.039 -0.315  0.074  0.026  0.000  0.000   0.1401775199
+  57 -0.039 -0.315  0.074  0.021  0.000  0.000   0.1401730148
+  58 -0.039 -0.315  0.074  0.020  0.000  0.000   0.1401728459
+  64 -0.039 -0.315  0.074  0.020 -0.618  0.000   0.1392601160
+  66 -0.039 -0.315  0.074  0.020 -0.318  0.000   0.1357581095
+  67 -0.039 -0.315  0.074  0.020 -0.327  0.000   0.1357564276
+  71 -0.039 -0.315  0.074  0.020 -0.343  0.000   0.1357305614
+  76 -0.039 -0.315  0.074  0.020 -0.344  0.000   0.1357285481
+  77 -0.039 -0.315  0.074  0.020 -0.345  0.000   0.1357274074
+  84 -0.039 -0.315  0.074  0.020 -0.345  0.103   0.1335247812
+  85 -0.039 -0.315  0.074  0.020 -0.345  0.142   0.1325655272
+  86 -0.039 -0.315  0.074  0.020 -0.345  0.234   0.1311347114
+  89 -0.039 -0.315  0.074  0.020 -0.345  0.227   0.1310577627
+  90 -0.039 -0.315  0.074  0.020 -0.345  0.220   0.1310323795
+  91 -0.039 -0.315  0.074  0.020 -0.345  0.221   0.1310323258
+  powell nthiter 1: fret = 0.131032
+ 103 -0.052 -0.315  0.074  0.020 -0.345  0.221   0.1309530955
+ 112 -0.052 -0.416  0.074  0.020 -0.345  0.221   0.1301793995
+ 113 -0.052 -0.393  0.074  0.020 -0.345  0.221   0.1300159788
+ 114 -0.052 -0.386  0.074  0.020 -0.345  0.221   0.1299845947
+ 116 -0.052 -0.379  0.074  0.020 -0.345  0.221   0.1299552424
+ 118 -0.052 -0.376  0.074  0.020 -0.345  0.221   0.1299501162
+ 119 -0.052 -0.375  0.074  0.020 -0.345  0.221   0.1299490882
+ 127 -0.052 -0.375  0.091  0.020 -0.345  0.221   0.1298718537
+ 129 -0.052 -0.375  0.094  0.020 -0.345  0.221   0.1298699392
+ 138 -0.052 -0.375  0.094  0.054 -0.345  0.221   0.1293842544
+ 139 -0.052 -0.375  0.094  0.091 -0.345  0.221   0.1293244826
+ 140 -0.052 -0.375  0.094  0.077 -0.345  0.221   0.1292534068
+ 141 -0.052 -0.375  0.094  0.075 -0.345  0.221   0.1292528533
+ 153 -0.052 -0.375  0.094  0.075 -0.348  0.221   0.1292511894
+ 154 -0.052 -0.375  0.094  0.075 -0.347  0.221   0.1292510429
+ 165 -0.052 -0.375  0.094  0.075 -0.347  0.223   0.1292417133
+ 167 -0.052 -0.375  0.094  0.075 -0.347  0.225   0.1292405979
+  powell nthiter 2: fret = 0.129241
+ 178 -0.048 -0.375  0.094  0.075 -0.347  0.225   0.1292379172
+ 179 -0.049 -0.375  0.094  0.075 -0.347  0.225   0.1292367618
+ 187 -0.049 -0.411  0.094  0.075 -0.347  0.225   0.1292243013
+ 188 -0.049 -0.394  0.094  0.075 -0.347  0.225   0.1291894470
+ 189 -0.049 -0.395  0.094  0.075 -0.347  0.225   0.1291879014
+ 190 -0.049 -0.398  0.094  0.075 -0.347  0.225   0.1291861262
+ 212 -0.049 -0.398  0.094  0.077 -0.347  0.225   0.1291850157
+ 223 -0.049 -0.398  0.094  0.077 -0.354  0.225   0.1291724461
+ 226 -0.049 -0.398  0.094  0.077 -0.353  0.225   0.1291721784
+ 239 -0.049 -0.398  0.094  0.077 -0.353  0.228   0.1291630413
+ 240 -0.049 -0.398  0.094  0.077 -0.353  0.229   0.1291624962
+  powell nthiter 3: fret = 0.129162
+ 261 -0.049 -0.401  0.094  0.077 -0.353  0.229   0.1291598296
+ 272 -0.049 -0.401  0.089  0.077 -0.353  0.229   0.1291537008
+ 275 -0.049 -0.401  0.087  0.077 -0.353  0.229   0.1291520171
+ 276 -0.049 -0.401  0.085  0.077 -0.353  0.229   0.1291488183
+ 277 -0.049 -0.401  0.084  0.077 -0.353  0.229   0.1291476663
+ 286 -0.049 -0.401  0.084  0.075 -0.353  0.229   0.1291474705
+ 298 -0.049 -0.401  0.084  0.075 -0.357  0.229   0.1291437793
+ 314 -0.049 -0.401  0.084  0.075 -0.357  0.230   0.1291431627
+  powell nthiter 4: fret = 0.129143
+ 334 -0.049 -0.402  0.084  0.075 -0.357  0.230   0.1291423210
+ 335 -0.049 -0.403  0.084  0.075 -0.357  0.230   0.1291420805
+ 346 -0.049 -0.403  0.083  0.075 -0.357  0.230   0.1291398448
+ 348 -0.049 -0.403  0.081  0.075 -0.357  0.230   0.1291386951
+Powell done niters = 4
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.030022
+ 1  -25.0 -25.0  25.0   0.982678
+ 2  -25.0  25.0 -25.0   1.017616
+ 3  -25.0  25.0  25.0   1.003428
+ 4   25.0 -25.0 -25.0   0.975964
+ 5   25.0 -25.0  25.0   1.006885
+ 6   25.0  25.0 -25.0   1.004279
+ 7   25.0  25.0  25.0   0.985229
+REL:  8  0.129139    8.006100  1.000763 rel = 0.12904 
+Number of iterations     4
+Min cost was 0.129139
+Number of FunctionCalls   385
+TolPowell 0.000100
+nMaxItersPowell 36
+OptimizationTime 0.547000 sec
+Parameters at optimum (transmm) -0.04942 -0.40341  0.08115
+Parameters at optimum (rotdeg)  0.07499 -0.35706  0.22964 
+Final costs ----------------
+Number of surface hits 3080
+WM  Intensity   123.9068 +/-  18.7168
+Ctx Intensity   149.5353 +/-  15.0394
+Pct Contrast     19.1691 +/-  13.5371
+Cost   0.1291
+RelCost   0.1604
+Reg at min cost was 
+ 1.00000  -0.00288   0.00088  -0.02222;
+ 0.00288   0.99999  -0.00130   0.04502;
+-0.00088   0.00130   1.00000   0.15341;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Writing optimal reg to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat, type = 14 
+Original Reg 
+ 0.99997   0.00114   0.00711   0.02945;
+-0.00114   1.00000   0.00001   0.44840;
+-0.00711  -0.00002   0.99997   0.07149;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Original Reg - Optimal Reg
+-0.00002   0.00402   0.00623   0.05167;
+-0.00402   0.00000   0.00131   0.40339;
+-0.00623  -0.00132  -0.00002  -0.08192;
+ 0.00000   0.00000   0.00000   0.00000;
+
+Computing change in lh position
+LH rmsDiffMean 0.603404
+Computing change in rh position
+Surface-RMS-Diff-mm 0.541973 0.104890 0.803521
+mri_segreg done
+mri_segreg --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --init-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat --out-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat --interp trilinear --wm-proj-abs 2 --tol 1e-8 --tol1d 1e-3 --c0 0 --mincost /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat.mincost --dof 6 --nmax 36 --param /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat.param --surf white --brute -0.1 0.1 0.1 --cur-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.curopt.dat --gm-proj-frac 0.5 --nsub 1 --gm-gt-wm 0.5
+$Id: mri_segreg.c,v 1.113 2016/05/10 03:23:20 greve Exp $
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+mri_segreg --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii --init-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat --out-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat --interp trilinear --wm-proj-abs 2 --tol 1e-8 --tol1d 1e-3 --c0 0 --mincost /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat.mincost --dof 6 --nmax 36 --param /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat.param --surf white --brute -0.1 0.1 0.1 --cur-reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/reg.curopt.dat --gm-proj-frac 0.5 --nsub 1 --gm-gt-wm 0.5 
+sysname  Linux
+hostname nid01131
+machine  x86_64
+user     jcha9928
+movvol /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/template.nii
+regfile /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/tmp.bbregister.3149/bbr.pass1.dat
+subject sub-NDARINVVV50F0CH
+dof 6
+outregfile /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat
+UseMask 0
+UseLH 1
+UseRH 1
+nsubsamp 1
+PenaltySign  -1
+PenaltySlope 0.500000
+PenaltyCenter 0.000000
+surfname white
+GMProjFrac 0.500000
+WMProjAbs 2.000000
+lhcostfile (null)
+rhcostfile (null)
+interp  trilinear (1)
+frame  0
+TolPowell 0.000000
+nMaxItersPowell 36
+n1dmin  3
+Profile   0
+Gdiag_no  -1
+AddNoise  0 (0)
+SynthSeed 1521095926
+TransRandMax 0.000000
+RotRandMax 0.000000
+Translations 0.000000 0.000000 0.000000
+Rotations   0.000000 0.000000 0.000000
+Input reg
+ 1.00000  -0.00288   0.00088  -0.02222;
+ 0.00288   0.99999  -0.00130   0.04502;
+-0.00088   0.00130   1.00000   0.15341;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Loading mov
+Projecting LH Surfs
+Loading lh.white surf
+Loading lh.thickness for GM
+GM Proj: 1 0.500000 2.000000
+WM Proj: 0 0.500000 2.000000
+Projecting RH Surfs
+Loading rh.white surf
+Loading rh.thickness for GM
+Projecting RH Surfs
+Using lh.cortex.label
+Using rh.cortex.label
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.020142
+ 1  -25.0 -25.0  25.0   0.992150
+ 2  -25.0  25.0 -25.0   1.011234
+ 3  -25.0  25.0  25.0   1.010155
+ 4   25.0 -25.0 -25.0   1.007434
+ 5   25.0 -25.0  25.0   1.000806
+ 6   25.0  25.0 -25.0   1.010451
+ 7   25.0  25.0  25.0   0.984575
+REL:  8  0.136909    8.036947  1.004618 rel = 0.13628 
+Initial costs ----------------
+Number of surface hits 307036
+WM  Intensity   124.1451 +/-  18.5893
+Ctx Intensity   149.1834 +/-  14.9538
+Pct Contrast     18.7387 +/-  13.4721
+Cost   0.1369
+RelCost   0.1363
+
+------------------------------------
+Brute force preopt -0.1 0.1 0.1, n = 729
+     0  -0.1000  -0.1000  -0.1000  -0.1000  -0.1000  -0.1000      0.1382   0.1382  0.0
+     4  -0.1000  -0.1000  -0.1000  -0.1000   0.0000   0.0000      0.1378   0.1378  0.0
+     9  -0.1000  -0.1000  -0.1000   0.0000  -0.1000  -0.1000      0.1361   0.1361  0.0
+    31  -0.1000  -0.1000   0.0000  -0.1000   0.0000   0.0000      0.1351   0.1351  0.0
+    36  -0.1000  -0.1000   0.0000   0.0000  -0.1000  -0.1000      0.1339   0.1339  0.0
+   112  -0.1000   0.0000   0.0000  -0.1000   0.0000   0.0000      0.1338   0.1338  0.0
+   115  -0.1000   0.0000   0.0000  -0.1000   0.1000   0.0000      0.1336   0.1336  0.0
+   117  -0.1000   0.0000   0.0000   0.0000  -0.1000  -0.1000      0.1332   0.1332  0.0
+   120  -0.1000   0.0000   0.0000   0.0000   0.0000  -0.1000      0.1328   0.1328  0.0
+   124  -0.1000   0.0000   0.0000   0.0000   0.1000   0.0000      0.1327   0.1327  0.0
+   201  -0.1000   0.1000   0.0000   0.0000   0.0000  -0.1000      0.1326   0.1326  0.0
+   283   0.0000  -0.1000   0.0000   0.0000   0.0000   0.0000      0.1323   0.1323  0.0
+   337   0.0000   0.0000  -0.1000   0.0000   0.0000   0.0000      0.1313   0.1313  0.0
+   361   0.0000   0.0000   0.0000   0.0000  -0.1000   0.0000      0.1310   0.1310  0.0
+   364   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000      0.1291   0.1291  0.0
+Brute Force --------------------------
+Min cost was 0.129139
+Number of iterations   729
+Search time 1.015000 sec
+Parameters at best (transmm, rotdeg)
+  0.000   0.000   0.000  0.000  0.000  0.000 
+--------------------------------------------
+
+Starting Powell Minimization
+Init Powel Params dof = 6
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+fs_powell::minimize
+  nparams 6
+  maxfev 36
+  ftol   0.000000
+  linmin_xtol_   0.001000
+  powell nthiter 0: fret = 0.136909
+   7  0.095  0.000  0.000  0.000  0.000  0.000   0.1363215666
+   8  0.087  0.000  0.000  0.000  0.000  0.000   0.1363202744
+   9  0.090  0.000  0.000  0.000  0.000  0.000   0.1363193288
+  18  0.090 -0.005  0.000  0.000  0.000  0.000   0.1362945984
+  19  0.090 -0.028  0.000  0.000  0.000  0.000   0.1362550513
+  21  0.090 -0.024  0.000  0.000  0.000  0.000   0.1362536507
+  22  0.090 -0.025  0.000  0.000  0.000  0.000   0.1362535787
+  30  0.090 -0.025 -0.064  0.000  0.000  0.000   0.1354052239
+  31  0.090 -0.025 -0.090  0.000  0.000  0.000   0.1353207978
+  33  0.090 -0.025 -0.089  0.000  0.000  0.000   0.1353206476
+  42  0.090 -0.025 -0.089 -0.013  0.000  0.000   0.1353040882
+  43  0.090 -0.025 -0.089 -0.012  0.000  0.000   0.1353039755
+  51  0.090 -0.025 -0.089 -0.012  0.008  0.000   0.1353015641
+  52  0.090 -0.025 -0.089 -0.012  0.006  0.000   0.1353014954
+  60  0.090 -0.025 -0.089 -0.012  0.006 -0.124   0.1340373409
+  61  0.090 -0.025 -0.089 -0.012  0.006 -0.123   0.1340366248
+  62  0.090 -0.025 -0.089 -0.012  0.006 -0.119   0.1340357039
+  64  0.090 -0.025 -0.089 -0.012  0.006 -0.120   0.1340355502
+  powell nthiter 1: fret = 0.134036
+  73  0.120 -0.025 -0.089 -0.012  0.006 -0.120   0.1339510098
+  83  0.120 -0.016 -0.089 -0.012  0.006 -0.120   0.1339408098
+  93  0.120 -0.016 -0.086 -0.012  0.006 -0.120   0.1339388300
+  94  0.120 -0.016 -0.085 -0.012  0.006 -0.120   0.1339384959
+ 103  0.120 -0.016 -0.085 -0.015  0.006 -0.120   0.1339379845
+ 113  0.120 -0.016 -0.085 -0.015 -0.007 -0.120   0.1339285534
+ 114  0.120 -0.016 -0.085 -0.015 -0.006 -0.120   0.1339281565
+ 122  0.120 -0.016 -0.085 -0.015 -0.006 -0.130   0.1339138937
+ 123  0.120 -0.016 -0.085 -0.015 -0.006 -0.134   0.1339132617
+ 124  0.120 -0.016 -0.085 -0.015 -0.006 -0.133   0.1339132245
+  powell nthiter 2: fret = 0.133913
+ 133  0.122 -0.016 -0.085 -0.015 -0.006 -0.133   0.1339111943
+ 134  0.129 -0.016 -0.085 -0.015 -0.006 -0.133   0.1339093037
+ 136  0.127 -0.016 -0.085 -0.015 -0.006 -0.133   0.1339084204
+ 155  0.127 -0.016 -0.089 -0.015 -0.006 -0.133   0.1339079200
+ 156  0.127 -0.016 -0.087 -0.015 -0.006 -0.133   0.1339076407
+ 165  0.127 -0.016 -0.087 -0.016 -0.006 -0.133   0.1339075715
+ 173  0.127 -0.016 -0.087 -0.016 -0.009 -0.133   0.1339070882
+ 174  0.127 -0.016 -0.087 -0.016 -0.008 -0.133   0.1339070480
+ 183  0.127 -0.016 -0.087 -0.016 -0.008 -0.138   0.1339066283
+ 185  0.127 -0.016 -0.087 -0.016 -0.008 -0.135   0.1339059723
+  powell nthiter 3: fret = 0.133906
+ 197  0.128 -0.016 -0.087 -0.016 -0.008 -0.135   0.1339058337
+ 207  0.128 -0.015 -0.087 -0.016 -0.008 -0.135   0.1339058326
+ 226  0.128 -0.015 -0.087 -0.015 -0.008 -0.135   0.1339057957
+ 234  0.128 -0.015 -0.087 -0.015 -0.010 -0.135   0.1339057521
+ 245  0.128 -0.015 -0.087 -0.015 -0.010 -0.136   0.1339056557
+  powell nthiter 4: fret = 0.133906
+Powell done niters = 4
+Computing relative cost
+ 0  -25.0 -25.0 -25.0   1.019905
+ 1  -25.0 -25.0  25.0   0.991346
+ 2  -25.0  25.0 -25.0   1.012362
+ 3  -25.0  25.0  25.0   1.008553
+ 4   25.0 -25.0 -25.0   1.006139
+ 5   25.0 -25.0  25.0   1.001063
+ 6   25.0  25.0 -25.0   1.009716
+ 7   25.0  25.0  25.0   0.986038
+REL:  8  0.133906    8.035122  1.004390 rel = 0.13332 
+Number of iterations     4
+Min cost was 0.133906
+Number of FunctionCalls   301
+TolPowell 0.000000
+nMaxItersPowell 36
+OptimizationTime 30.087000 sec
+Parameters at optimum (transmm)  0.12751 -0.01460 -0.08730
+Parameters at optimum (rotdeg) -0.01465 -0.00955 -0.13646 
+Final costs ----------------
+Number of surface hits 307036
+WM  Intensity   124.0708 +/-  18.4149
+Ctx Intensity   149.1329 +/-  14.9664
+Pct Contrast     18.7509 +/-  13.4394
+Cost   0.1339
+RelCost   0.1363
+Reg at min cost was 
+ 1.00000  -0.00050   0.00072   0.10538;
+ 0.00050   1.00000  -0.00104   0.03051;
+-0.00071   0.00104   1.00000   0.06610;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Writing optimal reg to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat, type = 14 
+Original Reg 
+ 1.00000  -0.00288   0.00088  -0.02222;
+ 0.00288   0.99999  -0.00130   0.04502;
+-0.00088   0.00130   1.00000   0.15341;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Original Reg - Optimal Reg
+-0.00000  -0.00238   0.00017  -0.12760;
+ 0.00238  -0.00000  -0.00025   0.01450;
+-0.00017   0.00026  -0.00000   0.08731;
+ 0.00000   0.00000   0.00000   0.00000;
+
+Computing change in lh position
+LH rmsDiffMean 0.164667
+Computing change in rh position
+Surface-RMS-Diff-mm 0.168140 0.064635 0.326809
+mri_segreg done
+MinCost: 0.133906 124.070821 149.132878 18.750908 
+tkregister2_cmdl --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz --reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat --noedit --ltaout /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.lta
+tkregister_tcl /global/homes/j/jcha9928/app/freesurfer/tktools/tkregister2.tcl
+INFO: no target volume specified, assuming FreeSurfer orig volume.
+target  volume orig
+movable volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz
+reg file       /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.dat
+LoadVol        0
+ZeroCRAS       0
+$Id: tkregister2.c,v 1.132.2.1 2016/08/02 21:17:29 greve Exp $
+Diagnostic Level -1
+---- Input registration matrix --------
+ 1.00000  -0.00050   0.00072   0.10538;
+ 0.00050   1.00000  -0.00104   0.03051;
+-0.00071   0.00104   1.00000   0.06610;
+ 0.00000   0.00000   0.00000   1.00000;
+float2int = 0
+---------------------------------------
+INFO: loading target /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz
+Ttarg: --------------------
+-1.00000   0.00000   0.00000   128.00000;
+ 0.00000   0.00000   1.00000  -128.00000;
+ 0.00000  -1.00000   0.00000   128.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+INFO: loading movable /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz
+Tmov: --------------------
+-1.00000   0.00000   0.00000   128.00000;
+ 0.00000   0.00000   1.00000  -128.00000;
+ 0.00000  -1.00000   0.00000   128.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+mkheaderreg = 0, float2int = 0
+---- Input registration matrix --------
+ 1.00000  -0.00050   0.00072   0.10538;
+ 0.00050   1.00000  -0.00104   0.03051;
+-0.00071   0.00104   1.00000   0.06610;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant 1
+subject = sub-NDARINVVV50F0CH
+RegMat ---------------------------
+ 1.00000  -0.00050   0.00072   0.10538;
+ 0.00050   1.00000  -0.00104   0.03051;
+-0.00071   0.00104   1.00000   0.06610;
+ 0.00000   0.00000   0.00000   1.00000;
+Cleaning up
+ 
+Started at Tue Mar 13 13:51:25 PDT 2018 
+Ended   at Tue Mar 13 13:52:51 PDT 2018
+BBR-Run-Time-Sec 86
+ 
+bbregister Done
+To check results, run:
+tkregisterfv --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz --reg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.lta --surfs 
+ 
+
+ cp /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.auto.lta /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.lta 
+
+
+ mri_convert -odt float -at /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.lta -rl /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.prenorm.mgz 
+
+mri_convert.bin -odt float -at /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.lta -rl /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.prenorm.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig/T2raw.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: Reading transformation from file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.lta...
+Reading transform with LTAreadEx()
+reading template info from volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/orig.mgz...
+INFO: Applying transformation from file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/transforms/T2raw.lta...
+---------------------------------
+INFO: Transform Matrix (linear_ras_to_ras)
+ 1.00000   0.00050  -0.00071  -0.10536;
+-0.00050   1.00000   0.00104  -0.03054;
+ 0.00072  -0.00104   1.00000  -0.06615;
+ 0.00000   0.00000   0.00000   1.00000;
+---------------------------------
+Applying LTAtransformInterp (resample_type 1)
+writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.prenorm.mgz...
+
+ mri_normalize -sigma 0.5 -nonmax_suppress 0 -min_dist 1 -aseg /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/aseg.presurf.mgz -surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/rh.white identity.nofile -surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/lh.white identity.nofile /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.prenorm.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.norm.mgz 
+
+using Gaussian smoothing of bias field, sigma=0.500
+disabling nonmaximum suppression
+retaining  points that are at least 1.000mm from the boundary
+using segmentation for initial intensity normalization
+reading from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.prenorm.mgz...
+computing distance transform
+computing distance transform
+45869 non wm control points removed
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 0...
+smoothing bias field with sigma=0.500
+writing normalized volume to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.norm.mgz
+
+ mri_mask /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.norm.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/brainmask.mgz /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.mgz 
+
+DoAbs = 0
+Writing masked volume to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/mri/T2.mgz...done.
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ cp -v /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/lh.pial /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/lh.woT2.pial 
+
+'/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/lh.pial' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/lh.woT2.pial'
+
+ mris_make_surfaces -orig_white white -orig_pial woT2.pial -aseg ../mri/aseg.presurf -nowhite -mgz -T1 brain.finalsurfs -T2 ../mri/T2 -nsigma_above 2 -nsigma_below 5 sub-NDARINVVV50F0CH lh 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/scripts
+
+ cp -v /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/rh.pial /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/rh.woT2.pial 
+
+'/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/rh.pial' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVVV50F0CH/surf/rh.woT2.pial'
+
+ mris_make_surfaces -orig_white white -orig_pial woT2.pial -aseg ../mri/aseg.presurf -nowhite -mgz -T1 brain.finalsurfs -T2 ../mri/T2 -nsigma_above 2 -nsigma_below 5 sub-NDARINVVV50F0CH rh 
+
+Waiting for PID 3945 of (3945 3948) to complete...
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+slurmstepd: error: *** STEP 10889045.318 ON nid01131 CANCELLED AT 2018-03-13T14:52:54 ***
+srun: forcing job termination
+srun: forcing job termination
+srun: error: nid01131: task 0: Terminated
+srun: Terminating job step 10889045.318

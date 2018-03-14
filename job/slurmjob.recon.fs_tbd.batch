@@ -1,0 +1,20 @@
+#!/bin/bash -l
+#SBATCH -N 2
+#SBATCH -C haswell
+#SBATCH -q premium
+#SBATCH -J recon
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 24:00:00
+#SBATCH -L cscratch1
+#OpenMP settings:
+export OMP_NUM_THREADS=1
+export OMP_PLACES=threads
+export OMP_PROC_BIND=true
+echo start............................................
+echo "working directory is /global/cscratch1/sd/jcha9928/anal/fs_tbd"
+srun -N 1 -n 1 -c 32 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.fs_tbd.batch32aa > ./job/log.recon.batch32aa 2>&1 &
+sleep 0.1
+srun -N 1 -n 1 -c 32 --cpu_bind=cores /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.fs_tbd.batch32ab > ./job/log.recon.batch32ab 2>&1 &
+sleep 0.1
+wait

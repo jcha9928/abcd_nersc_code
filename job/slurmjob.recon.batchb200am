@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+#SBATCH -N 200
+#SBATCH -C haswell
+#SBATCH -q regular
+#SBATCH -J b200am
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 06:00:00
+#SBATCH -L cscratch1
+#DW jobdw capacity=600GB access_mode=striped type=scratch
+#DW stage_out source=$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
+
+#OpenMP settings:
+export OMP_NUM_THREADS=32
+export OMP_PLACES=threads
+export OMP_PROC_BIND=true
+
+echo start............................................
+echo "working directory is /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code"
+
+wait

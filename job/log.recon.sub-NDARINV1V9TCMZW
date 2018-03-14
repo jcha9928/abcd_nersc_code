@@ -1,0 +1,2047 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Subject 'sub-NDARINV1VCFJ6CR': make all
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -white
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 359233 Mar  4 12:13 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Make White Surf rh Tue Mar 13 01:53:24 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -mgz -T1 brain.finalsurfs sub-NDARINV1VCFJ6CR rh 
+
+using white.preaparc as white matter name...
+using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
+not using aparc to prevent surfaces crossing the midline
+INFO: assuming MGZ format for volumes.
+using brain.finalsurfs as T1 volume...
+$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
+$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/filled.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/brain.finalsurfs.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/../mri/aseg.presurf.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+26534 bright wm thresholded.
+214 bright non-wm voxels segmented.
+reading original surface position from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.orig...
+computing class statistics...
+border white:    267210 voxels (1.59%)
+border gray      319292 voxels (1.90%)
+WM (98.0): 97.6 +- 10.1 [70.0 --> 110.0]
+GM (63.0) : 63.5 +- 10.7 [30.0 --> 110.0]
+setting MIN_GRAY_AT_WHITE_BORDER to 46.3 (was 70)
+setting MAX_BORDER_WHITE to 114.1 (was 105)
+setting MIN_BORDER_WHITE to 57.0 (was 85)
+setting MAX_CSF to 35.5 (was 40)
+setting MAX_GRAY to 93.9 (was 95)
+setting MAX_GRAY_AT_CSF_BORDER to 46.3 (was 75)
+setting MIN_GRAY_AT_CSF_BORDER to 24.8 (was 40)
+repositioning cortical surface to gray/white boundary
+smoothing T1 volume with sigma = 2.000
+vertex spacing 0.81 +- 0.22 (0.02-->4.58) (max @ vno 4198 --> 16865)
+face area 0.28 +- 0.13 (0.00-->5.08)
+mean absolute distance = 0.60 +- 0.71
+5322 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+using class modes intead of means, discounting robust sigmas....
+intensity peaks found at WM=104+-6.1,    GM=57+-9.6
+mean inside = 92.2, mean outside = 67.4
+smoothing surface for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+removing 2 vertex label from ripped group
+removing 2 vertex label from ripped group
+mean border=73.5, 72 (72) missing vertices, mean dist 0.3 [0.4 (%34.9)->0.7 (%65.1))]
+%81 local maxima, %15 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=4, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height 0.000000
+momentum 0.000000
+nbhd_size 0
+max_nbrs 0
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 1
+randomSeed 0
+
+smoothing T1 volume with sigma = 1.000
+vertex spacing 0.92 +- 0.26 (0.10-->6.47) (max @ vno 65482 --> 62874)
+face area 0.28 +- 0.13 (0.00-->6.37)
+mean absolute distance = 0.32 +- 0.49
+4299 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=5150942.0, rms=12.493
+001: dt: 0.5000, sse=2731104.2, rms=8.585 (31.284%)
+002: dt: 0.5000, sse=1852160.1, rms=6.608 (23.021%)
+003: dt: 0.5000, sse=1463093.0, rms=5.501 (16.756%)
+004: dt: 0.5000, sse=1310007.8, rms=5.001 (9.083%)
+005: dt: 0.5000, sse=1233924.5, rms=4.728 (5.469%)
+006: dt: 0.5000, sse=1210980.1, rms=4.641 (1.837%)
+007: dt: 0.5000, sse=1188593.0, rms=4.553 (1.898%)
+rms = 4.54, time step reduction 1 of 3 to 0.250...
+008: dt: 0.5000, sse=1192329.6, rms=4.539 (0.301%)
+009: dt: 0.2500, sse=862674.7, rms=2.999 (33.928%)
+010: dt: 0.2500, sse=788239.1, rms=2.531 (15.603%)
+011: dt: 0.2500, sse=774589.8, rms=2.429 (4.030%)
+012: dt: 0.2500, sse=763281.4, rms=2.345 (3.458%)
+rms = 2.32, time step reduction 2 of 3 to 0.125...
+013: dt: 0.2500, sse=761587.9, rms=2.319 (1.109%)
+014: dt: 0.1250, sse=713240.8, rms=1.922 (17.120%)
+015: dt: 0.1250, sse=707548.3, rms=1.869 (2.759%)
+rms = 1.86, time step reduction 3 of 3 to 0.062...
+016: dt: 0.1250, sse=706881.9, rms=1.861 (0.417%)
+positioning took 1.2 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 2 vertex label from ripped group
+mean border=77.9, 50 (12) missing vertices, mean dist -0.2 [0.3 (%78.5)->0.2 (%21.5))]
+%87 local maxima, % 9 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid01, nav=2, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+vertex spacing 0.90 +- 0.25 (0.07-->6.68) (max @ vno 65482 --> 62874)
+face area 0.35 +- 0.17 (0.00-->8.89)
+mean absolute distance = 0.22 +- 0.35
+3997 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1776314.1, rms=5.913
+017: dt: 0.5000, sse=1247594.2, rms=4.093 (30.785%)
+rms = 4.59, time step reduction 1 of 3 to 0.250...
+018: dt: 0.2500, sse=995357.8, rms=2.833 (30.784%)
+019: dt: 0.2500, sse=913038.1, rms=2.276 (19.651%)
+020: dt: 0.2500, sse=874092.2, rms=1.954 (14.146%)
+021: dt: 0.2500, sse=866317.2, rms=1.891 (3.252%)
+022: dt: 0.2500, sse=859143.8, rms=1.821 (3.653%)
+rms = 1.81, time step reduction 2 of 3 to 0.125...
+023: dt: 0.2500, sse=860482.4, rms=1.814 (0.427%)
+024: dt: 0.1250, sse=831018.5, rms=1.518 (16.277%)
+rms = 1.49, time step reduction 3 of 3 to 0.062...
+025: dt: 0.1250, sse=828152.2, rms=1.487 (2.080%)
+positioning took 0.7 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 4 vertex label from ripped group
+removing 1 vertex label from ripped group
+removing 3 vertex label from ripped group
+removing 2 vertex label from ripped group
+removing 2 vertex label from ripped group
+mean border=80.3, 53 (7) missing vertices, mean dist -0.1 [0.2 (%69.6)->0.2 (%30.4))]
+%90 local maxima, % 6 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid01, nav=1, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+vertex spacing 0.89 +- 0.25 (0.09-->6.69) (max @ vno 65482 --> 62874)
+face area 0.34 +- 0.16 (0.00-->8.74)
+mean absolute distance = 0.19 +- 0.30
+3315 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1063590.8, rms=3.360
+rms = 4.02, time step reduction 1 of 3 to 0.250...
+026: dt: 0.2500, sse=884742.8, rms=2.254 (32.927%)
+027: dt: 0.2500, sse=818027.8, rms=1.630 (27.653%)
+028: dt: 0.2500, sse=808384.5, rms=1.553 (4.762%)
+rms = 1.51, time step reduction 2 of 3 to 0.125...
+029: dt: 0.2500, sse=805166.6, rms=1.513 (2.595%)
+030: dt: 0.1250, sse=790226.1, rms=1.337 (11.618%)
+rms = 1.32, time step reduction 3 of 3 to 0.062...
+031: dt: 0.1250, sse=790591.4, rms=1.319 (1.362%)
+positioning took 0.5 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 3 vertex label from ripped group
+removing 4 vertex label from ripped group
+removing 1 vertex label from ripped group
+removing 4 vertex label from ripped group
+removing 4 vertex label from ripped group
+removing 2 vertex label from ripped group
+mean border=81.0, 92 (7) missing vertices, mean dist -0.0 [0.2 (%55.6)->0.2 (%44.4))]
+%91 local maxima, % 4 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid01, nav=0, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing white matter surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white.preaparc...
+writing smoothed curvature to rh.curv
+000: dt: 0.0000, sse=814697.3, rms=1.696
+rms = 2.57, time step reduction 1 of 3 to 0.250...
+032: dt: 0.2500, sse=766816.8, rms=1.141 (32.752%)
+033: dt: 0.2500, sse=759491.8, rms=0.992 (13.031%)
+rms = 0.98, time step reduction 2 of 3 to 0.125...
+034: dt: 0.2500, sse=757216.6, rms=0.984 (0.767%)
+rms = 0.96, time step reduction 3 of 3 to 0.062...
+035: dt: 0.1250, sse=753175.6, rms=0.962 (2.218%)
+positioning took 0.3 minutes
+generating cortex label...
+6 non-cortical segments detected
+only using segment with 6607 vertices
+erasing segment 0 (vno[0] = 42477)
+erasing segment 2 (vno[0] = 106344)
+erasing segment 3 (vno[0] = 112218)
+erasing segment 4 (vno[0] = 113296)
+erasing segment 5 (vno[0] = 150449)
+writing cortex label to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/rh.cortex.label...
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.curv
+writing smoothed area to rh.area
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.area
+vertex spacing 0.89 +- 0.25 (0.02-->6.66) (max @ vno 62874 --> 65482)
+face area 0.33 +- 0.16 (0.00-->8.59)
+repositioning cortical surface to gray/csf boundary.
+smoothing T1 volume with sigma = 2.000
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+removing 2 vertex label from ripped group
+smoothing surface for 5 iterations...
+mean border=45.8, 113 (113) missing vertices, mean dist 1.5 [0.1 (%0.0)->3.0 (%100.0))]
+% 8 local maxima, %39 large gradients and %49 min vals, 374 gradients ignored
+perforing initial smooth deformation to move away from white surface
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=35653408.0, rms=34.724
+001: dt: 0.0500, sse=30931390.0, rms=32.299 (6.985%)
+002: dt: 0.0500, sse=27340020.0, rms=30.324 (6.114%)
+003: dt: 0.0500, sse=24591126.0, rms=28.721 (5.287%)
+004: dt: 0.0500, sse=22426200.0, rms=27.392 (4.626%)
+005: dt: 0.0500, sse=20667326.0, rms=26.263 (4.122%)
+006: dt: 0.0500, sse=19199218.0, rms=25.282 (3.736%)
+007: dt: 0.0500, sse=17944534.0, rms=24.412 (3.440%)
+008: dt: 0.0500, sse=16854890.0, rms=23.631 (3.201%)
+009: dt: 0.0500, sse=15897955.0, rms=22.922 (2.997%)
+010: dt: 0.0500, sse=15048718.0, rms=22.275 (2.825%)
+positioning took 0.7 minutes
+mean border=45.6, 79 (32) missing vertices, mean dist 1.3 [0.1 (%0.1)->2.5 (%99.9))]
+% 9 local maxima, %40 large gradients and %48 min vals, 385 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=16086300.0, rms=23.027
+011: dt: 0.0500, sse=15318381.0, rms=22.446 (2.526%)
+012: dt: 0.0500, sse=14626213.0, rms=21.908 (2.395%)
+013: dt: 0.0500, sse=13999590.0, rms=21.409 (2.275%)
+014: dt: 0.0500, sse=13431108.0, rms=20.947 (2.161%)
+015: dt: 0.0500, sse=12913108.0, rms=20.516 (2.056%)
+016: dt: 0.0500, sse=12439707.0, rms=20.115 (1.958%)
+017: dt: 0.0500, sse=12004429.0, rms=19.738 (1.873%)
+018: dt: 0.0500, sse=11603373.0, rms=19.384 (1.791%)
+019: dt: 0.0500, sse=11232280.0, rms=19.051 (1.718%)
+020: dt: 0.0500, sse=10887481.0, rms=18.736 (1.653%)
+positioning took 0.7 minutes
+mean border=45.6, 108 (28) missing vertices, mean dist 1.1 [0.1 (%2.8)->2.2 (%97.2))]
+% 9 local maxima, %40 large gradients and %47 min vals, 360 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=10984313.0, rms=18.821
+021: dt: 0.0500, sse=10658703.0, rms=18.520 (1.599%)
+022: dt: 0.0500, sse=10355380.0, rms=18.235 (1.538%)
+023: dt: 0.0500, sse=10069148.0, rms=17.962 (1.498%)
+024: dt: 0.0500, sse=9800128.0, rms=17.701 (1.451%)
+025: dt: 0.0500, sse=9546991.0, rms=17.452 (1.406%)
+026: dt: 0.0500, sse=9307348.0, rms=17.213 (1.369%)
+027: dt: 0.0500, sse=9079357.0, rms=16.983 (1.339%)
+028: dt: 0.0500, sse=8861570.0, rms=16.760 (1.314%)
+029: dt: 0.0500, sse=8653303.0, rms=16.543 (1.291%)
+030: dt: 0.0500, sse=8453981.0, rms=16.333 (1.268%)
+positioning took 0.7 minutes
+mean border=45.5, 174 (26) missing vertices, mean dist 0.9 [0.1 (%9.6)->2.1 (%90.4))]
+% 9 local maxima, %40 large gradients and %47 min vals, 311 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 1.000
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=8549914.0, rms=16.425
+031: dt: 0.5000, sse=7126816.5, rms=14.851 (9.581%)
+032: dt: 0.5000, sse=6120527.0, rms=13.622 (8.276%)
+033: dt: 0.5000, sse=5347251.5, rms=12.596 (7.532%)
+034: dt: 0.5000, sse=4723383.5, rms=11.699 (7.126%)
+035: dt: 0.5000, sse=4166964.5, rms=10.838 (7.361%)
+036: dt: 0.5000, sse=3643509.0, rms=9.959 (8.106%)
+037: dt: 0.5000, sse=3147985.8, rms=9.055 (9.081%)
+038: dt: 0.5000, sse=2704186.2, rms=8.159 (9.890%)
+039: dt: 0.5000, sse=2343685.5, rms=7.355 (9.852%)
+040: dt: 0.5000, sse=2085581.6, rms=6.718 (8.659%)
+041: dt: 0.5000, sse=1912540.6, rms=6.257 (6.863%)
+042: dt: 0.5000, sse=1804752.5, rms=5.949 (4.924%)
+043: dt: 0.5000, sse=1735321.9, rms=5.744 (3.457%)
+044: dt: 0.5000, sse=1693820.2, rms=5.615 (2.235%)
+045: dt: 0.5000, sse=1667277.9, rms=5.534 (1.453%)
+046: dt: 0.5000, sse=1651735.1, rms=5.481 (0.950%)
+rms = 5.45, time step reduction 1 of 3 to 0.250...
+047: dt: 0.5000, sse=1641945.9, rms=5.452 (0.533%)
+048: dt: 0.2500, sse=1538429.8, rms=5.067 (7.053%)
+049: dt: 0.2500, sse=1506815.0, rms=4.958 (2.153%)
+rms = 4.97, time step reduction 2 of 3 to 0.125...
+rms = 4.92, time step reduction 3 of 3 to 0.062...
+050: dt: 0.1250, sse=1497764.1, rms=4.923 (0.706%)
+positioning took 2.1 minutes
+mean border=45.0, 2982 (17) missing vertices, mean dist 0.1 [0.2 (%53.8)->0.7 (%46.2))]
+%16 local maxima, %33 large gradients and %45 min vals, 146 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid01, nav=8, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1814760.4, rms=5.078
+051: dt: 0.5000, sse=1766774.8, rms=4.933 (2.856%)
+052: dt: 0.5000, sse=1718238.5, rms=4.793 (2.839%)
+rms = 4.86, time step reduction 1 of 3 to 0.250...
+053: dt: 0.2500, sse=1609681.8, rms=4.338 (9.495%)
+054: dt: 0.2500, sse=1581708.5, rms=4.207 (3.010%)
+rms = 4.20, time step reduction 2 of 3 to 0.125...
+055: dt: 0.2500, sse=1580717.4, rms=4.202 (0.118%)
+056: dt: 0.1250, sse=1553552.1, rms=4.077 (2.985%)
+rms = 4.06, time step reduction 3 of 3 to 0.062...
+057: dt: 0.1250, sse=1548882.1, rms=4.057 (0.473%)
+positioning took 0.9 minutes
+mean border=44.5, 3040 (13) missing vertices, mean dist 0.1 [0.1 (%50.8)->0.5 (%49.2))]
+%28 local maxima, %22 large gradients and %44 min vals, 216 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid01, nav=4, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1586638.5, rms=4.199
+rms = 4.51, time step reduction 1 of 3 to 0.250...
+058: dt: 0.2500, sse=1563588.8, rms=4.097 (2.414%)
+rms = 4.08, time step reduction 2 of 3 to 0.125...
+059: dt: 0.2500, sse=1558962.4, rms=4.085 (0.310%)
+060: dt: 0.1250, sse=1548053.6, rms=4.033 (1.261%)
+rms = 4.01, time step reduction 3 of 3 to 0.062...
+061: dt: 0.1250, sse=1542933.1, rms=4.014 (0.464%)
+positioning took 0.6 minutes
+mean border=43.9, 6285 (13) missing vertices, mean dist 0.1 [0.1 (%48.5)->0.4 (%51.5))]
+%31 local maxima, %18 large gradients and %43 min vals, 212 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid01, nav=2, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing pial surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+writing smoothed curvature to rh.curv.pial
+000: dt: 0.0000, sse=1572448.2, rms=4.138
+rms = 4.31, time step reduction 1 of 3 to 0.250...
+062: dt: 0.2500, sse=1553392.2, rms=4.057 (1.963%)
+063: dt: 0.2500, sse=1533332.2, rms=3.989 (1.660%)
+rms = 3.95, time step reduction 2 of 3 to 0.125...
+064: dt: 0.2500, sse=1522742.4, rms=3.954 (0.891%)
+065: dt: 0.1250, sse=1502957.6, rms=3.862 (2.335%)
+rms = 3.84, time step reduction 3 of 3 to 0.062...
+066: dt: 0.1250, sse=1496139.2, rms=3.836 (0.670%)
+positioning took 0.8 minutes
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.curv.pial
+writing smoothed area to rh.area.pial
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.area.pial
+vertex spacing 1.04 +- 0.46 (0.07-->7.97) (max @ vno 102292 --> 102291)
+face area 0.42 +- 0.34 (0.00-->9.00)
+measuring cortical thickness...
+writing cortical thickness estimate to 'thickness' file.
+0 of 150904 vertices processed
+25000 of 150904 vertices processed
+50000 of 150904 vertices processed
+75000 of 150904 vertices processed
+100000 of 150904 vertices processed
+125000 of 150904 vertices processed
+150000 of 150904 vertices processed
+0 of 150904 vertices processed
+25000 of 150904 vertices processed
+50000 of 150904 vertices processed
+75000 of 150904 vertices processed
+100000 of 150904 vertices processed
+125000 of 150904 vertices processed
+150000 of 150904 vertices processed
+thickness calculation complete, 479:2343 truncations.
+26968 vertices at 0 distance
+90077 vertices at 1 distance
+96175 vertices at 2 distance
+50035 vertices at 3 distance
+18183 vertices at 4 distance
+5509 vertices at 5 distance
+1826 vertices at 6 distance
+681 vertices at 7 distance
+319 vertices at 8 distance
+193 vertices at 9 distance
+114 vertices at 10 distance
+104 vertices at 11 distance
+69 vertices at 12 distance
+66 vertices at 13 distance
+72 vertices at 14 distance
+66 vertices at 15 distance
+41 vertices at 16 distance
+39 vertices at 17 distance
+28 vertices at 18 distance
+37 vertices at 19 distance
+34 vertices at 20 distance
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.thickness
+positioning took 12.0 minutes
+
+Started at Tue Mar 13 01:53:23 PDT 2018 
+Ended   at Tue Mar 13 02:05:26 PDT 2018
+#@#%# recon-all-run-time-hours 0.201
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:05:26 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -pial
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 377995 Mar 13 02:05 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Make Pial Surf rh Tue Mar 13 02:05:26 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_make_surfaces -orig_white white.preaparc -orig_pial white.preaparc -aseg ../mri/aseg.presurf -mgz -T1 brain.finalsurfs sub-NDARINV1VCFJ6CR rh 
+
+using white.preaparc starting white location...
+using white.preaparc starting pial locations...
+using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
+INFO: assuming MGZ format for volumes.
+using brain.finalsurfs as T1 volume...
+$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
+$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/filled.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/brain.finalsurfs.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/../mri/aseg.presurf.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+26534 bright wm thresholded.
+214 bright non-wm voxels segmented.
+reading original surface position from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.orig...
+computing class statistics...
+border white:    267210 voxels (1.59%)
+border gray      319292 voxels (1.90%)
+WM (98.0): 97.6 +- 10.1 [70.0 --> 110.0]
+GM (63.0) : 63.5 +- 10.7 [30.0 --> 110.0]
+setting MIN_GRAY_AT_WHITE_BORDER to 46.3 (was 70)
+setting MAX_BORDER_WHITE to 114.1 (was 105)
+setting MIN_BORDER_WHITE to 57.0 (was 85)
+setting MAX_CSF to 35.5 (was 40)
+setting MAX_GRAY to 93.9 (was 95)
+setting MAX_GRAY_AT_CSF_BORDER to 46.3 (was 75)
+setting MIN_GRAY_AT_CSF_BORDER to 24.8 (was 40)
+using class modes intead of means, discounting robust sigmas....
+intensity peaks found at WM=104+-6.1,    GM=57+-9.6
+mean inside = 92.2, mean outside = 67.4
+smoothing surface for 5 iterations...
+reading initial white vertex positions from white.preaparc...
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+repositioning cortical surface to gray/white boundary
+smoothing T1 volume with sigma = 2.000
+vertex spacing 0.89 +- 0.25 (0.02-->6.66) (max @ vno 62874 --> 65482)
+face area 0.33 +- 0.16 (0.00-->8.54)
+mean absolute distance = 0.53 +- 0.69
+5292 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 119 points - only 0.00% unknown
+deleting segment 1 with 111 points - only 0.00% unknown
+deleting segment 3 with 7 points - only 0.00% unknown
+removing 1 vertex label from ripped group
+deleting segment 5 with 1 points - only 0.00% unknown
+deleting segment 6 with 5 points - only 0.00% unknown
+deleting segment 7 with 177 points - only 0.00% unknown
+removing 1 vertex label from ripped group
+deleting segment 8 with 1 points - only 0.00% unknown
+deleting segment 9 with 10 points - only 0.00% unknown
+deleting segment 10 with 14 points - only 0.00% unknown
+deleting segment 11 with 29 points - only 0.00% unknown
+deleting segment 12 with 10 points - only 0.00% unknown
+deleting segment 13 with 60 points - only 0.00% unknown
+mean border=72.9, 98 (96) missing vertices, mean dist 0.4 [0.5 (%12.7)->0.5 (%87.3))]
+%79 local maxima, %17 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=4, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height 0.000000
+momentum 0.000000
+nbhd_size 0
+max_nbrs 0
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 1
+randomSeed 0
+
+smoothing T1 volume with sigma = 1.000
+vertex spacing 0.92 +- 0.26 (0.07-->6.63) (max @ vno 65482 --> 62874)
+face area 0.33 +- 0.16 (0.00-->7.88)
+mean absolute distance = 0.33 +- 0.51
+4450 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=3604675.2, rms=9.959
+001: dt: 0.5000, sse=1710692.4, rms=5.834 (41.418%)
+002: dt: 0.5000, sse=1367267.5, rms=4.736 (18.822%)
+003: dt: 0.5000, sse=1311726.6, rms=4.543 (4.088%)
+004: dt: 0.5000, sse=1260808.8, rms=4.346 (4.338%)
+rms = 4.42, time step reduction 1 of 3 to 0.250...
+005: dt: 0.2500, sse=978448.2, rms=2.984 (31.342%)
+006: dt: 0.2500, sse=896542.7, rms=2.437 (18.324%)
+007: dt: 0.2500, sse=861886.4, rms=2.180 (10.538%)
+008: dt: 0.2500, sse=855719.4, rms=2.128 (2.405%)
+009: dt: 0.2500, sse=849400.4, rms=2.064 (3.012%)
+rms = 2.04, time step reduction 2 of 3 to 0.125...
+010: dt: 0.2500, sse=846448.5, rms=2.043 (0.977%)
+011: dt: 0.1250, sse=823979.0, rms=1.831 (10.386%)
+rms = 1.80, time step reduction 3 of 3 to 0.062...
+012: dt: 0.1250, sse=821145.1, rms=1.802 (1.618%)
+positioning took 0.9 minutes
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 110 points - only 0.00% unknown
+deleting segment 1 with 104 points - only 0.00% unknown
+deleting segment 2 with 7 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+removing 2 vertex label from ripped group
+deleting segment 4 with 2 points - only 0.00% unknown
+deleting segment 5 with 87 points - only 0.00% unknown
+deleting segment 6 with 14 points - only 0.00% unknown
+deleting segment 7 with 9 points - only 0.00% unknown
+deleting segment 8 with 56 points - only 0.00% unknown
+mean border=77.7, 65 (23) missing vertices, mean dist -0.2 [0.4 (%80.4)->0.2 (%19.6))]
+%87 local maxima, % 9 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid01, nav=2, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+vertex spacing 0.90 +- 0.26 (0.07-->6.66) (max @ vno 65482 --> 62874)
+face area 0.36 +- 0.18 (0.00-->9.09)
+mean absolute distance = 0.22 +- 0.36
+4061 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1831785.2, rms=6.014
+013: dt: 0.5000, sse=1263173.8, rms=4.042 (32.782%)
+rms = 4.50, time step reduction 1 of 3 to 0.250...
+014: dt: 0.2500, sse=1009754.2, rms=2.796 (30.819%)
+015: dt: 0.2500, sse=924335.3, rms=2.206 (21.122%)
+016: dt: 0.2500, sse=884688.1, rms=1.871 (15.178%)
+017: dt: 0.2500, sse=878508.0, rms=1.796 (4.031%)
+018: dt: 0.2500, sse=871408.9, rms=1.734 (3.418%)
+rms = 1.73, time step reduction 2 of 3 to 0.125...
+019: dt: 0.2500, sse=872121.4, rms=1.731 (0.178%)
+020: dt: 0.1250, sse=845327.8, rms=1.444 (16.576%)
+rms = 1.42, time step reduction 3 of 3 to 0.062...
+021: dt: 0.1250, sse=843158.7, rms=1.416 (1.931%)
+positioning took 0.7 minutes
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 111 points - only 0.00% unknown
+deleting segment 1 with 108 points - only 0.00% unknown
+deleting segment 2 with 9 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+deleting segment 4 with 116 points - only 0.00% unknown
+deleting segment 5 with 8 points - only 0.00% unknown
+deleting segment 6 with 25 points - only 0.00% unknown
+deleting segment 7 with 16 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+deleting segment 8 with 3 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+deleting segment 9 with 3 points - only 0.00% unknown
+deleting segment 10 with 9 points - only 0.00% unknown
+deleting segment 11 with 56 points - only 0.00% unknown
+mean border=80.2, 64 (18) missing vertices, mean dist -0.1 [0.2 (%70.2)->0.2 (%29.8))]
+%90 local maxima, % 6 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid01, nav=1, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+vertex spacing 0.90 +- 0.26 (0.05-->6.65) (max @ vno 65482 --> 62874)
+face area 0.34 +- 0.17 (0.00-->8.85)
+mean absolute distance = 0.19 +- 0.30
+3442 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1081735.6, rms=3.387
+rms = 3.99, time step reduction 1 of 3 to 0.250...
+022: dt: 0.2500, sse=898550.6, rms=2.261 (33.243%)
+023: dt: 0.2500, sse=826065.5, rms=1.596 (29.408%)
+024: dt: 0.2500, sse=817338.7, rms=1.507 (5.552%)
+rms = 1.47, time step reduction 2 of 3 to 0.125...
+025: dt: 0.2500, sse=813336.2, rms=1.468 (2.587%)
+026: dt: 0.1250, sse=799225.6, rms=1.290 (12.154%)
+rms = 1.27, time step reduction 3 of 3 to 0.062...
+027: dt: 0.1250, sse=796535.4, rms=1.274 (1.240%)
+positioning took 0.5 minutes
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 111 points - only 0.00% unknown
+deleting segment 1 with 103 points - only 0.00% unknown
+deleting segment 2 with 10 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+removing 1 vertex label from ripped group
+deleting segment 4 with 1 points - only 0.00% unknown
+deleting segment 5 with 129 points - only 0.00% unknown
+deleting segment 6 with 10 points - only 0.00% unknown
+deleting segment 7 with 35 points - only 0.00% unknown
+deleting segment 9 with 16 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+deleting segment 10 with 3 points - only 0.00% unknown
+deleting segment 11 with 7 points - only 0.00% unknown
+deleting segment 12 with 9 points - only 0.00% unknown
+deleting segment 13 with 56 points - only 0.00% unknown
+mean border=80.9, 90 (16) missing vertices, mean dist -0.0 [0.2 (%55.9)->0.2 (%44.1))]
+%92 local maxima, % 4 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid01, nav=0, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing white matter surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+writing smoothed curvature to rh.curv
+000: dt: 0.0000, sse=820901.6, rms=1.677
+rms = 2.55, time step reduction 1 of 3 to 0.250...
+028: dt: 0.2500, sse=775568.6, rms=1.117 (33.368%)
+029: dt: 0.2500, sse=768223.1, rms=0.973 (12.943%)
+rms = 0.97, time step reduction 2 of 3 to 0.125...
+030: dt: 0.2500, sse=766857.9, rms=0.966 (0.726%)
+rms = 0.94, time step reduction 3 of 3 to 0.062...
+031: dt: 0.1250, sse=763596.1, rms=0.944 (2.262%)
+positioning took 0.3 minutes
+generating cortex label...
+7 non-cortical segments detected
+only using segment with 6599 vertices
+erasing segment 0 (vno[0] = 42477)
+erasing segment 2 (vno[0] = 105368)
+erasing segment 3 (vno[0] = 112218)
+erasing segment 4 (vno[0] = 113296)
+erasing segment 5 (vno[0] = 117291)
+erasing segment 6 (vno[0] = 150449)
+writing cortex label to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/rh.cortex.label...
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.curv
+writing smoothed area to rh.area
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.area
+vertex spacing 0.89 +- 0.26 (0.05-->6.58) (max @ vno 62874 --> 65482)
+face area 0.34 +- 0.17 (0.00-->8.64)
+repositioning cortical surface to gray/csf boundary.
+smoothing T1 volume with sigma = 2.000
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 20 points - only 0.00% unknown
+removing 1 vertex label from ripped group
+deleting segment 1 with 1 points - only 0.00% unknown
+removing 2 vertex label from ripped group
+deleting segment 2 with 2 points - only 0.00% unknown
+deleting segment 3 with 76 points - only 0.00% unknown
+smoothing surface for 5 iterations...
+reading initial pial vertex positions from white.preaparc...
+mean border=45.9, 101 (101) missing vertices, mean dist 1.5 [1.0 (%0.0)->3.0 (%100.0))]
+% 8 local maxima, %39 large gradients and %49 min vals, 381 gradients ignored
+perforing initial smooth deformation to move away from white surface
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=37806232.0, rms=35.718
+001: dt: 0.0500, sse=32624804.0, rms=33.128 (7.250%)
+002: dt: 0.0500, sse=28950776.0, rms=31.162 (5.936%)
+003: dt: 0.0500, sse=26184002.0, rms=29.595 (5.029%)
+004: dt: 0.0500, sse=23991212.0, rms=28.291 (4.405%)
+005: dt: 0.0500, sse=22184746.0, rms=27.170 (3.962%)
+006: dt: 0.0500, sse=20656476.0, rms=26.184 (3.629%)
+007: dt: 0.0500, sse=19334920.0, rms=25.301 (3.374%)
+008: dt: 0.0500, sse=18176058.0, rms=24.500 (3.166%)
+009: dt: 0.0500, sse=17146334.0, rms=23.765 (2.998%)
+010: dt: 0.0500, sse=16223023.0, rms=23.087 (2.855%)
+positioning took 0.7 minutes
+mean border=45.8, 103 (56) missing vertices, mean dist 1.3 [0.8 (%0.0)->2.5 (%100.0))]
+% 9 local maxima, %39 large gradients and %49 min vals, 363 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=17006014.0, rms=23.666
+011: dt: 0.0500, sse=16168513.0, rms=23.049 (2.608%)
+012: dt: 0.0500, sse=15408638.0, rms=22.475 (2.493%)
+013: dt: 0.0500, sse=14716465.0, rms=21.938 (2.388%)
+014: dt: 0.0500, sse=14084543.0, rms=21.436 (2.287%)
+015: dt: 0.0500, sse=13506434.0, rms=20.967 (2.191%)
+016: dt: 0.0500, sse=12976308.0, rms=20.526 (2.099%)
+017: dt: 0.0500, sse=12489759.0, rms=20.114 (2.010%)
+018: dt: 0.0500, sse=12042105.0, rms=19.727 (1.925%)
+019: dt: 0.0500, sse=11630214.0, rms=19.363 (1.841%)
+020: dt: 0.0500, sse=11250263.0, rms=19.022 (1.763%)
+positioning took 0.7 minutes
+mean border=45.7, 120 (45) missing vertices, mean dist 1.1 [0.1 (%0.6)->2.2 (%99.4))]
+% 9 local maxima, %39 large gradients and %48 min vals, 349 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=11343400.0, rms=19.113
+021: dt: 0.0500, sse=10987804.0, rms=18.790 (1.693%)
+022: dt: 0.0500, sse=10658970.0, rms=18.485 (1.620%)
+023: dt: 0.0500, sse=10352518.0, rms=18.197 (1.560%)
+024: dt: 0.0500, sse=10067773.0, rms=17.925 (1.495%)
+025: dt: 0.0500, sse=9801848.0, rms=17.667 (1.439%)
+026: dt: 0.0500, sse=9553067.0, rms=17.422 (1.386%)
+027: dt: 0.0500, sse=9318396.0, rms=17.188 (1.345%)
+028: dt: 0.0500, sse=9096089.0, rms=16.963 (1.309%)
+029: dt: 0.0500, sse=8884368.0, rms=16.745 (1.281%)
+030: dt: 0.0500, sse=8682302.0, rms=16.535 (1.254%)
+positioning took 0.7 minutes
+mean border=45.6, 171 (38) missing vertices, mean dist 1.0 [0.1 (%6.0)->2.0 (%94.0))]
+% 9 local maxima, %39 large gradients and %48 min vals, 303 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid01, nav=16, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 1.000
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=8776027.0, rms=16.634
+031: dt: 0.5000, sse=7315398.0, rms=15.039 (9.586%)
+032: dt: 0.5000, sse=6267297.0, rms=13.775 (8.407%)
+033: dt: 0.5000, sse=5445223.0, rms=12.695 (7.841%)
+034: dt: 0.5000, sse=4773598.5, rms=11.734 (7.569%)
+035: dt: 0.5000, sse=4195950.0, rms=10.841 (7.609%)
+036: dt: 0.5000, sse=3667876.5, rms=9.954 (8.184%)
+037: dt: 0.5000, sse=3179238.2, rms=9.061 (8.968%)
+038: dt: 0.5000, sse=2749251.0, rms=8.195 (9.561%)
+039: dt: 0.5000, sse=2395327.2, rms=7.409 (9.590%)
+040: dt: 0.5000, sse=2136775.8, rms=6.776 (8.546%)
+041: dt: 0.5000, sse=1961338.8, rms=6.313 (6.836%)
+042: dt: 0.5000, sse=1848863.4, rms=5.993 (5.057%)
+043: dt: 0.5000, sse=1781228.5, rms=5.795 (3.309%)
+044: dt: 0.5000, sse=1739159.4, rms=5.665 (2.243%)
+045: dt: 0.5000, sse=1715015.9, rms=5.590 (1.326%)
+046: dt: 0.5000, sse=1697805.0, rms=5.534 (0.993%)
+rms = 5.50, time step reduction 1 of 3 to 0.250...
+047: dt: 0.5000, sse=1687431.0, rms=5.503 (0.576%)
+048: dt: 0.2500, sse=1587681.6, rms=5.134 (6.699%)
+049: dt: 0.2500, sse=1556269.0, rms=5.027 (2.076%)
+rms = 5.04, time step reduction 2 of 3 to 0.125...
+rms = 4.99, time step reduction 3 of 3 to 0.062...
+050: dt: 0.1250, sse=1547292.9, rms=4.993 (0.681%)
+positioning took 2.0 minutes
+mean border=45.0, 3058 (19) missing vertices, mean dist 0.1 [0.2 (%53.2)->0.7 (%46.8))]
+%16 local maxima, %33 large gradients and %45 min vals, 148 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid01, nav=8, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1838597.6, rms=5.133
+051: dt: 0.5000, sse=1782334.2, rms=4.959 (3.395%)
+052: dt: 0.5000, sse=1731334.9, rms=4.811 (2.987%)
+rms = 4.87, time step reduction 1 of 3 to 0.250...
+053: dt: 0.2500, sse=1624579.6, rms=4.364 (9.282%)
+054: dt: 0.2500, sse=1596997.2, rms=4.235 (2.964%)
+rms = 4.22, time step reduction 2 of 3 to 0.125...
+055: dt: 0.2500, sse=1593114.8, rms=4.219 (0.360%)
+056: dt: 0.1250, sse=1565922.2, rms=4.094 (2.961%)
+rms = 4.08, time step reduction 3 of 3 to 0.062...
+057: dt: 0.1250, sse=1561283.0, rms=4.075 (0.470%)
+positioning took 0.9 minutes
+mean border=44.5, 3194 (17) missing vertices, mean dist 0.1 [0.1 (%50.8)->0.5 (%49.2))]
+%28 local maxima, %22 large gradients and %44 min vals, 219 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid01, nav=4, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1602965.9, rms=4.236
+rms = 4.53, time step reduction 1 of 3 to 0.250...
+058: dt: 0.2500, sse=1579202.0, rms=4.133 (2.425%)
+rms = 4.11, time step reduction 2 of 3 to 0.125...
+059: dt: 0.2500, sse=1572938.9, rms=4.114 (0.461%)
+rms = 4.06, time step reduction 3 of 3 to 0.062...
+060: dt: 0.1250, sse=1562574.5, rms=4.064 (1.202%)
+positioning took 0.5 minutes
+mean border=44.0, 6337 (15) missing vertices, mean dist 0.1 [0.1 (%48.2)->0.4 (%51.8))]
+%31 local maxima, %18 large gradients and %43 min vals, 229 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid01, nav=2, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing pial surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+writing smoothed curvature to rh.curv.pial
+000: dt: 0.0000, sse=1591186.6, rms=4.187
+rms = 4.35, time step reduction 1 of 3 to 0.250...
+061: dt: 0.2500, sse=1569893.0, rms=4.097 (2.137%)
+062: dt: 0.2500, sse=1549119.2, rms=4.028 (1.690%)
+rms = 3.99, time step reduction 2 of 3 to 0.125...
+063: dt: 0.2500, sse=1538715.1, rms=3.994 (0.837%)
+064: dt: 0.1250, sse=1519318.6, rms=3.905 (2.245%)
+rms = 3.88, time step reduction 3 of 3 to 0.062...
+065: dt: 0.1250, sse=1512101.1, rms=3.878 (0.691%)
+positioning took 0.8 minutes
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.curv.pial
+writing smoothed area to rh.area.pial
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.area.pial
+vertex spacing 1.04 +- 0.47 (0.04-->7.17) (max @ vno 65483 --> 150079)
+face area 0.42 +- 0.34 (0.00-->8.49)
+measuring cortical thickness...
+writing cortical thickness estimate to 'thickness' file.
+0 of 150904 vertices processed
+25000 of 150904 vertices processed
+50000 of 150904 vertices processed
+75000 of 150904 vertices processed
+100000 of 150904 vertices processed
+125000 of 150904 vertices processed
+150000 of 150904 vertices processed
+0 of 150904 vertices processed
+25000 of 150904 vertices processed
+50000 of 150904 vertices processed
+75000 of 150904 vertices processed
+100000 of 150904 vertices processed
+125000 of 150904 vertices processed
+150000 of 150904 vertices processed
+thickness calculation complete, 336:1939 truncations.
+30269 vertices at 0 distance
+99394 vertices at 1 distance
+94558 vertices at 2 distance
+44017 vertices at 3 distance
+14943 vertices at 4 distance
+4617 vertices at 5 distance
+1535 vertices at 6 distance
+588 vertices at 7 distance
+291 vertices at 8 distance
+141 vertices at 9 distance
+104 vertices at 10 distance
+93 vertices at 11 distance
+63 vertices at 12 distance
+39 vertices at 13 distance
+51 vertices at 14 distance
+37 vertices at 15 distance
+34 vertices at 16 distance
+14 vertices at 17 distance
+17 vertices at 18 distance
+18 vertices at 19 distance
+21 vertices at 20 distance
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.thickness
+positioning took 11.6 minutes
+#--------------------------------------------
+#@# Surf Volume rh Tue Mar 13 02:17:04 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf
+mris_calc -o rh.area.mid rh.area add rh.area.pial
+Saving result to 'rh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_calc -o rh.area.mid rh.area.mid div 2
+Saving result to 'rh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_convert --volume sub-NDARINV1VCFJ6CR rh /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.volume
+masking with /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/rh.cortex.label
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+#@# sub-NDARINV1VCFJ6CR rh 296960
+ 
+vertexvol Done
+
+Started at Tue Mar 13 02:05:26 PDT 2018 
+Ended   at Tue Mar 13 02:17:08 PDT 2018
+#@#%# recon-all-run-time-hours 0.195
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:17:08 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -surfvolume
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 400130 Mar 13 02:17 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Surf Volume rh Tue Mar 13 02:17:09 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf
+mris_calc -o rh.area.mid rh.area add rh.area.pial
+Saving result to 'rh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_calc -o rh.area.mid rh.area.mid div 2
+Saving result to 'rh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_convert --volume sub-NDARINV1VCFJ6CR rh /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.volume
+masking with /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/rh.cortex.label
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+#@# sub-NDARINV1VCFJ6CR rh 296960
+ 
+vertexvol Done
+
+Started at Tue Mar 13 02:17:09 PDT 2018 
+Ended   at Tue Mar 13 02:17:12 PDT 2018
+#@#%# recon-all-run-time-hours 0.001
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:17:13 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -jacobian_white
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 401392 Mar 13 02:17 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Jacobian white lh Tue Mar 13 02:17:14 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_jacobian ../surf/lh.white.preaparc ../surf/lh.sphere.reg ../surf/lh.jacobian_white 
+
+reading surface from ../surf/lh.white.preaparc...
+writing curvature file ../surf/lh.jacobian_white
+
+Started at Tue Mar 13 02:17:13 PDT 2018 
+Ended   at Tue Mar 13 02:17:16 PDT 2018
+#@#%# recon-all-run-time-hours 0.001
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:17:16 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -jacobian_white
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 402195 Mar 13 02:17 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Jacobian white rh Tue Mar 13 02:17:18 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_jacobian ../surf/rh.white.preaparc ../surf/rh.sphere.reg ../surf/rh.jacobian_white 
+
+reading surface from ../surf/rh.white.preaparc...
+writing curvature file ../surf/rh.jacobian_white
+
+Started at Tue Mar 13 02:17:17 PDT 2018 
+Ended   at Tue Mar 13 02:17:19 PDT 2018
+#@#%# recon-all-run-time-hours 0.001
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:17:19 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -cortribbon
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 402998 Mar 13 02:17 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Cortical ribbon mask Tue Mar 13 02:17:21 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri
+
+ mris_volmask --aseg_name aseg.presurf --label_left_white 2 --label_left_ribbon 3 --label_right_white 41 --label_right_ribbon 42 --save_ribbon sub-NDARINV1VCFJ6CR 
+
+SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+loading input data...
+computing distance to left white surface 
+computing distance to left pial surface 
+computing distance to right white surface 
+computing distance to right pial surface 
+ hemi masks overlap voxels = 588
+writing volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/ribbon.mgz
+mris_volmask took 8.43 minutes
+ writing ribbon files
+
+Started at Tue Mar 13 02:17:20 PDT 2018 
+Ended   at Tue Mar 13 02:25:47 PDT 2018
+#@#%# recon-all-run-time-hours 0.141
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:25:47 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -parcstats
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 404190 Mar 13 02:25 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats lh Tue Mar 13 02:25:49 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.stats -b -a ../label/lh.aparc.annot -c ../label/aparc.annot.ctab sub-NDARINV1VCFJ6CR lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 318275
+Total vertex volume 315027 (mask=0)
+MRISreadBinaryCurvature: incompatible vertex number in file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+No such file or directory
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1458   1053   3458  0.000 0.000     0.114     0.020       14     1.1  bankssts
+ 1056    713   2620  0.000 0.000     0.147     0.033       23     1.5  caudalanteriorcingulate
+ 4093   2678   9800  0.000 0.000     0.115     0.024       42     4.1  caudalmiddlefrontal
+ 2677   1793   4454  0.000 0.000     0.159     0.042       44     4.7  cuneus
+  509    362   1849  0.000 0.000     0.123     0.028        4     0.5  entorhinal
+ 5293   3594  14507  0.000 0.000     0.139     0.037       90     8.1  fusiform
+ 6272   4214  13603  0.000 0.000     0.126     0.030       83     7.2  inferiorparietal
+ 3645   2470   9406  0.000 0.000     0.127     0.031       53     4.6  inferiortemporal
+ 2067   1364   4323  0.000 0.000     0.131     0.031       33     2.4  isthmuscingulate
+10232   6396  15952  0.000 0.000     0.136     0.032      145    13.5  lateraloccipital
+ 4090   2730   9523  0.000 0.000     0.138     0.039       69     6.6  lateralorbitofrontal
+ 4984   3440   9076  0.000 0.000     0.153     0.044       85     8.7  lingual
+ 3130   2124   7661  0.000 0.000     0.127     0.040       52     5.6  medialorbitofrontal
+ 4664   3083  12395  0.000 0.000     0.127     0.035       72     6.8  middletemporal
+  935    659   2031  0.000 0.000     0.099     0.017        7     0.5  parahippocampal
+ 1920   1270   4249  0.000 0.000     0.114     0.028       19     2.2  paracentral
+ 3078   2089   7551  0.000 0.000     0.125     0.027       42     3.1  parsopercularis
+ 1158    769   3339  0.000 0.000     0.138     0.035       23     1.5  parsorbitalis
+ 2816   1890   6311  0.000 0.000     0.127     0.025       43     2.8  parstriangularis
+ 2304   1672   2910  0.000 0.000     0.140     0.033       26     3.3  pericalcarine
+ 6453   4092  11229  0.000 0.000     0.112     0.029       73     7.4  postcentral
+ 1927   1299   4127  0.000 0.000     0.130     0.027       30     1.9  posteriorcingulate
+ 7299   4686  15512  0.000 0.000     0.115     0.031       72     9.2  precentral
+ 6311   4274  14012  0.000 0.000     0.133     0.031       88     8.0  precuneus
+ 1320    885   3394  0.000 0.000     0.148     0.042       26     2.4  rostralanteriorcingulate
+11382   7444  22866  0.000 0.000     0.137     0.039      176    19.5  rostralmiddlefrontal
+11895   7997  30075  0.000 0.000     0.132     0.036      161    18.1  superiorfrontal
+ 8795   5812  18337  0.000 0.000     0.126     0.029      119     9.6  superiorparietal
+ 7335   4856  17844  0.000 0.000     0.117     0.029       85     9.0  superiortemporal
+ 7279   4816  17522  0.000 0.000     0.129     0.029      104     8.1  supramarginal
+  392    248    938  0.000 0.000     0.155     0.063        7     0.8  frontalpole
+  563    454   2495  0.000 0.000     0.155     0.041       10     1.1  temporalpole
+  806    509   1795  0.000 0.000     0.105     0.020        9     0.6  transversetemporal
+ 4280   2778   9832  0.000 0.000     0.127     0.035       50     6.2  insula
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.pial.stats -b -a ../label/lh.aparc.annot -c ../label/aparc.annot.ctab sub-NDARINV1VCFJ6CR lh pial 
+
+computing statistics for each annotation in ../label/lh.aparc.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.pial...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 318275
+Total vertex volume 315027 (mask=0)
+MRISreadBinaryCurvature: incompatible vertex number in file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+No such file or directory
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1458   1129   3458  0.000 0.000     0.100     0.022       22     1.1  bankssts
+ 1056    955   2620  0.000 0.000     0.141     0.025       16     1.2  caudalanteriorcingulate
+ 4093   3356   9800  0.000 0.000     0.115     0.023       91     3.8  caudalmiddlefrontal
+ 2677   2044   4454  0.000 0.000     0.125     0.029       30     3.4  cuneus
+  509    592   1849  0.000 0.000     0.130     0.025        4     0.5  entorhinal
+ 5293   4554  14507  0.000 0.000     0.123     0.026       41     6.0  fusiform
+ 6272   4705  13603  0.000 0.000     0.107     0.023       81     6.0  inferiorparietal
+ 3645   2987   9406  0.000 0.000     0.114     0.023       39     3.6  inferiortemporal
+ 2067   1665   4323  0.000 0.000     0.118     0.028       22     2.2  isthmuscingulate
+10232   7295  15952  0.000 0.000     0.106     0.022      101     9.5  lateraloccipital
+ 4090   3132   9523  0.000 0.000     0.126     0.030       73     5.2  lateralorbitofrontal
+ 4984   3781   9076  0.000 0.000     0.122     0.029       52     5.7  lingual
+ 3130   2892   7661  0.000 0.000     0.149     0.038       46     4.8  medialorbitofrontal
+ 4664   4277  12395  0.000 0.000     0.122     0.023       41     4.6  middletemporal
+  935    772   2031  0.000 0.000     0.098     0.018        5     0.7  parahippocampal
+ 1920   1476   4249  0.000 0.000     0.108     0.021       17     1.9  paracentral
+ 3078   2641   7551  0.000 0.000     0.116     0.023       30     2.8  parsopercularis
+ 1158   1246   3339  0.000 0.000     0.159     0.028        9     1.6  parsorbitalis
+ 2816   2440   6311  0.000 0.000     0.134     0.027       31     3.1  parstriangularis
+ 2304   1297   2910  0.000 0.000     0.094     0.022       24     1.9  pericalcarine
+ 6453   4949  11229  0.000 0.000     0.101     0.018       51     4.8  postcentral
+ 1927   1483   4127  0.000 0.000     0.111     0.023       24     1.7  posteriorcingulate
+ 7299   5340  15512  0.000 0.000     0.097     0.020       61     5.5  precentral
+ 6311   4900  14012  0.000 0.000     0.121     0.027       67     7.2  precuneus
+ 1320   1146   3394  0.000 0.000     0.138     0.033       59     1.7  rostralanteriorcingulate
+11382   8902  22866  0.000 0.000     0.125     0.028      133    15.1  rostralmiddlefrontal
+11895   9857  30075  0.000 0.000     0.121     0.027      162    14.1  superiorfrontal
+ 8795   6954  18337  0.000 0.000     0.115     0.026      101     9.0  superiorparietal
+ 7335   5996  17844  0.000 0.000     0.118     0.026      134     7.6  superiortemporal
+ 7279   6016  17522  0.000 0.000     0.120     0.025       94     7.4  supramarginal
+  392    382    938  0.000 0.000     0.153     0.027        3     0.6  frontalpole
+  563    737   2495  0.000 0.000     0.179     0.045       85     1.0  temporalpole
+  806    692   1795  0.000 0.000     0.105     0.020        4     0.6  transversetemporal
+ 4280   2457   9832  0.000 0.000     0.099     0.028       60     5.0  insula
+
+Started at Tue Mar 13 02:25:48 PDT 2018 
+Ended   at Tue Mar 13 02:26:45 PDT 2018
+#@#%# recon-all-run-time-hours 0.016
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:26:45 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -parcstats
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 415463 Mar 13 02:26 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats rh Tue Mar 13 02:26:46 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/rh.cortex.label -f ../stats/rh.aparc.stats -b -a ../label/rh.aparc.annot -c ../label/aparc.annot.ctab sub-NDARINV1VCFJ6CR rh white 
+
+computing statistics for each annotation in ../label/rh.aparc.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/rh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1380    976   2434  2.559 0.426     0.102     0.019        9     1.1  bankssts
+ 1025    699   2087  2.484 0.773     0.125     0.017       14     0.7  caudalanteriorcingulate
+ 5426   3649  11931  2.700 0.679     0.127     0.031       72     6.7  caudalmiddlefrontal
+ 3133   2082   5256  2.210 0.503     0.149     0.040       53     5.0  cuneus
+  402    297   1310  3.165 0.629     0.136     0.037        5     0.7  entorhinal
+ 4702   3245  10839  2.855 0.642     0.125     0.029       68     5.6  fusiform
+ 7699   5216  17528  2.756 0.616     0.127     0.029      111     8.8  inferiorparietal
+ 5107   3424  12617  3.035 0.768     0.126     0.028       66     5.8  inferiortemporal
+ 1906   1245   3845  2.654 0.930     0.124     0.029       27     2.3  isthmuscingulate
+ 8770   5530  13497  2.223 0.593     0.137     0.034      128    11.7  lateraloccipital
+ 4082   2732   9010  2.890 0.581     0.135     0.044       86     7.7  lateralorbitofrontal
+ 5422   3793   9642  2.335 0.680     0.161     0.046       98    10.4  lingual
+ 2612   1764   5676  2.740 0.630     0.113     0.027       32     2.9  medialorbitofrontal
+ 5427   3657  14423  3.131 0.685     0.128     0.032       80     7.1  middletemporal
+  849    600   1736  2.562 0.656     0.090     0.020        6     0.5  parahippocampal
+ 2116   1396   4200  2.738 0.557     0.113     0.026       19     2.2  paracentral
+ 2232   1396   4549  2.825 0.571     0.102     0.023       19     1.9  parsopercularis
+ 1434    923   3581  2.961 0.783     0.150     0.049       38     2.6  parsorbitalis
+ 2925   1918   5625  2.562 0.537     0.116     0.033       38     3.9  parstriangularis
+ 2903   2002   3550  1.903 0.508     0.145     0.042       40     4.8  pericalcarine
+ 7251   4636  11904  2.244 0.653     0.121     0.032       88     9.7  postcentral
+ 1945   1277   3979  2.598 0.939     0.129     0.025       30     2.0  posteriorcingulate
+ 8188   5311  16548  2.649 0.684     0.116     0.028       82     9.3  precentral
+ 6252   4290  13154  2.735 0.594     0.132     0.030       82     7.7  precuneus
+ 1156    738   2768  3.004 0.635     0.135     0.033       25     1.5  rostralanteriorcingulate
+10005   6761  19610  2.518 0.656     0.133     0.034      145    14.6  rostralmiddlefrontal
+13049   8644  30528  2.869 0.732     0.132     0.035      180    18.6  superiorfrontal
+ 8529   5588  16772  2.570 0.619     0.130     0.033      117    11.2  superiorparietal
+ 6092   4023  13272  2.878 0.623     0.116     0.032       80     8.0  superiortemporal
+ 6176   4110  12170  2.703 0.680     0.137     0.038       95    10.0  supramarginal
+  443    314   1312  3.004 0.544     0.171     0.049       12     0.8  frontalpole
+  621    425   2049  3.393 0.747     0.137     0.050       11     1.2  temporalpole
+  559    351   1094  2.814 0.355     0.151     0.026        9     0.5  transversetemporal
+ 3791   2568   8447  3.180 0.733     0.118     0.031       38     4.4  insula
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/rh.cortex.label -f ../stats/rh.aparc.pial.stats -b -a ../label/rh.aparc.annot -c ../label/aparc.annot.ctab sub-NDARINV1VCFJ6CR rh pial 
+
+computing statistics for each annotation in ../label/rh.aparc.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/rh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1380    910   2434  2.559 0.426     0.144     0.044       20     2.7  bankssts
+ 1025    940   2087  2.484 0.773     0.177     0.045       25     2.1  caudalanteriorcingulate
+ 5426   4807  11931  2.700 0.679     0.164     0.043       78    11.2  caudalmiddlefrontal
+ 3133   2703   5256  2.210 0.503     0.158     0.039       49     5.4  cuneus
+  402    521   1310  3.165 0.629     0.215     0.051        6     0.9  entorhinal
+ 4702   4343  10839  2.855 0.642     0.174     0.045       71    10.1  fusiform
+ 7699   7100  17528  2.756 0.616     0.164     0.042      114    14.4  inferiorparietal
+ 5107   4547  12617  3.035 0.768     0.164     0.044       84    10.3  inferiortemporal
+ 1906   1588   3845  2.654 0.930     0.164     0.046       32     3.8  isthmuscingulate
+ 8770   6625  13497  2.223 0.593     0.141     0.036      148    14.0  lateraloccipital
+ 4082   3492   9010  2.890 0.581     0.167     0.043       71     8.2  lateralorbitofrontal
+ 5422   4633   9642  2.335 0.680     0.171     0.046      108    11.0  lingual
+ 2612   2331   5676  2.740 0.630     0.166     0.042       43     5.1  medialorbitofrontal
+ 5427   5477  14423  3.131 0.685     0.173     0.040       84    10.3  middletemporal
+  849    785   1736  2.562 0.656     0.153     0.037       11     1.3  parahippocampal
+ 2116   1649   4200  2.738 0.557     0.150     0.041       38     4.0  paracentral
+ 2232   1838   4549  2.825 0.571     0.143     0.032       27     3.3  parsopercularis
+ 1434   1387   3581  2.961 0.783     0.161     0.041       25     2.6  parsorbitalis
+ 2925   2438   5625  2.562 0.537     0.146     0.033       31     4.4  parstriangularis
+ 2903   1785   3550  1.903 0.508     0.129     0.035       44     4.4  pericalcarine
+ 7251   5890  11904  2.244 0.653     0.139     0.034       89    10.7  postcentral
+ 1945   1644   3979  2.598 0.939     0.152     0.039       35     3.2  posteriorcingulate
+ 8188   6675  16548  2.649 0.684     0.137     0.032      109    12.1  precentral
+ 6252   5279  13154  2.735 0.594     0.162     0.043      108    12.1  precuneus
+ 1156   1112   2768  3.004 0.635     0.179     0.049       26     2.2  rostralanteriorcingulate
+10005   8567  19610  2.518 0.656     0.164     0.041      200    20.1  rostralmiddlefrontal
+13049  11761  30528  2.869 0.732     0.167     0.045      242    27.7  superiorfrontal
+ 8529   7148  16772  2.570 0.619     0.153     0.039      143    14.9  superiorparietal
+ 6092   5228  13272  2.878 0.623     0.156     0.041       94    11.7  superiortemporal
+ 6176   4765  12170  2.703 0.680     0.151     0.048      135    14.0  supramarginal
+  443    542   1312  3.004 0.544     0.238     0.058        9     1.6  frontalpole
+  621    761   2049  3.393 0.747     0.175     0.034        5     1.1  temporalpole
+  559    438   1094  2.814 0.355     0.133     0.036        5     0.9  transversetemporal
+ 3791   2538   8447  3.180 0.733     0.151     0.049      105     8.4  insula
+
+Started at Tue Mar 13 02:26:45 PDT 2018 
+Ended   at Tue Mar 13 02:27:43 PDT 2018
+#@#%# recon-all-run-time-hours 0.016
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:27:44 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -cortparc2
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 426402 Mar 13 02:27 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc 2 lh Tue Mar 13 02:27:47 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV1VCFJ6CR lh ../surf/lh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/lh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.a2009s.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/lh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 2.9   using min determinant for regularization = 0.086
+0 singular and 762 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+3 labels changed using aseg
+relabeling using gibbs priors...
+000:   9733 changed, 149170 examined...
+001:   2268 changed, 37527 examined...
+002:    693 changed, 11838 examined...
+003:    277 changed, 3844 examined...
+004:    138 changed, 1539 examined...
+005:     63 changed, 834 examined...
+006:     27 changed, 346 examined...
+007:     14 changed, 161 examined...
+008:      2 changed, 64 examined...
+009:      1 changed, 10 examined...
+010:      0 changed, 9 examined...
+4 labels changed using aseg
+000: 288 total segments, 206 labels (2676 vertices) changed
+001: 90 total segments, 8 labels (33 vertices) changed
+002: 82 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 32 changed)
+rationalizing unknown annotations with cortex label
+relabeling Medial_wall label...
+1545 vertices marked for relabeling...
+1545 labels changed in reclassification.
+writing output to ../label/lh.aparc.a2009s.annot...
+classification took 0 minutes and 14 seconds.
+
+Started at Tue Mar 13 02:27:45 PDT 2018 
+Ended   at Tue Mar 13 02:28:02 PDT 2018
+#@#%# recon-all-run-time-hours 0.005
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:28:03 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -cortparc2
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 428871 Mar 13 02:28 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc 2 rh Tue Mar 13 02:28:04 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_ca_label -l ../label/rh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV1VCFJ6CR rh ../surf/rh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/rh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/rh.aparc.a2009s.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/rh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 1.4   using min determinant for regularization = 0.020
+0 singular and 719 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+56 labels changed using aseg
+relabeling using gibbs priors...
+000:   9665 changed, 150904 examined...
+001:   2250 changed, 37510 examined...
+002:    645 changed, 11754 examined...
+003:    250 changed, 3657 examined...
+004:    114 changed, 1486 examined...
+005:     64 changed, 678 examined...
+006:     31 changed, 348 examined...
+007:     18 changed, 180 examined...
+008:     13 changed, 98 examined...
+009:      5 changed, 71 examined...
+010:      4 changed, 28 examined...
+011:      2 changed, 16 examined...
+012:      3 changed, 15 examined...
+013:      1 changed, 17 examined...
+014:      0 changed, 9 examined...
+0 labels changed using aseg
+000: 297 total segments, 212 labels (3309 vertices) changed
+001: 97 total segments, 12 labels (21 vertices) changed
+002: 85 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 37 changed)
+rationalizing unknown annotations with cortex label
+relabeling Medial_wall label...
+946 vertices marked for relabeling...
+946 labels changed in reclassification.
+writing output to ../label/rh.aparc.a2009s.annot...
+classification took 0 minutes and 13 seconds.
+
+Started at Tue Mar 13 02:28:03 PDT 2018 
+Ended   at Tue Mar 13 02:28:17 PDT 2018
+#@#%# recon-all-run-time-hours 0.004
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:28:17 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -parcstats2
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 431484 Mar 13 02:28 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats 2 lh Tue Mar 13 02:28:17 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.a2009s.stats -b -a ../label/lh.aparc.a2009s.annot -c ../label/aparc.annot.a2009s.ctab sub-NDARINV1VCFJ6CR lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.a2009s.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 318275
+Total vertex volume 315027 (mask=0)
+MRISreadBinaryCurvature: incompatible vertex number in file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+No such file or directory
+reading colortable from annotation file...
+colortable with 76 entries read (originally Simple_surface_labels2008.txt)
+Saving annotation colortable ../label/aparc.annot.a2009s.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1290    844   2491  0.000 0.000     0.143     0.048       22     2.9  G&S_frontomargin
+ 2227   1480   4944  0.000 0.000     0.147     0.030       36     2.6  G&S_occipital_inf
+ 1486    942   3492  0.000 0.000     0.148     0.051       28     3.0  G&S_paracentral
+ 1601   1054   3507  0.000 0.000     0.143     0.033       26     2.0  G&S_subcentral
+  966    629   2288  0.000 0.000     0.169     0.053       22     2.0  G&S_transv_frontopol
+ 2546   1734   5897  0.000 0.000     0.136     0.035       40     4.0  G&S_cingul-Ant
+ 1406    990   3446  0.000 0.000     0.111     0.029       15     1.6  G&S_cingul-Mid-Ant
+ 1407    983   3429  0.000 0.000     0.125     0.027       21     1.5  G&S_cingul-Mid-Post
+  851    552   2811  0.000 0.000     0.168     0.044       20     1.3  G_cingul-Post-dorsal
+  402    280   1228  0.000 0.000     0.161     0.037        9     0.6  G_cingul-Post-ventral
+ 2362   1656   4190  0.000 0.000     0.176     0.048       44     4.8  G_cuneus
+ 1686   1091   4877  0.000 0.000     0.142     0.035       35     2.0  G_front_inf-Opercular
+  660    409   1791  0.000 0.000     0.141     0.035       15     1.0  G_front_inf-Orbital
+ 1606   1050   4468  0.000 0.000     0.141     0.031       35     1.9  G_front_inf-Triangul
+ 6850   4305  17068  0.000 0.000     0.149     0.045      135    13.7  G_front_middle
+ 7977   5271  23063  0.000 0.000     0.145     0.044      138    14.6  G_front_sup
+  660    445   1813  0.000 0.000     0.141     0.035       10     0.8  G_Ins_lg&S_cent_ins
+  845    539   3140  0.000 0.000     0.138     0.046       15     1.4  G_insular_short
+ 2865   1699   5503  0.000 0.000     0.151     0.048       60     5.3  G_occipital_middle
+ 1547    957   2828  0.000 0.000     0.130     0.041       22     2.3  G_occipital_sup
+ 2373   1576   7177  0.000 0.000     0.150     0.043       53     4.1  G_oc-temp_lat-fusifor
+ 3421   2345   6508  0.000 0.000     0.173     0.056       76     7.7  G_oc-temp_med-Lingual
+ 1232    834   3488  0.000 0.000     0.119     0.028       14     1.4  G_oc-temp_med-Parahip
+ 2580   1710   7646  0.000 0.000     0.153     0.045       61     4.7  G_orbital
+ 2414   1604   7197  0.000 0.000     0.131     0.036       46     3.3  G_pariet_inf-Angular
+ 3767   2459  10591  0.000 0.000     0.143     0.035       66     4.8  G_pariet_inf-Supramar
+ 3590   2380   8625  0.000 0.000     0.135     0.031       58     4.2  G_parietal_sup
+ 2428   1425   4538  0.000 0.000     0.118     0.039       35     3.7  G_postcentral
+ 2569   1613   7139  0.000 0.000     0.128     0.044       34     4.7  G_precentral
+ 2913   1947   8153  0.000 0.000     0.145     0.039       55     4.4  G_precuneus
+  905    629   2964  0.000 0.000     0.148     0.058       22     2.8  G_rectus
+ 1065    706   2712  0.000 0.000     0.119     0.050       15     2.3  G_subcallosal
+  663    420   1715  0.000 0.000     0.105     0.020        8     0.5  G_temp_sup-G_T_transv
+ 2562   1610   7664  0.000 0.000     0.150     0.049       53     5.3  G_temp_sup-Lateral
+  854    575   2701  0.000 0.000     0.103     0.024        7     0.9  G_temp_sup-Plan_polar
+ 1046    711   2436  0.000 0.000     0.097     0.018        8     0.8  G_temp_sup-Plan_tempo
+ 1845   1246   5655  0.000 0.000     0.132     0.037       37     2.9  G_temporal_inf
+ 2667   1778   8460  0.000 0.000     0.150     0.049       59     5.4  G_temporal_middle
+  484    335    814  0.000 0.000     0.123     0.018        5     0.4  Lat_Fis-ant-Horizont
+  529    370    990  0.000 0.000     0.076     0.013        2     0.2  Lat_Fis-ant-Vertical
+ 1382    915   1991  0.000 0.000     0.112     0.021       11     1.2  Lat_Fis-post
+ 2705   1570   3184  0.000 0.000     0.133     0.033       39     3.7  Pole_occipital
+ 1395   1016   6083  0.000 0.000     0.163     0.048       32     2.8  Pole_temporal
+ 2922   2040   4095  0.000 0.000     0.121     0.027       25     3.3  S_calcarine
+ 3051   2002   4106  0.000 0.000     0.093     0.017       14     2.2  S_central
+ 1067    736   1785  0.000 0.000     0.095     0.013        5     0.6  S_cingul-Marginalis
+  627    410   1095  0.000 0.000     0.105     0.028        5     0.6  S_circular_insula_ant
+ 1466    983   2523  0.000 0.000     0.105     0.019        9     1.3  S_circular_insula_inf
+ 2402   1579   3887  0.000 0.000     0.106     0.019       13     2.1  S_circular_insula_sup
+  901    617   2052  0.000 0.000     0.112     0.028        8     1.1  S_collat_transv_ant
+  665    457    822  0.000 0.000     0.111     0.018        4     0.6  S_collat_transv_post
+ 3141   2162   5429  0.000 0.000     0.104     0.019       21     2.3  S_front_inf
+ 2021   1375   3322  0.000 0.000     0.124     0.026       19     2.5  S_front_middle
+ 3264   2286   6228  0.000 0.000     0.097     0.020       16     2.7  S_front_sup
+  169    132    433  0.000 0.000     0.165     0.023        2     0.2  S_interm_prim-Jensen
+ 3421   2294   5972  0.000 0.000     0.114     0.021       34     2.7  S_intrapariet&P_trans
+ 1433    979   1775  0.000 0.000     0.122     0.028       11     1.6  S_oc_middle&Lunatus
+ 1199    802   1696  0.000 0.000     0.121     0.023       10     1.1  S_oc_sup&transversal
+  955    640   1392  0.000 0.000     0.112     0.020        6     0.9  S_occipital_ant
+  636    437   1094  0.000 0.000     0.120     0.024        5     0.5  S_oc-temp_lat
+ 2578   1815   4746  0.000 0.000     0.114     0.022       19     2.1  S_oc-temp_med&Lingual
+  374    266    607  0.000 0.000     0.116     0.019        2     0.3  S_orbital_lateral
+  661    449   1052  0.000 0.000     0.107     0.022        4     0.5  S_orbital_med-olfact
+ 1535   1039   3239  0.000 0.000     0.131     0.033       18     2.2  S_orbital-H_Shaped
+ 2937   1962   4922  0.000 0.000     0.121     0.025       30     3.0  S_parieto_occipital
+ 1835   1115   1696  0.000 0.000     0.121     0.021       29     1.2  S_pericallosal
+ 3287   2188   5665  0.000 0.000     0.103     0.019       27     2.6  S_postcentral
+ 1735   1165   3012  0.000 0.000     0.107     0.021       14     1.4  S_precentral-inf-part
+ 1295    861   2160  0.000 0.000     0.100     0.020        6     1.1  S_precentral-sup-part
+  694    476   1035  0.000 0.000     0.121     0.023        6     0.5  S_suborbital
+ 1095    783   2038  0.000 0.000     0.124     0.022       10     1.1  S_subparietal
+ 1246    843   2441  0.000 0.000     0.124     0.025       12     1.2  S_temporal_inf
+ 6670   4588  13309  0.000 0.000     0.107     0.019       53     5.2  S_temporal_sup
+  512    349    691  0.000 0.000     0.103     0.012        3     0.3  S_temporal_transverse
+
+Started at Tue Mar 13 02:28:17 PDT 2018 
+Ended   at Tue Mar 13 02:28:49 PDT 2018
+#@#%# recon-all-run-time-hours 0.009
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:28:49 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -parcstats2
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 441035 Mar 13 02:28 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats 2 rh Tue Mar 13 02:28:49 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/rh.cortex.label -f ../stats/rh.aparc.a2009s.stats -b -a ../label/rh.aparc.a2009s.annot -c ../label/aparc.annot.a2009s.ctab sub-NDARINV1VCFJ6CR rh white 
+
+computing statistics for each annotation in ../label/rh.aparc.a2009s.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/rh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+reading colortable from annotation file...
+colortable with 76 entries read (originally Simple_surface_labels2008.txt)
+Saving annotation colortable ../label/aparc.annot.a2009s.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+  841    598   1843  2.792 0.575     0.156     0.031       14     1.2  G&S_frontomargin
+ 1487    960   2994  2.605 0.549     0.148     0.035       29     1.7  G&S_occipital_inf
+ 1383    898   3180  2.670 0.679     0.131     0.036       20     1.8  G&S_paracentral
+ 2061   1377   4208  2.641 0.586     0.138     0.041       35     3.2  G&S_subcentral
+ 1219    833   3155  2.954 0.563     0.156     0.037       26     1.9  G&S_transv_frontopol
+ 3585   2380   7492  2.798 0.612     0.116     0.025       40     3.6  G&S_cingul-Ant
+ 1282    950   3038  2.862 0.551     0.124     0.021       15     1.1  G&S_cingul-Mid-Ant
+ 1586   1088   3244  2.872 0.600     0.131     0.027       22     1.8  G&S_cingul-Mid-Post
+  640    413   2001  3.241 0.571     0.143     0.035       13     0.9  G_cingul-Post-dorsal
+  446    308   1344  3.266 0.568     0.155     0.040       10     0.9  G_cingul-Post-ventral
+ 3050   2032   5130  2.143 0.523     0.157     0.046       57     5.4  G_cuneus
+ 1518    937   4057  3.025 0.594     0.120     0.032       22     1.8  G_front_inf-Opercular
+  685    409   1549  2.724 0.717     0.168     0.066       19     1.9  G_front_inf-Orbital
+ 1298    826   2913  2.720 0.518     0.125     0.041       21     2.1  G_front_inf-Triangul
+ 5358   3566  14096  2.791 0.761     0.152     0.044      108    10.0  G_front_middle
+ 7713   4943  21450  3.071 0.764     0.141     0.041      127    13.1  G_front_sup
+  655    478   1743  3.173 0.662     0.126     0.030        8     0.8  G_Ins_lg&S_cent_ins
+  684    436   2531  3.902 0.769     0.126     0.041       12     1.0  G_insular_short
+ 3201   2053   7732  2.782 0.623     0.147     0.035       67     4.5  G_occipital_middle
+ 2278   1399   3959  2.282 0.609     0.154     0.055       41     5.1  G_occipital_sup
+ 2224   1483   6133  3.067 0.671     0.145     0.038       50     3.4  G_oc-temp_lat-fusifor
+ 3418   2362   6986  2.469 0.686     0.177     0.056       75     7.8  G_oc-temp_med-Lingual
+ 1079    733   2744  2.905 0.716     0.125     0.036       14     1.4  G_oc-temp_med-Parahip
+ 2997   1943   8354  3.050 0.729     0.153     0.050       81     5.3  G_orbital
+ 2494   1653   6626  2.901 0.663     0.138     0.034       43     3.3  G_pariet_inf-Angular
+ 3284   2112   7910  2.902 0.792     0.150     0.050       69     6.9  G_pariet_inf-Supramar
+ 2358   1523   6225  2.898 0.743     0.134     0.032       40     2.8  G_parietal_sup
+ 2668   1579   4527  2.242 0.638     0.131     0.041       41     4.7  G_postcentral
+ 3050   1899   8084  2.879 0.782     0.131     0.036       41     4.5  G_precentral
+ 2132   1529   6235  3.022 0.606     0.154     0.039       41     3.6  G_precuneus
+  879    599   2624  2.928 0.667     0.160     0.053       26     1.9  G_rectus
+  200    141    497  3.357 0.501     0.111     0.032        2     0.2  G_subcallosal
+  425    264    947  2.946 0.438     0.168     0.029        9     0.4  G_temp_sup-G_T_transv
+ 2325   1434   5736  2.936 0.664     0.131     0.042       38     4.3  G_temp_sup-Lateral
+  919    634   2503  3.266 0.553     0.078     0.019        8     0.5  G_temp_sup-Plan_polar
+ 1040    719   2309  2.812 0.529     0.130     0.037       17     1.2  G_temp_sup-Plan_tempo
+ 2740   1791   8596  3.307 0.718     0.138     0.036       49     3.8  G_temporal_inf
+ 3185   2082   9997  3.335 0.627     0.138     0.040       61     4.9  G_temporal_middle
+  540    373    745  2.368 0.403     0.094     0.018        3     0.4  Lat_Fis-ant-Horizont
+  161    118    252  2.441 0.457     0.116     0.009        1     0.1  Lat_Fis-ant-Vertical
+ 1443    977   2094  2.564 0.412     0.108     0.020        9     1.2  Lat_Fis-post
+ 4089   2496   4882  1.802 0.505     0.128     0.034       56     5.4  Pole_occipital
+ 1620   1133   4956  3.222 0.726     0.154     0.049       30     3.3  Pole_temporal
+ 3342   2388   4919  2.267 0.650     0.138     0.036       43     4.9  S_calcarine
+ 3201   2155   3823  2.025 0.516     0.104     0.021       18     2.8  S_central
+ 1340    909   2237  2.572 0.534     0.094     0.015        6     0.9  S_cingul-Marginalis
+  578    401   1109  3.217 0.544     0.095     0.018        2     0.4  S_circular_insula_ant
+ 1203    799   1798  2.787 0.523     0.095     0.018        6     0.9  S_circular_insula_inf
+ 1933   1312   3190  2.857 0.604     0.103     0.018        9     1.6  S_circular_insula_sup
+  799    563   1634  2.945 0.728     0.107     0.018        5     0.6  S_collat_transv_ant
+  615    421    750  2.379 0.428     0.148     0.034        7     0.9  S_collat_transv_post
+ 2827   1904   4284  2.306 0.476     0.094     0.017       18     1.8  S_front_inf
+ 2615   1763   4580  2.487 0.608     0.115     0.028       26     3.1  S_front_middle
+ 4932   3362   8005  2.392 0.554     0.117     0.029       48     5.9  S_front_sup
+  531    369    801  2.359 0.429     0.110     0.022        3     0.5  S_interm_prim-Jensen
+ 3312   2243   5850  2.546 0.488     0.120     0.023       34     3.2  S_intrapariet&P_trans
+  829    565    935  1.891 0.466     0.135     0.030        8     1.0  S_oc_middle&Lunatus
+ 2134   1432   3067  2.365 0.418     0.122     0.026       21     2.3  S_oc_sup&transversal
+  866    596   1245  2.328 0.435     0.114     0.020        6     0.8  S_occipital_ant
+ 1339    920   2215  2.746 0.452     0.099     0.019        6     1.1  S_oc-temp_lat
+ 1980   1429   3122  2.495 0.465     0.100     0.018       11     1.4  S_oc-temp_med&Lingual
+  491    346    629  2.129 0.499     0.112     0.018        3     0.4  S_orbital_lateral
+  783    526   1186  2.666 0.563     0.121     0.059       23     2.9  S_orbital_med-olfact
+ 1460    999   2756  2.837 0.409     0.117     0.026       14     1.4  S_orbital-H_Shaped
+ 2988   2012   4634  2.487 0.457     0.123     0.025       30     3.2  S_parieto_occipital
+ 1955   1181   1860  1.867 0.792     0.119     0.020       30     1.4  S_pericallosal
+ 2769   1848   3771  2.378 0.464     0.115     0.025       26     3.1  S_postcentral
+ 2325   1561   3521  2.519 0.475     0.102     0.019       17     1.8  S_precentral-inf-part
+ 1190    803   1792  2.513 0.501     0.089     0.014        5     0.7  S_precentral-sup-part
+  156    113    472  3.183 0.568     0.136     0.033        2     0.2  S_suborbital
+ 1317    898   2426  2.579 0.479     0.121     0.025       13     1.5  S_subparietal
+ 1534   1049   2135  2.578 0.643     0.108     0.016        9     1.2  S_temporal_inf
+ 5791   4072  10200  2.621 0.509     0.107     0.020       44     5.0  S_temporal_sup
+  248    185    393  2.491 0.554     0.110     0.013        1     0.1  S_temporal_transverse
+
+Started at Tue Mar 13 02:28:49 PDT 2018 
+Ended   at Tue Mar 13 02:29:18 PDT 2018
+#@#%# recon-all-run-time-hours 0.008
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:29:21 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -cortparc3
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 450419 Mar 13 02:29 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc 3 lh Tue Mar 13 02:29:21 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV1VCFJ6CR lh ../surf/lh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/lh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.DKTatlas.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/lh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 1.4   using min determinant for regularization = 0.020
+0 singular and 383 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+1139 labels changed using aseg
+relabeling using gibbs priors...
+000:   2174 changed, 149170 examined...
+001:    522 changed, 10080 examined...
+002:    145 changed, 2914 examined...
+003:     61 changed, 822 examined...
+004:     38 changed, 367 examined...
+005:     24 changed, 231 examined...
+006:      8 changed, 122 examined...
+007:      6 changed, 40 examined...
+008:      3 changed, 32 examined...
+009:      1 changed, 19 examined...
+010:      0 changed, 7 examined...
+154 labels changed using aseg
+000: 57 total segments, 24 labels (146 vertices) changed
+001: 33 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 7 changed)
+rationalizing unknown annotations with cortex label
+relabeling unknown label...
+relabeling corpuscallosum label...
+1383 vertices marked for relabeling...
+1383 labels changed in reclassification.
+writing output to ../label/lh.aparc.DKTatlas.annot...
+classification took 0 minutes and 10 seconds.
+
+Started at Tue Mar 13 02:29:21 PDT 2018 
+Ended   at Tue Mar 13 02:29:31 PDT 2018
+#@#%# recon-all-run-time-hours 0.003
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:29:31 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -cortparc3
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 452867 Mar 13 02:29 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc 3 rh Tue Mar 13 02:29:32 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_ca_label -l ../label/rh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV1VCFJ6CR rh ../surf/rh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/rh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/rh.aparc.DKTatlas.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/rh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 0.9   using min determinant for regularization = 0.009
+0 singular and 325 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+1237 labels changed using aseg
+relabeling using gibbs priors...
+000:   2151 changed, 150904 examined...
+001:    459 changed, 9933 examined...
+002:    135 changed, 2607 examined...
+003:     71 changed, 786 examined...
+004:     40 changed, 383 examined...
+005:     18 changed, 218 examined...
+006:     10 changed, 92 examined...
+007:      7 changed, 62 examined...
+008:      5 changed, 44 examined...
+009:      1 changed, 32 examined...
+010:      0 changed, 6 examined...
+191 labels changed using aseg
+000: 55 total segments, 22 labels (156 vertices) changed
+001: 34 total segments, 1 labels (1 vertices) changed
+002: 33 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 7 changed)
+rationalizing unknown annotations with cortex label
+relabeling unknown label...
+relabeling corpuscallosum label...
+878 vertices marked for relabeling...
+878 labels changed in reclassification.
+writing output to ../label/rh.aparc.DKTatlas.annot...
+classification took 0 minutes and 11 seconds.
+
+Started at Tue Mar 13 02:29:32 PDT 2018 
+Ended   at Tue Mar 13 02:29:43 PDT 2018
+#@#%# recon-all-run-time-hours 0.003
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:29:43 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -parcstats3
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 455365 Mar 13 02:29 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats 3 lh Tue Mar 13 02:29:43 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.DKTatlas.stats -b -a ../label/lh.aparc.DKTatlas.annot -c ../label/aparc.annot.DKTatlas.ctab sub-NDARINV1VCFJ6CR lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.DKTatlas.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 318275
+Total vertex volume 315027 (mask=0)
+MRISreadBinaryCurvature: incompatible vertex number in file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+No such file or directory
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.DKTatlas.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1747   1193   3768  0.000 0.000     0.131     0.032       30     2.1  caudalanteriorcingulate
+ 4326   2856  10368  0.000 0.000     0.114     0.023       43     4.2  caudalmiddlefrontal
+ 3628   2446   6386  0.000 0.000     0.153     0.039       56     5.8  cuneus
+  488    345   1650  0.000 0.000     0.134     0.031        5     0.6  entorhinal
+ 5026   3390  13018  0.000 0.000     0.135     0.035       78     7.3  fusiform
+ 6430   4326  14510  0.000 0.000     0.126     0.030       88     7.5  inferiorparietal
+ 3710   2529  10248  0.000 0.000     0.131     0.034       63     5.1  inferiortemporal
+ 2026   1351   4316  0.000 0.000     0.133     0.031       32     2.4  isthmuscingulate
+10011   6238  15830  0.000 0.000     0.137     0.033      145    13.3  lateraloccipital
+ 4597   3093  11304  0.000 0.000     0.146     0.046       85     8.9  lateralorbitofrontal
+ 5132   3539   9122  0.000 0.000     0.152     0.044       88     8.9  lingual
+ 2494   1701   6139  0.000 0.000     0.125     0.040       38     4.5  medialorbitofrontal
+ 6016   4043  15483  0.000 0.000     0.127     0.034       86     8.1  middletemporal
+ 1071    747   2273  0.000 0.000     0.102     0.017        8     0.7  parahippocampal
+ 2258   1484   5258  0.000 0.000     0.115     0.030       23     2.7  paracentral
+ 2815   1898   6733  0.000 0.000     0.124     0.027       38     2.8  parsopercularis
+ 1237    831   2772  0.000 0.000     0.118     0.025       16     1.2  parsorbitalis
+ 3457   2299   7631  0.000 0.000     0.127     0.026       52     3.4  parstriangularis
+ 2282   1649   2883  0.000 0.000     0.138     0.033       25     3.2  pericalcarine
+ 7286   4642  12637  0.000 0.000     0.115     0.029       82     8.5  postcentral
+ 2236   1479   5055  0.000 0.000     0.132     0.028       38     2.4  posteriorcingulate
+ 7202   4628  15142  0.000 0.000     0.116     0.031       72     8.9  precentral
+ 6125   4159  13737  0.000 0.000     0.133     0.031       90     7.6  precuneus
+ 1757   1170   4078  0.000 0.000     0.138     0.037       29     2.7  rostralanteriorcingulate
+ 8437   5465  17533  0.000 0.000     0.132     0.037      126    13.4  rostralmiddlefrontal
+13504   9033  33313  0.000 0.000     0.138     0.039      205    23.2  superiorfrontal
+ 7053   4651  14779  0.000 0.000     0.124     0.029       94     7.6  superiorparietal
+ 8985   6055  22679  0.000 0.000     0.119     0.029      104    11.1  superiortemporal
+ 6851   4528  16338  0.000 0.000     0.129     0.029       97     7.7  supramarginal
+  776    491   1727  0.000 0.000     0.106     0.021        9     0.6  transversetemporal
+ 3460   2256   8315  0.000 0.000     0.121     0.029       37     4.0  insula
+
+Started at Tue Mar 13 02:29:43 PDT 2018 
+Ended   at Tue Mar 13 02:30:11 PDT 2018
+#@#%# recon-all-run-time-hours 0.008
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:30:11 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi rh -parcstats3
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 461105 Mar 13 02:30 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Parcellation Stats 3 rh Tue Mar 13 02:30:12 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/rh.cortex.label -f ../stats/rh.aparc.DKTatlas.stats -b -a ../label/rh.aparc.DKTatlas.annot -c ../label/aparc.annot.DKTatlas.ctab sub-NDARINV1VCFJ6CR rh white 
+
+computing statistics for each annotation in ../label/rh.aparc.DKTatlas.annot.
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/wm.mgz...
+reading input surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+reading input pial surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.pial...
+reading input white surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/rh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/rh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 300820
+Total vertex volume 296960 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.DKTatlas.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1341749 mm^3    (det: 1.451915 )
+lhCtxGM: 312434.657 312385.000  diff=   49.7  pctdiff= 0.016
+rhCtxGM: 294931.220 293811.000  diff= 1120.2  pctdiff= 0.380
+lhCtxWM: 206996.654 206963.500  diff=   33.2  pctdiff= 0.016
+rhCtxWM: 209462.946 209861.500  diff= -398.6  pctdiff=-0.190
+SubCortGMVol  58490.000
+SupraTentVol  1093887.477 (1089715.000) diff=4172.477 pctdiff=0.381
+SupraTentVolNotVent  1085721.477 (1081549.000) diff=4172.477 pctdiff=0.384
+BrainSegVol  1253271.000 (1251005.000) diff=2266.000 pctdiff=0.181
+BrainSegVolNotVent  1241938.000 (1242550.477) diff=-612.477 pctdiff=-0.049
+BrainSegVolNotVent  1241938.000
+CerebellumVol 160197.000
+VentChorVol    8166.000
+3rd4th5thCSF   3167.000
+CSFVol   901.000, OptChiasmVol   192.000
+MaskVol 1578829.000
+ 1110    757   2207  2.477 0.767     0.126     0.017       15     0.8  caudalanteriorcingulate
+ 5598   3756  12231  2.707 0.667     0.127     0.031       74     6.8  caudalmiddlefrontal
+ 3838   2578   6346  2.217 0.496     0.145     0.037       61     5.7  cuneus
+  314    242   1167  3.307 0.638     0.121     0.028        3     0.3  entorhinal
+ 4395   3017   9837  2.855 0.623     0.122     0.028       61     5.0  fusiform
+ 7723   5232  17365  2.754 0.617     0.128     0.029      110     9.0  inferiorparietal
+ 5327   3596  13456  3.028 0.774     0.128     0.030       70     6.3  inferiortemporal
+ 1903   1245   3816  2.664 0.908     0.124     0.029       26     2.3  isthmuscingulate
+ 8987   5634  13636  2.192 0.580     0.138     0.036      134    12.5  lateraloccipital
+ 4423   2967  10044  2.908 0.598     0.142     0.047      100     8.9  lateralorbitofrontal
+ 5319   3727   9552  2.357 0.669     0.161     0.046       97    10.1  lingual
+ 1947   1306   4804  2.835 0.674     0.123     0.036       33     2.7  medialorbitofrontal
+ 6497   4400  16274  3.040 0.693     0.124     0.030       88     8.0  middletemporal
+  900    637   1818  2.588 0.657     0.094     0.020        7     0.6  parahippocampal
+ 2224   1448   4510  2.764 0.583     0.115     0.027       21     2.3  paracentral
+ 2586   1622   5241  2.794 0.567     0.103     0.024       24     2.4  parsopercularis
+ 1227    831   3174  3.087 0.694     0.134     0.031       18     1.4  parsorbitalis
+ 2908   1897   5217  2.470 0.571     0.119     0.035       39     4.2  parstriangularis
+ 2844   1959   3449  1.883 0.514     0.142     0.042       36     4.6  pericalcarine
+ 7781   4984  12843  2.267 0.656     0.122     0.033       95    10.5  postcentral
+ 2086   1379   4242  2.606 0.926     0.130     0.025       31     2.2  posteriorcingulate
+ 8014   5216  16138  2.634 0.680     0.117     0.028       81     9.3  precentral
+ 6304   4316  13474  2.744 0.587     0.133     0.030       87     8.0  precuneus
+ 1479    945   3528  3.010 0.641     0.134     0.032       29     1.9  rostralanteriorcingulate
+ 7291   4895  13920  2.460 0.667     0.134     0.037      114    11.3  rostralmiddlefrontal
+15992  10667  36618  2.823 0.705     0.130     0.033      218    21.8  superiorfrontal
+ 6931   4553  14248  2.629 0.634     0.131     0.032       98     9.0  superiorparietal
+ 7728   5152  17007  2.882 0.638     0.118     0.032       97    10.0  superiortemporal
+ 5929   3943  11783  2.702 0.681     0.137     0.039       94     9.7  supramarginal
+  550    345   1091  2.823 0.357     0.153     0.026        9     0.5  transversetemporal
+ 3468   2341   7925  3.252 0.694     0.113     0.028       31     3.7  insula
+
+Started at Tue Mar 13 02:30:11 PDT 2018 
+Ended   at Tue Mar 13 02:30:40 PDT 2018
+#@#%# recon-all-run-time-hours 0.008
+recon-all -s sub-NDARINV1VCFJ6CR finished without error at Tue Mar 13 02:30:40 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR -hemi lh -pctsurfcon
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 466678 Mar 13 02:30 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# WM/GM Contrast lh Tue Mar 13 02:30:41 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+
+ pctsurfcon --s sub-NDARINV1VCFJ6CR --lh-only 
+
+Log file is /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/pctsurfcon.log
+Tue Mar 13 02:30:41 PDT 2018
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts
+/global/homes/j/jcha9928/app/freesurfer/bin/pctsurfcon
+$Id: pctsurfcon,v 1.15 2016/02/12 21:43:15 zkaufman Exp $
+Linux nid01015 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /global/homes/j/jcha9928/app/freesurfer
+mri_vol2surf --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/rawavg.mgz --hemi lh --noreshape --interp trilinear --projdist -1 --o /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/tmp.pctsurfcon.46397/lh.wm.mgh --regheader sub-NDARINV1VCFJ6CR --cortex
+srcvol = /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/rawavg.mgz
+srcreg unspecified
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = lh
+ProjDist = -1
+reshape = 0
+interp = trilinear
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Computing registration from header.
+  Using /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/orig.mgz as target reference.
+-------- original matrix -----------
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/lh.cortex.label
+Reading surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white
+Done reading source surface
+Mapping Source Volume onto Source Subject Surface
+ 1 -1 -1 -1
+using old
+Done mapping volume to surface
+Number of source voxels hit = 78086
+Masking with /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/lh.cortex.label
+Writing to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/tmp.pctsurfcon.46397/lh.wm.mgh
+Dim: 149170 1 1
+mri_vol2surf --mov /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/rawavg.mgz --hemi lh --noreshape --interp trilinear --o /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/tmp.pctsurfcon.46397/lh.gm.mgh --projfrac 0.3 --regheader sub-NDARINV1VCFJ6CR --cortex
+srcvol = /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/rawavg.mgz
+srcreg unspecified
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = lh
+ProjFrac = 0.3
+thickness = thickness
+reshape = 0
+interp = trilinear
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Computing registration from header.
+  Using /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/mri/orig.mgz as target reference.
+-------- original matrix -----------
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/label/lh.cortex.label
+Reading surface /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.white
+Done reading source surface
+Reading thickness /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+MRISreadBinaryCurvature: incompatible vertex number in file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.thickness
+Linux nid01015 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-NDARINV1VCFJ6CR exited with ERRORS at Tue Mar 13 02:30:45 PDT 2018
+
+For more details, see the log file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+/global/homes/j/jcha9928/app/freesurfer/bin/recon-all.makefile:368: recipe for target '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.w-g.pct.mgh' failed
+make: *** [/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1VCFJ6CR/surf/lh.w-g.pct.mgh] Error 1
+I THINK RECON-ALL IS DONE BY NOW

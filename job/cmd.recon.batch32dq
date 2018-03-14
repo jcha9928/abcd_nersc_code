@@ -1,0 +1,13 @@
+  #!/bin/bash
+  source ~/.bashrc_jiook
+  FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
+  source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
+
+  SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
+  cat ./list/batch32dq | parallel --delay .2 --jobs 32 "ulimit -m 4000000 && ulimit -v 4000000 && recon-all   -s {}   -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/{}_t1w.nii.gz   -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/{}_t2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/{}_t2w.nii.gz -T2pial T1T2   -all   -qcache"  
+  
+  #################use this when there is no T2w images###################
+  #cat ./list/batch32dq | parallel --jobs 32 recon-all   #-s {}   #-i /global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/{}_t1w.nii.gz   #-hippocampal-subfields-T1 /global/cscratch1/sd/jcha9928/anal/ABCD/data/anat/{}_t2w.nii.gz    #-all   #-qcache 
+  
+  echo "I THINK RECON-ALL IS DONE BY NOW"

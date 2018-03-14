@@ -1,0 +1,87 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Subject 'sub-NDARINV1KBEC5AT': make all
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT -careg 
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 69847 Mar  4 06:04 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/scripts/recon-all.local-copy'
+#--------------------------------------
+#@# CA Reg Tue Mar 13 01:53:20 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri
+
+ mri_ca_register -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/touch/rusage.mri_ca_register.dat -nobigventricles -T transforms/talairach.lta -align-after -mask brainmask.mgz norm.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca transforms/talairach.m3z 
+
+not handling expanded ventricles...
+using previously computed transform transforms/talairach.lta
+renormalizing sequences with structure alignment, equivalent to:
+	-renormalize
+	-regularize_mean 0.500
+	-regularize 0.500
+using MR volume brainmask.mgz to mask input volume...
+
+== Number of threads available to mri_ca_register for OpenMP = 64 == 
+reading 1 input volumes...
+logging results to talairach.log
+reading input volume 'norm.mgz'...
+mghRead(/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri/norm.mgz, -1): read error
+No such file or directory
+mri_ca_register: could not open input volume norm.mgz.
+
+No such file or directory
+ERROR: mri_ca_register with non-zero status 255
+but continuing despite the error
+
+Started at Tue Mar 13 01:53:20 PDT 2018 
+Ended   at Tue Mar 13 01:53:20 PDT 2018
+#@#%# recon-all-run-time-hours 0.000
+recon-all -s sub-NDARINV1KBEC5AT finished without error at Tue Mar 13 01:53:20 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT -calabel
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 71461 Mar 13 01:53 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/scripts/recon-all.local-copy'
+#--------------------------------------
+#@# SubCort Seg Tue Mar 13 01:53:21 PDT 2018
+
+ mri_ca_label -relabel_unlikely 9 .3 -prior 0.5 -align norm.mgz transforms/talairach.m3z /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca aseg.auto_noCCseg.mgz 
+
+sysname  Linux
+hostname nid00913
+machine  x86_64
+
+setenv SUBJECTS_DIR /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri
+mri_ca_label -relabel_unlikely 9 .3 -prior 0.5 -align norm.mgz transforms/talairach.m3z /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca aseg.auto_noCCseg.mgz 
+
+
+== Number of threads available to mri_ca_label for OpenMP = 64 == 
+relabeling unlikely voxels with window_size = 9 and prior threshold 0.30
+using Gibbs prior factor = 0.500
+renormalizing sequences with structure alignment, equivalent to:
+	-renormalize
+	-renormalize_mean 0.500
+	-regularize 0.500
+reading 1 input volumes
+reading classifier array from /global/homes/j/jcha9928/app/freesurfer/average/RB_all_2016-05-10.vc700.gca
+reading input volume from norm.mgz
+mghRead(/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri/norm.mgz, -1): read error
+No such file or directory
+mri_ca_label: could not read input MR volume from norm.mgz
+No such file or directory
+Linux nid00913 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-NDARINV1KBEC5AT exited with ERRORS at Tue Mar 13 01:53:33 PDT 2018
+
+For more details, see the log file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+/global/homes/j/jcha9928/app/freesurfer/bin/recon-all.makefile:71: recipe for target '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri/aseg.presurf.mgz' failed
+make: *** [/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV1KBEC5AT/mri/aseg.presurf.mgz] Error 1
+I THINK RECON-ALL IS DONE BY NOW

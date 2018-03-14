@@ -1,0 +1,440 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Subject 'sub-NDARINV3PNCV5A7': make all
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7 -talairach -tal-check
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 50677 Mar  4 07:40 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Talairach Tue Mar 13 01:53:58 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+
+ mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --n 1 --proto-iters 1000 --distance 50 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+/global/homes/j/jcha9928/app/freesurfer/bin/mri_nu_correct.mni
+--no-rescale --i orig.mgz --o orig_nu.mgz --n 1 --proto-iters 1000 --distance 50
+nIters 1
+$Id: mri_nu_correct.mni,v 1.27 2016/02/26 16:19:49 mreuter Exp $
+Linux nid01627 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+Tue Mar 13 01:53:58 PDT 2018
+Program nu_correct, built from:
+Package MNI N3, version 1.12.0, compiled by nicks@terrier (x86_64-unknown-linux-gnu) on 2015-06-19 at 01:25:34
+/usr/bin/bc
+tmpdir is ./tmp.mri_nu_correct.mni.24983
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.24983/nu0.mnc -odt float
+mri_convert.bin orig.mgz ./tmp.mri_nu_correct.mni.24983/nu0.mnc -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from orig.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from uchar to float (noscale = 0)...
+writing to ./tmp.mri_nu_correct.mni.24983/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Tue Mar 13 01:54:00 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.24983/nu0.mnc ./tmp.mri_nu_correct.mni.24983/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.24983/0/ -iterations 1000 -distance 50
+[jcha9928@nid01627:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/] [2018-03-13 01:54:00] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 1000 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 50 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.24983/0/ ./tmp.mri_nu_correct.mni.24983/nu0.mnc ./tmp.mri_nu_correct.mni.24983/nu1.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 53 
+CV of field change: 0.000998429
+ 
+ 
+ 
+mri_convert ./tmp.mri_nu_correct.mni.24983/nu1.mnc orig_nu.mgz --like orig.mgz --conform
+mri_convert.bin ./tmp.mri_nu_correct.mni.24983/nu1.mnc orig_nu.mgz --like orig.mgz --conform 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from ./tmp.mri_nu_correct.mni.24983/nu1.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+writing to orig_nu.mgz...
+ 
+ 
+Tue Mar 13 01:55:24 PDT 2018
+mri_nu_correct.mni done
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+Started at Tue Mar 13 01:55:24 PDT 2018
+Ended   at Tue Mar 13 01:56:02 PDT 2018
+talairach_avi done
+
+INFO: transforms/talairach.xfm already exists!
+The new transforms/talairach.auto.xfm will not be copied to transforms/talairach.xfm
+This is done to retain any edits made to transforms/talairach.xfm
+Add the -clean-tal flag to recon-all to overwrite transforms/talairach.xfm
+
+#--------------------------------------------
+#@# Talairach Failure Detection Tue Mar 13 01:56:02 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+talairach_afd: Talairach Transform: transforms/talairach.xfm OK (p=0.4710, pval=0.1049 >= threshold=0.0050)
+
+ awk -f /global/homes/j/jcha9928/app/freesurfer/bin/extract_talairach_avi_QA.awk /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/transforms/talairach_avi.log 
+
+
+ tal_QC_AZS /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/transforms/talairach_avi.log 
+
+TalAviQA: 0.97822
+z-score: 0
+
+Started at Tue Mar 13 01:53:57 PDT 2018 
+Ended   at Tue Mar 13 01:56:02 PDT 2018
+#@#%# recon-all-run-time-hours 0.035
+recon-all -s sub-NDARINV3PNCV5A7 finished without error at Tue Mar 13 01:56:02 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7 -nuintensitycor
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 59399 Mar 13 01:56 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Nu Intensity Correction Tue Mar 13 01:56:03 PDT 2018
+
+ mri_nu_correct.mni --i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 
+
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+/global/homes/j/jcha9928/app/freesurfer/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2
+nIters 2
+$Id: mri_nu_correct.mni,v 1.27 2016/02/26 16:19:49 mreuter Exp $
+Linux nid01627 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+Tue Mar 13 01:56:03 PDT 2018
+Program nu_correct, built from:
+Package MNI N3, version 1.12.0, compiled by nicks@terrier (x86_64-unknown-linux-gnu) on 2015-06-19 at 01:25:34
+/usr/bin/bc
+tmpdir is ./tmp.mri_nu_correct.mni.26184
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.26184/nu0.mnc -odt float
+mri_convert.bin orig.mgz ./tmp.mri_nu_correct.mni.26184/nu0.mnc -odt float 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from orig.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+changing data type from uchar to float (noscale = 0)...
+writing to ./tmp.mri_nu_correct.mni.26184/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Tue Mar 13 01:56:05 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.26184/nu0.mnc ./tmp.mri_nu_correct.mni.26184/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.26184/0/
+[jcha9928@nid01627:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/] [2018-03-13 01:56:05] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.26184/0/ ./tmp.mri_nu_correct.mni.26184/nu0.mnc ./tmp.mri_nu_correct.mni.26184/nu1.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 22 
+CV of field change: 0.00098304
+ 
+ 
+--------------------------------------------------------
+Iteration 2 Tue Mar 13 01:56:51 PDT 2018
+nu_correct -clobber ./tmp.mri_nu_correct.mni.26184/nu1.mnc ./tmp.mri_nu_correct.mni.26184/nu2.mnc -tmpdir ./tmp.mri_nu_correct.mni.26184/1/
+[jcha9928@nid01627:/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/] [2018-03-13 01:56:51] running:
+  /global/homes/j/jcha9928/app/freesurfer/mni/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1.0e-7 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.26184/1/ ./tmp.mri_nu_correct.mni.26184/nu1.mnc ./tmp.mri_nu_correct.mni.26184/nu2.imp
+
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Processing:.................................................................Done
+Number of iterations: 20 
+CV of field change: 0.00098793
+ 
+ 
+ 
+mri_binarize --i ./tmp.mri_nu_correct.mni.26184/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.26184/ones.mgz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+cmdline mri_binarize.bin --i ./tmp.mri_nu_correct.mni.26184/nu2.mnc --min -1 --o ./tmp.mri_nu_correct.mni.26184/ones.mgz 
+sysname  Linux
+hostname nid01627
+machine  x86_64
+user     jcha9928
+
+input      ./tmp.mri_nu_correct.mni.26184/nu2.mnc
+frame      0
+nErode3d   0
+nErode2d   0
+output     ./tmp.mri_nu_correct.mni.26184/ones.mgz
+Binarizing based on threshold
+min        -1
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 16777216 values in range
+Counting number of voxels in first frame
+Found 16777216 voxels in final mask
+Count: 16777216 16777216.000000 16777216 100.000000
+mri_binarize done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.26184/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.26184/sum.junk --avgwf ./tmp.mri_nu_correct.mni.26184/input.mean.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.26184/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.26184/sum.junk --avgwf ./tmp.mri_nu_correct.mni.26184/input.mean.dat 
+sysname  Linux
+hostname nid01627
+machine  x86_64
+user     jcha9928
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.26184/ones.mgz
+Loading orig.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.26184/input.mean.dat
+mri_segstats done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.26184/ones.mgz --i ./tmp.mri_nu_correct.mni.26184/nu2.mnc --sum ./tmp.mri_nu_correct.mni.26184/sum.junk --avgwf ./tmp.mri_nu_correct.mni.26184/output.mean.dat
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.26184/ones.mgz --i ./tmp.mri_nu_correct.mni.26184/nu2.mnc --sum ./tmp.mri_nu_correct.mni.26184/sum.junk --avgwf ./tmp.mri_nu_correct.mni.26184/output.mean.dat 
+sysname  Linux
+hostname nid01627
+machine  x86_64
+user     jcha9928
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.26184/ones.mgz
+Loading ./tmp.mri_nu_correct.mni.26184/nu2.mnc
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+  0
+Writing to ./tmp.mri_nu_correct.mni.26184/output.mean.dat
+mri_segstats done
+mris_calc -o ./tmp.mri_nu_correct.mni.26184/nu2.mnc ./tmp.mri_nu_correct.mni.26184/nu2.mnc mul .97186139257858242510
+Saving result to './tmp.mri_nu_correct.mni.26184/nu2.mnc' (type = MINC )                       [ ok ]
+mri_convert ./tmp.mri_nu_correct.mni.26184/nu2.mnc nu.mgz --like orig.mgz
+mri_convert.bin ./tmp.mri_nu_correct.mni.26184/nu2.mnc nu.mgz --like orig.mgz 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from ./tmp.mri_nu_correct.mni.26184/nu2.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+mri_make_uchar nu.mgz transforms/talairach.xfm nu.mgz
+type change took 0 minutes and 5 seconds.
+mapping (10, 118) to ( 3, 110)
+ 
+ 
+Tue Mar 13 01:58:00 PDT 2018
+mri_nu_correct.mni done
+
+ mri_add_xform_to_header -c /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/transforms/talairach.xfm nu.mgz nu.mgz 
+
+INFO: extension is mgz
+
+Started at Tue Mar 13 01:56:03 PDT 2018 
+Ended   at Tue Mar 13 01:58:02 PDT 2018
+#@#%# recon-all-run-time-hours 0.033
+recon-all -s sub-NDARINV3PNCV5A7 finished without error at Tue Mar 13 01:58:02 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7 -normalization
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 69810 Mar 13 01:58 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Intensity Normalization Tue Mar 13 01:58:03 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+
+ mri_normalize -g 1 -mprage nu.mgz T1.mgz 
+
+using max gradient = 1.000
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+reading from nu.mgz...
+normalizing image...
+talairach transform
+ 1.06069  -0.02608   0.01027  -0.72469;
+ 0.05159   1.00740   0.54614  -14.36701;
+-0.04617  -0.49145   1.07513   6.81422;
+ 0.00000   0.00000   0.00000   1.00000;
+processing without aseg, no1d=0
+MRInormInit(): 
+INFO: Modifying talairach volume c_(r,a,s) based on average_305
+MRInormalize(): 
+MRIsplineNormalize(): npeaks = 20
+Starting OpenSpline(): npoints = 20
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+
+Iterating 2 times
+---------------------------------
+3d normalization pass 1 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 62 (62), valley at 25 (25)
+csf peak at 32, setting threshold to 52
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+---------------------------------
+3d normalization pass 2 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 60 (60), valley at 24 (24)
+csf peak at 30, setting threshold to 50
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+Done iterating ---------------------------------
+writing output to T1.mgz
+3D bias adjustment took 1 minutes and 7 seconds.
+
+Started at Tue Mar 13 01:58:03 PDT 2018 
+Ended   at Tue Mar 13 01:59:11 PDT 2018
+#@#%# recon-all-run-time-hours 0.019
+recon-all -s sub-NDARINV3PNCV5A7 finished without error at Tue Mar 13 01:59:11 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7 -skullstrip
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 71736 Mar 13 01:59 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Skull Stripping Tue Mar 13 01:59:12 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri
+
+ mri_watershed -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/touch/rusage.mri_watershed.dat -T1 -brain_atlas /global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca transforms/talairach_with_skull.lta T1.mgz brainmask.auto.mgz 
+
+
+Mode:          T1 normalized volume
+ltaReadFile(transforms/talairach_with_skull.lta): can't read data
+Mode:          Use the information of atlas (default parms, --help for details)
+
+mri_watershed Error: Cannot read the transform
+
+Linux nid01627 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-NDARINV3PNCV5A7 exited with ERRORS at Tue Mar 13 01:59:13 PDT 2018
+
+For more details, see the log file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+/global/homes/j/jcha9928/app/freesurfer/bin/recon-all.makefile:31: recipe for target '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/brainmask.mgz' failed
+make: *** [/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV3PNCV5A7/mri/brainmask.mgz] Error 1
+I THINK RECON-ALL IS DONE BY NOW

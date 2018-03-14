@@ -7,10 +7,10 @@ source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
 #mkdir $DW_JOB_STRIPED/fs
 #SUBJECTS_DIR=$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-#recon-all -all -s sub-NDARINVR8EDKZ2W -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVR8EDKZ2W/ses-baselineYear1Arm1/anat/sub-NDARINVR8EDKZ2W_ses-baselineYear1Arm1_T1w.nii.gz  -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVPEM4YKYG/ses-baselineYear1Arm1/anat/sub-NDARINVPEM4YKYG_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVPEM4YKYG/ses-baselineYear1Arm1/anat/sub-NDARINVPEM4YKYG_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 64 
-recon-all -s sub-NDARINVR8EDKZ2W -make all  -parallel -openmp 32 
+#recon-all -all -s sub-NDARINVR8EDKZ2W -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVR8EDKZ2W/ses-baselineYear1Arm1/anat/sub-NDARINVR8EDKZ2W_ses-baselineYear1Arm1_T1w.nii.gz   -parallel -openmp 64 
+recon-all -s sub-NDARINVR8EDKZ2W -make all  -parallel -openmp 64 
 
 #echo now copying fs to local scratch
 

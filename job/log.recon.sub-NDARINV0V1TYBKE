@@ -1,0 +1,910 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Subject 'sub-NDARINV0VBJ9TP2': make all
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2 -hemi rh -white
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 248630 Mar  4 09:25 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Make White Surf rh Tue Mar 13 01:53:13 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts
+
+ mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -mgz -T1 brain.finalsurfs sub-NDARINV0VBJ9TP2 rh 
+
+using white.preaparc as white matter name...
+using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
+not using aparc to prevent surfaces crossing the midline
+INFO: assuming MGZ format for volumes.
+using brain.finalsurfs as T1 volume...
+$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
+$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/filled.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/brain.finalsurfs.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/../mri/aseg.presurf.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/wm.mgz...
+34721 bright wm thresholded.
+25 bright non-wm voxels segmented.
+reading original surface position from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.orig...
+computing class statistics...
+border white:    290567 voxels (1.73%)
+border gray      344119 voxels (2.05%)
+WM (100.0): 99.5 +- 8.8 [70.0 --> 110.0]
+GM (71.0) : 71.2 +- 9.3 [30.0 --> 110.0]
+setting MIN_GRAY_AT_WHITE_BORDER to 59.7 (was 70)
+setting MAX_BORDER_WHITE to 113.8 (was 105)
+setting MIN_BORDER_WHITE to 69.0 (was 85)
+setting MAX_CSF to 50.3 (was 40)
+setting MAX_GRAY to 96.2 (was 95)
+setting MAX_GRAY_AT_CSF_BORDER to 59.7 (was 75)
+setting MIN_GRAY_AT_CSF_BORDER to 41.0 (was 40)
+repositioning cortical surface to gray/white boundary
+smoothing T1 volume with sigma = 2.000
+vertex spacing 0.82 +- 0.22 (0.01-->3.32) (max @ vno 36912 --> 163067)
+face area 0.28 +- 0.12 (0.00-->1.74)
+mean absolute distance = 0.62 +- 0.75
+5616 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+using class modes intead of means, discounting robust sigmas....
+intensity peaks found at WM=105+-5.2,    GM=69+-6.1
+mean inside = 94.8, mean outside = 74.5
+smoothing surface for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+mean border=80.1, 41 (41) missing vertices, mean dist 0.3 [0.5 (%37.6)->0.7 (%62.4))]
+%73 local maxima, %24 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=4, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height 0.000000
+momentum 0.000000
+nbhd_size 0
+max_nbrs 0
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 1
+randomSeed 0
+
+smoothing T1 volume with sigma = 1.000
+vertex spacing 0.91 +- 0.24 (0.11-->3.89) (max @ vno 163143 --> 91511)
+face area 0.28 +- 0.12 (0.00-->1.90)
+mean absolute distance = 0.33 +- 0.46
+4347 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=3871391.5, rms=10.067
+001: dt: 0.5000, sse=2066709.0, rms=6.714 (33.300%)
+002: dt: 0.5000, sse=1434376.9, rms=5.027 (25.132%)
+003: dt: 0.5000, sse=1207575.8, rms=4.253 (15.402%)
+004: dt: 0.5000, sse=1099797.6, rms=3.827 (10.006%)
+005: dt: 0.5000, sse=1062161.0, rms=3.671 (4.086%)
+006: dt: 0.5000, sse=1033888.3, rms=3.545 (3.434%)
+rms = 3.54, time step reduction 1 of 3 to 0.250...
+007: dt: 0.5000, sse=1035056.8, rms=3.540 (0.147%)
+008: dt: 0.2500, sse=810450.6, rms=2.224 (37.171%)
+009: dt: 0.2500, sse=763261.6, rms=1.858 (16.461%)
+010: dt: 0.2500, sse=751491.6, rms=1.753 (5.666%)
+011: dt: 0.2500, sse=744701.4, rms=1.686 (3.788%)
+rms = 1.66, time step reduction 2 of 3 to 0.125...
+012: dt: 0.2500, sse=741876.2, rms=1.656 (1.801%)
+013: dt: 0.1250, sse=735511.4, rms=1.585 (4.256%)
+rms = 1.57, time step reduction 3 of 3 to 0.062...
+014: dt: 0.1250, sse=734353.0, rms=1.574 (0.712%)
+positioning took 1.1 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 3 vertex label from ripped group
+mean border=84.3, 41 (13) missing vertices, mean dist -0.2 [0.3 (%81.0)->0.2 (%19.0))]
+%85 local maxima, %11 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid00, nav=2, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+vertex spacing 0.89 +- 0.24 (0.06-->3.94) (max @ vno 163143 --> 91511)
+face area 0.34 +- 0.15 (0.00-->2.49)
+mean absolute distance = 0.20 +- 0.32
+3671 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1718708.8, rms=5.372
+015: dt: 0.5000, sse=1165841.0, rms=3.350 (37.631%)
+rms = 3.52, time step reduction 1 of 3 to 0.250...
+016: dt: 0.2500, sse=1008731.4, rms=2.507 (25.176%)
+017: dt: 0.2500, sse=934576.8, rms=1.856 (25.948%)
+018: dt: 0.2500, sse=887192.1, rms=1.538 (17.151%)
+019: dt: 0.2500, sse=875758.5, rms=1.411 (8.280%)
+020: dt: 0.2500, sse=870426.6, rms=1.345 (4.638%)
+rms = 1.32, time step reduction 2 of 3 to 0.125...
+021: dt: 0.2500, sse=867276.4, rms=1.319 (1.934%)
+022: dt: 0.1250, sse=863176.4, rms=1.264 (4.165%)
+rms = 1.26, time step reduction 3 of 3 to 0.062...
+023: dt: 0.1250, sse=862631.1, rms=1.262 (0.171%)
+positioning took 0.8 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 4 vertex label from ripped group
+removing 1 vertex label from ripped group
+removing 1 vertex label from ripped group
+removing 4 vertex label from ripped group
+mean border=86.5, 49 (8) missing vertices, mean dist -0.1 [0.2 (%71.5)->0.2 (%28.5))]
+%90 local maxima, % 6 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid00, nav=1, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+vertex spacing 0.88 +- 0.24 (0.04-->3.97) (max @ vno 163143 --> 91511)
+face area 0.33 +- 0.15 (0.00-->2.46)
+mean absolute distance = 0.17 +- 0.27
+3267 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1048463.2, rms=2.904
+rms = 2.86, time step reduction 1 of 3 to 0.250...
+024: dt: 0.5000, sse=1051980.8, rms=2.858 (1.581%)
+025: dt: 0.2500, sse=868101.3, rms=1.598 (44.072%)
+026: dt: 0.2500, sse=840552.2, rms=1.270 (20.563%)
+rms = 1.25, time step reduction 2 of 3 to 0.125...
+027: dt: 0.2500, sse=834664.3, rms=1.246 (1.870%)
+028: dt: 0.1250, sse=825249.6, rms=1.127 (9.542%)
+rms = 1.12, time step reduction 3 of 3 to 0.062...
+029: dt: 0.1250, sse=824080.6, rms=1.119 (0.741%)
+positioning took 0.5 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 3 vertex label from ripped group
+removing 1 vertex label from ripped group
+mean border=87.1, 58 (7) missing vertices, mean dist -0.0 [0.2 (%55.3)->0.2 (%44.7))]
+%91 local maxima, % 5 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid00, nav=0, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing white matter surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.white.preaparc...
+writing smoothed curvature to rh.curv
+000: dt: 0.0000, sse=832474.1, rms=1.356
+rms = 1.67, time step reduction 1 of 3 to 0.250...
+030: dt: 0.2500, sse=802927.5, rms=0.944 (30.375%)
+031: dt: 0.2500, sse=800154.3, rms=0.820 (13.125%)
+rms = 0.85, time step reduction 2 of 3 to 0.125...
+rms = 0.82, time step reduction 3 of 3 to 0.062...
+032: dt: 0.1250, sse=797129.8, rms=0.817 (0.363%)
+positioning took 0.3 minutes
+generating cortex label...
+7 non-cortical segments detected
+only using segment with 7383 vertices
+erasing segment 1 (vno[0] = 120819)
+erasing segment 2 (vno[0] = 123225)
+erasing segment 3 (vno[0] = 124317)
+erasing segment 4 (vno[0] = 126321)
+erasing segment 5 (vno[0] = 127418)
+erasing segment 6 (vno[0] = 129883)
+writing cortex label to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/rh.cortex.label...
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.curv
+writing smoothed area to rh.area
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.area
+vertex spacing 0.88 +- 0.24 (0.05-->3.96) (max @ vno 91511 --> 163143)
+face area 0.33 +- 0.15 (0.00-->2.45)
+repositioning cortical surface to gray/csf boundary.
+smoothing T1 volume with sigma = 2.000
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+removing 2 vertex label from ripped group
+smoothing surface for 5 iterations...
+mean border=57.7, 54 (54) missing vertices, mean dist 1.8 [0.0 (%0.0)->2.9 (%100.0))]
+%14 local maxima, %45 large gradients and %37 min vals, 357 gradients ignored
+perforing initial smooth deformation to move away from white surface
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=26697282.0, rms=28.758
+001: dt: 0.0500, sse=23153188.0, rms=26.728 (7.058%)
+002: dt: 0.0500, sse=20545236.0, rms=25.130 (5.980%)
+003: dt: 0.0500, sse=18578722.0, rms=23.854 (5.079%)
+004: dt: 0.0500, sse=17038394.0, rms=22.804 (4.400%)
+005: dt: 0.0500, sse=15789769.0, rms=21.916 (3.893%)
+006: dt: 0.0500, sse=14747406.0, rms=21.146 (3.513%)
+007: dt: 0.0500, sse=13856093.0, rms=20.465 (3.222%)
+008: dt: 0.0500, sse=13082145.0, rms=19.854 (2.984%)
+009: dt: 0.0500, sse=12400126.0, rms=19.300 (2.791%)
+010: dt: 0.0500, sse=11793177.0, rms=18.793 (2.627%)
+positioning took 0.7 minutes
+mean border=57.4, 41 (16) missing vertices, mean dist 1.5 [0.1 (%0.2)->2.4 (%99.8))]
+%16 local maxima, %45 large gradients and %35 min vals, 331 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=12847948.0, rms=19.632
+011: dt: 0.0500, sse=12294855.0, rms=19.179 (2.310%)
+012: dt: 0.0500, sse=11796485.0, rms=18.761 (2.180%)
+013: dt: 0.0500, sse=11344674.0, rms=18.373 (2.064%)
+014: dt: 0.0500, sse=10934539.0, rms=18.015 (1.953%)
+015: dt: 0.0500, sse=10560793.0, rms=17.681 (1.851%)
+016: dt: 0.0500, sse=10219419.0, rms=17.371 (1.754%)
+017: dt: 0.0500, sse=9904604.0, rms=17.080 (1.676%)
+018: dt: 0.0500, sse=9613956.0, rms=16.806 (1.600%)
+019: dt: 0.0500, sse=9344361.0, rms=16.549 (1.533%)
+020: dt: 0.0500, sse=9093945.0, rms=16.306 (1.469%)
+positioning took 0.7 minutes
+mean border=57.3, 46 (15) missing vertices, mean dist 1.3 [0.1 (%2.3)->2.1 (%97.7))]
+%17 local maxima, %45 large gradients and %35 min vals, 317 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=9219513.0, rms=16.425
+021: dt: 0.0500, sse=8980591.0, rms=16.191 (1.423%)
+022: dt: 0.0500, sse=8757960.0, rms=15.971 (1.364%)
+023: dt: 0.0500, sse=8547823.0, rms=15.759 (1.324%)
+024: dt: 0.0500, sse=8349990.0, rms=15.557 (1.280%)
+025: dt: 0.0500, sse=8163195.5, rms=15.365 (1.240%)
+026: dt: 0.0500, sse=7985998.0, rms=15.179 (1.207%)
+027: dt: 0.0500, sse=7816911.5, rms=15.000 (1.180%)
+028: dt: 0.0500, sse=7654127.0, rms=14.826 (1.164%)
+029: dt: 0.0500, sse=7496918.0, rms=14.655 (1.151%)
+030: dt: 0.0500, sse=7344980.5, rms=14.488 (1.139%)
+positioning took 0.7 minutes
+mean border=57.2, 95 (14) missing vertices, mean dist 1.1 [0.1 (%8.0)->1.9 (%92.0))]
+%17 local maxima, %45 large gradients and %34 min vals, 266 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 1.000
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=7428101.0, rms=14.572
+031: dt: 0.5000, sse=6305057.5, rms=13.282 (8.851%)
+032: dt: 0.5000, sse=5464669.5, rms=12.222 (7.980%)
+033: dt: 0.5000, sse=4782746.0, rms=11.290 (7.625%)
+034: dt: 0.5000, sse=4218866.5, rms=10.451 (7.429%)
+035: dt: 0.5000, sse=3720785.2, rms=9.651 (7.656%)
+036: dt: 0.5000, sse=3268680.5, rms=8.860 (8.200%)
+037: dt: 0.5000, sse=2838503.5, rms=8.040 (9.252%)
+038: dt: 0.5000, sse=2447627.2, rms=7.213 (10.290%)
+039: dt: 0.5000, sse=2122324.0, rms=6.450 (10.574%)
+040: dt: 0.5000, sse=1878383.5, rms=5.809 (9.939%)
+041: dt: 0.5000, sse=1710553.2, rms=5.327 (8.295%)
+042: dt: 0.5000, sse=1608779.1, rms=5.009 (5.977%)
+043: dt: 0.5000, sse=1545498.5, rms=4.804 (4.083%)
+044: dt: 0.5000, sse=1511591.1, rms=4.686 (2.470%)
+045: dt: 0.5000, sse=1487966.9, rms=4.606 (1.689%)
+046: dt: 0.5000, sse=1474355.9, rms=4.556 (1.104%)
+rms = 4.51, time step reduction 1 of 3 to 0.250...
+047: dt: 0.5000, sse=1461841.1, rms=4.514 (0.905%)
+048: dt: 0.2500, sse=1317244.0, rms=3.908 (13.438%)
+049: dt: 0.2500, sse=1273232.6, rms=3.723 (4.735%)
+rms = 3.72, time step reduction 2 of 3 to 0.125...
+050: dt: 0.2500, sse=1273235.8, rms=3.719 (0.110%)
+051: dt: 0.1250, sse=1247602.1, rms=3.600 (3.187%)
+rms = 3.58, time step reduction 3 of 3 to 0.062...
+052: dt: 0.1250, sse=1243620.0, rms=3.582 (0.501%)
+positioning took 2.2 minutes
+mean border=55.9, 2200 (9) missing vertices, mean dist 0.1 [0.2 (%43.7)->0.5 (%56.3))]
+%33 local maxima, %31 large gradients and %31 min vals, 119 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid00, nav=8, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1708405.9, rms=4.331
+053: dt: 0.5000, sse=1662929.4, rms=4.178 (3.546%)
+054: dt: 0.5000, sse=1606818.6, rms=3.998 (4.315%)
+rms = 4.16, time step reduction 1 of 3 to 0.250...
+055: dt: 0.2500, sse=1455424.9, rms=3.279 (17.976%)
+056: dt: 0.2500, sse=1410662.0, rms=3.031 (7.557%)
+rms = 2.99, time step reduction 2 of 3 to 0.125...
+057: dt: 0.2500, sse=1402847.0, rms=2.988 (1.422%)
+058: dt: 0.1250, sse=1371477.6, rms=2.802 (6.228%)
+rms = 2.77, time step reduction 3 of 3 to 0.062...
+059: dt: 0.1250, sse=1364949.8, rms=2.765 (1.318%)
+positioning took 0.9 minutes
+mean border=54.9, 2249 (9) missing vertices, mean dist 0.1 [0.2 (%40.1)->0.3 (%59.9))]
+%47 local maxima, %17 large gradients and %31 min vals, 150 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid00, nav=4, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1450480.0, rms=3.210
+rms = 3.69, time step reduction 1 of 3 to 0.250...
+060: dt: 0.2500, sse=1399545.8, rms=2.934 (8.597%)
+061: dt: 0.2500, sse=1384109.0, rms=2.850 (2.888%)
+rms = 2.83, time step reduction 2 of 3 to 0.125...
+062: dt: 0.2500, sse=1378866.5, rms=2.832 (0.619%)
+063: dt: 0.1250, sse=1362033.1, rms=2.728 (3.676%)
+rms = 2.71, time step reduction 3 of 3 to 0.062...
+064: dt: 0.1250, sse=1357670.5, rms=2.705 (0.823%)
+positioning took 0.7 minutes
+mean border=54.3, 4844 (9) missing vertices, mean dist 0.0 [0.2 (%43.9)->0.2 (%56.1))]
+%50 local maxima, %14 large gradients and %30 min vals, 158 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid00, nav=2, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing pial surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.pial...
+writing smoothed curvature to rh.curv.pial
+000: dt: 0.0000, sse=1379834.2, rms=2.826
+rms = 3.24, time step reduction 1 of 3 to 0.250...
+065: dt: 0.2500, sse=1362717.6, rms=2.723 (3.653%)
+rms = 2.69, time step reduction 2 of 3 to 0.125...
+066: dt: 0.2500, sse=1354596.0, rms=2.692 (1.129%)
+067: dt: 0.1250, sse=1345117.0, rms=2.630 (2.300%)
+rms = 2.61, time step reduction 3 of 3 to 0.062...
+068: dt: 0.1250, sse=1340500.5, rms=2.609 (0.823%)
+positioning took 0.6 minutes
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.curv.pial
+writing smoothed area to rh.area.pial
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.area.pial
+vertex spacing 1.02 +- 0.45 (0.07-->7.41) (max @ vno 119916 --> 118740)
+face area 0.41 +- 0.32 (0.00-->6.29)
+measuring cortical thickness...
+writing cortical thickness estimate to 'thickness' file.
+0 of 163474 vertices processed
+25000 of 163474 vertices processed
+50000 of 163474 vertices processed
+75000 of 163474 vertices processed
+100000 of 163474 vertices processed
+125000 of 163474 vertices processed
+150000 of 163474 vertices processed
+0 of 163474 vertices processed
+25000 of 163474 vertices processed
+50000 of 163474 vertices processed
+75000 of 163474 vertices processed
+100000 of 163474 vertices processed
+125000 of 163474 vertices processed
+150000 of 163474 vertices processed
+thickness calculation complete, 529:1640 truncations.
+29778 vertices at 0 distance
+96362 vertices at 1 distance
+103824 vertices at 2 distance
+54993 vertices at 3 distance
+20151 vertices at 4 distance
+6078 vertices at 5 distance
+1922 vertices at 6 distance
+678 vertices at 7 distance
+279 vertices at 8 distance
+138 vertices at 9 distance
+97 vertices at 10 distance
+75 vertices at 11 distance
+57 vertices at 12 distance
+43 vertices at 13 distance
+38 vertices at 14 distance
+43 vertices at 15 distance
+22 vertices at 16 distance
+19 vertices at 17 distance
+7 vertices at 18 distance
+12 vertices at 19 distance
+18 vertices at 20 distance
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/rh.thickness
+positioning took 12.4 minutes
+
+Started at Tue Mar 13 01:53:12 PDT 2018 
+Ended   at Tue Mar 13 02:05:40 PDT 2018
+#@#%# recon-all-run-time-hours 0.208
+recon-all -s sub-NDARINV0VBJ9TP2 finished without error at Tue Mar 13 02:05:40 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2 -hemi lh -cortparc
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 267076 Mar 13 02:05 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc lh Tue Mar 13 02:05:41 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV0VBJ9TP2 lh ../surf/lh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/lh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/lh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 0.8   using min determinant for regularization = 0.006
+0 singular and 342 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+1688 labels changed using aseg
+relabeling using gibbs priors...
+000:   3615 changed, 162858 examined...
+001:    874 changed, 14870 examined...
+002:    220 changed, 4882 examined...
+003:     86 changed, 1341 examined...
+004:     36 changed, 485 examined...
+005:     17 changed, 235 examined...
+006:      9 changed, 83 examined...
+007:      8 changed, 49 examined...
+008:      3 changed, 34 examined...
+009:      0 changed, 18 examined...
+316 labels changed using aseg
+000: 132 total segments, 85 labels (372 vertices) changed
+001: 43 total segments, 3 labels (15 vertices) changed
+002: 40 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 9 changed)
+rationalizing unknown annotations with cortex label
+relabeling unknown label...
+relabeling corpuscallosum label...
+2498 vertices marked for relabeling...
+2498 labels changed in reclassification.
+writing output to ../label/lh.aparc.annot...
+classification took 0 minutes and 11 seconds.
+
+Started at Tue Mar 13 02:05:41 PDT 2018 
+Ended   at Tue Mar 13 02:05:52 PDT 2018
+#@#%# recon-all-run-time-hours 0.003
+recon-all -s sub-NDARINV0VBJ9TP2 finished without error at Tue Mar 13 02:05:52 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2 -hemi lh -pial
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 269522 Mar 13 02:05 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Make Pial Surf lh Tue Mar 13 02:05:53 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts
+
+ mris_make_surfaces -orig_white white.preaparc -orig_pial white.preaparc -aseg ../mri/aseg.presurf -mgz -T1 brain.finalsurfs sub-NDARINV0VBJ9TP2 lh 
+
+using white.preaparc starting white location...
+using white.preaparc starting pial locations...
+using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
+INFO: assuming MGZ format for volumes.
+using brain.finalsurfs as T1 volume...
+$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
+$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/filled.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/brain.finalsurfs.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/../mri/aseg.presurf.mgz...
+reading volume /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/mri/wm.mgz...
+34721 bright wm thresholded.
+25 bright non-wm voxels segmented.
+reading original surface position from /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.orig...
+computing class statistics...
+border white:    290567 voxels (1.73%)
+border gray      344119 voxels (2.05%)
+WM (100.0): 99.5 +- 8.8 [70.0 --> 110.0]
+GM (71.0) : 71.2 +- 9.3 [30.0 --> 110.0]
+setting MIN_GRAY_AT_WHITE_BORDER to 59.7 (was 70)
+setting MAX_BORDER_WHITE to 113.8 (was 105)
+setting MIN_BORDER_WHITE to 69.0 (was 85)
+setting MAX_CSF to 50.3 (was 40)
+setting MAX_GRAY to 96.2 (was 95)
+setting MAX_GRAY_AT_CSF_BORDER to 59.7 (was 75)
+setting MIN_GRAY_AT_CSF_BORDER to 41.0 (was 40)
+using class modes intead of means, discounting robust sigmas....
+intensity peaks found at WM=105+-5.2,    GM=69+-5.2
+mean inside = 94.8, mean outside = 74.7
+smoothing surface for 5 iterations...
+reading initial white vertex positions from white.preaparc...
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+repositioning cortical surface to gray/white boundary
+smoothing T1 volume with sigma = 2.000
+vertex spacing 0.88 +- 0.25 (0.03-->6.62) (max @ vno 162363 --> 162465)
+face area 0.32 +- 0.15 (0.00-->5.65)
+mean absolute distance = 0.59 +- 0.72
+5808 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+removing 1 vertex label from ripped group
+deleting segment 3 with 55 points - only 0.00% unknown
+deleting segment 4 with 14 points - only 0.00% unknown
+deleting segment 5 with 67 points - only 0.00% unknown
+deleting segment 6 with 29 points - only 0.00% unknown
+deleting segment 7 with 15 points - only 0.00% unknown
+mean border=79.7, 84 (84) missing vertices, mean dist 0.5 [0.7 (%10.0)->0.6 (%90.0))]
+%71 local maxima, %26 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=4, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height 0.000000
+momentum 0.000000
+nbhd_size 0
+max_nbrs 0
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 0
+randomSeed 0
+
+smoothing T1 volume with sigma = 1.000
+vertex spacing 0.91 +- 0.25 (0.11-->7.01) (max @ vno 162363 --> 162465)
+face area 0.32 +- 0.15 (0.00-->5.26)
+mean absolute distance = 0.34 +- 0.46
+3812 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=3245369.8, rms=8.875
+001: dt: 0.5000, sse=1555031.0, rms=4.993 (43.743%)
+002: dt: 0.5000, sse=1177455.9, rms=3.647 (26.957%)
+003: dt: 0.5000, sse=1132729.5, rms=3.479 (4.596%)
+004: dt: 0.5000, sse=1078980.2, rms=3.227 (7.248%)
+rms = 3.40, time step reduction 1 of 3 to 0.250...
+005: dt: 0.2500, sse=914127.1, rms=2.215 (31.353%)
+006: dt: 0.2500, sse=858213.6, rms=1.747 (21.157%)
+007: dt: 0.2500, sse=841396.8, rms=1.575 (9.853%)
+rms = 1.54, time step reduction 2 of 3 to 0.125...
+008: dt: 0.2500, sse=838047.7, rms=1.538 (2.336%)
+009: dt: 0.1250, sse=832156.8, rms=1.472 (4.250%)
+rms = 1.46, time step reduction 3 of 3 to 0.062...
+010: dt: 0.1250, sse=831897.7, rms=1.460 (0.816%)
+positioning took 0.9 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 4 vertex label from ripped group
+deleting segment 1 with 14 points - only 0.00% unknown
+deleting segment 2 with 13 points - only 0.00% unknown
+deleting segment 3 with 41 points - only 0.00% unknown
+deleting segment 4 with 20 points - only 0.00% unknown
+deleting segment 5 with 6 points - only 0.00% unknown
+removing 3 vertex label from ripped group
+deleting segment 6 with 3 points - only 0.00% unknown
+mean border=84.4, 51 (11) missing vertices, mean dist -0.3 [0.4 (%83.8)->0.2 (%16.2))]
+%87 local maxima, %10 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid00, nav=2, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+vertex spacing 0.89 +- 0.25 (0.07-->7.01) (max @ vno 162363 --> 162465)
+face area 0.35 +- 0.17 (0.00-->6.37)
+mean absolute distance = 0.20 +- 0.30
+3731 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1811210.9, rms=5.613
+011: dt: 0.5000, sse=1192510.5, rms=3.425 (38.985%)
+rms = 3.46, time step reduction 1 of 3 to 0.250...
+012: dt: 0.2500, sse=1029944.4, rms=2.565 (25.095%)
+013: dt: 0.2500, sse=927522.8, rms=1.807 (29.549%)
+014: dt: 0.2500, sse=890543.2, rms=1.437 (20.484%)
+015: dt: 0.2500, sse=879163.2, rms=1.293 (10.015%)
+016: dt: 0.2500, sse=874578.2, rms=1.227 (5.108%)
+rms = 1.21, time step reduction 2 of 3 to 0.125...
+017: dt: 0.2500, sse=871934.4, rms=1.208 (1.573%)
+018: dt: 0.1250, sse=868580.4, rms=1.157 (4.187%)
+rms = 1.16, time step reduction 3 of 3 to 0.062...
+019: dt: 0.1250, sse=867730.9, rms=1.160 (-0.236%)
+positioning took 0.8 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 4 vertex label from ripped group
+deleting segment 1 with 53 points - only 0.00% unknown
+deleting segment 2 with 19 points - only 0.00% unknown
+deleting segment 3 with 49 points - only 0.00% unknown
+deleting segment 4 with 26 points - only 0.00% unknown
+deleting segment 5 with 18 points - only 0.00% unknown
+mean border=86.5, 64 (5) missing vertices, mean dist -0.1 [0.2 (%72.5)->0.2 (%27.5))]
+%91 local maxima, % 5 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid00, nav=1, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+vertex spacing 0.88 +- 0.25 (0.06-->7.01) (max @ vno 162363 --> 162465)
+face area 0.33 +- 0.16 (0.00-->6.41)
+mean absolute distance = 0.17 +- 0.26
+2984 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1048831.1, rms=2.885
+rms = 2.87, time step reduction 1 of 3 to 0.250...
+020: dt: 0.5000, sse=1060558.4, rms=2.872 (0.476%)
+021: dt: 0.2500, sse=870113.6, rms=1.572 (45.244%)
+022: dt: 0.2500, sse=838272.2, rms=1.227 (21.994%)
+rms = 1.20, time step reduction 2 of 3 to 0.125...
+023: dt: 0.2500, sse=836274.5, rms=1.195 (2.558%)
+024: dt: 0.1250, sse=826988.1, rms=1.069 (10.521%)
+rms = 1.06, time step reduction 3 of 3 to 0.062...
+025: dt: 0.1250, sse=824157.5, rms=1.060 (0.915%)
+positioning took 0.5 minutes
+inhibiting deformation at non-cortical midline structures...
+deleting segment 0 with 55 points - only 0.00% unknown
+deleting segment 1 with 20 points - only 0.00% unknown
+deleting segment 2 with 49 points - only 0.00% unknown
+deleting segment 3 with 28 points - only 0.00% unknown
+deleting segment 4 with 18 points - only 0.00% unknown
+mean border=87.2, 90 (4) missing vertices, mean dist -0.0 [0.2 (%55.9)->0.2 (%44.1))]
+%93 local maxima, % 4 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid00, nav=0, nbrs=2, l_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing white matter surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.white...
+writing smoothed curvature to lh.curv
+000: dt: 0.0000, sse=831877.8, rms=1.323
+rms = 1.65, time step reduction 1 of 3 to 0.250...
+026: dt: 0.2500, sse=803977.1, rms=0.912 (31.061%)
+027: dt: 0.2500, sse=799395.3, rms=0.790 (13.365%)
+rms = 0.82, time step reduction 2 of 3 to 0.125...
+rms = 0.79, time step reduction 3 of 3 to 0.062...
+028: dt: 0.1250, sse=797174.1, rms=0.787 (0.332%)
+positioning took 0.3 minutes
+generating cortex label...
+8 non-cortical segments detected
+only using segment with 7557 vertices
+erasing segment 1 (vno[0] = 76983)
+erasing segment 2 (vno[0] = 120987)
+erasing segment 3 (vno[0] = 121099)
+erasing segment 4 (vno[0] = 122240)
+erasing segment 5 (vno[0] = 123417)
+erasing segment 6 (vno[0] = 124515)
+erasing segment 7 (vno[0] = 124851)
+writing cortex label to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/lh.cortex.label...
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.curv
+writing smoothed area to lh.area
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.area
+vertex spacing 0.88 +- 0.26 (0.03-->7.01) (max @ vno 162363 --> 162465)
+face area 0.32 +- 0.16 (0.00-->6.30)
+repositioning cortical surface to gray/csf boundary.
+smoothing T1 volume with sigma = 2.000
+averaging target values for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+removing 3 vertex label from ripped group
+smoothing surface for 5 iterations...
+reading initial pial vertex positions from white.preaparc...
+mean border=57.7, 88 (88) missing vertices, mean dist 1.8 [0.5 (%0.0)->2.9 (%100.0))]
+%14 local maxima, %45 large gradients and %37 min vals, 284 gradients ignored
+perforing initial smooth deformation to move away from white surface
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=28977024.0, rms=29.969
+001: dt: 0.0500, sse=24973818.0, rms=27.762 (7.366%)
+002: dt: 0.0500, sse=22192492.0, rms=26.118 (5.920%)
+003: dt: 0.0500, sse=20121796.0, rms=24.824 (4.956%)
+004: dt: 0.0500, sse=18494176.0, rms=23.757 (4.298%)
+005: dt: 0.0500, sse=17161688.0, rms=22.846 (3.833%)
+006: dt: 0.0500, sse=16037817.0, rms=22.049 (3.490%)
+007: dt: 0.0500, sse=15069428.0, rms=21.338 (3.224%)
+008: dt: 0.0500, sse=14222515.0, rms=20.696 (3.008%)
+009: dt: 0.0500, sse=13471621.0, rms=20.110 (2.832%)
+010: dt: 0.0500, sse=12799897.0, rms=19.571 (2.682%)
+positioning took 0.7 minutes
+mean border=57.6, 68 (44) missing vertices, mean dist 1.5 [0.2 (%0.0)->2.4 (%100.0))]
+%15 local maxima, %45 large gradients and %36 min vals, 273 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=13499729.0, rms=20.136
+011: dt: 0.0500, sse=12891493.0, rms=19.649 (2.419%)
+012: dt: 0.0500, sse=12340402.0, rms=19.197 (2.300%)
+013: dt: 0.0500, sse=11838721.0, rms=18.776 (2.193%)
+014: dt: 0.0500, sse=11380963.0, rms=18.383 (2.091%)
+015: dt: 0.0500, sse=10962390.0, rms=18.017 (1.994%)
+016: dt: 0.0500, sse=10579030.0, rms=17.674 (1.901%)
+017: dt: 0.0500, sse=10226951.0, rms=17.354 (1.814%)
+018: dt: 0.0500, sse=9903386.0, rms=17.054 (1.729%)
+019: dt: 0.0500, sse=9605234.0, rms=16.772 (1.649%)
+020: dt: 0.0500, sse=9330043.0, rms=16.508 (1.574%)
+positioning took 0.7 minutes
+mean border=57.5, 78 (33) missing vertices, mean dist 1.3 [0.1 (%0.6)->2.1 (%99.4))]
+%16 local maxima, %45 large gradients and %36 min vals, 279 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=1.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.05
+000: dt: 0.0000, sse=9441883.0, rms=16.623
+021: dt: 0.0500, sse=9183049.0, rms=16.373 (1.507%)
+022: dt: 0.0500, sse=8943169.0, rms=16.137 (1.439%)
+023: dt: 0.0500, sse=8719724.0, rms=15.915 (1.380%)
+024: dt: 0.0500, sse=8511029.0, rms=15.704 (1.326%)
+025: dt: 0.0500, sse=8315864.0, rms=15.504 (1.273%)
+026: dt: 0.0500, sse=8132391.0, rms=15.313 (1.228%)
+027: dt: 0.0500, sse=7958474.0, rms=15.130 (1.194%)
+028: dt: 0.0500, sse=7791931.5, rms=14.953 (1.171%)
+029: dt: 0.0500, sse=7632182.0, rms=14.781 (1.151%)
+030: dt: 0.0500, sse=7478086.0, rms=14.613 (1.137%)
+positioning took 0.7 minutes
+mean border=57.4, 121 (28) missing vertices, mean dist 1.1 [0.1 (%4.0)->1.9 (%96.0))]
+%16 local maxima, %45 large gradients and %35 min vals, 220 gradients ignored
+tol=1.0e-04, sigma=2.0, host=nid00, nav=16, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 1.000
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=7580615.5, rms=14.726
+031: dt: 0.5000, sse=6435526.0, rms=13.423 (8.849%)
+032: dt: 0.5000, sse=5544919.5, rms=12.309 (8.302%)
+033: dt: 0.5000, sse=4825411.5, rms=11.329 (7.963%)
+034: dt: 0.5000, sse=4232028.5, rms=10.446 (7.787%)
+035: dt: 0.5000, sse=3731669.5, rms=9.640 (7.724%)
+036: dt: 0.5000, sse=3278034.8, rms=8.843 (8.266%)
+037: dt: 0.5000, sse=2842009.0, rms=8.006 (9.461%)
+038: dt: 0.5000, sse=2431757.8, rms=7.131 (10.936%)
+039: dt: 0.5000, sse=2096365.0, rms=6.329 (11.244%)
+040: dt: 0.5000, sse=1843374.0, rms=5.649 (10.743%)
+041: dt: 0.5000, sse=1680400.6, rms=5.166 (8.549%)
+042: dt: 0.5000, sse=1582193.2, rms=4.850 (6.125%)
+043: dt: 0.5000, sse=1530513.0, rms=4.677 (3.567%)
+044: dt: 0.5000, sse=1498433.2, rms=4.565 (2.380%)
+045: dt: 0.5000, sse=1483111.4, rms=4.512 (1.166%)
+rms = 4.46, time step reduction 1 of 3 to 0.250...
+046: dt: 0.5000, sse=1469821.5, rms=4.463 (1.097%)
+047: dt: 0.2500, sse=1331666.5, rms=3.875 (13.176%)
+048: dt: 0.2500, sse=1291537.1, rms=3.703 (4.419%)
+rms = 3.69, time step reduction 2 of 3 to 0.125...
+049: dt: 0.2500, sse=1290448.5, rms=3.694 (0.248%)
+050: dt: 0.1250, sse=1266451.9, rms=3.582 (3.042%)
+rms = 3.57, time step reduction 3 of 3 to 0.062...
+051: dt: 0.1250, sse=1263802.1, rms=3.570 (0.339%)
+positioning took 2.1 minutes
+mean border=56.0, 2346 (10) missing vertices, mean dist 0.1 [0.2 (%43.1)->0.5 (%56.9))]
+%33 local maxima, %30 large gradients and %32 min vals, 112 gradients ignored
+tol=1.0e-04, sigma=1.0, host=nid00, nav=8, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1703460.8, rms=4.336
+052: dt: 0.5000, sse=1647790.5, rms=4.137 (4.573%)
+053: dt: 0.5000, sse=1607139.0, rms=4.019 (2.866%)
+rms = 4.18, time step reduction 1 of 3 to 0.250...
+054: dt: 0.2500, sse=1461840.1, rms=3.333 (17.063%)
+055: dt: 0.2500, sse=1422709.4, rms=3.116 (6.509%)
+rms = 3.09, time step reduction 2 of 3 to 0.125...
+056: dt: 0.2500, sse=1418260.2, rms=3.092 (0.766%)
+057: dt: 0.1250, sse=1389862.2, rms=2.928 (5.299%)
+rms = 2.90, time step reduction 3 of 3 to 0.062...
+058: dt: 0.1250, sse=1385371.6, rms=2.905 (0.810%)
+positioning took 0.9 minutes
+mean border=55.0, 2425 (9) missing vertices, mean dist 0.1 [0.2 (%40.0)->0.3 (%60.0))]
+%48 local maxima, %17 large gradients and %31 min vals, 114 gradients ignored
+tol=1.0e-04, sigma=0.5, host=nid00, nav=4, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=1469303.4, rms=3.343
+rms = 3.81, time step reduction 1 of 3 to 0.250...
+059: dt: 0.2500, sse=1418920.8, rms=3.081 (7.841%)
+060: dt: 0.2500, sse=1403480.9, rms=3.000 (2.613%)
+rms = 2.98, time step reduction 2 of 3 to 0.125...
+061: dt: 0.2500, sse=1398186.0, rms=2.983 (0.579%)
+062: dt: 0.1250, sse=1381809.0, rms=2.886 (3.225%)
+rms = 2.86, time step reduction 3 of 3 to 0.062...
+063: dt: 0.1250, sse=1377114.4, rms=2.863 (0.813%)
+positioning took 0.7 minutes
+mean border=54.4, 5098 (9) missing vertices, mean dist 0.0 [0.2 (%44.4)->0.2 (%55.6))]
+%50 local maxima, %13 large gradients and %30 min vals, 106 gradients ignored
+tol=1.0e-04, sigma=0.2, host=nid00, nav=2, nbrs=2, l_surf_repulse=5.000, l_tspring=1.000, l_nspring=0.500, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing pial surface to /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.pial...
+writing smoothed curvature to lh.curv.pial
+000: dt: 0.0000, sse=1396395.4, rms=2.971
+rms = 3.34, time step reduction 1 of 3 to 0.250...
+064: dt: 0.2500, sse=1379873.4, rms=2.876 (3.198%)
+rms = 2.84, time step reduction 2 of 3 to 0.125...
+065: dt: 0.2500, sse=1370173.0, rms=2.838 (1.351%)
+066: dt: 0.1250, sse=1360234.2, rms=2.777 (2.145%)
+rms = 2.75, time step reduction 3 of 3 to 0.062...
+067: dt: 0.1250, sse=1354525.5, rms=2.749 (0.986%)
+positioning took 0.6 minutes
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.curv.pial
+writing smoothed area to lh.area.pial
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.area.pial
+vertex spacing 1.02 +- 0.44 (0.04-->6.28) (max @ vno 79483 --> 79484)
+face area 0.40 +- 0.32 (0.00-->5.65)
+measuring cortical thickness...
+writing cortical thickness estimate to 'thickness' file.
+0 of 162858 vertices processed
+25000 of 162858 vertices processed
+50000 of 162858 vertices processed
+75000 of 162858 vertices processed
+100000 of 162858 vertices processed
+125000 of 162858 vertices processed
+150000 of 162858 vertices processed
+0 of 162858 vertices processed
+25000 of 162858 vertices processed
+50000 of 162858 vertices processed
+75000 of 162858 vertices processed
+100000 of 162858 vertices processed
+125000 of 162858 vertices processed
+150000 of 162858 vertices processed
+thickness calculation complete, 386:1133 truncations.
+34348 vertices at 0 distance
+107473 vertices at 1 distance
+102147 vertices at 2 distance
+47176 vertices at 3 distance
+15784 vertices at 4 distance
+4443 vertices at 5 distance
+1435 vertices at 6 distance
+564 vertices at 7 distance
+251 vertices at 8 distance
+126 vertices at 9 distance
+89 vertices at 10 distance
+75 vertices at 11 distance
+71 vertices at 12 distance
+76 vertices at 13 distance
+51 vertices at 14 distance
+48 vertices at 15 distance
+35 vertices at 16 distance
+28 vertices at 17 distance
+5 vertices at 18 distance
+1 vertices at 19 distance
+4 vertices at 20 distance
+writing curvature file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.thickness
+positioning took 12.1 minutes
+#--------------------------------------------
+#@# Surf Volume lh Tue Mar 13 02:18:00 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf
+mris_calc -o lh.area.mid lh.area add lh.area.pial
+Saving result to 'lh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_calc -o lh.area.mid lh.area.mid div 2
+Saving result to 'lh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_convert --volume sub-NDARINV0VBJ9TP2 lh /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.volume
+masking with /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/lh.cortex.label
+Total face volume 328650
+Total vertex volume 324840 (mask=0)
+#@# sub-NDARINV0VBJ9TP2 lh 324840
+ 
+vertexvol Done
+
+Started at Tue Mar 13 02:05:52 PDT 2018 
+Ended   at Tue Mar 13 02:18:04 PDT 2018
+#@#%# recon-all-run-time-hours 0.203
+recon-all -s sub-NDARINV0VBJ9TP2 finished without error at Tue Mar 13 02:18:04 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2 -hemi lh -surfvolume
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 289909 Mar 13 02:18 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Surf Volume lh Tue Mar 13 02:18:06 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf
+mris_calc -o lh.area.mid lh.area add lh.area.pial
+Saving result to 'lh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_calc -o lh.area.mid lh.area.mid div 2
+Saving result to 'lh.area.mid' (type = MRI_CURV_FILE)                       [ ok ]
+mris_convert --volume sub-NDARINV0VBJ9TP2 lh /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/surf/lh.volume
+masking with /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/lh.cortex.label
+Total face volume 328650
+Total vertex volume 324840 (mask=0)
+#@# sub-NDARINV0VBJ9TP2 lh 324840
+ 
+vertexvol Done
+
+Started at Tue Mar 13 02:18:05 PDT 2018 
+Ended   at Tue Mar 13 02:18:09 PDT 2018
+#@#%# recon-all-run-time-hours 0.001
+recon-all -s sub-NDARINV0VBJ9TP2 finished without error at Tue Mar 13 02:18:09 PDT 2018
+done
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2 -hemi rh -cortparc
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 291171 Mar 13 02:18 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.local-copy'
+#-----------------------------------------
+#@# Cortical Parc rh Tue Mar 13 02:18:10 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts
+
+ mris_ca_label -l ../label/rh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-NDARINV0VBJ9TP2 rh ../surf/rh.sphere.reg /global/homes/j/jcha9928/app/freesurfer/average/rh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/rh.aparc.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+
+ERROR: 
+      MRISreadVertexPositions(../surf/rh.sphere.reg): surfaces differ. Main: 163474 verts 326944 faces, ../surf/rh.sphere.reg: 0 verts 0 faces
+Surfaces may be out-of-date
+
+
+reading atlas from /global/homes/j/jcha9928/app/freesurfer/average/rh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 0.7   using min determinant for regularization = 0.004
+0 singular and 309 ill-conditioned covariance matrices regularized
+No such file or directory
+mris_ca_label: could not read spherical coordinate system from ../surf/rh.sphere.reg for sub-NDARINV0VBJ9TP2
+No such file or directory
+Linux nid00874 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-NDARINV0VBJ9TP2 exited with ERRORS at Tue Mar 13 02:18:15 PDT 2018
+
+For more details, see the log file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+/global/homes/j/jcha9928/app/freesurfer/bin/recon-all.makefile:306: recipe for target '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/rh.aparc.annot' failed
+make: *** [/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0VBJ9TP2/label/rh.aparc.annot] Error 1
+I THINK RECON-ALL IS DONE BY NOW

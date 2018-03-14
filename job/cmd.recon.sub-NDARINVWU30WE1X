@@ -3,11 +3,16 @@ source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
 
+
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-#mkdir $DW_JOB_STRIPED/fs
-#SUBJECTS_DIR=$DW_JOB_STRIPED/fs
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
+mkdir -p $DW_JOB_STRIPED/fs
+SUBJECTS_DIR=$DW_JOB_STRIPED/fs
+
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+#rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVWU30WE1X/scripts/IsRunning*
 
 #recon-all -all -s sub-NDARINVWU30WE1X -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVWU30WE1X/ses-baselineYear1Arm1/anat/sub-NDARINVWU30WE1X_ses-baselineYear1Arm1_T1w.nii.gz    -hippocampal-subfields-T1  -parallel -openmp 64 
 recon-all -s sub-NDARINVWU30WE1X -all -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVWU30WE1X/ses-baselineYear1Arm1/anat/sub-NDARINVWU30WE1X_ses-baselineYear1Arm1_T1w.nii.gz     -hippocampal-subfields-T1  -parallel -openmp 32 

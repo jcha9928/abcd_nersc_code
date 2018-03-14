@@ -1,0 +1,207 @@
+Jiook's environment
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Subject 'sub-NDARINV2L3VG13G': make all
+recon-all -s /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G -skullstrip
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+INFO: SUBJECTS_DIR is /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+Actual FREESURFER_HOME /global/u2/j/jcha9928/app/freesurfer
+-rw-rw---- 1 jcha9928 jcha9928 42587 Mar  4 06:42 /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/scripts/recon-all.log
+'/global/u2/j/jcha9928/app/freesurfer/bin/recon-all' -> '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Skull Stripping Tue Mar 13 01:53:36 PDT 2018
+/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/mri
+
+ mri_em_register -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/touch/rusage.mri_em_register.skull.dat -skull nu.mgz /global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca transforms/talairach_with_skull.lta 
+
+aligning to atlas containing skull, setting unknown_nbr_spacing = 5
+
+== Number of threads available to mri_em_register for OpenMP = 64 == 
+reading 1 input volumes...
+logging results to talairach_with_skull.log
+reading '/global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca'...
+average std = 22.9   using min determinant for regularization = 52.6
+0 singular and 9002 ill-conditioned covariance matrices regularized
+reading 'nu.mgz'...
+freeing gibbs priors...done.
+accounting for voxel sizes in initial transform
+bounding unknown intensity as < 8.7 or > 569.1 
+total sample mean = 77.6 (1399 zeros)
+************************************************
+spacing=8, using 3243 sample points, tol=1.00e-05...
+************************************************
+register_mri: find_optimal_transform
+find_optimal_transform: nsamples 3243, passno 0, spacing 8
+resetting wm mean[0]: 100 --> 108
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=13.0
+skull bounding box = (49, 56, 33) --> (206, 255, 255)
+using (101, 122, 144) as brain centroid...
+mean wm in atlas = 108, using box (82,97,117) --> (120, 146,171) to find MRI wm
+before smoothing, mri peak at 108
+robust fit to distribution - 108 +- 5.7
+after smoothing, mri peak at 108, scaling input intensities by 1.000
+scaling channel 0 by 1
+initial log_p = -4.588
+************************************************
+First Search limited to translation only.
+************************************************
+max log p =    -4.467000 @ (-9.091, -9.091, -27.273)
+max log p =    -4.398411 @ (4.545, -13.636, 4.545)
+max log p =    -4.376751 @ (6.818, 2.273, -2.273)
+max log p =    -4.354475 @ (-1.136, 1.136, 3.409)
+max log p =    -4.344455 @ (0.568, 1.705, -0.568)
+max log p =    -4.340625 @ (0.852, 0.284, 0.852)
+Found translation: (2.6, -17.3, -21.3): log p = -4.341
+****************************************
+Nine parameter search.  iteration 0 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-4.049, old_max_log_p =-4.341 (thresh=-4.3)
+ 1.15000   0.00000   0.00000  -23.29095;
+ 0.00000   1.14215   0.47309  -84.46760;
+ 0.00000  -0.40708   0.98278   41.45604;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 1 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-4.049, old_max_log_p =-4.049 (thresh=-4.0)
+ 1.15000   0.00000   0.00000  -23.29095;
+ 0.00000   1.14215   0.47309  -84.46760;
+ 0.00000  -0.40708   0.98278   41.45604;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.2500
+****************************************
+Nine parameter search.  iteration 2 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.957, old_max_log_p =-4.049 (thresh=-4.0)
+ 1.14858   0.02653   0.04887  -29.32482;
+-0.03631   1.06633   0.47378  -72.60383;
+-0.03310  -0.43288   0.94873   50.32093;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 3 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-3.955, old_max_log_p =-3.957 (thresh=-4.0)
+ 1.12531   0.06069   0.06214  -33.18077;
+-0.07414   1.09870   0.44891  -69.23783;
+-0.03491  -0.40521   0.98180   43.93360;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.0625
+****************************************
+Nine parameter search.  iteration 4 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.932, old_max_log_p =-3.955 (thresh=-4.0)
+ 1.12586   0.07219   0.08573  -38.07447;
+-0.09296   1.09431   0.45558  -66.18822;
+-0.05250  -0.41463   0.97581   47.83590;
+ 0.00000   0.00000   0.00000   1.00000;
+****************************************
+Nine parameter search.  iteration 5 nscales = 2 ...
+****************************************
+Result so far: scale 0.062: max_log_p=-3.929, old_max_log_p =-3.932 (thresh=-3.9)
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+min search scale 0.025000 reached
+***********************************************
+Computing MAP estimate using 3243 samples...
+***********************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-05
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 3243
+Quasinewton: input matrix
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 008: -log(p) =   -0.0  tol 0.000010
+Resulting transform:
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+
+pass 1, spacing 8: log(p) = -3.929 (old=-4.588)
+transform before final EM align:
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+
+**************************************************
+ EM alignment process ...
+ Computing final MAP estimate using 364799 samples. 
+**************************************************
+dt = 5.00e-06, momentum=0.80, tol=1.00e-07
+l_intensity = 1.0000
+Aligning input volume to GCA...
+Transform matrix
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+nsamples 364799
+Quasinewton: input matrix
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+outof QuasiNewtonEMA: 010: -log(p) =    4.4  tol 0.000000
+final transform:
+ 1.12718   0.07227   0.08583  -38.26542;
+-0.09329   1.09816   0.45718  -66.45257;
+-0.05231  -0.41317   0.97238   48.05752;
+ 0.00000   0.00000   0.00000   1.00000;
+
+writing output transformation to transforms/talairach_with_skull.lta...
+mri_em_register utimesec    10823.344000
+mri_em_register stimesec    1.748000
+mri_em_register ru_maxrss   611760
+mri_em_register ru_ixrss    0
+mri_em_register ru_idrss    0
+mri_em_register ru_isrss    0
+mri_em_register ru_minflt   162273
+mri_em_register ru_majflt   351
+mri_em_register ru_nswap    0
+mri_em_register ru_inblock  1824
+mri_em_register ru_oublock  24
+mri_em_register ru_msgsnd   0
+mri_em_register ru_msgrcv   0
+mri_em_register ru_nsignals 0
+mri_em_register ru_nvcsw    5762
+mri_em_register ru_nivcsw   19647
+registration took 3 minutes and 28 seconds.
+
+ mri_watershed -rusage /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/touch/rusage.mri_watershed.dat -T1 -brain_atlas /global/homes/j/jcha9928/app/freesurfer/average/RB_all_withskull_2016-05-10.vc700.gca transforms/talairach_with_skull.lta T1.mgz brainmask.auto.mgz 
+
+
+Mode:          T1 normalized volume
+Mode:          Use the information of atlas (default parms, --help for details)
+mghRead(/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/mri/T1.mgz, -1): read error
+
+*********************************************************
+The input file is T1.mgz
+The output file is brainmask.auto.mgz
+No such file or directory
+
+mri_watershed Error: read failed
+
+Linux nid01124 4.4.49-92.11.1_3.0-cray_ari_c #1 SMP Tue Jan 23 18:01:33 UTC 2018 (3.0.100) x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-NDARINV2L3VG13G exited with ERRORS at Tue Mar 13 01:57:07 PDT 2018
+
+For more details, see the log file /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+/global/homes/j/jcha9928/app/freesurfer/bin/recon-all.makefile:31: recipe for target '/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/mri/brainmask.mgz' failed
+make: *** [/global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV2L3VG13G/mri/brainmask.mgz] Error 1
+I THINK RECON-ALL IS DONE BY NOW

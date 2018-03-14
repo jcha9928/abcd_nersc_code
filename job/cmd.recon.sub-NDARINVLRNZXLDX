@@ -7,10 +7,10 @@ source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
 #mkdir $DW_JOB_STRIPED/fs
 #SUBJECTS_DIR=$DW_JOB_STRIPED/fs
 SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
 
-#recon-all -all -s sub-NDARINVLRNZXLDX -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVLRNZXLDX/ses-baselineYear1Arm1/anat/sub-NDARINVLRNZXLDX_ses-baselineYear1Arm1_T1w.nii.gz    -hippocampal-subfields-T1  -parallel -openmp 64 
-recon-all -s sub-NDARINVLRNZXLDX -make all  -parallel -openmp 32 
+#recon-all -all -s sub-NDARINVLRNZXLDX -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVLRNZXLDX/ses-baselineYear1Arm1/anat/sub-NDARINVLRNZXLDX_ses-baselineYear1Arm1_T1w.nii.gz   -parallel -openmp 64 
+recon-all -s sub-NDARINVLRNZXLDX -make all  -parallel -openmp 64 
 
 #echo now copying fs to local scratch
 
