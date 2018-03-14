@@ -19,13 +19,13 @@ rm -rf $CMD_tasks
 ####################################################################################
 cat<<EOA >$CMD_batch
 #!/bin/bash -l
-#SBATCH -N 6 -c 32
+#SBATCH -N 7 -c 64
 #SBATCH -C haswell
 #SBATCH -q premium
 #SBATCH -J $list
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 00:01:00
+#SBATCH -t 00:05:00
 #SBATCH -L cscratch1
 #DW jobdw capacity=600GB access_mode=striped type=scratch
 #DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
@@ -88,7 +88,7 @@ ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$threads
 #rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/IsRunning*
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
 
-recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp 8 >> $LOG
+recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp 4 >> $LOG
 
 #echo now copying fs to local scratch
 #cp -rfv \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
