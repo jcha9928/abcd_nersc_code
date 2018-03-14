@@ -23,7 +23,7 @@ cat<<EOA >$CMD_batch
 #SBATCH -J $list
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
-#SBATCH -t 00:10:00
+#SBATCH -t 06:00:00
 #SBATCH -L cscratch1
 #DW jobdw capacity=600GB access_mode=striped type=scratch
 #DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
@@ -105,7 +105,7 @@ chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
 echo "srun -N 1 -n 1 -c 64 --cpu_bind=cores $CMD > $LOG 2>&1 &">>$CMD_batch
-echo "sleep 1">>$CMD_batch
+echo "sleep 3">>$CMD_batch
 
 i=$(($i+1))
 #echo $i
