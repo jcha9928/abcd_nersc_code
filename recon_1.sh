@@ -106,7 +106,10 @@ EOC
 chmod +x $CMD
 
 #echo "aprun -n 1 -N 1 -d 64 -j 1 -cc depth -e OMP_NUM_THREADS=64 $CMD > ./job/log.recon.${SUBJECT} 2>&1 &">>$CMD_batch 
-echo "srun -N 1 -n 1 -c 64 --cpu_bind=threads $CMD > $LOG 2>&1 &">>$CMD_batch
+#echo "srun -N 1 -n 1 -c 64 --cpu_bind=threads $CMD > $LOG 2>&1 &">>$CMD_batch
+############################# "-c is optional for MPI jobs"#################################
+echo "srun -N 1 -n 1 --cpu_bind=threads $CMD > $LOG 2>&1 &">>$CMD_batch
+
 echo "sleep 3">>$CMD_batch
 
 i=$(($i+1))
