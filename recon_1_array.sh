@@ -13,42 +13,6 @@ abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.batch${1}
 rm -rf $CMD_batch
 
-####################################################################################
-cat<<EOA >$CMD_batch
-#!/bin/bash -l
-#SBATCH -n $N
-#SBATCH --array=1-$N
-#SBATCH --tasks-per-node=8
-#SBATCH -C haswell
-#SBATCH -q premium
-#SBATCH -J $list
-#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
-#SBATCH --mail-type=ALL
-#SBATCH -t 06:00:00
-#SBATCH -L cscratch1
-#DW jobdw capacity=1500GB access_mode=striped type=scratch
-#DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
-#OpenMP settings:
-
-export OMP_NUM_THREADS=$threads
-export OMP_PLACES=threads
-export OMP_PROC_BIND=true
-
-
-echo start............................................
-echo "working directory is `pwd`"
-
-echo "SLURM_JOBID: " \$SLURM_JOBID
-echo "SLURM_ARRAY_TASK_ID: " \$SLURM_ARRAY_TASK_ID
-echo "SLURM_ARRAY_JOB_ID: " \$SLURM_ARRAY_JOB_ID
-
-arrayfile=`ls job/cmd.recon.batch${1}.*.${s} | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'`
-\$arrayfile
-
-EOA
-#####################################################################
-
-
 i=1
 for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/\$list`
 do
@@ -118,7 +82,46 @@ i=$(($i+1))
 #echo $i
 
 done
+####################################################################################
+######################## BEGINNIGN OF BATCH SCRIPT ############################
+####################################################################################
+cat<<EOA >$CMD_batch
+#!/bin/bash -l
+#SBATCH -n $N
+#SBATCH --array=1-$N
+#SBATCH --tasks-per-node=8
+#SBATCH -C haswell
+#SBATCH -q premium
+#SBATCH -J $list
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 06:00:00
+#SBATCH -L cscratch1
+#DW jobdw capacity=1500GB access_mode=striped type=scratch
+#DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
+#OpenMP settings:
 
+export OMP_NUM_THREADS=$threads
+export OMP_PLACES=threads
+export OMP_PROC_BIND=true
+
+
+echo start............................................
+echo "working directory is `pwd`"
+
+echo "SLURM_JOBID: " \$SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " \$SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " \$SLURM_ARRAY_JOB_ID
+
+arrayfile=`ls job/cmd.recon.batch${1}.*.${s} | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'`
+
+echo "running array job"
+\$arrayfile
+
+EOA
+####################################################################################
+######################## END OF BATCH SCRIPT ############################
+####################################################################################
 #echo "wait" >> $CMD_batch
 ### batch submission
 
