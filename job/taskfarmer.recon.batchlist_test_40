@@ -1,0 +1,23 @@
+#!/bin/bash -l
+#SBATCH -N 6 -c 32
+#SBATCH -C haswell
+#SBATCH -q premium
+#SBATCH -J list_test_40
+#SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
+#SBATCH --mail-type=ALL
+#SBATCH -t 00:01:00
+#SBATCH -L cscratch1
+#DW jobdw capacity=600GB access_mode=striped type=scratch
+#DW stage_out source=$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
+#OpenMP settings:
+
+cd /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/taskfarmer 
+export PATH=/global/common/cori/tig/taskfarmer/1.5/bin:/usr/common/software/parallel/20170822/bin:/global/u2/j/jcha9928/.local/cori/3.5-anaconda/bin/:/global/homes/j/jcha9928/usr/bin:/global/homes/j/jcha9928/app/freesurfer/bin:/global/homes/j/jcha9928/app/freesurfer/fsfast/bin:/global/homes/j/jcha9928/app/freesurfer/tktools:/global/homes/j/jcha9928/app/fsl/bin:/global/homes/j/jcha9928/app/freesurfer/mni/bin:/global/homes/j/jcha9928/app/ANTs/bin/:/global/u2/j/jcha9928/app/mrtrix3/bin:/global/common/cori/software/python/3.5-anaconda/bin:/global/common/cori/software/python/3.5-anaconda/lib/python3.5/site-packages/mpi4py/bin:/opt/gcc/7.1.0/bin:/global/homes/j/jcha9928/app/fsl/bin:/usr/common/software/darshan/3.1.4/bin:/usr/common/software/altd/2.0/bin:/usr/common/software/bin:/usr/common/mss/bin:/usr/common/nsg/bin:/opt/cray/pe/mpt/7.6.2/gni/bin:/opt/cray/rca/2.2.15-6.0.4.1_13.1__g46acb0f.ari/bin:/opt/cray/alps/6.4.1-6.0.4.0_7.2__g86d0f3d.ari/sbin:/opt/cray/job/2.2.2-6.0.4.0_8.2__g3c644b5.ari/bin:/opt/cray/pe/craype/2.5.12/bin:/opt/intel/compilers_and_libraries_2018.1.163/linux/bin/intel64:/usr/syscom/nsg/sbin:/usr/syscom/nsg/bin:/opt/cray/pe/modules/3.2.10.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/cray/pe/bin:/usr/common/tig/taskfarmer/1.5/bin:/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code
+export THREADS=40 
+
+export OMP_NUM_THREADS=8
+export OMP_PLACES=threads
+export OMP_PROC_BIND=true
+
+runcommands.sh /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/taskfarmer/taskfarmer.recon.taskslist_test_40
+

@@ -3,14 +3,19 @@ source ~/.bashrc_jiook
 FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
 source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
 
+
 #SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-#mkdir $DW_JOB_STRIPED/fs
-#SUBJECTS_DIR=$DW_JOB_STRIPED/fs
-SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
-ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=64
+
+mkdir -p $DW_JOB_STRIPED/fs
+SUBJECTS_DIR=$DW_JOB_STRIPED/fs
+
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
+#rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINVTXGL96R1/scripts/IsRunning*
 
 #recon-all -all -s sub-NDARINVTXGL96R1 -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T1w.nii.gz  -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 64 
-recon-all -s sub-NDARINVTXGL96R1 -all -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T1w.nii.gz   -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 64 
+recon-all -s sub-NDARINVTXGL96R1 -all -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T1w.nii.gz   -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINVTXGL96R1/ses-baselineYear1Arm1/anat/sub-NDARINVTXGL96R1_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 16 
 
 #echo now copying fs to local scratch
 

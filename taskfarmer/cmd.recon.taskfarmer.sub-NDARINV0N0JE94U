@@ -1,0 +1,17 @@
+#!/bin/bash
+source ~/.bashrc_jiook
+FREESURFER_HOME=/global/homes/j/jcha9928/app/freesurfer
+source /global/homes/j/jcha9928/app/freesurfer/SetUpFreeSurfer.sh
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+mkdir -p $DW_JOB_STRIPED/fs
+SUBJECTS_DIR=$DW_JOB_STRIPED/fs
+#SUBJECTS_DIR=/global/cscratch1/sd/jcha9928/anal/ABCD/fs
+ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=32
+#rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/sub-NDARINV0N0JE94U/scripts/IsRunning*
+#recon-all -all -s sub-NDARINV0N0JE94U -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T1w.nii.gz  -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 64 
+
+recon-all -s sub-NDARINV0N0JE94U -all -i /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T1w.nii.gz   -T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T2w.nii.gz -T2pial   -hippocampal-subfields-T1T2 /global/cscratch1/sd/jcha9928/anal/ABCD/data/sub-NDARINV0N0JE94U/ses-baselineYear1Arm1/anat/sub-NDARINV0N0JE94U_ses-baselineYear1Arm1_T2w.nii.gz T1T2  -parallel -openmp 8 >> /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/taskfarmer/log.recon.sub-NDARINV0N0JE94U
+
+#echo now copying fs to local scratch
+#cp -rfv $DW_JOB_STRIPED/fs/sub-NDARINV0N0JE94U /global/cscratch1/sd/jcha9928/anal/ABCD/fs
+echo "I THINK RECON-ALL IS DONE BY NOW"
