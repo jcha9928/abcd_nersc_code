@@ -113,7 +113,7 @@ echo "SLURM_JOBID: " \$SLURM_JOBID
 echo "SLURM_ARRAY_TASK_ID: " \$SLURM_ARRAY_TASK_ID
 echo "SLURM_ARRAY_JOB_ID: " \$SLURM_ARRAY_JOB_ID
 
-arrayfile=`ls job/cmd.recon.batch${1}.*.${s} | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'`
+arrayfile=`ls job/cmd.recon.batch${1}.*.* | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'`
 
 echo "running array job"
 \$arrayfile
