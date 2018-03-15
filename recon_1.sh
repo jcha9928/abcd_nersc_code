@@ -6,7 +6,7 @@ list=${1}
 N=`wc ${1} | awk '{print $1}'`
 
 echo $list
-threads=8
+threads=16
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
