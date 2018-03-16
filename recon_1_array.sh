@@ -119,10 +119,10 @@ echo "SLURM_ARRAY_TASK_ID: " \$SLURM_ARRAY_TASK_ID
 echo "SLURM_ARRAY_JOB_ID: " \$SLURM_ARRAY_JOB_ID
 
 #arrayfile=`echo "\`ls job/cmd.recon.batch${1}.*.* | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'\`"`
-ls job/cmd.recon.batch${1}.*.* | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'
+#ls job/cmd.recon.batch${1}.*.* | awk -v line=\$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'
 
 echo "running array job"
-\$arrayfile
+$arrayfile
 
 EOA
 ####################################################################################
