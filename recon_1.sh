@@ -6,7 +6,7 @@ list=${1}
 N=`wc ${1} | awk '{print $1}'`
 
 echo $list
-threads=16
+threads=8
 
 abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 
@@ -110,7 +110,7 @@ chmod +x $CMD
 ############################# "-c is optional for MPI jobs"#################################
 echo "srun -N 1 -n 1 --cpu_bind=threads $CMD > $LOG 2>&1 &">>$CMD_batch
 
-echo "sleep 3">>$CMD_batch
+echo "sleep 10">>$CMD_batch
 
 i=$(($i+1))
 #echo $i
