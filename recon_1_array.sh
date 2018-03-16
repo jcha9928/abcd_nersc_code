@@ -26,8 +26,8 @@ SUBJECT=${s}
 CMD=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/cmd.recon.batch${1}.${i}.${s}
 rm -rf $CMD
 
-LOG=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.${s}
-rm -rf $LOG
+#LOG=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.taskid.
+rm -rf global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/log.recon.batch${1}.taskid${i}.
 
 #CMD_sub=/lus/theta-fs0/projects/AD_Brain_Imaging/anal/ABCD/abcd_alcf_code/job/cmd_sub.recon.${s}
 #rm -rf $CMD_sub
@@ -102,7 +102,7 @@ cat<<EOA >$CMD_batch
 #SBATCH --mail-type=ALL
 #SBATCH -t 00:05:00
 #SBATCH -L cscratch1
-#DW jobdw capacity=1500GB access_mode=striped type=scratch
+#DW jobdw capacity=10GB access_mode=striped type=scratch
 #DW stage_out source=\$DW_JOB_STRIPED/fs destination=/global/cscratch1/sd/jcha9928/anal/ABCD/fs_from_dw type=directory
 #OpenMP settings:
 
