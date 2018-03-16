@@ -64,7 +64,7 @@ SUBJECTS_DIR=\$DW_JOB_STRIPED/fs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=$threads
 #rm /global/cscratch1/sd/jcha9928/anal/ABCD/fs/${SUBJECT}/scripts/IsRunning*
 #recon-all -all -s ${SUBJECT} -i ${t1} ${t2_arg} ${hippo_arg} -parallel -openmp 64 
-recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp 4
+recon-all -s ${SUBJECT} ${input_arg2} -parallel -openmp $threads
 
 #echo now copying fs to local scratch
 #cp -rfv \$DW_JOB_STRIPED/fs/${SUBJECT} /global/cscratch1/sd/jcha9928/anal/ABCD/fs
@@ -87,6 +87,8 @@ i=$(($i+1))
 echo $CMD >> $arrayfile
 
 done
+
+#SBATCH --tasks-per-node=8
 ####################################################################################
 ######################## BEGINNIGN OF BATCH SCRIPT ############################
 ####################################################################################
@@ -94,7 +96,6 @@ cat<<EOA >$CMD_batch
 #!/bin/bash -l
 #SBATCH -n $N
 #SBATCH --array=1-$N
-#SBATCH --tasks-per-node=8
 #SBATCH -C haswell
 #SBATCH -q regular
 #SBATCH -J $list
