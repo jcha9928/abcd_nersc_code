@@ -96,7 +96,7 @@ cat<<EOA >$CMD_batch
 #SBATCH --array=1-$N
 #SBATCH --tasks-per-node=8
 #SBATCH -C haswell
-#SBATCH -q premium
+#SBATCH -q regular
 #SBATCH -J $list
 #SBATCH --mail-user=jiook.cha@nyspi.columbia.edu
 #SBATCH --mail-type=ALL
