@@ -1,6 +1,7 @@
 #!/bin/bash
 #usage: recon_1_array.sh b300_aa
 # use this one: other versions failed
+# trying single task (1 task per node)
 
 list=${1}
 N=`wc ${1} | awk '{print $1}'`
