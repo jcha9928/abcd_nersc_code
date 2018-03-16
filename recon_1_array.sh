@@ -13,6 +13,9 @@ abcd=/global/cscratch1/sd/jcha9928/anal/ABCD/
 CMD_batch=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/slurmjob.recon.batch${1}
 rm -rf $CMD_batch
 
+arrayfile=/global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/job/arrayfile.recon.batch${1}
+rm -rf $arrayfile
+
 i=1
 for s in `cat /global/cscratch1/sd/jcha9928/anal/ABCD/abcd_nersc_code/\$list`
 do
@@ -81,6 +84,8 @@ chmod +x $CMD
 i=$(($i+1))
 #echo $i
 
+echo $CMD >> $arrayfile
+
 done
 ####################################################################################
 ######################## BEGINNIGN OF BATCH SCRIPT ############################
@@ -128,6 +133,7 @@ EOA
 
 echo $CMD_batch
 chmod +x $CMD_batch 
+echo "arrayfile is $arrayfile"
 echo sbatch $CMD_batch
 
 
